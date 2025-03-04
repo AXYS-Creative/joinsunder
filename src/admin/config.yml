@@ -36,94 +36,81 @@ collections:
         name: "image"
         widget: "image"
         required: false
-  - name: "page_library"
-    label: "Page - Library"
-    description: >
-      Library for all UI components
+  - name: "page_home"
+    label: "Page - Home"
     files:
-      - name: "marquee"
-        label: "Marquee"
-        file: "src/_data/library/marquee.yaml"
+      - name: "hero"
+        label: "Section - Hero"
+        file: "src/_data/page_home/hero.yaml"
         preview_path: "#"
         editor:
           preview: false
         fields:
-          - name: "marquee_toggle"
-            label: "Marquee Toggle"
-            widget: "boolean"
-            hint: "Hide or show the discount marquee."
-          - name: "marquee_text"
-            label: "Marquee Text"
+          - name: "section_title"
+            label: "Section Title"
+            widget: "string"
             required: true
-          - name: "marquee_scrub"
-            label: "Marquee Scrub"
-            widget: "boolean"
-            hint: "Change velocity based on scroll speed."
-      - name: "accordion"
-        label: "Accordion"
-        file: "src/_data/library.accordion.yaml"
-        preview_path: "#"
-        editor:
-          preview: false
-        fields:
-          - name: "accordion_behavior_single"
-            label: "Single Open"
-            widget: "boolean"
-            required: false
-            hint: "Allow only one item to be open at a time."
-          - name: "accordion_data"
-            label: "accordion Items"
-            label_singular: "Item"
-            widget: "list"
-            fields:
-              - name: "title"
-                label: "Title"
-                widget: "string"
-                required: true
-              - name: "content"
-                label: "Content"
-                widget: "text"
-                required: true
-      - name: "carousel_snap"
-        label: "Snap Carousel"
-        file: "src/_data/library/carousel_snap.yaml"
-        preview_path: "/library#carousel-snap"
-        editor:
-          preview: false
-        fields:
-          - name: "autoplay"
-            label: "Autoplay"
+            hint: Semantic page heading for accessibility and SEO. Not visually shown on the page (per design) but improves site indexing and other areas. If left blank, defaults to 'Welcome to Sunder Energy'
+          - name: "external_panel"
+            label: "External Panel (sunderenergy.com)"
             widget: "object"
-            summary: "{{fields.enabled}}, {{fields.interval}}"
             fields:
-              - name: "enabled"
-                label: "Enabled"
-                widget: "boolean"
-                hint: "Autoplay carousel"
-              - name: "interval"
-                label: "Interval"
-                widget: "number"
-                hint: "i.e. 5000 — Interval in milliseconds. Not recommended below 2000"
-              - name: "allow_user_toggle"
-                label: "Allow User Toggle"
-                widget: "boolean"
-                hint: "Allow users to toggle autoplay"
-          - name: "list"
-            label: "Carousel Items"
-            label_singular: "Item"
-            widget: "list"
-            fields:
-              - name: "title"
-                label: "Title"
+              - name: "bg_img"
+                label: "Background Image"
+                widget: "image"
+                required: true
+              - name: "logo"
+                label: "Logo"
+                widget: "image"
+                required: true
+                hint: "Recommended to use an SVG file"
+              - name: "pre_title"
+                label: "Small Title"
                 widget: "string"
                 required: true
-              - name: "description"
-                label: "Description"
-                widget: "text"
+              - name: "title"
+                label: "Large Title"
+                widget: "string"
                 required: true
-              - name: "image"
-                label: "Image"
+              - name: "cta_text"
+                label: "Button Text"
+                widget: "string"
+                required: true
+                hint: "Leave empty to remove the button"
+              - name: "cta_url"
+                label: "Button URL"
+                widget: "string"
+                required: true
+          - name: "internal_panel"
+            label: "Internal Panel (joinsunder.com)"
+            widget: "object"
+            fields:
+              - name: "bg_img"
+                label: "Background Image"
                 widget: "image"
+                required: true
+              - name: "logo"
+                label: "Logo"
+                widget: "image"
+                required: true
+                hint: "Recommended to use an SVG file"
+              - name: "pre_title"
+                label: "Small Title"
+                widget: "string"
+                required: true
+              - name: "title"
+                label: "Large Title"
+                widget: "string"
+                required: true
+              - name: "cta_text"
+                label: "Button Text"
+                widget: "string"
+                required: true
+                hint: "Leave empty to remove the button"
+              - name: "cta_url"
+                label: "Button URL"
+                widget: "string"
+                required: true
   - name: "meta_data"
     label: "Meta Data"
     description: >

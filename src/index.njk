@@ -13,39 +13,44 @@ hide_footer: true
 ---
 
 <section class="hero">
-  <h1 class="sr-only">ADD h1 for SEO & a11y</h1>
+  <h1 class="sr-only">{{ page_home.hero.section_title }}</h1>
 
   <div
     class="hero-panel sunder-external"
-    style="background-image: url(/static/img/home-img-1.avif)"
+    style="background-image: url({{ page_home.hero.external_panel.bg_img }})"
   >
     <img
       class="hero-panel__logo"
-      src="/static/img/logo-external-light.svg"
+      src="{{ page_home.hero.external_panel.logo }}"
       alt=""
     />
     <h2 class="hero-panel__title">
-      <span class="h5">Learn more about</span>
-      <span class="h3">Going Solar</span>
+      <span class="h5">{{ page_home.hero.external_panel.pre_title }}</span>
+      <span class="h3">{{ page_home.hero.external_panel.title }}</span>
     </h2>
     <!-- prettier-ignore -->
-    {% set cta_1_text = 'Learn more' %}
+    {% set cta_1_text = page_home.hero.external_panel.cta_text %}
+    {% set cta_1_url = page_home.hero.external_panel.cta_url %}
     {% include "./_includes/components/cta-group.njk" %}
   </div>
 
   <div
     class="hero-panel sunder-internal"
-    style="background-image: url(/static/img/home-img-2.avif)"
+    style="background-image: url({{ page_home.hero.internal_panel.bg_img }})"
   >
     <img
       class="hero-panel__logo"
-      src="/static/img/logo-squad-light.svg"
+      src="{{ page_home.hero.internal_panel.logo }}"
       alt=""
     />
     <h2 class="hero-panel__title">
-      <span class="h5">Join America’s Leading</span>
-      <span class="h3">Solar Company</span>
+      <span class="h5">{{ page_home.hero.internal_panel.pre_title }}</span>
+      <span class="h3">{{ page_home.hero.internal_panel.title }}</span>
     </h2>
+
+    <!-- prettier-ignore -->
+    {% set cta_1_text = page_home.hero.internal_panel.cta_text %}
+    {% set cta_1_url = page_home.hero.internal_panel.cta_url %}
     {% include "./_includes/components/cta-group.njk" %}
   </div>
 </section>

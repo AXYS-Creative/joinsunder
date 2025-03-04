@@ -1,0 +1,17 @@
+section_title: "Solar made simple"
+
+external_panel:
+  bg_img: "/static/img/home-img-1.avif"
+  logo: "/static/img/logo-external-light.svg"
+  pre_title: "Learn more about"
+  title: "going solar"
+  cta_text: "Learn More"
+  cta_url: "https://sunderenergy.com/"
+
+internal_panel:
+  bg_img: "/static/img/home-img-2.avif"
+  logo: "/static/img/logo-squad-light.svg"
+  pre_title: "Join America’s leading"
+  title: "solar company"
+  cta_text: "Learn More"
+  cta_url: "https://sunderenergy.com/"
