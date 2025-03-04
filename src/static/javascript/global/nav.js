@@ -1,8 +1,6 @@
 const siteHeader = document.querySelector(".site-header"),
   siteNav = document.querySelector(".site-nav"),
-  siteNavBtn = document.querySelector(".site-nav-btn"),
-  skipToContent = document.querySelector(".skip-to-content"),
-  contentStart = document.querySelector(".content-start");
+  siteNavBtn = document.querySelector(".site-nav-btn");
 
 const navLinks = document.querySelectorAll(".nav-link"),
   navFooterLinks = document.querySelectorAll(".nav-footer-link"),
@@ -50,11 +48,4 @@ const closeNav = () => {
   }
 });
 
-siteNavBtn.addEventListener("click", toggleNav);
-
-// Skip to main content option
-if (skipToContent) {
-  skipToContent.addEventListener("click", () => {
-    contentStart?.focus();
-  });
-}
+siteNavBtn?.addEventListener("click", toggleNav);

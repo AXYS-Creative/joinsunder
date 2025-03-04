@@ -1,12 +1,18 @@
 $brand-font--heading: "Satoshi", source-sans-pro, sans-serif;
-$brand-font--body: Avenir, Montserrat, Corbel, source-sans-pro, sans-serif; // If not using a 'Modern font stack' just have one fallback
+$brand-font--body: "Satoshi", source-sans-pro, sans-serif;
 
-$black: #0a0a0a;
-$grey-dark: #313131;
-$grey-light: #c0c0c0;
-$white: #fefefe;
+$sunder-snow: #f7f7f7;
+$sunder-ice: #c6d3d8;
+$sunder-royal-light: #0c5ff2;
+$sunder-royal: #074895;
+$sunder-navy: #061a2a;
+$sunder-midnight: #000014;
 
-$blue: #007bff;
+$black: $sunder-midnight;
+$grey: $sunder-ice;
+$white: $sunder-snow;
+
+$blue: $sunder-royal-light;
 $red: #dc143c;
 
 $content-width: 1920px;
@@ -15,7 +21,6 @@ $content-width: 1920px;
 $z-index--nav: 3;
 $z-index--header: 4;
 $z-index--loader: 5;
-$z-index--mouse-cursor: 6; // Library
 
 // Easing
 $cubic-ease: cubic-bezier(0.18, 0.97, 0.47, 1);
@@ -38,39 +43,51 @@ $test: 2px dashed rgba(yellow, 0.75);
 $test-bg: rgba(navy, 0.75);
 
 :root {
-  --background-color: #{$black};
-  --font-color--primary: #{$white};
-  --font-color--secondary: #{$grey-light};
+  --background-color: #{$white};
+  --font-color--primary: #{$blue};
+  --font-color--secondary: #{$grey};
   --font-color--error: #{$red};
 
-  --hero-color--primary: #{$blue};
+  --hero-color--primary: #{$sunder-royal-light};
 
   --font-family--heading: #{$brand-font--heading};
   --font-family--body: #{$brand-font--body};
 
-  --link-color: #{$grey-light};
+  --btn-color-bg: #{$blue};
+  --btn-color-text: #{$white};
+  --btn-color-border: var(--btn-color-bg);
+  --btn-color-bg--hover: #{$white};
+  --btn-color-text--hover: #{$blue};
+  --btn-color-border--hover: var(--btn-color-bg--hover);
+
+  --link-color: #{$grey};
   --link-color-hover: #{$white};
 
   --content-width: #{$content-width};
-  --body-padding: 64px;
+  --body-padding: 24px;
   --body-padding-double: calc(var(--body-padding) * 2);
 
-  --section-gap: 24px;
+  --section-gap: 64px;
   --section-gap--lg: 64px;
 
   --border-bold-girth: 2px;
-  --border-bold-color: #{$grey-light};
+  --border-bold-color: #{$grey};
 
-  --radius: 24px;
-  --radius-btn: 4px;
+  --radius: 8px;
+  --radius-btn: 10px;
 
   @media (max-width: 1512px) {
     --body-padding: 48px;
   }
 
   @media (max-width: 1024px) {
-    --body-padding: 24px;
+    --body-padding: 16px;
     --section-gap--lg: 24px;
+  }
+
+  @media (max-width: 768px) {
+    --body-padding: 8px;
+    --radius: 5px;
   }
 }
 

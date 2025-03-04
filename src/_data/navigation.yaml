@@ -3,7 +3,7 @@
 show_skip_to_content: true
 
 items:
-  - text: Home
+  - text: The [%span.reveal%]Sunder[%span%] Way
     url: "/"
   - text: Style Guide
     url: "/style-guide"

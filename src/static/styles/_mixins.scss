@@ -99,7 +99,8 @@ $min-breakpoints: (
   color: var(--font-color--primary);
   font-family: var(--font-family--heading);
   font-size: $size;
-  font-weight: 300;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 @mixin h1 {
@@ -116,11 +117,14 @@ $min-breakpoints: (
     font-size: max(49.2px, 4.8vw);
   }
 }
+
+// Laning page
 @mixin h3 {
-  @include heading-text(52px);
+  @include heading-text(56px);
+  letter-spacing: -2px;
 
   @include mq-max("xxl") {
-    font-size: max(39px, 3.4vw);
+    font-size: max(40px, 3.6vw);
   }
 }
 @mixin h4 {
@@ -130,11 +134,14 @@ $min-breakpoints: (
     font-size: max(28.7px, 2.4vw);
   }
 }
+
+// Laning page
 @mixin h5 {
   @include heading-text(32px);
+  letter-spacing: -1px;
 
   @include mq-max("xxl") {
-    font-size: max(24.5px, 2.4vw);
+    font-size: max(22px, 2vw);
   }
 }
 @mixin h6 {
@@ -204,11 +211,10 @@ $min-breakpoints: (
   --background-color: #{$black};
   --font-color--primary: #{$white};
 
-  background-color: var(--background-color);
   color: var(--font-color--primary);
 }
 
-@mixin ultra-wide($bg-color: $test-bg, $z-index: -1) {
+@mixin ultra-wide-bg($bg-color: $test-bg, $z-index: -1) {
   &::before {
     content: "";
     isolation: isolate;

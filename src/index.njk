@@ -2,24 +2,50 @@
 layout: app
 path: home
 
-title: Sample title // CHANGE ME
-description: Sample description // CHANGE ME
+title: Join Sunder Energy - Join the best
+description: Welcome to Sunder, America's leading solar sales company. Empower your future with us and discover why thousands are building brighter careers in the solar industry.
 
-# master props for cta-group
-cta_1_text: CHANGE ME
-cta_1_url: "#"
-cta_2_text: CHANGE ME
-cta_2_url: "#"
-cta_2_target: "_blank"
+# master props
+hide_header: true
+hide_footer: true
+# Page notes
+# Using eager loading for computed/dynamic height. Only use fetchpriority sparingly
 ---
 
 <section class="hero">
-  <h1>H1 CHANGE ME</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <h1 class="sr-only">ADD h1 for SEO & a11y</h1>
 
-  <!-- prettier-ignore -->
-  {% set content_start = true %}
-  {% include "./_includes/components/cta-group.njk" %}
+  <div
+    class="hero-panel sunder-external"
+    style="background-image: url(/static/img/home-img-1.avif)"
+  >
+    <img
+      class="hero-panel__logo"
+      src="/static/img/logo-sunder-external-light.svg"
+      alt=""
+    />
+    <h2 class="hero-panel__title">
+      <span class="h5">Learn more about</span>
+      <span class="h3">Going Solar</span>
+    </h2>
+    <!-- prettier-ignore -->
+    {% set cta_1_text = 'Learn more' %}
+    {% include "./_includes/components/cta-group.njk" %}
+  </div>
+
+  <div
+    class="hero-panel sunder-internal"
+    style="background-image: url(/static/img/home-img-2.avif)"
+  >
+    <img
+      class="hero-panel__logo"
+      src="/static/img/logo-squad-light.svg"
+      alt=""
+    />
+    <h2 class="hero-panel__title">
+      <span class="h5">Join America’s Leading</span>
+      <span class="h3">Solar Company</span>
+    </h2>
+    {% include "./_includes/components/cta-group.njk" %}
+  </div>
 </section>
-
-{% include './_includes/partials/loader.njk' %}
