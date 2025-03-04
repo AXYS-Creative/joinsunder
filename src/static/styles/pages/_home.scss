@@ -62,14 +62,18 @@
   }
 
   .sunder-internal {
-    border-radius: var(--radius) var(--radius) 0 0;
+    @include mq-max("lg") {
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
     // &:hover,
     // &:focus-within {
     //   border: $test;
     // }
   }
   .sunder-external {
-    border-radius: 0 0 var(--radius) var(--radius);
+    @include mq-max("lg") {
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
     // &:hover,
     // &:focus-within {
     //   border: $test;

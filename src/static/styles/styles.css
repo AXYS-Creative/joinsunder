@@ -965,11 +965,15 @@ figure {
   align-items: flex-start;
   margin-block: 32px 48px;
 }
-.hero .sunder-internal {
-  border-radius: var(--radius) var(--radius) 0 0;
+@media screen and (max-width: 1024px) {
+  .hero .sunder-internal {
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
 }
-.hero .sunder-external {
-  border-radius: 0 0 var(--radius) var(--radius);
+@media screen and (max-width: 1024px) {
+  .hero .sunder-external {
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
 }
 
 .error {
