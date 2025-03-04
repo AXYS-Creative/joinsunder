@@ -2,7 +2,7 @@ site_name: "Join Sunder"
 url: "https://joinsunder-dev.netlify.app/"
 author: Sunder Energy
 contact_email: info@sunderenergy.com
-theme_color: "#0c5ff2"
+theme_color: "#f7f7f7"
 
 # Open Graph Protocol
 og_title: "Join Sunder - Join The Best" #Separate from individual page title in index.html
