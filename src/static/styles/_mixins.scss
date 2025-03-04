@@ -126,6 +126,10 @@ $min-breakpoints: (
   @include mq-max("xxl") {
     font-size: max(40px, 3.6vw);
   }
+
+  @include mq-max("sm") {
+    font-size: 32px;
+  }
 }
 @mixin h4 {
   @include heading-text(36px);
@@ -142,6 +146,10 @@ $min-breakpoints: (
 
   @include mq-max("xxl") {
     font-size: max(22px, 2vw);
+  }
+
+  @include mq-max("sm") {
+    font-size: 18px;
   }
 }
 @mixin h6 {
@@ -210,6 +218,13 @@ $min-breakpoints: (
 @mixin dark-theme {
   --background-color: #{$black};
   --font-color--primary: #{$white};
+
+  --btn-color-bg: #{$white};
+  --btn-color-text: #{$blue};
+  --btn-color-border: var(--btn-color-bg);
+  --btn-color-bg--hover: #{$blue};
+  --btn-color-text--hover: #{$white};
+  --btn-color-border--hover: var(--btn-color-bg--hover);
 
   color: var(--font-color--primary);
 }

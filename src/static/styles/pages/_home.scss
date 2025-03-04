@@ -13,9 +13,14 @@
   }
 
   @include mq-max("lg") {
-    height: auto;
+    height: 100vh;
+    min-height: 1200px;
     flex-direction: column-reverse;
     padding: var(--body-padding);
+  }
+
+  @include mq-max("sm") {
+    min-height: 950px;
   }
 
   .hero-panel {
@@ -28,10 +33,31 @@
     width: 50%;
     padding-block-start: 20vh;
 
+    @include mq-motion-allow {
+      transition: $ease;
+    }
+
     @include mq-max("lg") {
       overflow: hidden;
       width: 100%;
-      padding-block: 64px;
+      justify-content: space-between;
+      padding-block: 24px 64px;
+    }
+
+    &:hover,
+    &:focus-within {
+      &::after {
+        width: 75%;
+
+        @include mq-max("lg") {
+          width: 100%;
+          height: 75%;
+        }
+
+        @include mq-max("sm") {
+          height: 0;
+        }
+      }
     }
 
     &::before {
@@ -40,6 +66,26 @@
       inset: 0;
       background-color: rgba(0, 0, 0, 0.25);
       z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 100%;
+      z-index: -1;
+      transition: $ease;
+      background: linear-gradient(
+        var(--direction),
+        $blue-opaque 0%,
+        transparent 100%
+      );
+
+      @include mq-max("lg") {
+        width: 100%;
+        height: 0;
+      }
     }
 
     &__logo {
@@ -53,6 +99,10 @@
       @include mq-max("lg") {
         width: 320px;
       }
+
+      @include mq-max("md") {
+        width: min(55%, 320px);
+      }
     }
 
     &__title {
@@ -65,18 +115,31 @@
     @include mq-max("lg") {
       border-radius: var(--radius) var(--radius) 0 0;
     }
-    // &:hover,
-    // &:focus-within {
-    //   border: $test;
-    // }
+
+    &::after {
+      --direction: to right;
+      left: 0;
+
+      @include mq-max("lg") {
+        --direction: to top;
+        top: auto;
+        bottom: 0;
+      }
+    }
   }
+
   .sunder-external {
     @include mq-max("lg") {
       border-radius: 0 0 var(--radius) var(--radius);
     }
-    // &:hover,
-    // &:focus-within {
-    //   border: $test;
-    // }
+
+    &::after {
+      --direction: to left;
+      right: 0;
+
+      @include mq-max("lg") {
+        --direction: to bottom;
+      }
+    }
   }
 }
