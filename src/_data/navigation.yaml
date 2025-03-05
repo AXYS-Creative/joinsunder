@@ -4,12 +4,10 @@ show_skip_to_content: true
 
 items:
   - text: The [%span.reveal%]Sunder[%span%] Way
-    url: "/"
-  - text: Style Guide
-    url: "/style-guide"
-  - text: Library
-    url: "/library"
-  - text: Advanced
-    url: "/advanced"
-  - text: Blog
-    url: "/blog"
+    url: "/sunder-way"
+  - text: The [%span.reveal%]Sunder[%span%] Platform
+    url: "/platform"
+  - text: About [%span.reveal%]Sunder[%span%]
+    url: "/about"
+  - text: Join [%span.reveal%]Sunder[%span%]
+    url: "/join"

@@ -6,7 +6,6 @@
 >
   <div class="width-constraint">
     {% if navigation.items %}
-
     <ul class="nav-links">
       {% for item in navigation.items %}
       <li>
@@ -16,27 +15,7 @@
       </li>
       {% endfor %}
     </ul>
-
     {% endif %}
-
-    <ul class="nav-footer-links">
-      <li>
-        <a
-          class="nav-footer-link tab-element-nav"
-          href="{{ settings.url }}admin"
-        >
-          Admin Login
-        </a>
-      </li>
-      <li>
-        <a class="nav-footer-link tab-element-nav" href="/">Privacy Policy</a>
-      </li>
-      <li>
-        <a class="nav-footer-link tab-element-nav" href="/">
-          Terms & Conditions
-        </a>
-      </li>
-    </ul>
 
     <!-- prettier-ignore -->
     {% set tab_nav = true %}

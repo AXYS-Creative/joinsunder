@@ -65,6 +65,10 @@ body {
   // No static content here to allow clickthrough
   --children-height: 36px;
 
+  @include mq-max("md") {
+    --children-height: 32px;
+  }
+
   & > * {
     z-index: $z-index--header;
     position: fixed;
@@ -73,11 +77,10 @@ body {
 
   .header-logo {
     @include left-spacing;
+    @include row-center(flex-start);
     top: var(--body-padding);
-    display: flex;
-    align-items: center;
-    gap: 12px;
     height: var(--children-height);
+    aspect-ratio: 5/1;
 
     &__img {
       height: 100%;
@@ -113,11 +116,14 @@ body {
     transition: opacity 0.3s ease;
 
     .site-nav-btn {
-      $line-offset: 4px;
+      $line-offset: 3px;
 
+      background: vaR(--btn-color-bg);
       width: 100%;
       aspect-ratio: 1;
-      transition: 0.2s ease 0s;
+      border-radius: 50%;
+      padding: 8px;
+      transition: $ease-c;
 
       &:hover,
       &:focus-visible {
@@ -128,7 +134,7 @@ body {
         scale: 0.9;
       }
 
-      .site-nav-btn-line-wrapper {
+      &__line-wrapper {
         position: relative;
         transition: 0.2s ease;
       }
@@ -137,7 +143,7 @@ body {
         @include absolute-center;
         width: 100%;
         height: 3px;
-        background: var(--font-color--primary);
+        background: var(--btn-color-text);
         transition: 0.3s ease;
 
         &:first-of-type {
@@ -149,7 +155,7 @@ body {
       }
 
       &[aria-expanded="true"] {
-        .site-nav-btn-line-wrapper {
+        .site-nav-btn__line-wrapper {
           rotate: 45deg;
         }
         .site-nav-btn-line {
@@ -175,18 +181,17 @@ body {
 }
 
 .site-nav {
+  border: $test;
   @include hide-content;
   position: fixed;
   top: 0;
+  left: 50%;
+  translate: -50% 0;
   width: 100vw;
   height: 100vh;
   height: 100dvh;
   overflow: auto;
   z-index: $z-index--nav;
-
-  @include mq-min("lg") {
-    display: none;
-  }
 
   .width-constraint {
     position: relative;
@@ -205,8 +210,7 @@ body {
     }
   }
 
-  .nav-links,
-  .nav-footer-links {
+  .nav-links {
     position: absolute;
 
     li {
@@ -252,39 +256,6 @@ body {
     }
   }
 
-  .nav-footer-links {
-    @include left-spacing;
-    @include row-center;
-    bottom: var(--body-padding);
-    gap: 48px;
-
-    @include mq-max("lg") {
-      gap: 24px;
-    }
-
-    @include mq-max("md") {
-      @include column-start;
-      gap: 12px;
-    }
-
-    @include mq-max("sm") {
-      gap: 4px;
-    }
-
-    li {
-      .nav-footer-link {
-        padding: 4px;
-        border-bottom: 2px solid transparent;
-        transition: 0.2s ease;
-
-        &:hover,
-        &:focus-visible {
-          border-color: var(--primary-accent-color);
-        }
-      }
-    }
-  }
-
   .social-media-links {
     @include right-spacing;
     position: absolute;
@@ -310,7 +281,6 @@ body {
     }
 
     .nav-links,
-    .nav-footer-links,
     .nav-social-media {
       opacity: 1;
       pointer-events: all;
