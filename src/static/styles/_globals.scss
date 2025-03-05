@@ -63,6 +63,7 @@ body {
 
 .site-header {
   // No static content here to allow clickthrough
+  --children-height: 36px;
 
   & > * {
     z-index: $z-index--header;
@@ -72,27 +73,23 @@ body {
 
   .header-logo {
     @include left-spacing;
-    top: 56px;
+    top: var(--body-padding);
     display: flex;
     align-items: center;
     gap: 12px;
-    width: 48px;
-    // mix-blend-mode: difference;
+    height: var(--children-height);
 
-    @include mq-max("md") {
-      top: 38px;
+    &__img {
+      height: 100%;
     }
-
-    // &__icon {
-
-    // }
   }
 
   .header-links {
     @include row-center;
     @include right-spacing;
-    top: 68px;
+    top: var(--body-padding);
     gap: 48px;
+    display: none;
 
     @include mq-max("lg") {
       display: none;
@@ -109,26 +106,17 @@ body {
   }
 
   .site-nav-btn-wrapper {
-    display: none;
-
-    @include mq-max("lg") {
-      @include right-spacing;
-      top: 74px;
-      translate: 0 -50%;
-      transition: opacity 0.3s ease;
-      mix-blend-mode: difference;
-      display: block;
-    }
-
-    @include mq-max("md") {
-      top: 56px;
-    }
+    @include right-spacing;
+    top: var(--body-padding);
+    height: var(--children-height);
+    aspect-ratio: 1;
+    transition: opacity 0.3s ease;
 
     .site-nav-btn {
       $line-offset: 4px;
 
-      width: 28px;
-      height: 28px;
+      width: 100%;
+      aspect-ratio: 1;
       transition: 0.2s ease 0s;
 
       &:hover,
@@ -149,7 +137,6 @@ body {
         @include absolute-center;
         width: 100%;
         height: 3px;
-        border-radius: 12px;
         background: var(--font-color--primary);
         transition: 0.3s ease;
 

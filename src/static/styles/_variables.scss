@@ -40,7 +40,7 @@ $ease-c: 0.82s $cubic-ease;
 $magnet: translate 0.025s ease-in;
 
 // Debugging
-$test: 2px dashed rgba(yellow, 0.75);
+$test: 2px dashed rgba(coral, 0.75);
 $test-bg: rgba(navy, 0.75);
 
 :root {
@@ -65,8 +65,10 @@ $test-bg: rgba(navy, 0.75);
   --link-color-hover: #{$white};
 
   --content-width: #{$content-width};
-  --body-padding: 8px;
+  --body-padding: 24px;
   --body-padding-double: calc(var(--body-padding) * 2);
+  --body-padding-sm: 8px;
+  --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
 
   --section-gap: 64px;
   --section-gap--lg: 64px;
@@ -82,7 +84,7 @@ $test-bg: rgba(navy, 0.75);
   }
 
   @media (max-width: 768px) {
-    --body-padding: 8px;
+    --body-padding: 16px;
     --radius: 5px;
   }
 }
