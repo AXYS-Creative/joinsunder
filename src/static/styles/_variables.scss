@@ -32,8 +32,8 @@ $cubic-ease-sudden-back: cubic-bezier(0.8, -0.11, 0.11, 1.11);
 $cubic-ease-sudden-back-strong: cubic-bezier(0.77, -0.43, 0.11, 1.11);
 $cubic-ease-slow-finish: cubic-bezier(0.09, 0.9, 0.5, 1);
 
-$ease: 0.24s ease;
-$ease-c: 0.64s $cubic-ease;
+$ease: 0.32s ease;
+$ease-c: 0.82s $cubic-ease;
 
 // Library
 // $magnet: translate 2.5s $cubic-ease-back-strong;
@@ -65,7 +65,7 @@ $test-bg: rgba(navy, 0.75);
   --link-color-hover: #{$white};
 
   --content-width: #{$content-width};
-  --body-padding: 24px;
+  --body-padding: 8px;
   --body-padding-double: calc(var(--body-padding) * 2);
 
   --section-gap: 64px;
@@ -77,12 +77,7 @@ $test-bg: rgba(navy, 0.75);
   --radius: 8px;
   --radius-btn: 10px;
 
-  @media (max-width: 1512px) {
-    --body-padding: 48px;
-  }
-
   @media (max-width: 1024px) {
-    --body-padding: 16px;
     --section-gap--lg: 24px;
   }
 

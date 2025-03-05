@@ -15,7 +15,7 @@
   --link-color: #c6d3d8;
   --link-color-hover: #f7f7f7;
   --content-width: 1920px;
-  --body-padding: 24px;
+  --body-padding: 8px;
   --body-padding-double: calc(var(--body-padding) * 2);
   --section-gap: 64px;
   --section-gap--lg: 64px;
@@ -24,14 +24,8 @@
   --radius: 8px;
   --radius-btn: 10px;
 }
-@media (max-width: 1512px) {
-  :root {
-    --body-padding: 48px;
-  }
-}
 @media (max-width: 1024px) {
   :root {
-    --body-padding: 16px;
     --section-gap--lg: 24px;
   }
 }
@@ -752,7 +746,7 @@ figure {
 }
 @media (prefers-reduced-motion: no-preference) {
   .classic-link {
-    transition: 0.24s ease;
+    transition: 0.32s ease;
   }
 }
 .classic-link::before {
@@ -767,7 +761,7 @@ figure {
 }
 @media (prefers-reduced-motion: no-preference) {
   .classic-link::before {
-    transition: 0.24s ease;
+    transition: 0.32s ease;
   }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -813,7 +807,7 @@ figure {
   .fill-text:is(.fill-text-hover),
   .fill-text-hover:is(.fill-text-hover) {
     background-size: 0%;
-    transition: 0.24s ease;
+    transition: 0.32s ease;
   }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -905,6 +899,7 @@ figure {
 }
 .main-home {
   max-width: 100vw;
+  padding: var(--body-padding);
 }
 
 .hero {
@@ -920,25 +915,18 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: max(750px, 100vh);
+  height: max(750px, 100vh - var(--body-padding-double));
   padding: 0;
 }
 @media screen and (max-width: 1512px) {
   .hero {
-    height: max(625px, 100vh);
+    height: max(620px, 100vh - var(--body-padding-double));
   }
 }
 @media screen and (max-width: 1024px) {
   .hero {
-    height: 100vh;
-    min-height: 1200px;
+    min-height: 850px;
     flex-direction: column-reverse;
-    padding: var(--body-padding);
-  }
-}
-@media screen and (max-width: 480px) {
-  .hero {
-    min-height: 950px;
   }
 }
 .hero .hero-panel {
@@ -952,12 +940,12 @@ figure {
   background-size: cover;
   height: 100%;
   width: 50%;
-  padding-block-start: 20vh;
+  padding-block-start: 150px;
   overflow: hidden;
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero .hero-panel {
-    transition: 0.24s ease;
+    transition: 0.32s ease;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -987,7 +975,7 @@ figure {
   width: 100%;
   height: 100%;
   z-index: -1;
-  transition: 0.24s ease;
+  transition: 0.82s cubic-bezier(0.18, 0.97, 0.47, 1);
   opacity: 0;
   background: linear-gradient(var(--direction), rgba(12, 95, 242, 0.8) 0%, transparent 100%);
 }
@@ -1001,7 +989,7 @@ figure {
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero .hero-panel__bg-img {
-    transition: 0.24s ease;
+    transition: 0.32s ease;
   }
 }
 .hero .hero-panel__logo {
@@ -1030,6 +1018,9 @@ figure {
   align-items: flex-start;
   margin-block: 32px 48px;
 }
+.hero .sunder-internal {
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
 @media screen and (max-width: 1024px) {
   .hero .sunder-internal {
     border-radius: var(--radius) var(--radius) 0 0;
@@ -1045,6 +1036,9 @@ figure {
     top: auto;
     bottom: 0;
   }
+}
+.hero .sunder-external {
+  border-radius: var(--radius) 0 0 var(--radius);
 }
 @media screen and (max-width: 1024px) {
   .hero .sunder-external {
@@ -1092,7 +1086,7 @@ figure {
 }
 @media (prefers-reduced-motion: no-preference) {
   .cta-1 {
-    transition: 0.24s ease;
+    transition: 0.32s ease;
   }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1197,7 +1191,7 @@ figure {
 }
 .accordion-label__icon {
   display: inline-flex;
-  transition: 0.24s ease;
+  transition: 0.32s ease;
 }
 .accordion-content {
   --font-size: 18px;
@@ -1208,7 +1202,7 @@ figure {
   display: grid;
   grid-template-rows: 0fr;
   visibility: hidden;
-  transition: 0.24s ease;
+  transition: 0.32s ease;
 }
 @media screen and (max-width: 1512px) {
   .accordion-content {
@@ -1406,7 +1400,7 @@ figure {
 }
 @media (prefers-reduced-motion: no-preference) {
   .btn--toggle__switch::before, .btn--toggle__switch::after {
-    transition: 0.24s ease;
+    transition: 0.32s ease;
   }
 }
 .btn--toggle__switch::before {
@@ -1427,7 +1421,7 @@ figure {
 }
 @media (prefers-reduced-motion: no-preference) {
   .btn--toggle__switch-nob {
-    transition: 0.24s ease;
+    transition: 0.32s ease;
   }
 }
 .btn--toggle[aria-pressed=true] .btn--toggle__switch {
@@ -1490,7 +1484,7 @@ figure {
   overflow: hidden;
 }
 .carousel-hero__text .carousel-hero__title span {
-  animation: carousel-title-default 0.64s cubic-bezier(0.18, 0.97, 0.47, 1);
+  animation: carousel-title-default 0.82s cubic-bezier(0.18, 0.97, 0.47, 1);
 }
 .carousel-hero__img {
   position: absolute;
@@ -1512,7 +1506,7 @@ figure {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  transition: 0.64s cubic-bezier(0.18, 0.97, 0.47, 1);
+  transition: 0.82s cubic-bezier(0.18, 0.97, 0.47, 1);
 }
 .carousel-hero__slide.active .carousel-hero__text,
 .carousel-hero__slide.active .carousel-hero__img {
@@ -1526,8 +1520,8 @@ figure {
   pointer-events: none;
 }
 .carousel-hero__slide.active .carousel-hero__title span {
-  animation: carousel-title-reveal 0.64s cubic-bezier(0.18, 0.97, 0.47, 1);
-  transition: 0.64s cubic-bezier(0.18, 0.97, 0.47, 1);
+  animation: carousel-title-reveal 0.82s cubic-bezier(0.18, 0.97, 0.47, 1);
+  transition: 0.82s cubic-bezier(0.18, 0.97, 0.47, 1);
 }
 @keyframes carousel-title-reveal {
   0% {
@@ -1775,7 +1769,7 @@ figure {
 .form-feedback .form-footer .status-message {
   opacity: 0;
   visibility: hidden;
-  transition: 0.24s ease;
+  transition: 0.32s ease;
 }
 .form-feedback .form-footer .status-message.active {
   opacity: 1;

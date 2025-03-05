@@ -1,26 +1,21 @@
 .main-home {
   max-width: 100vw;
+  padding: var(--body-padding);
 }
 
 .hero {
   @include dark-theme;
   @include row-center;
-  height: max(750px, 100vh);
+  height: max(750px, calc(100vh - var(--body-padding-double)));
   padding: 0;
 
   @include mq-max("xxl") {
-    height: max(625px, 100vh);
+    height: max(620px, calc(100vh - var(--body-padding-double)));
   }
 
   @include mq-max("lg") {
-    height: 100vh;
-    min-height: 1200px;
+    min-height: 850px;
     flex-direction: column-reverse;
-    padding: var(--body-padding);
-  }
-
-  @include mq-max("sm") {
-    min-height: 950px;
   }
 
   .hero-panel {
@@ -31,7 +26,7 @@
     background-size: cover;
     height: 100%;
     width: 50%;
-    padding-block-start: 20vh;
+    padding-block-start: 150px;
     overflow: hidden;
 
     @include mq-motion-allow {
@@ -76,7 +71,7 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      transition: $ease;
+      transition: $ease-c;
       opacity: 0;
       background: linear-gradient(
         var(--direction),
@@ -126,6 +121,8 @@
   }
 
   .sunder-internal {
+    border-radius: 0 var(--radius) var(--radius) 0;
+
     @include mq-max("lg") {
       border-radius: var(--radius) var(--radius) 0 0;
     }
@@ -143,6 +140,8 @@
   }
 
   .sunder-external {
+    border-radius: var(--radius) 0 0 var(--radius);
+
     @include mq-max("lg") {
       border-radius: 0 0 var(--radius) var(--radius);
     }
