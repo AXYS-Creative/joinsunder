@@ -179,7 +179,7 @@ body {
   max-width: unset;
 
   @include column-start;
-  // @include hide-content;
+  @include hide-content;
   position: fixed;
   top: var(--body-padding-sm);
   left: var(--body-padding-sm);
