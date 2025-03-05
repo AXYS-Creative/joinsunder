@@ -25,7 +25,7 @@
   --section-gap--lg: 64px;
   --header-height: 36px;
   --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 1.5);
-  --border-bold-girth: 2px;
+  --border-bold-girth: 4px;
   --border-bold-color: #c6d3d8;
   --radius: 8px;
   --radius-lg: 24px;
@@ -45,6 +45,7 @@
 @media (max-width: 768px) {
   :root {
     --body-padding: 16px;
+    --border-bold-girth: 2px;
     --radius: 5px;
   }
 }
@@ -206,11 +207,6 @@ body:has(.load-complete) .hero div {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   position: fixed;
   top: var(--body-padding-sm);
   left: var(--body-padding-sm);
@@ -239,6 +235,7 @@ body:has(.load-complete) .hero div {
   font-size: 96px;
   font-weight: 900;
   text-transform: uppercase;
+  position: relative;
   color: var(--link-color);
   display: inline-flex;
   gap: 0.2ch;
@@ -254,9 +251,23 @@ body:has(.load-complete) .hero div {
     font-size: 36px;
   }
 }
+.site-nav .nav-links__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: var(--border-bold-girth);
+  background: var(--hero-color--primary);
+  transition: width 0.32s ease;
+}
 @media (hover: hover) and (pointer: fine) {
   .site-nav .nav-links__link:hover, .site-nav .nav-links__link:focus-visible {
+    border-color: var(--hero-color--primary);
     color: var(--link-color-hover);
+  }
+  .site-nav .nav-links__link:hover::before, .site-nav .nav-links__link:focus-visible::before {
+    width: 100%;
   }
   .site-nav .nav-links__link:hover .reveal, .site-nav .nav-links__link:focus-visible .reveal {
     width: 6ch;

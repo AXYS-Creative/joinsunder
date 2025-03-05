@@ -81,7 +81,7 @@ $test-bg: rgba(navy, 0.75);
 
   --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 1.5);
 
-  --border-bold-girth: 2px;
+  --border-bold-girth: 4px;
   --border-bold-color: #{$grey};
 
   --radius: 8px;
@@ -99,6 +99,9 @@ $test-bg: rgba(navy, 0.75);
 
   @media (max-width: 768px) {
     --body-padding: 16px;
+
+    --border-bold-girth: 2px;
+
     --radius: 5px;
   }
 }

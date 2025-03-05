@@ -179,7 +179,7 @@ body {
   max-width: unset;
 
   @include column-start;
-  @include hide-content;
+  // @include hide-content;
   position: fixed;
   top: var(--body-padding-sm);
   left: var(--body-padding-sm);
@@ -207,13 +207,30 @@ body {
   .nav-links {
     &__link {
       @include h1;
+      position: relative;
       color: var(--link-color);
       display: inline-flex;
       gap: 0.2ch;
       transition: color $ease;
 
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: var(--border-bold-girth);
+        background: var(--hero-color--primary);
+        transition: width $ease;
+      }
+
       @include desktop-hover {
+        border-color: var(--hero-color--primary);
         color: var(--link-color-hover);
+
+        &::before {
+          width: 100%;
+        }
 
         .reveal {
           width: 6ch;
