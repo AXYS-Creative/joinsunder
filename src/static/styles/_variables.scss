@@ -49,7 +49,7 @@ $test-bg: rgba(navy, 0.75);
   --font-color--secondary: #{$grey};
   --font-color--error: #{$red};
 
-  --hero-color--primary: #{$sunder-royal-light};
+  --hero-color--primary: #{$blue};
 
   --font-family--heading: #{$brand-font--heading};
   --font-family--body: #{$brand-font--body};
@@ -61,8 +61,10 @@ $test-bg: rgba(navy, 0.75);
   --btn-color-text--hover: #{$blue};
   --btn-color-border--hover: var(--btn-color-bg--hover);
 
-  --link-color: #{$grey};
-  --link-color-hover: #{$white};
+  --link-color: #{$white};
+  --link-color-hover: #{$blue};
+
+  --surface-color: #{$grey};
 
   --content-width: #{$content-width};
   --body-padding: 24px;
@@ -70,17 +72,29 @@ $test-bg: rgba(navy, 0.75);
   --body-padding-sm: 8px;
   --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
 
+  --section-min-height: 750px;
+
   --section-gap: 64px;
   --section-gap--lg: 64px;
+
+  --header-height: 36px;
+
+  --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 1.5);
 
   --border-bold-girth: 2px;
   --border-bold-color: #{$grey};
 
   --radius: 8px;
+  --radius-lg: 24px;
   --radius-btn: 10px;
+
+  @media (max-width: 1512px) {
+    --section-min-height: 620px;
+  }
 
   @media (max-width: 1024px) {
     --section-gap--lg: 24px;
+    --header-height: 32px;
   }
 
   @media (max-width: 768px) {

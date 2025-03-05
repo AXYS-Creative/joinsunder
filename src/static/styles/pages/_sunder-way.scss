@@ -1,0 +1,8 @@
+.main-sunder-way {
+  padding: var(--body-padding-sm);
+}
+
+.section-ethos {
+  height: 100vh;
+  @include top-fade-section;
+}

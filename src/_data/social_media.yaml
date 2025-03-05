@@ -1,13 +1,16 @@
 links:
-  - title: Instagram
-    url: https://www.instagram.com
-    src: /static/img/icon-social-square-instagram.svg
-  - title: Twitter
-    url: https://twitter.com
-    src: /static/img/icon-social-square-x.svg
-  - title: LinkedIn
-    url: https://linkedin.com
-    src: /static/img/icon-social-square-linkedin.svg
+  - title: Tik Tok
+    url: https://tiktok.com
+    src: /static/img/icon-social-tiktok.svg
+  - title: YouTube
+    url: https://youtube.com
+    src: /static/img/icon-social-youtube.svg
   - title: Facebook
     url: https://facebook.com
-    src: /static/img/icon-social-square-facebook.svg
+    src: /static/img/icon-social-facebook.svg
+  - title: Instagram
+    url: https://www.instagram.com
+    src: /static/img/icon-social-instagram.svg
+  - title: LinkedIn
+    url: https://linkedin.com
+    src: /static/img/icon-social-linkedin.svg

@@ -63,15 +63,10 @@ body {
 
 .site-header {
   // No static content here to allow clickthrough
-  --children-height: 36px;
-
-  @include mq-max("md") {
-    --children-height: 32px;
-  }
 
   & > * {
-    z-index: $z-index--header;
     position: fixed;
+    z-index: $z-index--header;
     transition: opacity 0.5s ease;
   }
 
@@ -79,7 +74,7 @@ body {
     @include left-spacing;
     @include row-center(flex-start);
     top: var(--body-padding);
-    height: var(--children-height);
+    height: var(--header-height);
     aspect-ratio: 5/1;
 
     &__img {
@@ -111,7 +106,7 @@ body {
   .site-nav-btn-wrapper {
     @include right-spacing;
     top: var(--body-padding);
-    height: var(--children-height);
+    height: var(--header-height);
     aspect-ratio: 1;
     transition: opacity 0.3s ease;
 
@@ -181,115 +176,65 @@ body {
 }
 
 .site-nav {
-  border: $test;
-  @include hide-content;
+  max-width: unset;
+
+  @include column-start;
+  // @include hide-content;
   position: fixed;
-  top: 0;
-  left: 50%;
-  translate: -50% 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  overflow: auto;
+  top: var(--body-padding-sm);
+  left: var(--body-padding-sm);
+  background-color: var(--surface-color);
+  width: calc(100vw - var(--body-padding-sm-double));
+  height: calc(100dvh - var(--body-padding-sm-double));
+  min-height: var(--section-min-height); //Triggers overflow content
+  border-radius: var(--radius);
   z-index: $z-index--nav;
+  overflow: auto;
+  padding: var(--body-padding);
+  padding-block-start: var(--top-spacing-header);
 
-  .width-constraint {
-    position: relative;
+  &__inner {
     max-width: $content-width;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 768px;
+
+    @include column-start(space-between);
+    // padding: var(--body-padding);
+    // padding-block-start: var(--top-spacing-header);
     margin: auto;
-
-    @include mq-max("xxl") {
-      min-height: 640px;
-    }
-
-    @include mq-max("sm") {
-      min-height: 520px;
-    }
+    width: 100%;
+    // height: 100%;
   }
 
   .nav-links {
-    position: absolute;
+    &__link {
+      @include h1;
+      color: var(--link-color);
+      display: inline-flex;
+      gap: 0.2ch;
+      transition: color $ease;
 
-    li {
-      a {
-        font-family: $brand-font--body;
-      }
-    }
-  }
+      @include desktop-hover {
+        color: var(--link-color-hover);
 
-  .nav-links {
-    @include left-spacing;
-    @include column-start;
-    gap: 12px;
-    top: 50%;
-    translate: 0 -50%;
-
-    li {
-      display: flex;
-      overflow: hidden;
-
-      &:focus-within {
-        border-radius: 4px;
-        box-shadow: 0 0 0 3px rgba(#2353c1, 0.75), 0 0 0 5px rgba(#fff, 0.75);
-      }
-    }
-
-    .nav-link {
-      @include h2;
-      height: 100%;
-      translate: 0 100%;
-      border-left: 4px solid transparent;
-      // transition: 0.2s ease, translate 0.3s ease 0.6s;
-
-      &:hover,
-      &:focus-visible {
-        padding-left: 24px;
-        border-color: var(--primary-accent-color);
-
-        @include mq-max("xxl") {
-          padding-left: 16px;
+        .reveal {
+          width: 6ch;
         }
       }
+
+      .reveal {
+        width: 0;
+        overflow: hidden;
+        transition: color 0.01s ease, width $ease;
+      }
     }
   }
 
-  .social-media-links {
-    @include right-spacing;
-    position: absolute;
-    bottom: var(--body-padding);
+  &__footer {
+    @include row-center(flex-end);
+    width: 100%;
   }
 
   &[aria-hidden="false"] {
     @include show-content;
-    background: var(--background-color);
-    transition: background 0s ease;
-
-    .nav-links li {
-      @for $i from 1 through 10 {
-        &:nth-of-type(#{$i}) {
-          $transition: 0.25s + $i * 0.16s;
-          $delay: 0.2s + $i * 0.04s;
-
-          .nav-link {
-            transition: 0.2s ease, translate $transition ease $delay;
-          }
-        }
-      }
-    }
-
-    .nav-links,
-    .nav-social-media {
-      opacity: 1;
-      pointer-events: all;
-      // transition: opacity 0s ease 0.3s;
-
-      .nav-link {
-        translate: 0 0;
-      }
-    }
   }
 }
 

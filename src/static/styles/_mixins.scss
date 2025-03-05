@@ -103,11 +103,16 @@ $min-breakpoints: (
   text-transform: uppercase;
 }
 
+// Nav Menu Links
 @mixin h1 {
   @include heading-text(96px);
 
   @include mq-max("xxl") {
-    font-size: max(61.5px, 6vw);
+    font-size: max(56px, 6.2vw);
+  }
+
+  @include mq-max("md") {
+    font-size: 36px;
   }
 }
 @mixin h2 {
@@ -153,11 +158,8 @@ $min-breakpoints: (
   }
 }
 @mixin h6 {
-  @include heading-text(24px);
-
-  @include mq-max("xxl") {
-    font-size: max(18px, 2vw);
-  }
+  @include heading-text(26px);
+  letter-spacing: -1px;
 }
 
 @mixin body-font-styles($size: md) {
@@ -267,6 +269,20 @@ $min-breakpoints: (
       padding-inline: calc(var(--body-padding) * 4);
     }
   }
+}
+
+@mixin section-fade {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    to bottom,
+    var(--surface-color) -50%,
+    var(--background-color) 50%
+  );
+}
+
+@mixin top-fade-section {
+  @include section-fade;
+  margin-top: var(--top-spacing-header);
 }
 
 @mixin left-spacing {

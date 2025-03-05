@@ -1,17 +1,20 @@
-<ul class="social-media-links">
-  {% for link in social_data %}
-  <li>
-    <a
-      href="{{ link.url }}"
-      target="_blank"
-      class="social-media-link {% if tab_nav %}tab-element-nav{% else %}tab-element-page{% endif %}"
-      aria-label="{{ link.title }}"
-    >
-      <span
-        class="social-media-link__img"
-        style="mask-image: url({{link.src}});"
-      ></span>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+<div class="social-media">
+  <p class="social-media__label">Socials</p>
+  <ul class="social-media__links">
+    {% for link in social_data %}
+    <li>
+      <a
+        href="{{ link.url }}"
+        target="_blank"
+        class="social-media__link {% if tab_nav %}tab-element-nav{% else %}tab-element-page{% endif %}"
+        aria-label="{{ link.title }}"
+      >
+        <span
+          class="social-media__link-img"
+          style="mask-image: url({{ link.src }});"
+        ></span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

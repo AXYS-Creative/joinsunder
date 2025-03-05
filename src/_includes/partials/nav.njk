@@ -4,19 +4,20 @@
   aria-label="Main Navigation"
   aria-hidden="true"
 >
-  <div class="width-constraint">
+  <div class="site-nav__inner">
     {% if navigation.items %}
     <ul class="nav-links">
       {% for item in navigation.items %}
       <li>
-        <a class="nav-link tab-element-nav" href="{{ item.url }}">
+        <a class="nav-links__link tab-element-nav" href="{{ item.url }}">
           {{ item.text }}
         </a>
       </li>
       {% endfor %}
     </ul>
     {% endif %}
-
+  </div>
+  <div class="site-nav__footer">
     <!-- prettier-ignore -->
     {% set tab_nav = true %}
     {% set social_data = social_media.links %}
