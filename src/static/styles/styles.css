@@ -207,6 +207,11 @@ body:has(.load-complete) .hero div {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   position: fixed;
   top: var(--body-padding-sm);
   left: var(--body-padding-sm);
