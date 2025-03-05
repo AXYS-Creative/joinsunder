@@ -195,6 +195,18 @@ $min-breakpoints: (
   }
 }
 
+@mixin link-font-styles {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+
+  @include mq-max("lg") {
+    font-size: 16px;
+    font-weight: 800;
+  }
+}
+
 @mixin inherit-font {
   font-family: inherit;
   font-size: inherit;
@@ -220,6 +232,9 @@ $min-breakpoints: (
 @mixin dark-theme {
   --background-color: #{$black};
   --font-color--primary: #{$white};
+
+  --link-color: #{$white};
+  --link-color-hover: #{$grey};
 
   --btn-color-bg: #{$white};
   --btn-color-text: #{$blue};

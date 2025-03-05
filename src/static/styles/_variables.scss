@@ -2,6 +2,7 @@ $brand-font--heading: "Satoshi", source-sans-pro, sans-serif;
 $brand-font--body: "Satoshi", source-sans-pro, sans-serif;
 
 $sunder-snow: #f7f7f7;
+$sunder-ice-light: #efefef;
 $sunder-ice: #c6d3d8;
 $sunder-royal-light: #0c5ff2;
 $sunder-royal: #074895;
@@ -61,10 +62,10 @@ $test-bg: rgba(navy, 0.75);
   --btn-color-text--hover: #{$blue};
   --btn-color-border--hover: var(--btn-color-bg--hover);
 
-  --link-color: #{$white};
-  --link-color-hover: #{$blue};
+  --link-color: #{$blue};
+  --link-color-hover: #{$white};
 
-  --surface-color: #{$grey};
+  --surface-color: #{$sunder-ice}; // Nav menu bg
 
   --content-width: #{$content-width};
   --body-padding: 24px;

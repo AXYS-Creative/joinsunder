@@ -72,14 +72,7 @@ body {
 
   .header-logo {
     @include left-spacing;
-    @include row-center(flex-start);
     top: var(--body-padding);
-    height: var(--header-height);
-    aspect-ratio: 5/1;
-
-    &__img {
-      height: 100%;
-    }
   }
 
   .header-links {
@@ -164,14 +157,16 @@ body {
     }
   }
 
-  &.away-from-top {
-    > * {
-      @include hide-content;
-    }
-  }
+  // &.away-from-top {
+  //   > * {
+  //     @include hide-content;
+  //   }
+  // }
 
   // &.nav-active {
-
+  //   > * {
+  //     @include show-content;
+  //   }
   // }
 }
 
@@ -197,18 +192,15 @@ body {
     max-width: $content-width;
 
     @include column-start(space-between);
-    // padding: var(--body-padding);
-    // padding-block-start: var(--top-spacing-header);
     margin: auto;
     width: 100%;
-    // height: 100%;
   }
 
   .nav-links {
     &__link {
       @include h1;
       position: relative;
-      color: var(--link-color);
+      color: $white; // Doesn't follow convention for dark theme
       display: inline-flex;
       gap: 0.2ch;
       transition: color $ease;
@@ -226,7 +218,7 @@ body {
 
       @include desktop-hover {
         border-color: var(--hero-color--primary);
-        color: var(--link-color-hover);
+        color: $blue;
 
         &::before {
           width: 100%;
@@ -256,54 +248,53 @@ body {
 }
 
 .site-footer {
-  @include row-center(space-between);
-  gap: 12px;
-  position: relative;
-  padding: var(--body-padding);
+  @include dark-theme;
+  background-color: var(--hero-color--primary);
+  width: calc(100vw - var(--body-padding-sm-double));
+  max-width: unset; // toggle for ultra-wide behavior
+  padding: var(--body-padding-double);
+  margin-bottom: var(--body-padding-sm);
+  border-radius: var(--radius-lg);
 
-  @media all {
+  &__inner {
+    max-width: $content-width;
+    @include column-start;
+    gap: 128px;
+    margin: auto;
+    width: 100%;
+
     @include mq-max("lg") {
-      justify-content: flex-start;
+      gap: 64px;
     }
 
-    @include mq-max("md") {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
+    // .inner-top {
 
-    @include mq-max("sm") {
-      padding-block-end: 48px;
+    // }
+
+    .inner-bottom {
+      @include row-end(space-between);
+      width: 100%;
+
+      @include mq-max("lg") {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 64px;
+      }
     }
   }
 
-  .copyright {
-    @include row-center;
-    gap: 10px;
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    translate: calc(-50% - 6px) 50%;
+  .footer-links {
+    display: grid;
+    gap: 24px 128px;
 
-    @include mq-max("lg") {
-      left: auto;
-      bottom: 0;
-      right: var(--body-padding);
-      translate: 0 calc(var(--body-padding) * -1);
+    @include mq-min("lg") {
+      grid-template-rows: repeat(4, 1fr);
+      grid-auto-flow: column;
     }
 
-    @include mq-max("sm") {
-      position: static;
-      order: 1;
-      translate: 0 0;
-    }
-  }
+    // &__link {
 
-  .return-to-top,
-  .axys-link {
-    @include mq-max("md") {
-      font-size: 12px;
-    }
+    // }
   }
 }
 
@@ -377,6 +368,14 @@ li {
 
 strong {
   font-weight: 900;
+}
+
+a {
+  color: var(--link-color);
+
+  @include desktop-hover {
+    color: var(--link-color-hover);
+  }
 }
 
 button {

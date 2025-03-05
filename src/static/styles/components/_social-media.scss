@@ -24,8 +24,11 @@
   &__label {
     @include h6;
     color: var(--text-color);
-    translate: 0 100%;
     transition: $ease 0.2s;
+
+    @include mq-mouse {
+      translate: 0 100%;
+    }
   }
 
   &__links {
@@ -43,7 +46,9 @@
     }
 
     li {
-      opacity: 0;
+      @include mq-mouse {
+        opacity: 0;
+      }
     }
   }
 

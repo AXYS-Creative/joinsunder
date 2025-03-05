@@ -1,20 +1,39 @@
 {% if hide_footer != true %}
-
 <footer class="site-footer">
-  <a href="#" class="return-to-top classic-link tab-element-page">
-    Return to top
-  </a>
-  <small class="copyright">
-    <span>&copy;<time class="year-text"></time> {{ meta_data.site_name }}</span>
-    <span class="lg-up" aria-hidden="true">•</span>
-    <span class="lg-up">All Rights Reserved</span>
-  </small>
-  <a
-    href="https://axyscreative.com"
-    target="_blank"
-    class="axys-link classic-link tab-element-page"
-  >
-    Made by AXYS Creative
-  </a>
+  <div class="site-footer__inner">
+    <div class="inner-top">
+      <!-- prettier-ignore -->
+      {% set logo_link_src = "/static/img/logo-squad-light.svg" %}
+      {% set logo_link_class = "footer-logo" %}
+      {% set page_tabbing = 'tab-element-page' %}
+      {% include "../components/logo-link.njk" %}
+    </div>
+
+    <div class="inner-bottom">
+      <ul class="footer-links" aria-label="Footer navigation">
+        {% for item in navigation.footer_links %}
+        <li>
+          <a
+            class="footer-links__link classic-link tab-element-page"
+            href="{{ item.url }}"
+          >
+            {{ item.text }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!-- prettier-ignore -->
+      {% set cta_1_text = 'Join the squad' %}
+      {% include "../components/cta-group.njk" %}
+    </div>
+    <!-- <a
+      href="https://axyscreative.com"
+      target="_blank"
+      class="sr-only axys-link tab-element-page"
+    >
+      Made by AXYS Creative
+    </a> -->
+  </div>
 </footer>
 {% endif %}

@@ -1,29 +1,9 @@
 {% if hide_header != true %}
 <header class="site-header" aria-label="Site Header">
-  <a class="header-logo hide-mouse" href="{{ settings.url }}">
-    <img
-      class="header-logo__img"
-      src="/static/img/logo-squad-blue.svg"
-      alt="{{ meta_data.site_name }} logo"
-      width="116"
-      height="32"
-    />
-  </a>
-
-  {% if navigation.items %}
-  <ul class="header-links" aria-label="Header navigation">
-    {% for item in navigation.items %}
-    <li class="">
-      <a
-        class="header-links__link classic-link tab-element-page"
-        href="{{ item.url }}"
-      >
-        {{ item.text }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
+  <!-- prettier-ignore -->
+  {% set logo_link_src = "/static/img/logo-squad-blue.svg" %}
+  {% set logo_link_class = "header-logo" %}
+  {% include "../components/logo-link.njk" %}
 
   <div class="site-nav-btn-wrapper">
     <button

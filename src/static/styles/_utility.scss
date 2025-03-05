@@ -1,33 +1,34 @@
 .classic-link {
-  position: relative;
+  @include link-font-styles;
+  // position: relative;
 
   @include mq-motion-allow {
     transition: $ease;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: auto;
-    width: 100%;
-    height: 1px;
-    background-color: currentColor;
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 0;
+  //   width: 0;
+  //   left: auto;
+  //   right: 0;
+  //   height: 2px;
+  //   background-color: currentColor;
 
-    @include mq-motion-allow {
-      transition: $ease;
-    }
-  }
+  //   @include mq-motion-allow {
+  //     transition: $ease;
+  //   }
+  // }
 
   @include desktop-hover {
-    color: var(--hero-color--primary);
+    color: var(--link-color-hover);
 
-    &::before {
-      width: 0;
-      left: auto;
-      right: 0;
-    }
+    // &::before {
+    //   left: 0;
+    //   right: auto;
+    //   width: 100%;
+    // }
   }
 }
 

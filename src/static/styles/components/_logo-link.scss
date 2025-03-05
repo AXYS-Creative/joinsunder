@@ -1,0 +1,8 @@
+.logo-link {
+  height: var(--header-height);
+  aspect-ratio: 5/1;
+
+  &__img {
+    height: 100%;
+  }
+}

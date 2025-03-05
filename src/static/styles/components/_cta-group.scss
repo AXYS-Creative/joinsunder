@@ -1,14 +1,11 @@
 .cta-1 {
+  @include link-font-styles;
   border: 1px solid var(--btn-color-border);
   border-radius: var(--radius-btn);
   background: var(--btn-color-bg);
   color: var(--btn-color-text);
   padding: 8px 20px;
   flex-shrink: 0;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
 
   @include mq-motion-allow {
     transition: $ease;
@@ -18,11 +15,6 @@
     border-color: var(--btn-color-border--hover);
     background: var(--btn-color-bg--hover);
     color: var(--btn-color-text--hover);
-  }
-
-  @include mq-max("lg") {
-    font-size: 16px;
-    font-weight: 800;
   }
 }
 

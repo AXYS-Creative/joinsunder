@@ -7,26 +7,26 @@ export const mqMotionAllow = window.matchMedia(
 export const mqMaxLg = window.matchMedia("(max-width: 1024px)").matches;
 export const mqMinLg = window.matchMedia("(min-width: 1024px)").matches;
 
-// Get current year for copyright
-{
-  const yearText = document.querySelector(".year-text");
-  const currentYear = new Date().getFullYear();
+// // Get current year for copyright
+// {
+//   const yearText = document.querySelector(".year-text");
+//   const currentYear = new Date().getFullYear();
 
-  if (yearText) {
-    yearText.innerHTML = currentYear;
-    yearText.setAttribute("datetime", currentYear);
-  }
-}
+//   if (yearText) {
+//     yearText.innerHTML = currentYear;
+//     yearText.setAttribute("datetime", currentYear);
+//   }
+// }
 
-// Return to top
-{
-  const returnToTop = document.querySelector(".return-to-top"),
-    logo = document.querySelector(".header-logo");
+// // Return to top
+// {
+//   const returnToTop = document.querySelector(".return-to-top"),
+//     logo = document.querySelector(".header-logo");
 
-  returnToTop?.addEventListener("click", (e) => {
-    logo.focus();
-  });
-}
+//   returnToTop?.addEventListener("click", (e) => {
+//     logo.focus();
+//   });
+// }
 
 // Detect Safari Browser
 export const isSafari = () => {
