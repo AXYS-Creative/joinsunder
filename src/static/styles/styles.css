@@ -1078,19 +1078,30 @@ figure {
     width: 50%;
   }
 }
-.main-join .hero .img-panel {
-  display: flex;
+.main-join .hero .join-carousel {
+  position: relative;
   border-radius: var(--radius);
   overflow: hidden;
 }
 @media screen and (max-width: 1024px) {
-  .main-join .hero .img-panel {
+  .main-join .hero .join-carousel {
     display: none;
   }
 }
-.main-join .hero .img-panel img {
+.main-join .hero .join-carousel__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  opacity: 0;
+  transition: 0.32s ease;
+}
+.main-join .hero .join-carousel__img.active {
+  opacity: 1;
 }
 .main-join .hero .form-panel {
   display: flex;

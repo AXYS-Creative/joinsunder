@@ -1,0 +1,16 @@
+autoplay_interval: 5000
+
+images:
+  - title: "Title 1"
+    src: "/static/img/join-img-1.avif"
+  - title: "Title 2"
+    src: "/static/img/home-img-2.avif"
+  - title: "Title 3"
+    src: "/static/img/home-img-1.avif"
+
+section_title: Join Sunder
+
+form_data:
+  show_field_discovery: true
+  max_count_discovery: 250
+  show_recaptcha: true

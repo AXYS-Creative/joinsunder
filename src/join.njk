@@ -8,20 +8,33 @@ description: #CHANGE ME
 # master props
 hide_header: false
 hide_footer: true
-# Page notes
-# Using eager loading for computed/dynamic height. Only use fetchpriority sparingly
 ---
 
 <section class="hero">
-  <div class="img-panel">
-    <img src="/static/img/home-img-2.avif" alt="" />
+  <div
+    class="join-carousel"
+    data-carousel-interval="{{ page_join.hero.autoplay.interval }}"
+  >
+    {% for img in page_join.hero.images %}
+    <!-- prettier-ignore -->
+    <img
+      class="join-carousel__img"
+      src="{{ img.src }}"
+      alt=""
+      width="800"
+      height="1200"
+      {%if loop.index != 1%}
+        loading="lazy"
+      {%endif%}
+    />
+    {% endfor %}
   </div>
 
   <div class="form-panel">
-    <h1 class="form-panel__title">Join Sunder</h1>
+    <h1 class="form-panel__title">{{ page_join.hero.section_title }}</h1>
 
     <!-- prettier-ignore -->
-    {% set form_data = page_join.form.form_data %}
+    {% set form_data = page_join.hero.form_data %}
     {% include "./_includes/components/form-redirect.njk" %}
   </div>
 </section>
