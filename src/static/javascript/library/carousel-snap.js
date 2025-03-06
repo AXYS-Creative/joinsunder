@@ -1,4 +1,4 @@
-import { root, mqMaxLg } from "../utility.js";
+import { root, mqMaxLg } from "../util.js";
 
 const carouselSnap = document.querySelector(".carousel-snap"),
   trackInner = document.querySelector(".carousel-snap__track-inner"),

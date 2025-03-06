@@ -3,8 +3,8 @@ $brand-font--body: "Satoshi", source-sans-pro, sans-serif;
 
 $sunder-snow: #f7f7f7;
 $sunder-ice-light: #efefef;
-$sunder-ice: #c6d3d8;
-$sunder-royal-light: #0c5ff2;
+$sunder-ice: #d9d9d9;
+$sunder-royal-light: #0058f5;
 $sunder-royal: #074895;
 $sunder-navy: #061a2a;
 $sunder-midnight: #000014;
@@ -70,7 +70,7 @@ $test-bg: rgba(navy, 0.75);
   --content-width: #{$content-width};
   --body-padding: 24px;
   --body-padding-double: calc(var(--body-padding) * 2);
-  --body-padding-sm: 8px;
+  --body-padding-sm: 12px;
   --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
 
   --section-min-height: 750px;

@@ -1,3 +1,5 @@
+import { lenis } from "../util.js";
+
 const siteHeader = document.querySelector(".site-header"),
   siteNav = document.querySelector(".site-nav"),
   siteNavBtn = document.querySelector(".site-nav-btn");
@@ -28,6 +30,12 @@ const toggleNav = () => {
   tabElementsNav.forEach((el) =>
     el.setAttribute("tabindex", isNavOpen ? "0" : "-1")
   );
+
+  if (isNavOpen) {
+    lenis.stop();
+  } else {
+    lenis.start();
+  }
 };
 
 const closeNav = () => {

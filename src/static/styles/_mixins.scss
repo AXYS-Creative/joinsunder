@@ -290,8 +290,8 @@ $min-breakpoints: (
   border-radius: var(--radius-lg);
   background: linear-gradient(
     to bottom,
-    var(--surface-color) -50%,
-    var(--background-color) 50%
+    $sunder-ice-light 0%,
+    var(--background-color) 75%
   );
 }
 

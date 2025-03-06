@@ -71,6 +71,7 @@ body {
   }
 
   .header-logo {
+    // see logo-link.scss for full styles
     @include left-spacing;
     top: var(--body-padding);
   }
@@ -104,14 +105,19 @@ body {
     transition: opacity 0.3s ease;
 
     .site-nav-btn {
-      $line-offset: 3px;
+      --line-offset: 3px;
 
-      background: vaR(--btn-color-bg);
+      border: 1px solid var(--btn-color-border);
+      background: var(--btn-color-bg);
       width: 100%;
       aspect-ratio: 1;
       border-radius: 50%;
       padding: 8px;
       transition: $ease-c;
+
+      @include mq-max("lg") {
+        --line-offset: 2.25px;
+      }
 
       &:hover,
       &:focus-visible {
@@ -129,25 +135,32 @@ body {
 
       &-line {
         @include absolute-center;
-        width: 100%;
+        width: 125%;
         height: 3px;
         background: var(--btn-color-text);
         transition: 0.3s ease;
 
+        @include mq-max("lg") {
+          height: 2.5px;
+        }
+
         &:first-of-type {
-          translate: -50% calc(-50% - $line-offset);
+          translate: -50% calc(-50% - var(--line-offset));
         }
         &:last-of-type {
-          translate: -50% calc(-50% + $line-offset);
+          translate: -50% calc(-50% + var(--line-offset));
         }
       }
 
       &[aria-expanded="true"] {
+        background-color: transparent;
+
         .site-nav-btn__line-wrapper {
           rotate: 45deg;
         }
         .site-nav-btn-line {
           translate: -50% -50%;
+          background: var(--btn-color-bg);
 
           &:last-of-type {
             rotate: 90deg;
@@ -171,32 +184,54 @@ body {
 }
 
 .site-nav {
-  max-width: unset;
-
   @include column-start;
   @include hide-content;
   position: fixed;
-  top: var(--body-padding-sm);
-  left: var(--body-padding-sm);
-  background-color: var(--surface-color);
-  width: calc(100vw - var(--body-padding-sm-double));
-  height: calc(100dvh - var(--body-padding-sm-double));
+  top: 0;
+  left: 0;
+  max-width: unset;
+  width: 100vw;
+  height: 100dvh;
+  background-color: var(--background-color);
+  padding: var(--body-padding-sm);
   min-height: var(--section-min-height); //Triggers overflow content
-  border-radius: var(--radius);
   z-index: $z-index--nav;
-  overflow: auto;
-  padding: var(--body-padding);
-  padding-block-start: var(--top-spacing-header);
+
+  @include mq-motion-allow {
+    transition: opacity $ease;
+  }
 
   &__inner {
-    max-width: $content-width;
-
+    @include hide-content; // for animation
     @include column-start(space-between);
     margin: auto;
-    width: 100%;
+    background-color: var(--surface-color);
+    max-width: $content-width;
+    width: calc(100vw - var(--body-padding-sm-double));
+    height: calc(100dvh - var(--body-padding-sm-double));
+    min-height: var(--section-min-height); //Triggers overflow content
+    border-radius: var(--radius);
+    padding: var(--body-padding);
+    padding-block-start: var(--top-spacing-header);
+
+    @include mq-motion-allow {
+      translate: 0 -48px;
+      transition: opacity $ease, translate $ease;
+    }
   }
 
   .nav-links {
+    @include column-start;
+    gap: 12px;
+    height: 100%;
+
+    @include mq-min("xxl") {
+      gap: 24px;
+    }
+    @include mq-min("lg") {
+      margin-inline-start: var(--body-padding-double);
+    }
+
     &__link {
       @include h1;
       position: relative;
@@ -244,6 +279,11 @@ body {
 
   &[aria-hidden="false"] {
     @include show-content;
+
+    .site-nav__inner {
+      @include show-content;
+      translate: 0 0;
+    }
   }
 }
 
@@ -251,7 +291,7 @@ body {
   @include dark-theme;
   background-color: var(--hero-color--primary);
   width: calc(100vw - var(--body-padding-sm-double));
-  max-width: unset; // toggle for ultra-wide behavior
+  // max-width: unset; // toggle for ultra-wide behavior
   padding: var(--body-padding-double);
   margin-bottom: var(--body-padding-sm);
   border-radius: var(--radius-lg);
