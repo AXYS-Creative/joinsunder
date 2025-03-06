@@ -222,7 +222,7 @@ body {
 
   .nav-links {
     @include column-start;
-    gap: 12px;
+    gap: 32px;
     height: 100%;
 
     @include mq-min(xxl) {

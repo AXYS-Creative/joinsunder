@@ -28,8 +28,7 @@ if (document.querySelector(".form-redirect")) {
     textarea.addEventListener("input", updateCharCount);
   }
 
-  // reCAPTCHA
-  const recaptcha = document.querySelector(".g-recaptcha");
-
-  recaptcha?.setAttribute("data-theme", "dark");
+  // // reCAPTCHA
+  // const recaptcha = document.querySelector(".g-recaptcha");
+  // recaptcha?.setAttribute("data-theme", "dark");
 }

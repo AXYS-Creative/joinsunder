@@ -99,14 +99,14 @@
     width: 304px;
     height: 78px;
 
-    @include mq-max(sm) {
-      scale: 0.8;
-    }
+    // @include mq-max(sm) {
+    //   scale: 0.8;
+    // }
   }
 
   .form-footer {
-    @include row-center;
-    gap: 24px;
+    display: flex; // align-items: shrinks cta-1
+    gap: 16px;
   }
 }
 

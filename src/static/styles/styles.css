@@ -267,7 +267,7 @@ body:has(.load-complete) .hero div {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 12px;
+  gap: 32px;
   height: 100%;
 }
 @media screen and (min-width: 1513px) {
@@ -286,6 +286,7 @@ body:has(.load-complete) .hero div {
   font-size: 96px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   letter-spacing: -2px;
   position: relative;
   color: #f7f7f7;
@@ -431,6 +432,7 @@ body:has(.load-complete) .hero div {
   font-size: 26px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   letter-spacing: -1px;
   color: var(--font-color--primary);
 }
@@ -460,6 +462,7 @@ h1,
   font-size: 96px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   letter-spacing: -2px;
 }
 @media screen and (max-width: 1512px) {
@@ -488,6 +491,7 @@ h2,
   font-size: 72px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 @media screen and (max-width: 1512px) {
   h2,
@@ -503,6 +507,7 @@ h3,
   font-size: 56px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   letter-spacing: -2px;
 }
 @media screen and (max-width: 1512px) {
@@ -525,6 +530,7 @@ h4,
   font-size: 36px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 @media screen and (max-width: 1512px) {
   h4,
@@ -540,6 +546,7 @@ h5,
   font-size: 32px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   letter-spacing: -1px;
 }
 @media screen and (max-width: 1512px) {
@@ -562,6 +569,7 @@ h6,
   font-size: 26px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   letter-spacing: -1px;
 }
 @media screen and (max-width: 768px) {
@@ -1096,6 +1104,31 @@ figure {
     gap: 64px;
   }
 }
+.main-join .hero .form-panel__title {
+  color: var(--font-color--primary);
+  font-family: var(--font-family--heading);
+  font-size: 56px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+@media screen and (max-width: 1512px) {
+  .main-join .hero .form-panel__title {
+    font-size: max(40px, 3.6vw);
+  }
+}
+@media screen and (max-width: 480px) {
+  .main-join .hero .form-panel__title {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main-join .hero .form-panel__title {
+    font-size: 56px;
+    text-align: center;
+  }
+}
 
 .main-sunder-way {
   padding: var(--body-padding-sm);
@@ -1260,6 +1293,7 @@ figure {
   font-size: 26px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   letter-spacing: -1px;
   color: var(--text-color);
   transition: 0.32s ease 0.2s;
@@ -1377,6 +1411,7 @@ figure {
   font-size: 36px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   gap: 24px;
 }
 @media screen and (max-width: 1512px) {
@@ -1468,6 +1503,7 @@ figure {
   font-size: 96px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   letter-spacing: -2px;
   font-size: 10vw;
   font-weight: 600;
@@ -1495,6 +1531,7 @@ figure {
   font-size: 72px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -1933,16 +1970,9 @@ figure {
   width: 304px;
   height: 78px;
 }
-@media screen and (max-width: 480px) {
-  .form-redirect .recaptcha {
-    scale: 0.8;
-  }
-}
 .form-redirect .form-footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .grid-flow-parent {
@@ -2031,6 +2061,7 @@ figure {
   font-size: 72px;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
   padding-inline: var(--body-padding);
   padding-block: var(--body-padding-double);
   overflow: hidden;

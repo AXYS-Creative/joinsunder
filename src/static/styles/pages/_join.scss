@@ -36,6 +36,15 @@
       @include mq-max(lg) {
         gap: 64px;
       }
+
+      &__title {
+        @include h3;
+
+        @include mq-max(lg) {
+          font-size: 56px;
+          text-align: center;
+        }
+      }
     }
   }
 }

@@ -101,6 +101,7 @@ $min-breakpoints: (
   font-size: $size;
   font-weight: 900;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 // Nav Menu Links
@@ -128,7 +129,7 @@ $min-breakpoints: (
   }
 }
 
-// Laning page lg-text, form title
+// Laning page lg-text, form title (one-off on lg)
 @mixin h3 {
   @include heading-text(56px);
   letter-spacing: -2px;

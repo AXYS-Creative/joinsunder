@@ -1,17 +1,16 @@
-<!-- prettier-ignore -->
 <form
   class="form-redirect"
-  action="/contact"
+  action="/form-submit"
   method="post"
   name="form-redirect"
   netlify
-  netlify-honeybot="bot-field"
+  netlify-honeypot="bot-field"
   {% if form_data.show_recaptcha == true %}
     data-netlify-recaptcha="true"
     hidden
   {% endif %}
 >
-  <input type="hidden" name="contact-form" value="contact" />
+  <input type="hidden" name="bot-field" />
 
   <div class="form-block-group form-block-group--full-name">
     <div class="form-block form-block--first-name">
@@ -150,11 +149,7 @@
   {% endif %}
 
   <div class="form-footer">
-    <button class="cta-1 outline tab-element-page" type="submit">
-      Submit
-    </button>
-    <button class="cta-2" type="button">
-      Contact Us
-    </button>
+    <button class="cta-1 outline tab-element-page" type="submit">Submit</button>
+    <a href="" class="cta-2" type="button">Contact Us</a>
   </div>
 </form>
