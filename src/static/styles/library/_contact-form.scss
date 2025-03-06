@@ -1,16 +1,9 @@
-.form-section {
-  @include column-center;
-  h2 {
-    margin-block-end: 64px;
-  }
-}
-
-.form-feedback,
+// .form-feedback,
 .form-redirect {
   @include body-font-styles;
   @include column-center;
-  gap: 2em;
-  width: min(100%, 768px);
+  gap: 1em;
+  width: min(100%, 648px);
 
   @include mq-max(md) {
     width: calc(100% - var(--body-padding) * 2);
@@ -19,14 +12,14 @@
   .form-block {
     position: relative;
     width: 100%;
-    height: 2em;
+    height: 3em;
 
-    &:hover,
-    &:focus-within {
-      .label {
-        opacity: 1;
-      }
-    }
+    // &:hover,
+    // &:focus-within {
+    //   .label {
+    //     opacity: 1;
+    //   }
+    // }
 
     &:has(textarea) {
       height: 6em;
@@ -34,17 +27,27 @@
 
     .label,
     .input {
-      @include row-end(flex-start);
+      @include row-center(flex-start);
+      padding: 12px;
       font-size: inherit;
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 0; // Device compatibility
+      outline: none;
+
+      &:focus {
+        border: 2px solid var(--hero-color--primary);
+      }
+
+      &--textarea {
+        align-items: flex-start;
+      }
     }
     .label {
       pointer-events: none;
       transition: 0.25s ease;
-      opacity: 0.75;
+      // opacity: 0.75;
       white-space: nowrap;
 
       .nested-label {
@@ -62,8 +65,8 @@
     }
     .input {
       border: none;
-      border-bottom: 1px solid var(--font-color--primary);
-      background-color: transparent;
+      background-color: var(--surface-color-2);
+      border-radius: var(--radius-sm);
       resize: none;
     }
   }
@@ -79,8 +82,9 @@
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
-    translate: 0 -100%;
-    font-size: 0.8em;
+    // translate: 0 -100%;
+    // font-size: 0.8em;
+    opacity: 0;
 
     .nested-label {
       translate: 8px 0;
@@ -100,26 +104,27 @@
     }
   }
 
-  .cta {
-    width: max(25%, 128px);
-  }
-}
-
-.form-feedback {
   .form-footer {
-    @include column-center;
-    gap: 12px;
-    width: 100%;
-
-    .status-message {
-      opacity: 0;
-      visibility: hidden;
-      transition: $ease;
-
-      &.active {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
+    @include row-center;
+    gap: 24px;
   }
 }
+
+// .form-feedback {
+//   .form-footer {
+//     @include column-center;
+//     gap: 12px;
+//     width: 100%;
+
+//     .status-message {
+//       opacity: 0;
+//       visibility: hidden;
+//       transition: $ease;
+
+//       &.active {
+//         opacity: 1;
+//         visibility: visible;
+//       }
+//     }
+//   }
+// }

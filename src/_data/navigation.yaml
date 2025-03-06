@@ -3,7 +3,7 @@
 show_skip_to_content: true
 
 items:
-  - text: The [%span.reveal%]Sunder[%span%] Way
+  - text: The [%span.reveal%]Sunder[%span%]Way
     url: "/sunder-way"
   - text: The [%span.reveal%]Sunder[%span%] Platform
     url: "/platform"

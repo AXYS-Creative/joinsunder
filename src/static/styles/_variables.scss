@@ -62,10 +62,18 @@ $test-bg: rgba(navy, 0.75);
   --btn-color-text--hover: #{$blue};
   --btn-color-border--hover: var(--btn-color-bg--hover);
 
+  --btn-color-2-bg: #{$white};
+  --btn-color-2-text: #{$blue};
+  --btn-color-2-border: var(--btn-color-2-text);
+  --btn-color-2-bg--hover: #{$blue};
+  --btn-color-2-text--hover: #{$white};
+  --btn-color-2-border--hover: var(--btn-color-2-bg--hover);
+
   --link-color: #{$blue};
   --link-color-hover: #{$white};
 
   --surface-color: #{$sunder-ice}; // Nav menu bg
+  --surface-color-2: #{$sunder-ice-light}; // Section gradient, form field bg
 
   --content-width: #{$content-width};
   --body-padding: 24px;
@@ -85,8 +93,9 @@ $test-bg: rgba(navy, 0.75);
   --border-bold-girth: 4px;
   --border-bold-color: #{$grey};
 
-  --radius: 8px;
-  --radius-lg: 24px;
+  --radius-sm: 5px; // form input fields
+  --radius: 8px; // full-width panels & nav
+  --radius-lg: 24px; // sections & footer
   --radius-btn: 10px;
 
   @media (max-width: 1512px) {

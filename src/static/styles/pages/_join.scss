@@ -1,0 +1,41 @@
+.main-join {
+  padding: var(--body-padding-sm);
+
+  .hero {
+    @include full-height-section;
+    @include row-center;
+    gap: var(--body-padding-sm);
+
+    > * {
+      width: 100%;
+      height: 100%;
+
+      @include mq-min(lg) {
+        width: 50%;
+      }
+    }
+
+    .img-panel {
+      display: flex;
+      border-radius: var(--radius);
+      overflow: hidden;
+
+      @include mq-max(lg) {
+        display: none;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .form-panel {
+      @include column-center;
+      gap: 96px;
+
+      @include mq-max(lg) {
+        gap: 64px;
+      }
+    }
+  }
+}

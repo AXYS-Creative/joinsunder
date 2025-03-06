@@ -13,18 +13,33 @@
 >
   <input type="hidden" name="contact-form" value="contact" />
 
-  <div class="form-block form-block--name">
-    <input
-      class="input tab-element-page"
-      id="name"
-      name="name"
-      type="text"
-      placeholder=" "
-      title="Please enter your first and last name."
-      aria-label="Please enter your first and last name."
-      required
-    />
-    <label class="label" for="name">Name</label>
+  <div class="form-block-group form-block-group--full-name">
+    <div class="form-block form-block--first-name">
+      <input
+        class="input tab-element-page"
+        id="first-name"
+        name="first-name"
+        type="text"
+        placeholder=" "
+        title="Please enter your first name."
+        aria-label="Please enter your first name."
+        required
+      />
+      <label class="label" for="first-name">First Name</label>
+    </div>
+    <div class="form-block form-block--last-name">
+      <input
+        class="input tab-element-page"
+        id="last-name"
+        name="last-name"
+        type="text"
+        placeholder=" "
+        title="Please enter your last name."
+        aria-label="Please enter your last name."
+        required
+      />
+      <label class="label" for="last-name">Last Name</label>
+    </div>
   </div>
 
   <div class="form-block-group form-block-group--email-phone">
@@ -134,8 +149,12 @@
   <div data-netlify-recaptcha="true" class="recaptcha" style="width: 304px; height: 78px;"></div>
   {% endif %}
 
-  <button class="cta-1 tab-element-page" type="submit">
-    Submit
-    <div class="hover-fill"></div>
-  </button>
+  <div class="form-footer">
+    <button class="cta-1 outline tab-element-page" type="submit">
+      Submit
+    </button>
+    <button class="cta-2" type="button">
+      Contact Us
+    </button>
+  </div>
 </form>

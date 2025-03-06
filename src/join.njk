@@ -1,0 +1,27 @@
+---
+layout: app
+path: join
+
+title: Join Sunder
+description: #CHANGE ME
+
+# master props
+hide_header: false
+hide_footer: true
+# Page notes
+# Using eager loading for computed/dynamic height. Only use fetchpriority sparingly
+---
+
+<section class="hero">
+  <div class="img-panel">
+    <img src="/static/img/home-img-2.avif" alt="" />
+  </div>
+
+  <div class="form-panel">
+    <h1 class="h3">Join Sunder</h1>
+
+    <!-- prettier-ignore -->
+    {% set form_data = page_join.form.form_data %}
+    {% include "./_includes/components/form-redirect.njk" %}
+  </div>
+</section>

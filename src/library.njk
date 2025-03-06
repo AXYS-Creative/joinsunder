@@ -130,21 +130,5 @@ show_header: true
 
 <section class="carousel-section"></section>
 
-<section class="form-section">
-  <h2 class="h6">[ Feedback Form - Component ]</h2>
-
-  <!-- prettier-ignore -->
-  {% set form_data = library.form_contact.form_data %}
-  {% include "./_includes/library/form-feedback.njk" %}
-</section>
-
-<section class="form-section">
-  <h2 class="h6">[ Redirect Form - Component ]</h2>
-
-  <!-- prettier-ignore -->
-  {% set form_data = library.form_redirect.form_data %}
-  {% include "./_includes/library/form-redirect.njk" %}
-</section>
-
 <!-- prettier-ignore -->
 {% include './_includes/partials/loader.njk' %}
