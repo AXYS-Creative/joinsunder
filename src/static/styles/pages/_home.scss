@@ -8,11 +8,11 @@
     height: max(750px, calc(100vh - var(--body-padding-sm-double)));
     padding: 0;
 
-    @include mq-max("xxl") {
+    @include mq-max(xxl) {
       height: max(620px, calc(100vh - var(--body-padding-sm-double)));
     }
 
-    @include mq-max("lg") {
+    @include mq-max(lg) {
       min-height: 850px;
       flex-direction: column-reverse;
     }
@@ -32,7 +32,7 @@
         transition: $ease;
       }
 
-      @include mq-max("lg") {
+      @include mq-max(lg) {
         width: 100%;
         justify-content: space-between;
         padding-block: 24px 64px;
@@ -44,7 +44,7 @@
           // width: 75%;
           opacity: 1;
 
-          // @include mq-max("lg") {
+          // @include mq-max(lg) {
           //   width: 100%;
           //   height: 75%;
           // }
@@ -78,7 +78,7 @@
           transparent 100%
         );
 
-        // @include mq-max("lg") {
+        // @include mq-max(lg) {
         //   width: 100%;
         //   height: 0;
         // }
@@ -100,15 +100,15 @@
         width: 416px;
         aspect-ratio: 2 / 1;
 
-        @include mq-max("xxl") {
+        @include mq-max(xxl) {
           width: 50%;
         }
 
-        @include mq-max("lg") {
+        @include mq-max(lg) {
           width: 320px;
         }
 
-        @include mq-max("md") {
+        @include mq-max(md) {
           width: min(55%, 320px);
         }
       }
@@ -122,7 +122,7 @@
     .sunder-internal {
       border-radius: 0 var(--radius) var(--radius) 0;
 
-      @include mq-max("lg") {
+      @include mq-max(lg) {
         border-radius: var(--radius) var(--radius) 0 0;
       }
 
@@ -130,7 +130,7 @@
         --direction: to right;
         left: 0;
 
-        @include mq-max("lg") {
+        @include mq-max(lg) {
           --direction: to top;
           top: auto;
           bottom: 0;
@@ -141,7 +141,7 @@
     .sunder-external {
       border-radius: var(--radius) 0 0 var(--radius);
 
-      @include mq-max("lg") {
+      @include mq-max(lg) {
         border-radius: 0 0 var(--radius) var(--radius);
       }
 
@@ -149,7 +149,7 @@
         --direction: to left;
         right: 0;
 
-        @include mq-max("lg") {
+        @include mq-max(lg) {
           --direction: to bottom;
         }
       }

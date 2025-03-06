@@ -278,6 +278,7 @@ body:has(.load-complete) .hero div {
   font-size: 96px;
   font-weight: 900;
   text-transform: uppercase;
+  letter-spacing: -2px;
   position: relative;
   color: #f7f7f7;
   display: inline-flex;
@@ -292,6 +293,11 @@ body:has(.load-complete) .hero div {
 @media screen and (max-width: 768px) {
   .site-nav .nav-links__link {
     font-size: 36px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .site-nav .nav-links__link {
+    letter-spacing: -3px;
   }
 }
 .site-nav .nav-links__link::before {
@@ -420,6 +426,11 @@ body:has(.load-complete) .hero div {
   letter-spacing: -1px;
   color: var(--font-color--primary);
 }
+@media screen and (max-width: 768px) {
+  .site-loader__text {
+    font-size: 20px;
+  }
+}
 .site-loader.load-complete {
   opacity: 0;
   pointer-events: none;
@@ -441,6 +452,7 @@ h1,
   font-size: 96px;
   font-weight: 900;
   text-transform: uppercase;
+  letter-spacing: -2px;
 }
 @media screen and (max-width: 1512px) {
   h1,
@@ -452,6 +464,12 @@ h1,
   h1,
   .h1 {
     font-size: 36px;
+  }
+}
+@media screen and (max-width: 480px) {
+  h1,
+  .h1 {
+    letter-spacing: -3px;
   }
 }
 
@@ -537,6 +555,12 @@ h6,
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -1px;
+}
+@media screen and (max-width: 768px) {
+  h6,
+  .h6 {
+    font-size: 20px;
+  }
 }
 
 p,
@@ -844,7 +868,7 @@ figure {
 }
 @font-face {
   font-family: "satoshi";
-  src: url(../fonts/Satoshi-Black.otf);
+  src: url(../fonts/Satoshi-Variable.woff2);
 }
 .main-home {
   padding: var(--body-padding-sm);
@@ -1072,6 +1096,7 @@ figure {
 }
 
 .logo-link {
+  display: inline-flex;
   height: var(--header-height);
   aspect-ratio: 5/1;
 }
@@ -1088,6 +1113,8 @@ figure {
 .social-media:hover .social-media__label, .social-media:focus-within .social-media__label {
   translate: 0 -25%;
   transition: 0.32s ease;
+  scale: 0.9;
+  transform-origin: top right;
 }
 .social-media:hover .social-media__links li:nth-of-type(1), .social-media:focus-within .social-media__links li:nth-of-type(1) {
   transition: 0.3s ease 0.02s;
@@ -1132,9 +1159,19 @@ figure {
   color: var(--text-color);
   transition: 0.32s ease 0.2s;
 }
+@media screen and (max-width: 768px) {
+  .social-media__label {
+    font-size: 20px;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   .social-media__label {
     translate: 0 100%;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .social-media__label {
+    translate: 0 -50%;
   }
 }
 .social-media__links {
@@ -1326,6 +1363,7 @@ figure {
   font-size: 96px;
   font-weight: 900;
   text-transform: uppercase;
+  letter-spacing: -2px;
   font-size: 10vw;
   font-weight: 600;
   line-height: 90%;
@@ -1339,6 +1377,11 @@ figure {
 @media screen and (max-width: 768px) {
   .main-advanced .light .title {
     font-size: 36px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main-advanced .light .title {
+    letter-spacing: -3px;
   }
 }
 .main-advanced .light .subtitle {

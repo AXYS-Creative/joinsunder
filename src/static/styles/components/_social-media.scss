@@ -7,7 +7,10 @@
     .social-media__label {
       translate: 0 -25%;
       transition: $ease;
+      scale: 0.9;
+      transform-origin: top right;
     }
+
     .social-media__links {
       @for $i from 1 through 10 {
         li:nth-of-type(#{$i}) {
@@ -29,13 +32,17 @@
     @include mq-mouse {
       translate: 0 100%;
     }
+
+    @include mq-touch {
+      translate: 0 -50%;
+    }
   }
 
   &__links {
     display: flex;
     gap: 16px;
 
-    @include mq-max("md") {
+    @include mq-max(md) {
       gap: 12px;
     }
 

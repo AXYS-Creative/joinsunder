@@ -83,7 +83,7 @@ body {
     gap: 48px;
     display: none;
 
-    @include mq-max("lg") {
+    @include mq-max(lg) {
       display: none;
     }
 
@@ -115,7 +115,7 @@ body {
       padding: 8px;
       transition: $ease-c;
 
-      @include mq-max("lg") {
+      @include mq-max(lg) {
         --line-offset: 2.25px;
       }
 
@@ -140,7 +140,7 @@ body {
         background: var(--btn-color-text);
         transition: 0.3s ease;
 
-        @include mq-max("lg") {
+        @include mq-max(lg) {
           height: 2.5px;
         }
 
@@ -225,10 +225,10 @@ body {
     gap: 12px;
     height: 100%;
 
-    @include mq-min("xxl") {
+    @include mq-min(xxl) {
       gap: 24px;
     }
-    @include mq-min("lg") {
+    @include mq-min(lg) {
       margin-inline-start: var(--body-padding-double);
     }
 
@@ -303,7 +303,7 @@ body {
     margin: auto;
     width: 100%;
 
-    @include mq-max("lg") {
+    @include mq-max(lg) {
       gap: 64px;
     }
 
@@ -315,7 +315,7 @@ body {
       @include row-end(space-between);
       width: 100%;
 
-      @include mq-max("lg") {
+      @include mq-max(lg) {
         flex-direction: column;
         align-items: flex-start;
         gap: 64px;
@@ -327,7 +327,7 @@ body {
     display: grid;
     gap: 24px 128px;
 
-    @include mq-min("lg") {
+    @include mq-min(lg) {
       grid-template-rows: repeat(4, 1fr);
       grid-auto-flow: column;
     }

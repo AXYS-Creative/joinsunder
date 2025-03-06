@@ -21,12 +21,12 @@
   // background-color: lightcoral; // for div
   object-fit: cover;
 
-  @include mq-max("md") {
+  @include mq-max(md) {
     scale: 0.75;
     transform-origin: 0 0;
   }
 
-  @include mq-max("sm") {
+  @include mq-max(sm) {
     scale: 0.5;
   }
 }

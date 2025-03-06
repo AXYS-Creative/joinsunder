@@ -10,7 +10,7 @@
     // // Conditioanl Hiding based on wrapping, ALSO SEE JS MEDIA QUERY
     // display: none;
 
-    // @include mq-max("lg") {
+    // @include mq-max(lg) {
     //   display: block;
     // }
     // // Conditioanl Hiding based on wrapping
@@ -29,7 +29,7 @@
     overflow: hidden;
     position: relative;
 
-    // @include mq-max("lg") {
+    // @include mq-max(lg) {
     cursor: grab; // Conditional media query based on wrapping
 
     &:active {
@@ -45,7 +45,7 @@
 
       // // Conditional wrapping, ALSO SEE JS MEDIA QUERY
       // flex-wrap: wrap;
-      // @include mq-max("lg") {
+      // @include mq-max(lg) {
       //   flex-wrap: nowrap;
       // }
       // // Conditioanl wrapping end
@@ -60,17 +60,17 @@
     // min-width: calc(30% - var(--carousel-snap-gap) / 3);
     // // Conditioanl wrapping end
 
-    @include mq-max("lg") {
+    @include mq-max(lg) {
       min-width: 500px;
     }
 
-    @include mq-max("md") {
+    @include mq-max(md) {
       min-width: 250px;
     }
 
     img {
       // Conditional media query based on wrapping
-      // @include mq-max("lg") {
+      // @include mq-max(lg) {
       pointer-events: none;
       user-select: none;
       // }

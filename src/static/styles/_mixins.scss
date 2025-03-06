@@ -106,19 +106,24 @@ $min-breakpoints: (
 // Nav Menu Links
 @mixin h1 {
   @include heading-text(96px);
+  letter-spacing: -2px;
 
-  @include mq-max("xxl") {
+  @include mq-max(xxl) {
     font-size: max(56px, 6.2vw);
   }
 
-  @include mq-max("md") {
+  @include mq-max(md) {
     font-size: 36px;
+  }
+
+  @include mq-max(sm) {
+    letter-spacing: -3px;
   }
 }
 @mixin h2 {
   @include heading-text(72px);
 
-  @include mq-max("xxl") {
+  @include mq-max(xxl) {
     font-size: max(49.2px, 4.8vw);
   }
 }
@@ -128,18 +133,18 @@ $min-breakpoints: (
   @include heading-text(56px);
   letter-spacing: -2px;
 
-  @include mq-max("xxl") {
+  @include mq-max(xxl) {
     font-size: max(40px, 3.6vw);
   }
 
-  @include mq-max("sm") {
+  @include mq-max(sm) {
     font-size: 32px;
   }
 }
 @mixin h4 {
   @include heading-text(36px);
 
-  @include mq-max("xxl") {
+  @include mq-max(xxl) {
     font-size: max(28.7px, 2.4vw);
   }
 }
@@ -149,17 +154,21 @@ $min-breakpoints: (
   @include heading-text(32px);
   letter-spacing: -1px;
 
-  @include mq-max("xxl") {
+  @include mq-max(xxl) {
     font-size: max(22px, 2vw);
   }
 
-  @include mq-max("sm") {
+  @include mq-max(sm) {
     font-size: 18px;
   }
 }
 @mixin h6 {
   @include heading-text(26px);
   letter-spacing: -1px;
+
+  @include mq-max(md) {
+    font-size: 20px;
+  }
 }
 
 @mixin body-font-styles($size: md) {
@@ -171,11 +180,11 @@ $min-breakpoints: (
   font-weight: 400;
 
   @media all {
-    @include mq-max("xxl") {
+    @include mq-max(xxl) {
       --font-size: 16px;
     }
 
-    @include mq-max("md") {
+    @include mq-max(md) {
       --font-size: 14px;
     }
   }
@@ -185,11 +194,11 @@ $min-breakpoints: (
 
     line-height: 1.5;
 
-    @include mq-max("xxl") {
+    @include mq-max(xxl) {
       --font-size: 20px;
     }
 
-    @include mq-max("md") {
+    @include mq-max(md) {
       --font-size: 16px;
     }
   }
@@ -201,7 +210,7 @@ $min-breakpoints: (
   font-weight: 900;
   letter-spacing: -0.5px;
 
-  @include mq-max("lg") {
+  @include mq-max(lg) {
     font-size: 16px;
     font-weight: 800;
   }
@@ -262,15 +271,15 @@ $min-breakpoints: (
 }
 
 @mixin full-viewport-section {
-  @include mq-min("xxl") {
+  @include mq-min(xxl) {
     height: clamp(750px, 100vh, 1250px);
   }
 
-  @include mq-max("xxl") {
+  @include mq-max(xxl) {
     height: clamp(625px, 100vh, 1100px);
   }
 
-  @include mq-max("md") {
+  @include mq-max(md) {
     height: clamp(500px, 100svh, 950px);
   }
 }
@@ -280,7 +289,7 @@ $min-breakpoints: (
   padding-block: var(--body-padding-double);
 
   @if $type == thin {
-    @include mq-min("lg") {
+    @include mq-min(lg) {
       padding-inline: calc(var(--body-padding) * 4);
     }
   }
@@ -303,7 +312,7 @@ $min-breakpoints: (
 @mixin left-spacing {
   left: var(--body-padding);
 
-  @include mq-min("xxxl") {
+  @include mq-min(xxxl) {
     left: calc(50% - calc($content-width / 2) + var(--body-padding));
   }
 }
@@ -311,7 +320,7 @@ $min-breakpoints: (
 @mixin right-spacing {
   right: var(--body-padding);
 
-  @include mq-min("xxxl") {
+  @include mq-min(xxxl) {
     right: calc(50% - calc($content-width / 2 - var(--body-padding)));
   }
 }

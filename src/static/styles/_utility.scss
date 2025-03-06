@@ -67,7 +67,7 @@
   .lg-up {
     display: none;
 
-    @include mq-min("lg") {
+    @include mq-min(lg) {
       display: block;
     }
   }
@@ -75,7 +75,7 @@
   .lg-down {
     display: none;
 
-    @include mq-max("lg") {
+    @include mq-max(lg) {
       display: block;
     }
   }
@@ -83,7 +83,7 @@
   .md-up {
     display: none;
 
-    @include mq-min("md") {
+    @include mq-min(md) {
       display: block;
     }
   }
@@ -91,7 +91,7 @@
   .md-down {
     display: none;
 
-    @include mq-max("md") {
+    @include mq-max(md) {
       display: block;
     }
   }
@@ -99,7 +99,7 @@
   .sm-up {
     display: none;
 
-    @include mq-min("sm") {
+    @include mq-min(sm) {
       display: block;
     }
   }
@@ -107,7 +107,7 @@
   .sm-down {
     display: none;
 
-    @include mq-max("sm") {
+    @include mq-max(sm) {
       display: block;
     }
   }
