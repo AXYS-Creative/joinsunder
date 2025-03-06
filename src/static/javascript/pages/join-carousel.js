@@ -3,10 +3,8 @@ const joinCarouselImages = document.querySelectorAll(".join-carousel__img");
 let currentIndex = 1;
 
 if (joinCarousel) {
-  let autoplayInterval = parseInt(
-    joinCarousel.getAttribute("data-carousel-interval"),
-    10
-  );
+  let autoplayInterval =
+    parseInt(joinCarousel.getAttribute("data-carousel-interval"), 10) || 5000;
 
   if (joinCarouselImages.length > 0) {
     joinCarouselImages[0].classList.add("active");
