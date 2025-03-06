@@ -116,10 +116,6 @@ $min-breakpoints: (
   @include mq-max(md) {
     font-size: 36px;
   }
-
-  @include mq-max(sm) {
-    letter-spacing: -3px;
-  }
 }
 @mixin h2 {
   @include heading-text(72px);

@@ -1,6 +1,7 @@
 .logo-link {
   display: inline-flex;
-  height: var(--header-height);
+  // height: var(--header-height);
+  height: var(--logo-height);
   aspect-ratio: 5/1;
 
   &__img {

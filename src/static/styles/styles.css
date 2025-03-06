@@ -31,6 +31,8 @@
   --section-gap: 64px;
   --section-gap--lg: 64px;
   --header-height: 36px;
+  --logo-offset: 4px;
+  --logo-height: calc(var(--header-height) - var(--logo-offset));
   --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 1.5);
   --border-bold-girth: 4px;
   --border-bold-color: #d9d9d9;
@@ -53,6 +55,7 @@
 @media (max-width: 768px) {
   :root {
     --body-padding: 16px;
+    --logo-offset: 6px;
     --border-bold-girth: 2px;
     --radius: 5px;
   }
@@ -66,6 +69,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 *:-webkit-autofill, *:-webkit-autofill:hover, *:-webkit-autofill:focus-visible {
   -webkit-text-fill-color: var(--font-color--primary);
@@ -109,7 +114,7 @@ body:has(.load-complete) .hero div {
 }
 .site-header .header-logo {
   left: var(--body-padding);
-  top: var(--body-padding);
+  top: calc(var(--body-padding) + var(--logo-offset));
 }
 @media screen and (min-width: 1921px) {
   .site-header .header-logo {
@@ -211,15 +216,15 @@ body:has(.load-complete) .hero div {
 }
 
 .site-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   opacity: 0;
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   position: fixed;
   top: 0;
   left: 0;
@@ -302,11 +307,6 @@ body:has(.load-complete) .hero div {
 @media screen and (max-width: 768px) {
   .site-nav .nav-links__link {
     font-size: 36px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .site-nav .nav-links__link {
-    letter-spacing: -3px;
   }
 }
 .site-nav .nav-links__link::before {
@@ -475,12 +475,6 @@ h1,
   h1,
   .h1 {
     font-size: 36px;
-  }
-}
-@media screen and (max-width: 480px) {
-  h1,
-  .h1 {
-    letter-spacing: -3px;
   }
 }
 
@@ -883,8 +877,9 @@ figure {
   }
 }
 @font-face {
-  font-family: "satoshi";
-  src: url(../fonts/Satoshi-Variable.woff2);
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 100 900;
 }
 .main-home {
   padding: var(--body-padding-sm);
@@ -1246,7 +1241,7 @@ figure {
 
 .logo-link {
   display: inline-flex;
-  height: var(--header-height);
+  height: var(--logo-height);
   aspect-ratio: 5/1;
 }
 .logo-link__img {
@@ -1377,6 +1372,11 @@ figure {
   height: var(--link-size);
   overflow: hidden;
   transition: 0.25s ease;
+}
+@media screen and (max-width: 1024px) {
+  .social-media__link {
+    --link-size: 28px;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   .social-media__link:hover .social-media__link-img, .social-media__link:focus-visible .social-media__link-img {
@@ -1529,11 +1529,6 @@ figure {
 @media screen and (max-width: 768px) {
   .main-advanced .light .title {
     font-size: 36px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .main-advanced .light .title {
-    letter-spacing: -3px;
   }
 }
 .main-advanced .light .subtitle {

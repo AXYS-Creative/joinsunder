@@ -68,6 +68,10 @@
     overflow: hidden;
     transition: 0.25s ease;
 
+    @include mq-max(lg) {
+      --link-size: 28px;
+    }
+
     @include desktop-hover {
       .social-media__link-img {
         background: white;
