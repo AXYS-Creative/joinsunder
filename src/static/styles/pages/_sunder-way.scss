@@ -1,8 +1,17 @@
-.main-sunder-way {
-  padding: var(--body-padding-sm);
-}
+// .main-sunder-way {
+//   padding: var(--body-padding-sm);
+// }
 
 .section-ethos {
   height: 100vh;
   @include top-fade-section;
+
+  &__title {
+    @include h1;
+
+    @include mq-max(lg) {
+      @include h3;
+      text-align: center;
+    }
+  }
 }

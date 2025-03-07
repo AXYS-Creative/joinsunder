@@ -95,105 +95,60 @@ $min-breakpoints: (
 // FYI: Dropping below 12px results in a11y pentalty.
 //
 
-@mixin heading-text($size) {
-  color: var(--font-color--primary);
+@mixin heading-text {
   font-family: var(--font-family--heading);
-  font-size: $size;
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 1.2;
+  letter-spacing: -2px;
 }
 
-// Nav Menu Links
 @mixin h1 {
-  @include heading-text(96px);
-  letter-spacing: -2px;
-
-  @include mq-max(xxl) {
-    font-size: max(56px, 6.2vw);
-  }
-
-  @include mq-max(md) {
-    font-size: 36px;
-  }
+  @include heading-text;
+  font-size: 96px;
+  line-height: 117.7%;
 }
+
 @mixin h2 {
-  @include heading-text(72px);
-
-  @include mq-max(xxl) {
-    font-size: max(49.2px, 4.8vw);
-  }
+  @include heading-text;
+  font-size: 75px;
+  line-height: 132.2%;
 }
 
-// Laning page lg-text, form title (one-off on lg)
 @mixin h3 {
-  @include heading-text(56px);
-  letter-spacing: -2px;
-
-  @include mq-max(xxl) {
-    font-size: max(40px, 3.6vw);
-  }
-
-  @include mq-max(sm) {
-    font-size: 32px;
-  }
+  @include heading-text;
+  font-size: 55px;
+  line-height: 110%;
 }
-@mixin h4 {
-  @include heading-text(36px);
 
-  @include mq-max(xxl) {
-    font-size: max(28.7px, 2.4vw);
-  }
+@mixin h4 {
+  @include heading-text;
+  font-size: 36px;
 }
 
 // Laning page
 @mixin h5 {
-  @include heading-text(32px);
-  letter-spacing: -1px;
-
-  @include mq-max(xxl) {
-    font-size: max(22px, 2vw);
-  }
-
-  @include mq-max(sm) {
-    font-size: 18px;
-  }
+  @include heading-text;
+  font-size: 24px;
 }
-@mixin h6 {
-  @include heading-text(26px);
-  letter-spacing: -1px;
 
-  @include mq-max(md) {
-    font-size: 20px;
-  }
-}
+// No h6 listed in Figma
 
 @mixin body-font-styles($size: md) {
-  --font-size: 18px;
+  --font-size: 24px;
 
   color: var(--font-color--primary);
   font-family: $brand-font--body;
   font-size: var(--font-size);
-  font-weight: 400;
+  font-weight: 500;
 
   @media all {
-    @include mq-max(xxl) {
-      --font-size: 16px;
-    }
-
     @include mq-max(md) {
-      --font-size: 14px;
+      --font-size: 22px;
     }
   }
 
-  @if $size == lg {
-    --font-size: 24px;
-
-    line-height: 1.5;
-
-    @include mq-max(xxl) {
-      --font-size: 20px;
-    }
+  @if $size == sm {
+    --font-size: 18px;
 
     @include mq-max(md) {
       --font-size: 16px;
@@ -236,7 +191,7 @@ $min-breakpoints: (
 //
 
 @mixin dark-theme {
-  --background-color: #{$black};
+  // --background-color: #{$black}; // messes with sections
   --font-color--primary: #{$white};
 
   --link-color: #{$white};
@@ -267,13 +222,14 @@ $min-breakpoints: (
 //   }
 // }
 
+// Not in use
 @mixin full-viewport-section {
   @include mq-min(xxl) {
     height: clamp(750px, 100vh, 1250px);
   }
 
   @include mq-max(xxl) {
-    height: clamp(625px, 100vh, 1100px);
+    height: clamp(650px, 100vh, 1100px);
   }
 
   @include mq-max(md) {
@@ -281,6 +237,23 @@ $min-breakpoints: (
   }
 }
 
+// section-img-hero... might need for other sections, might mess things up
+// @mixin partial-viewport-section {
+//   @include mq-min(xxl) {
+//     height: clamp(700px, 75vh, 1050px);
+//     // height: clamp(700px, auto, 1050px);
+//   }
+
+//   @include mq-max(xxl) {
+//     height: clamp(550px, 75vh, 750px);
+//   }
+
+//   @include mq-max(md) {
+//     height: clamp(500px, auto, 500px);
+//   }
+// }
+
+// Home & Join pages
 @mixin full-height-section {
   height: max(750px, calc(100vh - var(--body-padding-sm-double)));
   padding: 0;

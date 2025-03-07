@@ -79,27 +79,6 @@ body {
     top: calc(var(--body-padding) + var(--logo-offset));
   }
 
-  .header-links {
-    @include row-center;
-    @include right-spacing;
-    top: var(--body-padding);
-    gap: 48px;
-    display: none;
-
-    @include mq-max(lg) {
-      display: none;
-    }
-
-    &__link {
-      &:hover,
-      &:focus-visible {
-        &::after {
-          background: var(--font-color--primary);
-        }
-      }
-    }
-  }
-
   .site-nav-btn-wrapper {
     @include right-spacing;
     top: var(--body-padding);
@@ -243,6 +222,16 @@ body {
       gap: 0.2ch;
       transition: color $ease;
 
+      @include mq-max(xl) {
+        // any updates here should update the .reveal class
+        @include h3;
+      }
+
+      @include mq-max(lg) {
+        // any updates here should update the .reveal class
+        @include h4;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -264,6 +253,14 @@ body {
 
         .reveal {
           width: 5.75ch;
+
+          @include mq-max(xl) {
+            width: 5.6ch;
+          }
+
+          @include mq-max(lg) {
+            width: 5.5ch;
+          }
         }
       }
 
@@ -341,54 +338,32 @@ body {
   }
 }
 
-.site-loader {
-  @include row-center;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100dvh;
-  background: var(--background-color);
-  z-index: $z-index--loader;
+// .site-loader {
+//   @include row-center;
+//   position: fixed;
+//   top: 0;
+//   width: 100vw;
+//   height: 100dvh;
+//   background: var(--background-color);
+//   z-index: $z-index--loader;
 
-  &__text {
-    @include h6;
-    color: var(--font-color--primary);
-  }
+//   &__text {
+//     color: var(--font-color--primary);
+//   }
 
-  &.load-complete {
-    @include hide-content;
-    transition: 0.5s ease;
-  }
+//   &.load-complete {
+//     @include hide-content;
+//     transition: 0.5s ease;
+//   }
+// }
+
+.main-sunder-way,
+.main-platform {
+  padding: var(--body-padding-sm);
 }
 
 section {
   @include section-padding;
-}
-
-h1,
-.h1 {
-  @include h1;
-  // text-transform: uppercase;
-}
-h2,
-.h2 {
-  @include h2;
-}
-h3,
-.h3 {
-  @include h3;
-}
-h4,
-.h4 {
-  @include h4;
-}
-h5,
-.h5 {
-  @include h5;
-}
-h6,
-.h6 {
-  @include h6;
 }
 
 p,
@@ -452,6 +427,97 @@ figure {
 
 // Partials
 
-// .hero {
+.section-img-hero {
+  // border: $test;
+  @include dark-theme;
+  @include top-fade-section;
+  padding: var(--body-padding);
+  // margin-inline: var(--body-padding-sm);
 
-// }
+  &__inner {
+    // border: $test;
+    // @include partial-viewport-section; // Consider a prop to remove for brand sections?
+    isolation: isolate;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    padding: var(--body-padding);
+
+    @include mq-max(lg) {
+      padding-block: var(--body-padding-double);
+    }
+
+    // Blue gradient
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(60deg, rgba($blue, 1) 0%, rgba($blue, 0) 70%);
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      @include mq-max(md) {
+        background: linear-gradient(
+          180deg,
+          rgba($blue, 1) 15%,
+          rgba($blue, 0) 120%
+        );
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // width: 110%;
+    height: 100%;
+    object-fit: cover;
+    // object-position: 0% 40%;
+    border-radius: var(--radius);
+    z-index: -2;
+    user-select: none;
+  }
+
+  &__h1,
+  &__h2 {
+    margin-block-end: var(--section-gap);
+
+    @include mq-max(md) {
+      text-align: center;
+    }
+  }
+
+  &__h1 {
+    @include h1;
+
+    @include mq-max(lg) {
+      @include h3;
+    }
+  }
+
+  &__p {
+    margin-block-end: var(--section-gap);
+
+    @include mq-min(md) {
+      width: 572px;
+    }
+
+    @include mq-max(md) {
+      text-align: center;
+    }
+  }
+
+  .cta-group {
+    @include mq-min(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  // &.full-height {
+  //   @include full-viewport-section;
+  // }
+}

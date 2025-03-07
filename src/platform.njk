@@ -1,0 +1,22 @@
+---
+layout: app
+path: platform
+
+title: Sunder Platform
+description: #CHANGE ME
+
+# master props
+hide_header: false
+hide_footer: false
+# Page notes
+# Using eager loading for computed/dynamic height. Only use fetchpriority sparingly
+---
+
+<!-- prettier-ignore -->
+{% set section_h1 = 'The[%br%] Sunder[%br%] Platform' %}
+{% set section_p = 'We’re proud to offer a platform that empowers Sales Reps with unparalleled options, ensures top-tier customer service, and delivers industry-leading pay—setting a new standard that no other platform can match' %}
+{% set section_bg = '/static/img/platform-hero.avif' %}
+{% set cta_1_text = 'Join The Squad' %}
+{% set cta_1_url = '/join' %}
+{% set section_img_hero_class = 'full-height' %}
+{% include "./_includes/partials/section-img-hero.njk" %}

@@ -81,6 +81,12 @@ $test-bg: rgba(navy, 0.75);
   --body-padding-sm: 12px;
   --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
 
+  --full-width-snip: calc(100vw - var(--body-padding-double));
+  --full-width-snip-sm: calc(100vw - var(--body-padding-sm-double));
+
+  --full-height-snip: calc(100vh - var(--body-padding-double));
+  --full-height-snip-sm: calc(100vh - var(--body-padding-sm-double));
+
   --section-min-height: 750px;
 
   --section-gap: 64px;
@@ -102,6 +108,8 @@ $test-bg: rgba(navy, 0.75);
 
   @media (max-width: 1512px) {
     --section-min-height: 620px;
+
+    --section-gap: 48px;
   }
 
   @media (max-width: 1024px) {

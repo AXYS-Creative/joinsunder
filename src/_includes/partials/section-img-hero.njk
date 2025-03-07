@@ -1,0 +1,24 @@
+<section class="section-img-hero {{ section_img_hero_class }}">
+  <div class="section-img-hero__inner">
+    <img src="{{ section_bg }}" alt="" class="section-img-hero__bg" />
+
+    {% if section_graphic %}
+    <img src="{{ section_graphic }}" alt="" />
+    {% endif %}
+
+    <!-- prettier-ignore -->
+    {% if section_h1 %}
+    <h1 class="section-img-hero__h1">{{ section_h1 }}</h1>
+    {% endif %}
+
+    <!-- prettier-ignore -->
+    {% if section_h2 %}
+    <h2 class="section-img-hero__h2">{{ section_h2 }}</h2>
+    {% endif %}
+
+    <p class="section-img-hero__p">{{ section_p }}</p>
+
+    <!-- prettier-ignore -->
+    {% include "../components/cta-group.njk" %}
+  </div>
+</section>

@@ -98,7 +98,18 @@
 
       &__title {
         @include column-start;
-        margin-block: 32px 48px;
+        margin-block: 32px 64px;
+
+        &-sm {
+          @include h5;
+        }
+        &-lg {
+          @include h3;
+
+          @include mq-max(lg) {
+            @include h4;
+          }
+        }
       }
     }
 

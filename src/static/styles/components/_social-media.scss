@@ -25,9 +25,15 @@
   }
 
   &__label {
-    @include h6;
+    @include heading-text;
+    letter-spacing: -1px;
     color: var(--text-color);
     transition: $ease 0.2s;
+    font-size: 24px;
+
+    @include mq-max(lg) {
+      font-size: 16px;
+    }
 
     @include mq-mouse {
       translate: 0 100%;

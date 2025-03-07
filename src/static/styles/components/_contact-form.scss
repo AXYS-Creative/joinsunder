@@ -1,13 +1,9 @@
 // .form-feedback,
 .form-redirect {
-  @include body-font-styles;
+  @include body-font-styles(sm);
   @include column-center;
   gap: 1em;
   width: min(100%, 648px);
-
-  @include mq-max(md) {
-    width: calc(100% - var(--body-padding) * 2);
-  }
 
   .form-block {
     position: relative;
