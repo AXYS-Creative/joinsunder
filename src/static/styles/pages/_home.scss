@@ -102,6 +102,10 @@
 
         &-sm {
           @include h5;
+
+          @include mq-max(lg) {
+            font-size: 20px;
+          }
         }
         &-lg {
           @include h3;

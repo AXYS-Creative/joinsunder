@@ -425,6 +425,25 @@ section {
   padding-block: var(--body-padding-double);
 }
 
+h1 {
+  font-family: var(--font-family--heading);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-size: 96px;
+  line-height: 117.7%;
+}
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-family: var(--font-family--heading);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-size: 55px;
+    line-height: 110%;
+  }
+}
+
 p,
 strong,
 em,
@@ -776,6 +795,7 @@ figure {
   font-family: "Satoshi";
   src: url("../fonts/Satoshi-Variable.woff2") format("woff2");
   font-weight: 100 900;
+  font-display: block;
 }
 .main-home {
   padding: var(--body-padding-sm);
@@ -907,6 +927,12 @@ figure {
   text-transform: uppercase;
   letter-spacing: -2px;
   font-size: 24px;
+  letter-spacing: -1px;
+}
+@media screen and (max-width: 1024px) {
+  .main-home .hero .hero-panel__title-sm {
+    font-size: 20px;
+  }
 }
 .main-home .hero .hero-panel__title-lg {
   font-family: var(--font-family--heading);

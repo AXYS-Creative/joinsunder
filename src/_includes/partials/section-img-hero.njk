@@ -1,6 +1,30 @@
 <section class="section-img-hero {{ section_img_hero_class }}">
   <div class="section-img-hero__inner">
-    <img src="{{ section_bg }}" alt="" class="section-img-hero__bg" />
+    <picture>
+      <source
+        srcset="{{ section_bg }}"
+        media="(min-width: 1025px)"
+        type="image/avif"
+      />
+      <source
+        srcset="{{ section_bg_sm }}"
+        media="(max-width: 1024px)"
+        type="image/avif"
+      />
+      <!-- prettier-ignore -->
+      <img
+        class="section-img-hero__bg"
+        src="{{ section_bg }}"
+        alt=""
+        {% if is_hero %}
+          loading="eager"
+        {% else %}
+          loading="lazy"
+        {% endif %}
+        width="1500"
+        height="1000"
+      />
+    </picture>
 
     {% if section_graphic %}
     <img src="{{ section_graphic }}" alt="" />

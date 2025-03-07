@@ -1,0 +1,10 @@
+toggle_section: true
+
+section_title: The[%br%] Sunder[%br%] Platform
+section_desc: We’re proud to offer a platform that empowers Sales Reps with unparalleled options, ensures top-tier customer service, and delivers industry-leading pay—setting a new standard that no other platform can match
+section_bg: /static/img/platform-hero.avif
+section_bg_sm: /static/img/platform-hero-sm.avif
+
+cta:
+  text: Join The Squad
+  url: /join

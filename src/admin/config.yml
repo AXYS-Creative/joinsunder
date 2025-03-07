@@ -111,6 +111,63 @@ collections:
                 label: "Button URL"
                 widget: "string"
                 required: true
+  - name: "page_platform"
+    label: "Page - Sunder Platform"
+    files:
+      - name: "hero"
+        label: "Section - Hero"
+        file: "src/_data/page_platform/hero.yaml"
+        preview_path: "/platform"
+        editor:
+          preview: false
+        fields:
+          - name: "toggle_section"
+            label: "Show Section (Sunder Platform Hero)"
+            widget: "boolean"
+            default: true
+          - name: "section_title"
+            label: "Section Title"
+            widget: "string"
+            required: true
+            hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+          - name: "section_desc"
+            label: "Section Description"
+            widget: "text"
+            required: true
+          - name: "section_bg"
+            label: "Section Background Image"
+            widget: "image"
+            required: true
+          - name: "cta"
+            label: "Call To Action"
+            widget: "object"
+            summary: "{{ fields.name }}: {{ fields.url }}"
+            required: true
+            fields:
+              - name: text
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
+                hint: An empty value removes the button
+  - name: "page_spare_1"
+    label: "Page - Spare"
+    files:
+      - name: "hero"
+        label: "Section - Hero"
+        file: "src/_data/page_join/hero.yaml"
+        preview_path: "/join"
+        editor:
+          preview: false
+        fields:
+          - name: "section_title"
+            label: "Section Title"
+            widget: "string"
+            required: true
   - name: "page_join"
     label: "Page - Join"
     files:

@@ -13,10 +13,14 @@ hide_footer: false
 ---
 
 <!-- prettier-ignore -->
-{% set section_h1 = 'The[%br%] Sunder[%br%] Platform' %}
-{% set section_p = 'We’re proud to offer a platform that empowers Sales Reps with unparalleled options, ensures top-tier customer service, and delivers industry-leading pay—setting a new standard that no other platform can match' %}
-{% set section_bg = '/static/img/platform-hero.avif' %}
-{% set cta_1_text = 'Join The Squad' %}
-{% set cta_1_url = '/join' %}
+{% set section_h1 = page_platform.hero.section_title %}
+{% set section_p = page_platform.hero.section_desc %}
+{% set section_bg = page_platform.hero.section_bg %}
+{% set section_bg_sm = page_platform.hero.section_bg_sm %}
+{% set cta_1_text = page_platform.hero.cta.text %}
+{% set cta_1_url = page_platform.hero.cta.url %}
+{% set is_hero = true %}
 {% set section_img_hero_class = 'full-height' %}
-{% include "./_includes/partials/section-img-hero.njk" %}
+{% if page_platform.hero.toggle_section %}
+  {% include "./_includes/partials/section-img-hero.njk" %}
+{% endif %}

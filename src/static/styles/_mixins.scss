@@ -129,6 +129,7 @@ $min-breakpoints: (
 @mixin h5 {
   @include heading-text;
   font-size: 24px;
+  letter-spacing: -1px;
 }
 
 // No h6 listed in Figma
