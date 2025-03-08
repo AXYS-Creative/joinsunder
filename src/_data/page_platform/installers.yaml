@@ -1,54 +1,56 @@
 toggle_section: true
 
-section_title: Installers
+section_title: "Installers"
 section_desc: Sunder is partnered with with over [%span.h5%]20[%span%] installers nationwide.
 
+logo_grid: 5
+
 img_list:
-  - title: title
+  - title: 1 Solar
     src: /static/img/Platform-Installers-1Logo.svg
-  - title: title
+  - title: Action Solar
     src: /static/img/Platform-Installers-2Logo.svg
-  - title: title
+  - title: Blue Raven Solar
     src: /static/img/Platform-Installers-3Logo.svg
-  - title: title
+  - title: Bright Planet Solar
     src: /static/img/Platform-Installers-4Logo.svg
-  - title: title
+  - title: Brilliant Solar
     src: /static/img/Platform-Installers-5Logo.svg
-  - title: title
+  - title: Empower Solar
     src: /static/img/Platform-Installers-6Logo.svg
-  - title: title
+  - title: ESP
     src: /static/img/Platform-Installers-7Logo.svg
-  - title: title
+  - title: Fastrac Energy Services
     src: /static/img/Platform-Installers-8Logo.svg
-  - title: title
+  - title: Flo Energy
     src: /static/img/Platform-Installers-9Logo.svg
-  - title: title
+  - title: Go Solar Wolf River Electric
     src: /static/img/Platform-Installers-10Logo.svg
-  - title: title
+  - title: Green Brilliance
     src: /static/img/Platform-Installers-11Logo.svg
-  - title: title
+  - title: Green Light Solar
     src: /static/img/Platform-Installers-12Logo.svg
-  - title: title
+  - title: Ilum Energy Solutions
     src: /static/img/Platform-Installers-13Logo.svg
-  - title: title
+  - title: Lifetime Solar
     src: /static/img/Platform-Installers-14Logo.svg
-  - title: title
+  - title: Malama Solar
     src: /static/img/Platform-Installers-15Logo.svg
-  - title: title
+  - title: NSIS
     src: /static/img/Platform-Installers-16Logo.svg
-  - title: title
+  - title: OC Solar
     src: /static/img/Platform-Installers-17Logo.svg
-  - title: title
+  - title: We Our World Energy
     src: /static/img/Platform-Installers-18Logo.svg
-  - title: title
+  - title: Plug PV
     src: /static/img/Platform-Installers-19Logo.svg
-  - title: title
+  - title: Skyline Smart Energy
     src: /static/img/Platform-Installers-20Logo.svg
-  - title: title
+  - title: Spring Solar
     src: /static/img/Platform-Installers-21Logo.svg
-  - title: title
+  - title: Sun Solar
     src: /static/img/Platform-Installers-22Logo.svg
-  - title: title
+  - title: Tri Smart Solar
     src: /static/img/Platform-Installers-23Logo.svg
-  - title: title
+  - title: Unicity Solar Energy
     src: /static/img/Platform-Installers-24Logo.svg

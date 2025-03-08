@@ -1,5 +1,5 @@
-<section class="section-img-hero {{ section_img_hero_class }}">
-  <div class="section-img-hero__inner">
+<section class="partial-img-hero {{ section_img_hero_class }}">
+  <div class="partial-img-hero__inner">
     <picture>
       <source
         srcset="{{ section_bg }}"
@@ -13,7 +13,7 @@
       />
       <!-- prettier-ignore -->
       <img
-        class="section-img-hero__bg"
+        class="partial-img-hero__bg"
         src="{{ section_bg }}"
         alt=""
         {% if is_hero %}
@@ -32,15 +32,15 @@
 
     <!-- prettier-ignore -->
     {% if section_h1 %}
-    <h1 class="section-img-hero__h1">{{ section_h1 }}</h1>
+    <h1 class="partial-img-hero__h1">{{ section_h1 }}</h1>
     {% endif %}
 
     <!-- prettier-ignore -->
     {% if section_h2 %}
-    <h2 class="section-img-hero__h2">{{ section_h2 }}</h2>
+    <h2 class="partial-img-hero__h2">{{ section_h2 }}</h2>
     {% endif %}
 
-    <p class="section-img-hero__p">{{ section_p }}</p>
+    <p class="partial-img-hero__p">{{ section_p }}</p>
 
     <!-- prettier-ignore -->
     {% include "../components/cta-group.njk" %}

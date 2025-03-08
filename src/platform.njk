@@ -22,13 +22,27 @@ hide_footer: false
 {% set is_hero = true %}
 {% set section_img_hero_class = 'full-height' %}
 {% if page_platform.hero.toggle_section %}
-  {% include "./_includes/partials/section-img-hero.njk" %}
+  {% include "./_includes/partials/partial-img-hero.njk" %}
 {% endif %}
 
-<!-- prettier-ignore -->
-{% set section_h2 = page_platform.installers.section_title %}
-{% set section_desc = page_platform.installers.section_desc %}
-{% set section_logos = page_platform.installers.img_list %}
-{% if page_platform.installers.toggle_section %}
-  {% include "./_includes/partials/section-logos.njk" %}
-{% endif %}
+<section class="section-logos">
+  <!-- prettier-ignore -->
+  {% set section_id = "installers" %}
+  {% set section_h2 = page_platform.installers.section_title %}
+  {% set section_desc = page_platform.installers.section_desc %}
+  {% set section_logos = page_platform.installers.img_list %}
+  {% set logo_grid = page_platform.installers.logo_grid %}
+  {% if page_platform.installers.toggle_section %}
+    {% include "./_includes/partials/partial-logos.njk" %}
+  {% endif %}
+
+  <!-- prettier-ignore -->
+  {% set section_id = "financiers" %}
+  {% set section_h2 = page_platform.financiers.section_title %}
+  {% set section_desc = page_platform.financiers.section_desc %}
+  {% set section_logos = page_platform.financiers.img_list %}
+  {% set logo_grid = page_platform.installers.logo_grid %}
+  {% if page_platform.financiers.toggle_section %}
+    {% include "./_includes/partials/partial-logos.njk" %}
+  {% endif %}
+</section>

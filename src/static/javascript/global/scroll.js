@@ -8,20 +8,20 @@ window.addEventListener("scroll", () => {
   const documentHeight = document.documentElement.scrollHeight;
 
   let awayFromTop = currentScrollY > 24;
-  // let scrollingDown = currentScrollY > lastScrollY;
   let nearBottom = currentScrollY + windowHeight >= documentHeight - 128; // Adjust threshold as needed
+  let scrollingDown = currentScrollY > lastScrollY;
 
-  if (awayFromTop) {
-    siteHeader.classList.add("away-from-top");
-  } else {
-    siteHeader.classList.remove("away-from-top");
-  }
-
-  // if (scrollingDown) {
-  //   siteHeader.classList.add("scrolling-down");
+  // if (awayFromTop) {
+  //   siteHeader.classList.add("away-from-top");
   // } else {
-  //   siteHeader.classList.remove("scrolling-down");
+  //   siteHeader.classList.remove("away-from-top");
   // }
+
+  if (awayFromTop && scrollingDown) {
+    siteHeader.classList.add("scrolling-down");
+  } else {
+    siteHeader.classList.remove("scrolling-down");
+  }
 
   if (nearBottom) {
     siteHeader.classList.add("near-bottom");

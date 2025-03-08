@@ -80,6 +80,10 @@ body {
   border-radius: var(--radius);
   transition: $ease, width 0s;
 
+  &:focus-within {
+    translate: -50% 0 !important;
+  }
+
   // & > * {
   //   position: fixed;
   //   z-index: $z-index--header;
@@ -165,26 +169,17 @@ body {
     }
   }
 
-  &.away-from-top {
-    background: var(--background-color);
-    border: 1px solid var(--surface-color);
+  // &.away-from-top {
 
-    // > * {
-    //   @include hide-content;
-    // }
-  }
+  // }
 
-  &.near-bottom {
-    @include mq-max(lg) {
-      translate: -50% calc(-100% - var(--body-padding-sm));
-    }
+  &.near-bottom,
+  &.scrolling-down {
+    translate: -50% calc(-100% - var(--body-padding-sm));
   }
 
   &.nav-active {
-    background: transparent;
-    // > * {
-    //   @include show-content;
-    // }
+    translate: -50% 0;
   }
 }
 
@@ -255,6 +250,11 @@ body {
         @include h4;
       }
 
+      @include mq-max(sm) {
+        // any updates here should update the .reveal class
+        font-size: 30px;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -263,7 +263,10 @@ body {
         width: 0;
         height: var(--border-bold-girth);
         background: var(--hero-color--primary);
-        transition: width $ease;
+
+        @include mq-mouse {
+          transition: width $ease;
+        }
       }
 
       // @include desktop-hover // include hover for mobile/touch
@@ -286,13 +289,20 @@ body {
           @include mq-max(lg) {
             width: 5.5ch;
           }
+
+          @include mq-max(sm) {
+            width: 5.4ch;
+          }
         }
       }
 
       .reveal {
         width: 0;
         overflow: hidden;
-        transition: color 0.01s ease, width $ease;
+
+        @include mq-mouse {
+          transition: color 0.01s ease, width $ease;
+        }
       }
     }
   }

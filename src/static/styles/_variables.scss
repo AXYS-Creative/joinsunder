@@ -10,6 +10,7 @@ $sunder-midnight: #000014;
 
 $black: $sunder-midnight;
 $grey: $sunder-ice;
+$grey-light: $sunder-ice-light;
 $white: $sunder-snow;
 
 $blue: $sunder-royal-light;
@@ -72,8 +73,8 @@ $test-bg: rgba(navy, 0.75);
   --link-color-hover: #{$white};
 
   // Surface Colors
-  --surface-color: #{$sunder-ice}; // Nav menu bg
-  --surface-color-2: #{$sunder-ice-light}; // Section gradient, form field bg
+  --surface-color: #{$grey}; // Nav menu bg
+  --surface-color-2: #{$grey-light}; // Section gradient, form field bg
 
   // Size & Spacing
   --body-padding: 24px;
@@ -100,7 +101,7 @@ $test-bg: rgba(navy, 0.75);
   --logo-offset: 4px;
   --logo-height: calc(var(--header-height) - var(--logo-offset));
 
-  --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 3);
+  --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 2);
 
   --border-bold-girth: 4px;
   --border-bold-color: #{$grey};

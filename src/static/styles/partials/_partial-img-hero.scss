@@ -1,12 +1,10 @@
-.section-img-hero {
-  // border: $test;
+.partial-img-hero {
   @include dark-theme;
   @include top-fade-section;
   padding: var(--body-padding);
   // margin-inline: var(--body-padding-sm);
 
   &__inner {
-    // border: $test;
     // @include partial-viewport-section; // Consider a prop to remove for brand sections?
     isolation: isolate;
     position: relative;

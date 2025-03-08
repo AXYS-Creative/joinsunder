@@ -1,0 +1,22 @@
+toggle_section: true
+
+section_title: Finance Options
+section_desc: Subtitle Description
+
+logo_grid: 4
+
+img_list:
+  - title: EnFin by Qcells
+    src: /static/img/Platform-Finance-1Logo.svg
+  - title: Everbright
+    src: /static/img/Platform-Finance-2Logo.svg
+  - title: Goodleap
+    src: /static/img/Platform-Finance-3Logo.svg
+  - title: Igsenergy
+    src: /static/img/Platform-Finance-4Logo.svg
+  - title: LightReach
+    src: /static/img/Platform-Finance-5Logo.svg
+  - title: PosiGen Solar Energy and Energy Efficiency
+    src: /static/img/Platform-Finance-6Logo.svg
+  - title: Sunrun
+    src: /static/img/Platform-Finance-7Logo.svg

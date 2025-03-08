@@ -1,0 +1,10 @@
+<div class="logos-group" id="{{ section_id }}">
+  <h2 class="logos-group__h2">{{ section_h2 }}</h2>
+  <p class="logos-group__p">{{ section_desc }}</p>
+
+  <div class="logos-group__imgs grid-{{ logo_grid }}">
+    {% for item in section_logos %}
+    <img src="{{ item.src }}" alt="{{ item.title }}" width="335" height="186" />
+    {% endfor %}
+  </div>
+</div>
