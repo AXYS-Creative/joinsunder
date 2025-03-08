@@ -115,6 +115,10 @@
 
 // CMS Tokens
 @media all {
+  .h5 {
+    @include h5;
+  }
+
   .text-stroke {
     -webkit-text-stroke: 1px var(--font-color--primary);
     color: transparent;

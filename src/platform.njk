@@ -24,3 +24,11 @@ hide_footer: false
 {% if page_platform.hero.toggle_section %}
   {% include "./_includes/partials/section-img-hero.njk" %}
 {% endif %}
+
+<!-- prettier-ignore -->
+{% set section_h2 = page_platform.installers.section_title %}
+{% set section_desc = page_platform.installers.section_desc %}
+{% set section_logos = page_platform.installers.img_list %}
+{% if page_platform.installers.toggle_section %}
+  {% include "./_includes/partials/section-logos.njk" %}
+{% endif %}

@@ -1,0 +1,54 @@
+toggle_section: true
+
+section_title: Installers
+section_desc: Sunder is partnered with with over [%span.h5%]20[%span%] installers nationwide.
+
+img_list:
+  - title: title
+    src: /static/img/Platform-Installers-1Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-2Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-3Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-4Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-5Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-6Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-7Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-8Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-9Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-10Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-11Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-12Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-13Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-14Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-15Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-16Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-17Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-18Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-19Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-20Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-21Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-22Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-23Logo.svg
+  - title: title
+    src: /static/img/Platform-Installers-24Logo.svg

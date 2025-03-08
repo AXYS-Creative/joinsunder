@@ -4,6 +4,7 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-family: var(--font-family);
 
   // Autofill for form fields: input, textarea, select, etc. Feel free to delete if there are no forms
   &:-webkit-autofill,
@@ -64,24 +65,36 @@ body {
 }
 
 .site-header {
-  // No static content here to allow clickthrough
+  // border: $test;
+  @include row-center(space-between);
+  position: fixed;
+  top: var(--body-padding-sm);
+  left: 50%;
+  translate: -50% 0;
+  // height: var(--header-height);
+  z-index: $z-index--header;
+  width: var(--full-width-snip-sm);
+  max-width: var(--content-width);
+  padding: var(--body-padding) var(--body-padding);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  transition: $ease, width 0s;
 
-  & > * {
-    position: fixed;
-    z-index: $z-index--header;
-    transition: opacity 0.5s ease;
-  }
+  // & > * {
+  //   position: fixed;
+  //   z-index: $z-index--header;
+  //   transition: opacity 0.5s ease;
+  // }
 
-  .header-logo {
-    // see logo-link.scss for full styles
-    @include left-spacing;
-    // top: var(--body-padding);
-    top: calc(var(--body-padding) + var(--logo-offset));
-  }
+  // .header-logo {
+  //   // see logo-link.scss for full styles
+  //   @include left-spacing;
+  //   top: calc(var(--body-padding) + var(--logo-offset));
+  // }
 
   .site-nav-btn-wrapper {
-    @include right-spacing;
-    top: var(--body-padding);
+    // @include right-spacing;
+    // top: var(--body-padding);
     height: var(--header-height);
     aspect-ratio: 1;
     transition: opacity 0.3s ease;
@@ -152,17 +165,28 @@ body {
     }
   }
 
-  // &.away-from-top {
-  //   > * {
-  //     @include hide-content;
-  //   }
-  // }
+  &.away-from-top {
+    background: var(--background-color);
+    border: 2px solid $sunder-ice;
+    // box-shadow: 0 0 4px 2px rgba($sunder-ice, 0.5);
 
-  // &.nav-active {
-  //   > * {
-  //     @include show-content;
-  //   }
-  // }
+    // > * {
+    //   @include hide-content;
+    // }
+  }
+
+  &.near-bottom {
+    @include mq-max(lg) {
+      translate: -50% calc(-100% - var(--body-padding-sm));
+    }
+  }
+
+  &.nav-active {
+    background: transparent;
+    // > * {
+    //   @include show-content;
+    // }
+  }
 }
 
 .site-nav {
@@ -243,7 +267,9 @@ body {
         transition: width $ease;
       }
 
-      @include desktop-hover {
+      // @include desktop-hover // include hover for mobile/touch
+      &:hover,
+      &:focus-visible {
         border-color: var(--hero-color--primary);
         color: $blue;
 
@@ -415,7 +441,6 @@ span {
 }
 
 small {
-  font-family: $brand-font--body;
   font-size: 12px;
 }
 
@@ -431,101 +456,4 @@ ul {
 
 figure {
   font-size: 0; // Chrome's user agent stylesheet adds 1em padding-block-end
-}
-
-// Partials
-
-.section-img-hero {
-  // border: $test;
-  @include dark-theme;
-  @include top-fade-section;
-  padding: var(--body-padding);
-  // margin-inline: var(--body-padding-sm);
-
-  &__inner {
-    // border: $test;
-    // @include partial-viewport-section; // Consider a prop to remove for brand sections?
-    isolation: isolate;
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius);
-    padding: var(--body-padding);
-
-    @include mq-max(lg) {
-      padding-block: var(--body-padding-double);
-    }
-
-    // Blue gradient
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: linear-gradient(60deg, rgba($blue, 1) 0%, rgba($blue, 0) 70%);
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-
-      @include mq-max(md) {
-        background: linear-gradient(
-          180deg,
-          rgba($blue, 1) 15%,
-          rgba($blue, 0) 120%
-        );
-      }
-    }
-  }
-
-  &__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    // width: 110%;
-    height: 100%;
-    object-fit: cover;
-    // object-position: 0% 40%;
-    border-radius: var(--radius);
-    z-index: -2;
-    user-select: none;
-  }
-
-  &__h1,
-  &__h2 {
-    margin-block-end: var(--section-gap);
-
-    @include mq-max(md) {
-      text-align: center;
-    }
-  }
-
-  &__h1 {
-    @include h1;
-
-    @include mq-max(lg) {
-      @include h3;
-    }
-  }
-
-  &__p {
-    margin-block-end: var(--section-gap);
-
-    @include mq-min(md) {
-      width: 572px;
-    }
-
-    @include mq-max(md) {
-      text-align: center;
-    }
-  }
-
-  .cta-group {
-    @include mq-min(md) {
-      justify-content: flex-end;
-    }
-  }
-
-  // &.full-height {
-  //   @include full-viewport-section;
-  // }
 }

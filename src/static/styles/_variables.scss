@@ -1,5 +1,4 @@
-$brand-font--heading: "Satoshi", source-sans-pro, sans-serif;
-$brand-font--body: "Satoshi", source-sans-pro, sans-serif;
+$brand-font: "Satoshi", source-sans-pro, sans-serif;
 
 $sunder-snow: #f7f7f7;
 $sunder-ice-light: #efefef;
@@ -17,7 +16,7 @@ $blue: $sunder-royal-light;
 $blue-opaque: rgba($sunder-royal-light, 0.8);
 $red: #dc143c;
 
-$content-width: 1920px;
+$content-width: 1750px;
 
 // Layering
 $z-index--nav: 3;
@@ -52,9 +51,9 @@ $test-bg: rgba(navy, 0.75);
 
   --hero-color--primary: #{$blue};
 
-  --font-family--heading: #{$brand-font--heading};
-  --font-family--body: #{$brand-font--body};
+  --font-family: #{$brand-font};
 
+  // Button/Link Colors
   --btn-color-bg: #{$blue};
   --btn-color-text: #{$white};
   --btn-color-border: var(--btn-color-bg);
@@ -72,20 +71,25 @@ $test-bg: rgba(navy, 0.75);
   --link-color: #{$blue};
   --link-color-hover: #{$white};
 
+  // Surface Colors
   --surface-color: #{$sunder-ice}; // Nav menu bg
   --surface-color-2: #{$sunder-ice-light}; // Section gradient, form field bg
 
-  --content-width: #{$content-width};
+  // Size & Spacing
   --body-padding: 24px;
   --body-padding-double: calc(var(--body-padding) * 2);
   --body-padding-sm: 12px;
   --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
+
+  --content-width: #{$content-width};
 
   --full-width-snip: calc(100vw - var(--body-padding-double));
   --full-width-snip-sm: calc(100vw - var(--body-padding-sm-double));
 
   --full-height-snip: calc(100vh - var(--body-padding-double));
   --full-height-snip-sm: calc(100vh - var(--body-padding-sm-double));
+
+  --paragraph-snip: 572px; // for larger than md
 
   --section-min-height: 750px;
 
@@ -96,7 +100,7 @@ $test-bg: rgba(navy, 0.75);
   --logo-offset: 4px;
   --logo-height: calc(var(--header-height) - var(--logo-offset));
 
-  --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 1.5);
+  --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 3);
 
   --border-bold-girth: 4px;
   --border-bold-color: #{$grey};

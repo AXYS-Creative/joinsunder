@@ -1,0 +1,35 @@
+.section-logos {
+  @include section-fade;
+
+  &__h2 {
+    @include h3;
+    margin-block-end: 24px;
+
+    @include mq-max(md) {
+      text-align: center;
+    }
+  }
+
+  &__p {
+    @include paragraph-width-snip;
+  }
+
+  &__imgs {
+    @include row-center;
+    flex-wrap: wrap;
+
+    img {
+      flex: 1;
+      max-width: 20%;
+
+      @include mq-max(xl) {
+        max-width: 100%;
+        min-width: 200px;
+      }
+
+      @include mq-max(xs) {
+        min-width: 132px;
+      }
+    }
+  }
+}

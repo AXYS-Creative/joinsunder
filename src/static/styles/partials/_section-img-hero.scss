@@ -1,0 +1,86 @@
+.section-img-hero {
+  // border: $test;
+  @include dark-theme;
+  @include top-fade-section;
+  padding: var(--body-padding);
+  // margin-inline: var(--body-padding-sm);
+
+  &__inner {
+    // border: $test;
+    // @include partial-viewport-section; // Consider a prop to remove for brand sections?
+    isolation: isolate;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    padding: var(--body-padding);
+
+    @include mq-max(lg) {
+      padding-block: var(--body-padding-double);
+    }
+
+    // Blue gradient
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(60deg, rgba($blue, 1) 0%, rgba($blue, 0) 70%);
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      @include mq-max(md) {
+        background: linear-gradient(
+          180deg,
+          rgba($blue, 1) 15%,
+          rgba($blue, 0) 120%
+        );
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // width: 110%;
+    height: 100%;
+    object-fit: cover;
+    // object-position: 0% 40%;
+    border-radius: var(--radius);
+    z-index: -2;
+    user-select: none;
+  }
+
+  &__h1,
+  &__h2 {
+    margin-block-end: var(--section-gap);
+
+    @include mq-max(md) {
+      text-align: center;
+    }
+  }
+
+  &__h1 {
+    @include h1;
+
+    @include mq-max(lg) {
+      @include h3;
+    }
+  }
+
+  &__p {
+    @include paragraph-width-snip;
+  }
+
+  .cta-group {
+    @include mq-min(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  // &.full-height {
+  //   @include full-viewport-section;
+  // }
+}

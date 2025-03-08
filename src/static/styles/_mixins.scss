@@ -138,7 +138,6 @@ $min-breakpoints: (
   --font-size: 24px;
 
   color: var(--font-color--primary);
-  font-family: $brand-font--body;
   font-size: var(--font-size);
   font-weight: 500;
 
@@ -223,7 +222,7 @@ $min-breakpoints: (
 //   }
 // }
 
-// Not in use
+// Only using on 404 at the moment
 @mixin full-viewport-section {
   @include mq-min(xxl) {
     height: clamp(750px, 100vh, 1250px);
@@ -237,22 +236,6 @@ $min-breakpoints: (
     height: clamp(500px, 100svh, 950px);
   }
 }
-
-// section-img-hero... might need for other sections, might mess things up
-// @mixin partial-viewport-section {
-//   @include mq-min(xxl) {
-//     height: clamp(700px, 75vh, 1050px);
-//     // height: clamp(700px, auto, 1050px);
-//   }
-
-//   @include mq-max(xxl) {
-//     height: clamp(550px, 75vh, 750px);
-//   }
-
-//   @include mq-max(md) {
-//     height: clamp(500px, auto, 500px);
-//   }
-// }
 
 // Home & Join pages
 @mixin full-height-section {
@@ -291,6 +274,17 @@ $min-breakpoints: (
 @mixin top-fade-section {
   @include section-fade;
   margin-top: var(--top-spacing-header);
+}
+
+@mixin paragraph-width-snip {
+  margin-block-end: var(--section-gap);
+
+  @include mq-min(md) {
+    width: var(--paragraph-snip);
+  }
+  @include mq-max(md) {
+    text-align: center;
+  }
 }
 
 @mixin left-spacing {
