@@ -125,7 +125,7 @@ body:has(.load-complete) .hero div {
   width: var(--full-width-snip-sm);
   max-width: var(--content-width);
   padding: var(--body-padding) var(--body-padding);
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius);
   transition: 0.32s ease, width 0s;
 }
@@ -195,7 +195,7 @@ body:has(.load-complete) .hero div {
 }
 .site-header.away-from-top {
   background: var(--background-color);
-  border: 2px solid #d9d9d9;
+  border: 1px solid var(--surface-color);
 }
 @media screen and (max-width: 1024px) {
   .site-header.near-bottom {
