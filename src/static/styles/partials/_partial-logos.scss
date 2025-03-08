@@ -69,5 +69,13 @@
         }
       }
     }
+
+    &.grid-sm-1 {
+      img {
+        @include mq-max(sm) {
+          max-width: 100%;
+        }
+      }
+    }
   }
 }

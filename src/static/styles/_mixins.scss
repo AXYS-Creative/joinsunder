@@ -96,7 +96,6 @@ $min-breakpoints: (
 //
 
 @mixin heading-text {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;

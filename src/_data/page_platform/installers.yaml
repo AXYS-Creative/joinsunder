@@ -4,6 +4,7 @@ section_title: "Installers"
 section_desc: Sunder is partnered with with over [%span.h5%]20[%span%] installers nationwide.
 
 logo_grid: 5
+logo_grid_sm: 2
 
 img_list:
   - title: 1 Solar

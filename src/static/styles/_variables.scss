@@ -92,7 +92,7 @@ $test-bg: rgba(navy, 0.75);
 
   --paragraph-snip: 572px; // for larger than md
 
-  --section-min-height: 750px;
+  --section-min-height: 720px;
 
   --section-gap: 64px;
   --section-gap--lg: 64px;
@@ -112,7 +112,7 @@ $test-bg: rgba(navy, 0.75);
   --radius-btn: 10px;
 
   @media (max-width: 1512px) {
-    --section-min-height: 620px;
+    --section-min-height: 580px;
 
     --section-gap: 48px;
   }

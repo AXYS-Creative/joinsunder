@@ -4,6 +4,7 @@ section_title: Finance Options
 section_desc: Subtitle Description
 
 logo_grid: 4
+logo_grid_sm: 1
 
 img_list:
   - title: EnFin by Qcells

@@ -2,7 +2,9 @@
   <h2 class="logos-group__h2">{{ section_h2 }}</h2>
   <p class="logos-group__p">{{ section_desc }}</p>
 
-  <div class="logos-group__imgs grid-{{ logo_grid }}">
+  <div
+    class="logos-group__imgs grid-{{ logo_grid }} grid-sm-{{ logo_grid_sm }}"
+  >
     {% for item in section_logos %}
     <img src="{{ item.src }}" alt="{{ item.title }}" width="335" height="186" />
     {% endfor %}

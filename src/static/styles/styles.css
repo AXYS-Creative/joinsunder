@@ -31,7 +31,7 @@
   --full-height-snip: calc(100vh - var(--body-padding-double));
   --full-height-snip-sm: calc(100vh - var(--body-padding-sm-double));
   --paragraph-snip: 572px;
-  --section-min-height: 750px;
+  --section-min-height: 720px;
   --section-gap: 64px;
   --section-gap--lg: 64px;
   --header-height: 36px;
@@ -47,7 +47,7 @@
 }
 @media (max-width: 1512px) {
   :root {
-    --section-min-height: 620px;
+    --section-min-height: 580px;
     --section-gap: 48px;
   }
 }
@@ -85,6 +85,15 @@
 * input::-webkit-outer-spin-button,
 * input::-webkit-inner-spin-button {
   display: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body {
@@ -274,7 +283,6 @@ body:has(.load-complete) .hero div {
   }
 }
 .site-nav .nav-links__link {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -288,7 +296,6 @@ body:has(.load-complete) .hero div {
 }
 @media screen and (max-width: 1200px) {
   .site-nav .nav-links__link {
-    font-family: var(--font-family--heading);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -2px;
@@ -298,7 +305,6 @@ body:has(.load-complete) .hero div {
 }
 @media screen and (max-width: 1024px) {
   .site-nav .nav-links__link {
-    font-family: var(--font-family--heading);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -2px;
@@ -447,7 +453,6 @@ section {
 }
 
 h1 {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -456,7 +461,6 @@ h1 {
 }
 @media screen and (max-width: 1024px) {
   h1 {
-    font-family: var(--font-family--heading);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -2px;
@@ -693,7 +697,6 @@ figure {
 }
 @media all {
   .h5 {
-    font-family: var(--font-family--heading);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -2px;
@@ -846,7 +849,6 @@ figure {
   margin-block: 32px 64px;
 }
 .main-home .hero .hero-panel__title-sm {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -859,7 +861,6 @@ figure {
   }
 }
 .main-home .hero .hero-panel__title-lg {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -868,7 +869,6 @@ figure {
 }
 @media screen and (max-width: 1024px) {
   .main-home .hero .hero-panel__title-lg {
-    font-family: var(--font-family--heading);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -2px;
@@ -992,7 +992,6 @@ figure {
   }
 }
 .main-join .hero .form-panel__title {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -1026,7 +1025,6 @@ figure {
   margin-top: var(--top-spacing-header);
 }
 .section-ethos__title {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -1035,7 +1033,6 @@ figure {
 }
 @media screen and (max-width: 1024px) {
   .section-ethos__title {
-    font-family: var(--font-family--heading);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -2px;
@@ -1290,7 +1287,6 @@ figure {
   opacity: 1;
 }
 .social-media__label {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -1455,7 +1451,6 @@ figure {
   }
 }
 .partial-img-hero__h1 {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -1464,7 +1459,6 @@ figure {
 }
 @media screen and (max-width: 1024px) {
   .partial-img-hero__h1 {
-    font-family: var(--font-family--heading);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -2px;
@@ -1500,7 +1494,6 @@ figure {
   margin-block-start: var(--section-gap);
 }
 .logos-group__h2 {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -1574,6 +1567,11 @@ figure {
     max-width: 50%;
   }
 }
+@media screen and (max-width: 480px) {
+  .logos-group__imgs.grid-sm-1 img {
+    max-width: 100%;
+  }
+}
 
 .accordion {
   display: flex;
@@ -1598,7 +1596,6 @@ figure {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -1678,7 +1675,6 @@ figure {
   text-align: center;
 }
 .main-advanced .light .title {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -1690,7 +1686,6 @@ figure {
   margin-bottom: 24px;
 }
 .main-advanced .light .subtitle {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -2089,7 +2084,6 @@ figure {
 }
 
 .marquee {
-  font-family: var(--font-family--heading);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -2098,7 +2092,7 @@ figure {
   padding-inline: var(--body-padding);
   padding-block: var(--body-padding-double);
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   max-width: 1750px;
 }
 .marquee-inner {
