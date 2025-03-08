@@ -267,6 +267,7 @@ collections:
             hint: The time in milliseconds between each slide change
           - name: images
             label: Carousel Images
+            label_singular: Image
             widget: list
             required: true
             fields:
