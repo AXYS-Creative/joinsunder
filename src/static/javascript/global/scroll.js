@@ -11,11 +11,11 @@ window.addEventListener("scroll", () => {
   let nearBottom = currentScrollY + windowHeight >= documentHeight - 128; // Adjust threshold as needed
   let scrollingDown = currentScrollY > lastScrollY;
 
-  // if (awayFromTop) {
-  //   siteHeader.classList.add("away-from-top");
-  // } else {
-  //   siteHeader.classList.remove("away-from-top");
-  // }
+  if (awayFromTop) {
+    siteHeader.classList.add("away-from-top");
+  } else {
+    siteHeader.classList.remove("away-from-top");
+  }
 
   if (awayFromTop && scrollingDown) {
     siteHeader.classList.add("scrolling-down");

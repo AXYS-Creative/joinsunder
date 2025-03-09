@@ -179,11 +179,17 @@ body {
     }
   }
 
-  // &.away-from-top {
+  &.away-from-top {
+    background: var(--background-color);
+    border: 1px solid var(--surface-color);
+  }
 
-  // }
+  &.near-bottom {
+    @include mq-max(lg) {
+      translate: -50% calc(-100% - var(--body-padding-sm));
+    }
+  }
 
-  &.near-bottom,
   &.scrolling-down {
     translate: -50% calc(-100% - var(--body-padding-sm));
   }

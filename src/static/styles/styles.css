@@ -206,7 +206,16 @@ body:has(.load-complete) .hero div {
 .site-header .site-nav-btn-wrapper .site-nav-btn[aria-expanded=true] .site-nav-btn-line:last-of-type {
   rotate: 90deg;
 }
-.site-header.near-bottom, .site-header.scrolling-down {
+.site-header.away-from-top {
+  background: var(--background-color);
+  border: 1px solid var(--surface-color);
+}
+@media screen and (max-width: 1024px) {
+  .site-header.near-bottom {
+    translate: -50% calc(-100% - var(--body-padding-sm));
+  }
+}
+.site-header.scrolling-down {
   translate: -50% calc(-100% - var(--body-padding-sm));
 }
 .site-header.nav-active {
