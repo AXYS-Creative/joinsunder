@@ -196,6 +196,8 @@ body {
 
   &.nav-active {
     translate: -50% 0;
+    background: transparent;
+    border: 1px solid transparent;
   }
 }
 

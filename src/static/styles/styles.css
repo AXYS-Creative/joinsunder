@@ -220,6 +220,8 @@ body:has(.load-complete) .hero div {
 }
 .site-header.nav-active {
   translate: -50% 0;
+  background: transparent;
+  border: 1px solid transparent;
 }
 
 .site-nav {
@@ -585,6 +587,7 @@ figure {
   font-size: 20px;
   font-weight: 900;
   letter-spacing: -0.5px;
+  position: relative;
 }
 @media screen and (max-width: 1024px) {
   .classic-link {
@@ -597,9 +600,26 @@ figure {
     transition: 0.32s ease;
   }
 }
+.classic-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  left: 0;
+  height: 2px;
+  background-color: currentColor;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .classic-link::before {
+    transition: width 0.32s ease;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   .classic-link:hover, .classic-link:focus-visible {
     color: var(--link-color-hover);
+  }
+  .classic-link:hover::before, .classic-link:focus-visible::before {
+    width: 100%;
   }
 }
 
