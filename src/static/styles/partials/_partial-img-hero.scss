@@ -5,7 +5,7 @@
   // margin-inline: var(--body-padding-sm);
 
   &__inner {
-    // @include partial-viewport-section; // Consider a prop to remove for brand sections?
+    @include column-start(flex-end);
     isolation: isolate;
     position: relative;
     overflow: hidden;
@@ -14,6 +14,10 @@
 
     @include mq-max(lg) {
       padding-block: var(--body-padding-double);
+    }
+
+    @include mq-max(md) {
+      @include column-center(flex-start);
     }
 
     // Blue gradient
@@ -40,12 +44,10 @@
   &__bg {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
-    // width: 110%;
     height: 100%;
     object-fit: cover;
-    // object-position: 0% 40%;
     border-radius: var(--radius);
     z-index: -2;
     user-select: none;
@@ -68,8 +70,23 @@
     }
   }
 
+  &__graphic {
+    width: 400px;
+    margin-block-end: var(--body-padding);
+
+    @include mq-max(md) {
+      width: 50%;
+      margin-block-end: var(--section-gap);
+    }
+  }
+
+  &__footer {
+    width: 100%;
+  }
+
   &__p {
     @include paragraph-width-snip;
+    margin-block-end: var(--section-gap);
   }
 
   .cta-group {
@@ -78,7 +95,51 @@
     }
   }
 
-  // &.full-height {
-  //   @include full-viewport-section;
-  // }
+  &.tools {
+    .partial-img-hero__inner {
+      @include partial-height-section;
+
+      background-color: var(--surface-color-3);
+      // padding: var(--body-padding-double); // overrides with original above
+
+      // Blue gradient
+      &::before {
+        background: linear-gradient(
+          60deg,
+          rgba($blue, 1) 30%,
+          rgba($blue, 0) 70%
+        );
+
+        @include mq-max(md) {
+          background: linear-gradient(
+            180deg,
+            rgba($blue, 1) 32%,
+            rgba($blue, 0) 70%
+          );
+        }
+      }
+    }
+
+    .partial-img-hero__bg {
+      @include mq-min(md) {
+        right: -12%;
+      }
+      @include mq-max(md) {
+        scale: 1.25;
+      }
+    }
+
+    .partial-img-hero__p {
+      margin: 0;
+    }
+
+    .partial-img-hero__footer {
+      @include row-end(space-between);
+
+      @include mq-max(md) {
+        @include column-center(space-between);
+        flex: 1;
+      }
+    }
+  }
 }

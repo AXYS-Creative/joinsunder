@@ -1,4 +1,10 @@
-<section class="partial-img-hero {{ section_img_hero_class }}">
+<!-- prettier-ignore -->
+<section 
+class="partial-img-hero {{ section_img_hero_class }}"
+{% if section_id %}
+  id="{{ section_id }}"
+{% endif %}
+>
   <div class="partial-img-hero__inner">
     <!-- prettier-ignore -->
     <img
@@ -13,7 +19,12 @@
     />
 
     {% if section_graphic %}
-    <img src="{{ section_graphic }}" alt="" />
+    <img
+      class="partial-img-hero__graphic"
+      src="{{ section_graphic.src }}"
+      alt="{{ section_graphic.alt }}"
+      eleventy:ignore
+    />
     {% endif %}
 
     <!-- prettier-ignore -->
@@ -26,9 +37,11 @@
     <h2 class="partial-img-hero__h2">{{ section_h2 }}</h2>
     {% endif %}
 
-    <p class="partial-img-hero__p">{{ section_p }}</p>
+    <div class="partial-img-hero__footer">
+      <p class="partial-img-hero__p">{{ section_p }}</p>
 
-    <!-- prettier-ignore -->
-    {% include "../components/cta-group.njk" %}
+      <!-- prettier-ignore -->
+      {% include "../components/cta-group.njk" %}
+    </div>
   </div>
 </section>

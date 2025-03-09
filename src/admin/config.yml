@@ -236,6 +236,54 @@ collections:
                 label: Image Source
                 widget: image
                 required: true
+      - name: "tools_enzy"
+        label: "Section - Tool (Enzy)"
+        file: "src/_data/page_platform/tools_enzy.yaml"
+        preview_path: "/platform#enzy"
+        editor:
+          preview: false
+        fields:
+          - name: "toggle_section"
+            label: "Show Section (Sunder Platform Tool Enzy)"
+            widget: "boolean"
+            default: true
+          - name: "section_graphic"
+            label: "Section Graphic"
+            widget: "object"
+            required: false
+            fields:
+              - name: "src"
+                label: "Image Source"
+                widget: "image"
+                required: true
+              - name: "alt"
+                label: "Image Title"
+                widget: "string"
+                required: true
+          - name: "section_desc"
+            label: "Section Description"
+            widget: "text"
+            required: true
+          - name: "section_bg"
+            label: "Section Background Image"
+            widget: "image"
+            required: true
+          - name: "cta"
+            label: "Call To Action"
+            widget: "object"
+            summary: "{{ fields.name }}: {{ fields.url }}"
+            required: true
+            fields:
+              - name: text
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
+                hint: An empty value removes the button
   - name: "page_spare_1"
     label: "Page - Spare"
     files:

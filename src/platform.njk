@@ -19,7 +19,6 @@ hide_footer: false
 {% set cta_1_text = page_platform.hero.cta.text %}
 {% set cta_1_url = page_platform.hero.cta.url %}
 {% set is_hero = true %}
-{% set section_img_hero_class = 'full-height' %}
 {% if page_platform.hero.toggle_section %}
   {% include "./_includes/partials/partial-img-hero.njk" %}
 {% endif %}
@@ -47,3 +46,40 @@ hide_footer: false
     {% include "./_includes/partials/partial-logos.njk" %}
   {% endif %}
 </section>
+
+<!-- prettier-ignore -->
+{% set section_id = "enzy" %}
+{% set section_h1 = '' %}
+{% set section_h2 = '' %}
+{% set section_p = page_platform.tools_enzy.section_desc %}
+{% set section_graphic = page_platform.tools_enzy.section_graphic %}
+{% set section_bg = page_platform.tools_enzy.section_bg %}
+{% set cta_1_text = page_platform.tools_enzy.cta.text %}
+{% set cta_1_url = page_platform.tools_enzy.cta.url %}
+{% set is_hero = false %}
+{% set section_img_hero_class = 'tools' %}
+{% if page_platform.tools_enzy.toggle_section %}
+  {% include "./_includes/partials/partial-img-hero.njk" %}
+{% endif %}
+
+<!-- prettier-ignore -->
+{% set section_id = "merdeka" %}
+{% set section_p = page_platform.tools_merdeka.section_desc %}
+{% set section_graphic = page_platform.tools_merdeka.section_graphic %}
+{% set section_bg = page_platform.tools_merdeka.section_bg %}
+{% set cta_1_text = page_platform.tools_merdeka.cta.text %}
+{% set cta_1_url = page_platform.tools_merdeka.cta.url %}
+{% if page_platform.tools_merdeka.toggle_section %}
+  {% include "./_includes/partials/partial-img-hero.njk" %}
+{% endif %}
+
+<!-- prettier-ignore -->
+{% set section_id = "captivateiq" %}
+{% set section_p = page_platform.tools_captivate.section_desc %}
+{% set section_graphic = page_platform.tools_captivate.section_graphic %}
+{% set section_bg = page_platform.tools_captivate.section_bg %}
+{% set cta_1_text = page_platform.tools_captivate.cta.text %}
+{% set cta_1_url = page_platform.tools_captivate.cta.url %}
+{% if page_platform.tools_captivate.toggle_section %}
+  {% include "./_includes/partials/partial-img-hero.njk" %}
+{% endif %}

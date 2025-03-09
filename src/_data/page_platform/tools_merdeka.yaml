@@ -1,0 +1,11 @@
+toggle_section: true
+
+section_graphic:
+  src: /static/img/Platform-Tools-2LogoMerdeka.svg
+  alt: Merdeka
+section_desc: Sunder’s proprietary platform that enables customer success, automated commissions, and data flows across 20+ install partners.
+section_bg: /static/img/Platform-Tools-2Merdeka.png
+
+cta:
+  text: Learn More
+  url: /join

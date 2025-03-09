@@ -299,6 +299,7 @@ body {
 
         .reveal {
           width: 5.75ch;
+          pointer-events: none;
 
           @include mq-max(xl) {
             width: 5.6ch;

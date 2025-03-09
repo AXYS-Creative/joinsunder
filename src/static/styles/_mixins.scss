@@ -250,6 +250,19 @@ $min-breakpoints: (
   }
 }
 
+// // Platform Tools
+@mixin partial-height-section {
+  height: max(620px, 60vh);
+
+  @include mq-max(xxl) {
+    height: max(540px, 50vh);
+  }
+
+  @include mq-max(lg) {
+    min-height: 450px;
+  }
+}
+
 @mixin section-padding($type: regular) {
   padding-inline: var(--body-padding);
   padding-block: var(--body-padding-double);
@@ -276,8 +289,6 @@ $min-breakpoints: (
 }
 
 @mixin paragraph-width-snip {
-  margin-block-end: var(--section-gap);
-
   @include mq-min(md) {
     width: var(--paragraph-snip);
   }
