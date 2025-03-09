@@ -2,7 +2,7 @@ autoplay_interval: 5000
 
 images:
   - title: "Title 1"
-    src: "/static/img/Join-Form-1Photo"
+    src: "/static/img/Join-Form-1Photo.png"
   - title: "Title 2"
     src: "/static/img/Landing-Hero-BG1.png"
   - title: "Title 3"

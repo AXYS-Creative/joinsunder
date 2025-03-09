@@ -124,7 +124,7 @@ body {
       transition: $ease-c;
 
       @include mq-max(lg) {
-        --line-offset: 2.25px;
+        --line-offset: 3px;
       }
 
       &:hover,
@@ -150,6 +150,7 @@ body {
 
         @include mq-max(lg) {
           height: 2.5px;
+          width: 150%;
         }
 
         &:first-of-type {
