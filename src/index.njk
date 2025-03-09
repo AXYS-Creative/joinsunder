@@ -20,25 +20,20 @@ hide_footer: true
       class="hero-panel__bg-img"
       src="{{ page_home.hero.external_panel.bg_img }}"
       alt=""
-      width=""
-      height=""
-      loading="eager"
     />
     <img
       class="hero-panel__logo"
       src="{{ page_home.hero.external_panel.logo }}"
       alt=""
-      width=""
-      height=""
-      loading="eager"
+      eleventy:ignore
     />
     <h2 class="hero-panel__title">
-      <span class="hero-panel__title-sm">{{
-        page_home.hero.external_panel.pre_title
-      }}</span>
-      <span class="hero-panel__title-lg">{{
-        page_home.hero.external_panel.title
-      }}</span>
+      <span class="hero-panel__title-sm">
+        {{ page_home.hero.external_panel.pre_title }}
+      </span>
+      <span class="hero-panel__title-lg">
+        {{ page_home.hero.external_panel.title }}
+      </span>
     </h2>
     <!-- prettier-ignore -->
     {% set cta_1_text = page_home.hero.external_panel.cta_text %}
@@ -51,25 +46,20 @@ hide_footer: true
       class="hero-panel__bg-img"
       src="{{ page_home.hero.internal_panel.bg_img }}"
       alt=""
-      width=""
-      height=""
-      loading="eager"
     />
     <img
       class="hero-panel__logo"
       src="{{ page_home.hero.internal_panel.logo }}"
       alt=""
-      width=""
-      height=""
-      loading="eager"
+      eleventy:ignore
     />
     <h2 class="hero-panel__title">
-      <span class="hero-panel__title-sm">{{
-        page_home.hero.internal_panel.pre_title
-      }}</span>
-      <span class="hero-panel__title-lg">{{
-        page_home.hero.internal_panel.title
-      }}</span>
+      <span class="hero-panel__title-sm">
+        {{ page_home.hero.internal_panel.pre_title }}
+      </span>
+      <span class="hero-panel__title-lg">
+        {{ page_home.hero.internal_panel.title }}
+      </span>
     </h2>
 
     <!-- prettier-ignore -->

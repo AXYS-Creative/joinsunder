@@ -2,6 +2,7 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -15,6 +16,20 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "dd LLL yyyy"
     );
+  });
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "jpeg"], // Modern formats
+    widths: [320, 640, 1280, 1920], // No extra-large images
+    htmlOptions: {
+      imgAttributes: {
+        sizes:
+          "(max-width: 600px) 320px, (max-width: 1200px) 640px, (max-width: 1800px) 1280px, 1920px",
+        loading: "lazy",
+        decoding: "async",
+      },
+      pictureAttributes: {},
+    },
   });
 
   // Syntax Highlighting for Code blocks

@@ -6,7 +6,13 @@
     class="logos-group__imgs grid-{{ logo_grid }} grid-sm-{{ logo_grid_sm }}"
   >
     {% for item in section_logos %}
-    <img src="{{ item.src }}" alt="{{ item.title }}" width="335" height="186" />
+    <img
+      src="{{ item.src }}"
+      alt="{{ item.title }}"
+      width="335"
+      height="186"
+      eleventy:ignore
+    />
     {% endfor %}
   </div>
 </div>

@@ -2,11 +2,11 @@ autoplay_interval: 5000
 
 images:
   - title: "Title 1"
-    src: "/static/img/join-img-1.avif"
+    src: "/static/img/Join-Form-1Photo"
   - title: "Title 2"
-    src: "/static/img/home-img-2.avif"
+    src: "/static/img/Landing-Hero-BG1.png"
   - title: "Title 3"
-    src: "/static/img/home-img-1.avif"
+    src: "/static/img/Landing-Hero-BG2.png"
 
 section_title: Join Sunder
 
