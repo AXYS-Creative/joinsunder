@@ -8,8 +8,6 @@ description: #CHANGE ME
 # master props
 hide_header: false
 hide_footer: false
-# Page notes
-# Using eager loading for computed/dynamic height. Only use fetchpriority sparingly
 ---
 
 <!-- prettier-ignore -->
@@ -48,38 +46,23 @@ hide_footer: false
 </section>
 
 <!-- prettier-ignore -->
-{% set section_id = "enzy" %}
-{% set section_h1 = '' %}
-{% set section_h2 = '' %}
-{% set section_p = page_platform.tools_enzy.section_desc %}
-{% set section_graphic = page_platform.tools_enzy.section_graphic %}
-{% set section_bg = page_platform.tools_enzy.section_bg %}
-{% set cta_1_text = page_platform.tools_enzy.cta.text %}
-{% set cta_1_url = page_platform.tools_enzy.cta.url %}
-{% set is_hero = false %}
-{% set section_img_hero_class = 'tools' %}
-{% if page_platform.tools_enzy.toggle_section %}
-  {% include "./_includes/partials/partial-img-hero.njk" %}
-{% endif %}
-
-<!-- prettier-ignore -->
-{% set section_id = "merdeka" %}
-{% set section_p = page_platform.tools_merdeka.section_desc %}
-{% set section_graphic = page_platform.tools_merdeka.section_graphic %}
-{% set section_bg = page_platform.tools_merdeka.section_bg %}
-{% set cta_1_text = page_platform.tools_merdeka.cta.text %}
-{% set cta_1_url = page_platform.tools_merdeka.cta.url %}
-{% if page_platform.tools_merdeka.toggle_section %}
-  {% include "./_includes/partials/partial-img-hero.njk" %}
-{% endif %}
-
-<!-- prettier-ignore -->
-{% set section_id = "captivateiq" %}
-{% set section_p = page_platform.tools_captivate.section_desc %}
-{% set section_graphic = page_platform.tools_captivate.section_graphic %}
-{% set section_bg = page_platform.tools_captivate.section_bg %}
-{% set cta_1_text = page_platform.tools_captivate.cta.text %}
-{% set cta_1_url = page_platform.tools_captivate.cta.url %}
-{% if page_platform.tools_captivate.toggle_section %}
-  {% include "./_includes/partials/partial-img-hero.njk" %}
+{% if page_platform.tools.toggle_section %}
+<section class="section-tools" id="platform-tools">
+  <h2 class="sr-only">
+    {{ page_platform.tools.section_title or page_platform.tools.section_title_default }}
+  </h2>
+  <!-- prettier-ignore -->
+  {% for tool in page_platform.tools.list %}
+    {% set is_hero = false %}
+    {% set section_h1 = '' %}
+    {% set section_h2 = '' %}
+    {% set section_graphic = tool.graphic %}
+    {% set section_bg = tool.section_bg %}
+    {% set section_p = tool.section_desc %}
+    {% set section_img_hero_class = 'tools stack-section' %}
+    {% set cta_1_text = tool.cta.text %}
+    {% set cta_1_url = tool.cta.url %}
+    {% include "./_includes/partials/partial-img-hero.njk" %}
+  {% endfor %}
+</section>
 {% endif %}

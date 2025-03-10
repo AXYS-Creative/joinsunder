@@ -1,5 +1,5 @@
 <!-- prettier-ignore -->
-<section 
+<{% if is_hero %}section{% else %}div{% endif %}
 class="partial-img-hero {{ section_img_hero_class }}"
 {% if section_id %}
   id="{{ section_id }}"
@@ -21,8 +21,8 @@ class="partial-img-hero {{ section_img_hero_class }}"
     {% if section_graphic %}
     <img
       class="partial-img-hero__graphic"
-      src="{{ section_graphic.src }}"
-      alt="{{ section_graphic.alt }}"
+      src="{{ section_graphic }}"
+      alt=""
       eleventy:ignore
     />
     {% endif %}
@@ -44,4 +44,4 @@ class="partial-img-hero {{ section_img_hero_class }}"
       {% include "../components/cta-group.njk" %}
     </div>
   </div>
-</section>
+</{% if is_hero %}section{% else %}div{% endif %}>

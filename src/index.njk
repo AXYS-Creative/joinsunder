@@ -8,13 +8,11 @@ description: Welcome to Sunder, America's leading solar sales company. Empower y
 # master props
 hide_header: true
 hide_footer: true
-# Page notes
-# Using eager loading for computed/dynamic height. Only use fetchpriority sparingly
 ---
 
 <section class="hero">
   <h1 class="sr-only">
-    {{ page_home.hero.section_title or 'Welcome to Sunder Energy'}}
+    {{ page_home.hero.section_title or page_home.hero.section_title_default }}
   </h1>
 
   <div class="hero-panel sunder-external">

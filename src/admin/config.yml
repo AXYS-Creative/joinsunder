@@ -142,7 +142,7 @@ collections:
             label: "Call To Action"
             widget: "object"
             summary: "{{ fields.name }}: {{ fields.url }}"
-            required: true
+            required: false
             fields:
               - name: text
                 label: Button Text
@@ -236,54 +236,59 @@ collections:
                 label: Image Source
                 widget: image
                 required: true
-      - name: "tools_enzy"
-        label: "Section - Tool (Enzy)"
-        file: "src/_data/page_platform/tools_enzy.yaml"
-        preview_path: "/platform#enzy"
+      - name: "tools"
+        label: "Section - Tools"
+        file: "src/_data/page_platform/tools.yaml"
+        preview_path: "/platform#platform-tools"
         editor:
           preview: false
         fields:
           - name: "toggle_section"
-            label: "Show Section (Sunder Platform Tool Enzy)"
+            label: "Show Section (Sunder Platform Tools)"
             widget: "boolean"
             default: true
-          - name: "section_graphic"
-            label: "Section Graphic"
-            widget: "object"
-            required: false
+          - name: "toggle_title"
+            label: "Show Title"
+            widget: "string"
+            required: true
+            hint: Semantic page heading for accessibility and SEO. Not visually shown on the page (per design) but improves site indexing and other areas. If left blank, defaults to 'Sunder Tools'
+          - name: "list"
+            label: "Tools List"
+            widget: "list"
+            required: true
             fields:
-              - name: "src"
-                label: "Image Source"
-                widget: "image"
-                required: true
-              - name: "alt"
-                label: "Image Title"
+              - name: "title"
+                label: "Title"
                 widget: "string"
                 required: true
-          - name: "section_desc"
-            label: "Section Description"
-            widget: "text"
-            required: true
-          - name: "section_bg"
-            label: "Section Background Image"
-            widget: "image"
-            required: true
-          - name: "cta"
-            label: "Call To Action"
-            widget: "object"
-            summary: "{{ fields.name }}: {{ fields.url }}"
-            required: true
-            fields:
-              - name: text
-                label: Button Text
-                widget: string
+              - name: "graphic"
+                label: "Tool Logo"
+                widget: "image"
+                required: true
+              - name: "section_desc"
+                label: "Tool Description"
+                widget: "text"
+                required: true
+              - name: "section_bg"
+                label: "Tool Background Image"
+                widget: "image"
+                required: true
+              - name: "cta"
+                label: "Call To Action"
+                widget: "object"
+                summary: "{{ fields.name }}: {{ fields.url }}"
                 required: false
-                hint: An empty value removes the button
-              - name: url
-                label: Button URL
-                widget: string
-                required: false
-                hint: An empty value removes the button
+                fields:
+                  - name: text
+                    label: Button Text
+                    widget: string
+                    required: false
+                    hint: An empty value removes the button
+                  - name: url
+                    label: Button URL
+                    widget: string
+                    required: false
+                    hint: An empty value removes the button
   - name: "page_spare_1"
     label: "Page - Spare"
     files:

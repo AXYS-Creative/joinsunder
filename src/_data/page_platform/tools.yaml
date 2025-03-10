@@ -1,0 +1,30 @@
+toggle_section: true
+section_title: Sunder Tools
+section_title_default: Sunder Tools #if this changes update config file
+
+list:
+  - title: Enzy
+    graphic: /static/img/Platform-Tools-1LogoEnzy.svg
+    section_desc: Enzy is an innovative sales software that provides tools to recognize, reinforce, and reward your performance.
+    section_bg: /static/img/Platform-Tools-1Enzy.png
+    cta:
+      text: Learn More
+      url: /join
+  - title: Merdeka
+    graphic: /static/img/Platform-Tools-2LogoMerdeka.svg
+    section_desc: Sunder’s proprietary platform that enables customer success, automated commissions, and data flows across 20+ install partners.
+    section_bg: /static/img/Platform-Tools-2Merdeka.png
+    cta:
+      text: Learn More
+      url: /join
+  - title: Captivate IQ
+    graphic: /static/img/Platform-Tools-3LogoCIQ.svg
+    section_desc: >
+      CaptivateIQ is the solution for managing sales commissions.
+      [%br.lg-up%]
+      [%br.lg-up%]
+      Customized to our needs and structure, CIQ simplifies our pay process so reps are paid more accurately, more quickly, and more transparently.
+    section_bg: /static/img/Platform-Tools-3CIQ.png
+    cta:
+      text: Learn More
+      url: /join

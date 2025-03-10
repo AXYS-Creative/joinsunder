@@ -99,6 +99,9 @@ $test-bg: rgba(navy, 0.75);
   --section-gap--lg: 64px;
 
   --header-height: 36px;
+  --header-max-width: calc(
+    var(--content-width) - var(--body-padding-sm-double)
+  ); // used on both header and nav menu
   --logo-offset: 4px;
   --logo-height: calc(var(--header-height) - var(--logo-offset));
 

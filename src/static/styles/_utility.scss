@@ -37,27 +37,37 @@
   @include sr-only;
 }
 
-// Library
-@media all {
-  .magnet {
-    transition: $magnet;
-  }
+.stack-section {
+  position: sticky;
+  top: calc(var(--top-spacing-header) + var(--body-padding-sm-double));
+  transition: $ease;
 
-  .fill-text,
-  .fill-text-hover {
-    @include fill-text;
-
-    &:is(.fill-text-hover) {
-      background-size: 0%;
-      // -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
-      transition: $ease;
-
-      @include desktop-hover {
-        background-size: 100%;
-      }
-    }
+  &.scrolling-down {
+    top: var(--body-padding-sm);
   }
 }
+
+// // Library
+// @media all {
+//   .magnet {
+//     transition: $magnet;
+//   }
+
+//   .fill-text,
+//   .fill-text-hover {
+//     @include fill-text;
+
+//     &:is(.fill-text-hover) {
+//       background-size: 0%;
+//       // -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+//       transition: $ease;
+
+//       @include desktop-hover {
+//         background-size: 100%;
+//       }
+//     }
+//   }
+// }
 
 // Media Query Utility, be mindful of flex vs block
 @media all {

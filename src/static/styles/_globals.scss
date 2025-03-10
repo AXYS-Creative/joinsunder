@@ -83,13 +83,15 @@ body {
   // height: var(--header-height);
   z-index: $z-index--header;
   width: var(--full-width-snip-sm);
-  max-width: var(--content-width);
-  padding: var(--body-padding) var(--body-padding);
+  max-width: var(--header-max-width);
+  padding: var(--body-padding);
   border: 1px solid transparent;
   border-radius: var(--radius);
   transition: $ease, width 0s;
 
-  &:focus-within {
+  // :focus-within causes the header to persist on click, creating unwanted visibility on scroll
+  &:has(.header-logo:focus-visible),
+  &:has(.site-nav-btn:focus-visible) {
     translate: -50% 0 !important;
   }
 
@@ -106,9 +108,11 @@ body {
   // }
 
   .site-nav-btn-wrapper {
+    --nav-btn-height: 36px;
     // @include right-spacing;
     // top: var(--body-padding);
-    height: var(--header-height);
+    // height: var(--header-height);
+    height: var(--nav-btn-height);
     aspect-ratio: 1;
     transition: opacity 0.3s ease;
 
@@ -224,7 +228,7 @@ body {
     @include column-start(space-between);
     margin: auto;
     background-color: var(--surface-color);
-    max-width: $content-width;
+    max-width: var(--header-max-width);
     width: calc(100vw - var(--body-padding-sm-double));
     height: calc(100dvh - var(--body-padding-sm-double));
     min-height: var(--section-min-height); //Triggers overflow content
