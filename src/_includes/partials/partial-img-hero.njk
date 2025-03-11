@@ -1,5 +1,7 @@
+{% set container_tag = "section" if is_hero else "div" %}
+
 <!-- prettier-ignore -->
-<{% if is_hero %}section{% else %}div{% endif %}
+<{{ container_tag }}
 class="partial-img-hero {{ section_img_hero_class }}"
 {% if section_id %}
   id="{{ section_id }}"
@@ -44,4 +46,4 @@ class="partial-img-hero {{ section_img_hero_class }}"
       {% include "../components/cta-group.njk" %}
     </div>
   </div>
-</{% if is_hero %}section{% else %}div{% endif %}>
+</{{ container_tag }}>

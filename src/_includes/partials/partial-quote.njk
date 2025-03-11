@@ -1,0 +1,29 @@
+{% set h_tag_title = "h3" if section_title else "h2" %}
+{% set h_tag_name = "h4" if section_title else "h3" %}
+{% set h_tag_role = "h5" if section_title else "h4" %}
+
+<section class="partial-quote">
+  {% if section_title %}
+  <h2 class="sr-only">{{ section_title }}</h2>
+  {% endif %}
+
+  <!-- prettier-ignore -->
+  {% for quote_block in quote_list %}
+  <div class="quote">
+    <figure class="quote__figure">
+      <img class="quote__figure-img" src="{{ quote_block.img_src }}" alt="">
+      <figcaption class="quote__figure-caption">
+        <{{h_tag_name}} class="quote__figure-caption-name">{{ quote_block.name }}</{{h_tag_name}}>
+        <{{h_tag_role}} class="quote__figure-caption-role">{{ quote_block.role }}</{{h_tag_role}}>
+      </figcaption>
+    </figure>
+
+    <div class="quote__text-block">
+      <{{h_tag_title}} class="quote__text-block-title">
+        {{ quote_block.title }}
+      </{{h_tag_title}}>
+      <blockquote>“{{ quote_block.quote }}”</blockquote>
+    </div>
+  </div>
+  {% endfor %}
+</section>

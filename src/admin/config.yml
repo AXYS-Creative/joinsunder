@@ -247,13 +247,14 @@ collections:
             label: "Show Section (Sunder Platform Tools)"
             widget: "boolean"
             default: true
-          - name: "toggle_title"
-            label: "Show Title"
+          - name: "section_title"
+            label: "Section Title"
             widget: "string"
             required: true
             hint: Semantic page heading for accessibility and SEO. Not visually shown on the page (per design) but improves site indexing and other areas. If left blank, defaults to 'Sunder Tools'
           - name: "list"
             label: "Tools List"
+            label_singular: "Tool"
             widget: "list"
             required: true
             fields:

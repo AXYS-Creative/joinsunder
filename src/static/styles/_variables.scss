@@ -96,7 +96,8 @@ $test-bg: rgba(navy, 0.75);
   --section-min-height: 720px;
 
   --section-gap: 64px;
-  --section-gap--lg: 64px;
+  --section-gap-double: calc(var(--section-gap) * 2);
+  --section-gap-half: calc(var(--section-gap) / 2);
 
   --header-height: 36px;
   --header-max-width: calc(
@@ -127,7 +128,7 @@ $test-bg: rgba(navy, 0.75);
   }
 
   @media (max-width: 768px) {
-    --body-padding: 16px;
+    --body-padding: 18px;
 
     --logo-offset: 6px;
 

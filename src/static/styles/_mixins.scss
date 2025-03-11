@@ -124,14 +124,19 @@ $min-breakpoints: (
   font-size: 36px;
 }
 
-// Laning page
+// Landing page
 @mixin h5 {
   @include heading-text;
   font-size: 24px;
   letter-spacing: -1px;
 }
 
-// No h6 listed in Figma
+// No h6 listed in Figma, sharing with button-text
+@mixin h6 {
+  @include heading-text;
+  font-size: 20px;
+  letter-spacing: -1px;
+}
 
 @mixin body-font-styles($size: md) {
   --font-size: 24px;

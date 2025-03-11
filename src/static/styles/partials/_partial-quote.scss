@@ -1,0 +1,94 @@
+.partial-quote {
+  @include column-center;
+
+  @include mq-min(xl) {
+    padding-inline: calc(var(--body-padding-double) * 2);
+  }
+
+  .quote {
+    @include row-center;
+    gap: var(--section-gap-double);
+
+    @include mq-max(xl) {
+      gap: var(--section-gap);
+    }
+
+    @include mq-max(lg) {
+      flex-direction: column;
+    }
+
+    &__figure {
+      @include dark-theme;
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 1;
+
+      @include mq-min(md) {
+        width: 70%;
+      }
+
+      @include mq-min(lg) {
+        width: 32%;
+        min-width: 400px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+          0deg,
+          rgba($blue, 1) 0%,
+          rgba($blue, 0) 64%
+        );
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      &-img {
+        @include absolute-center;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      &-caption {
+        position: absolute;
+        bottom: var(--body-padding);
+        left: var(--body-padding);
+        z-index: 1;
+
+        &-name {
+          @include h3;
+        }
+
+        &-role {
+          @include h6;
+        }
+      }
+    }
+
+    &__text-block {
+      @include mq-min(lg) {
+        width: 60%;
+      }
+      @include mq-max(lg) {
+        text-align: center;
+        margin-block-end: var(--section-gap);
+      }
+
+      &-title {
+        @include h3;
+
+        @include mq-max(lg) {
+          @include h4;
+          text-align: center;
+          margin-block-end: var(--section-gap-half);
+        }
+      }
+    }
+  }
+}

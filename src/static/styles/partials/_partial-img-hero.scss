@@ -2,7 +2,6 @@
   @include dark-theme;
   @include top-fade-section;
   padding: var(--body-padding);
-  // margin-inline: var(--body-padding-sm);
 
   &__inner {
     @include column-start(flex-end);
@@ -100,7 +99,7 @@
       @include partial-height-section;
 
       background-color: var(--surface-color-3);
-      // padding: var(--body-padding-double); // overrides with original above
+      padding: var(--body-padding-double); // overrides with original above
 
       // Blue gradient
       &::before {
@@ -113,8 +112,8 @@
         @include mq-max(md) {
           background: linear-gradient(
             180deg,
-            rgba($blue, 1) 32%,
-            rgba($blue, 0) 70%
+            rgba($blue, 1) 36%,
+            rgba($blue, 0) 80%
           );
         }
       }
@@ -142,8 +141,58 @@
       }
     }
   }
+
+  // One-off requests
+  &.enzy {
+    .partial-img-hero__bg {
+      @include mq-max(lg) {
+        top: -7.5%;
+        scale: 1.75;
+      }
+    }
+  }
+
+  &.merdeka {
+    // top: 48px;
+
+    .partial-img-hero__bg {
+      width: 92%;
+
+      @include mq-max(lg) {
+        scale: 1;
+        width: 100%;
+      }
+    }
+  }
+
+  &.ciq {
+    .partial-img-hero__inner::before {
+      @include mq-max(md) {
+        background: linear-gradient(
+          180deg,
+          rgba($blue, 1) 56%,
+          rgba($blue, 0) 100%
+        );
+      }
+    }
+
+    .partial-img-hero__bg {
+      object-fit: contain;
+      scale: 1.125;
+      top: 34%;
+
+      @include mq-min(lg) {
+        top: -2%;
+        right: -24%;
+      }
+    }
+  }
 }
 
 .section-tools {
   padding-inline: 0;
+
+  @include mq-min(lg) {
+    padding-block-end: 0;
+  }
 }
