@@ -117,6 +117,11 @@ $min-breakpoints: (
   @include heading-text;
   font-size: 55px;
   line-height: 110%;
+
+  // fix text overflow for smaller screens
+  // @include mq-max(xs) {
+  //   font-size: 12vw;
+  // }
 }
 
 @mixin h4 {
@@ -146,7 +151,7 @@ $min-breakpoints: (
   font-weight: 500;
 
   @media all {
-    @include mq-max(md) {
+    @include mq-max(lg) {
       --font-size: 22px;
     }
   }
@@ -154,7 +159,7 @@ $min-breakpoints: (
   @if $size == sm {
     --font-size: 18px;
 
-    @include mq-max(md) {
+    @include mq-max(lg) {
       --font-size: 16px;
     }
   }

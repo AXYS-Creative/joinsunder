@@ -111,6 +111,91 @@ collections:
                 label: "Button URL"
                 widget: "string"
                 required: true
+  - name: "page_sunder_way"
+    label: "Page - Sunder Way"
+    files:
+      - name: "oss"
+        label: "Section - OSS"
+        file: "src/_data/page_sunder_way/oss.yaml"
+        preview_path: "/sunder-way#operation-sunder-serves"
+        editor:
+          preview: false
+        fields:
+          - name: "toggle_section"
+            label: "Show Section (Sunder Way OSS)"
+            widget: "boolean"
+            default: true
+          - name: "section_title"
+            label: "Section Title"
+            widget: "string"
+            required: true
+            hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+          - name: "section_desc"
+            label: "Section Description"
+            widget: "text"
+            required: true
+          - name: "section_bg"
+            label: "Section Background Image"
+            widget: "image"
+            required: true
+          - name: "graphic"
+            label: "Graphic"
+            widget: "image"
+            required: false
+          - name: "cta"
+            label: "Call To Action"
+            widget: "object"
+            summary: "{{ fields.name }}: {{ fields.url }}"
+            required: false
+            fields:
+              - name: text
+                label: Button Text
+                widget: string
+                required: true
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: true
+                hint: An empty value removes the button
+      - name: "quotes"
+        label: "Section - Quote"
+        file: "src/_data/page_sunder_way/quotes.yaml"
+        preview_path: "/sunder-way#quote-section"
+        editor:
+          preview: false
+        fields:
+          - name: "toggle_section"
+            label: "Show Section (Sunder Platform Quote)"
+            widget: "boolean"
+            default: true
+          - name: "list"
+            label: "All Quotes"
+            label_singular: "Quote"
+            widget: "list"
+            required: true
+            fields:
+              - name: "title"
+                label: "Title"
+                widget: "string"
+                required: true
+              - name: "quote"
+                label: "Quote"
+                widget: "text"
+                required: true
+              - name: "img_src"
+                label: "Portrait Source"
+                widget: "image"
+                required: true
+              - name: "name"
+                label: "Portrait Name"
+                widget: "string"
+                required: true
+                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+              - name: "role"
+                label: "Portrait Role"
+                widget: "string"
+                required: true
   - name: "page_platform"
     label: "Page - Sunder Platform"
     files:
@@ -270,6 +355,7 @@ collections:
                 label: "Tool Description"
                 widget: "text"
                 required: true
+                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
               - name: "section_bg"
                 label: "Tool Background Image"
                 widget: "image"
@@ -290,6 +376,44 @@ collections:
                     widget: string
                     required: false
                     hint: An empty value removes the button
+      - name: "quotes"
+        label: "Section - Quote"
+        file: "src/_data/page_platform/quotes.yaml"
+        preview_path: "/platform#quote-section"
+        editor:
+          preview: false
+        fields:
+          - name: "toggle_section"
+            label: "Show Section (Sunder Platform Quote)"
+            widget: "boolean"
+            default: true
+          - name: "list"
+            label: "All Quotes"
+            label_singular: "Quote"
+            widget: "list"
+            required: true
+            fields:
+              - name: "title"
+                label: "Title"
+                widget: "string"
+                required: true
+              - name: "quote"
+                label: "Quote"
+                widget: "text"
+                required: true
+              - name: "img_src"
+                label: "Portrait Source"
+                widget: "image"
+                required: true
+              - name: "name"
+                label: "Portrait Name"
+                widget: "string"
+                required: true
+                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+              - name: "role"
+                label: "Portrait Role"
+                widget: "string"
+                required: true
   - name: "page_spare_1"
     label: "Page - Spare"
     files:

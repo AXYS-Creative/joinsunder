@@ -27,22 +27,62 @@
 
     img {
       flex: 1;
+
+      @include mq-motion-allow {
+        opacity: 0;
+
+        &.animate {
+          opacity: 1;
+        }
+      }
     }
 
     &.grid-5 {
       img {
         max-width: 20%;
 
-        @include mq-max(xl) {
-          max-width: 25%;
-        }
+        // // fade in transition per row. This setup only looks good on desktop :(
+        // @for $i from 1 through 5 {
+        //   &:nth-of-type(#{$i}),
+        //   &:nth-of-type(#{$i + 5}),
+        //   &:nth-of-type(#{$i + 10}),
+        //   &:nth-of-type(#{$i + 15}),
+        //   &:nth-of-type(#{$i + 20}) {
+        //     transition: opacity 0.25s ease 2s; // persist for a moment
 
-        @include mq-max(lg) {
-          max-width: 33%;
-        }
+        //     &.animate {
+        //       transition: opacity 1s ease #{0.125s + (($i - 1) * 0.05s)};
+        //     }
+        //   }
+        // }
 
-        @include mq-max(md) {
-          max-width: 50%;
+        @media all {
+          @include mq-max(xl) {
+            max-width: 25%;
+
+            // // fade in transition per row, not responsive
+            // @for $i from 1 through 4 {
+            //   &:nth-of-type(#{$i}),
+            //   &:nth-of-type(#{$i + 4}),
+            //   &:nth-of-type(#{$i + 8}),
+            //   &:nth-of-type(#{$i + 12}),
+            //   &:nth-of-type(#{$i + 16}) {
+            //     transition: 0.25s ease 2s; // persist for a moment
+
+            //     &.animate {
+            //       transition: 1s ease #{0.125s + (($i - 1) * 0.05s)};
+            //     }
+            //   }
+            // }
+          }
+
+          @include mq-max(lg) {
+            max-width: 33%;
+          }
+
+          @include mq-max(md) {
+            max-width: 50%;
+          }
         }
       }
     }
@@ -58,6 +98,21 @@
         @include mq-max(md) {
           max-width: 50%;
         }
+
+        // // fade in transition per row, not responsive
+        // @for $i from 1 through 4 {
+        //   &:nth-of-type(#{$i}),
+        //   &:nth-of-type(#{$i + 4}),
+        //   &:nth-of-type(#{$i + 8}),
+        //   &:nth-of-type(#{$i + 12}),
+        //   &:nth-of-type(#{$i + 16}) {
+        //     transition: 0.25s ease 2s; // persist for a moment
+
+        //     &.animate {
+        //       transition: 1s ease #{0.125s + (($i - 1) * 0.05s)};
+        //     }
+        //   }
+        // }
       }
     }
 

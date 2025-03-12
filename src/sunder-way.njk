@@ -8,10 +8,30 @@ description: #CHANGE ME
 # master props
 hide_header: false
 hide_footer: false
-# Page notes
-# Using eager loading for computed/dynamic height. Only use fetchpriority sparingly
 ---
 
 <section class="section-ethos">
   <h1 class="section-ethos__title">The Sunder Way</h1>
 </section>
+
+<!-- prettier-ignore -->
+{% set section_id = "operation-sunder-serves" %}
+{% set section_graphic = page_sunder_way.oss.graphic %}
+{% set section_h1 = '' %}
+{% set section_h2 = page_sunder_way.oss.section_title %}
+{% set section_p = page_sunder_way.oss.section_desc %}
+{% set section_bg = page_sunder_way.oss.section_bg %}
+{% set cta_1_text = page_sunder_way.oss.cta.text %}
+{% set cta_1_url = page_sunder_way.oss.cta.url %}
+{% set is_hero = false %}
+{% set section_img_hero_class = 'oss' %}
+{% if page_sunder_way.oss.toggle_section %}
+  {% include "./_includes/partials/partial-img-hero.njk" %}
+{% endif %}
+
+<!-- prettier-ignore -->
+{% if page_sunder_way.quotes.toggle_section %}
+  {% set section_title = page_sunder_way.quotes.section_title %}
+  {% set quote_list = page_sunder_way.quotes.list %}
+  {% include "./_includes/partials/partial-quote.njk" %}
+{% endif %}

@@ -1,5 +1,6 @@
 .partial-quote {
   @include column-center;
+  gap: var(--section-gap);
 
   @include mq-min(xl) {
     padding-inline: calc(var(--body-padding-double) * 2);
@@ -15,6 +16,12 @@
 
     @include mq-max(lg) {
       flex-direction: column;
+    }
+
+    &:nth-of-type(even) {
+      @include mq-min(lg) {
+        flex-direction: row-reverse;
+      }
     }
 
     &__figure {

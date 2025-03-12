@@ -54,7 +54,7 @@
 
   &__h1,
   &__h2 {
-    margin-block-end: var(--section-gap);
+    margin-block-end: var(--section-gap-half);
 
     @include mq-max(md) {
       text-align: center;
@@ -67,6 +67,10 @@
     @include mq-max(lg) {
       @include h3;
     }
+  }
+
+  &__h2 {
+    @include h3;
   }
 
   &__graphic {
@@ -142,7 +146,7 @@
     }
   }
 
-  // One-off requests
+  // One-off tool requests (Platform)
   &.enzy {
     .partial-img-hero__bg {
       @include mq-max(lg) {
@@ -184,6 +188,40 @@
       @include mq-min(lg) {
         top: -2%;
         right: -24%;
+      }
+    }
+  }
+
+  // Operation Sunder Serves (The Sunder Way)
+  &.oss {
+    .partial-img-hero__inner {
+      padding: var(--body-padding-double); // overrides with original above
+
+      &::before {
+        @include mq-max(md) {
+          background: linear-gradient(
+            0deg,
+            rgba($blue, 1) 15%,
+            rgba($blue, 0) 120%
+          );
+        }
+      }
+    }
+
+    .partial-img-hero__graphic {
+      width: 250px;
+
+      @include mq-max(lg) {
+        width: 180px;
+      }
+      @include mq-max(md) {
+        width: min(75%, 250px);
+      }
+    }
+
+    .partial-img-hero__p {
+      @include mq-min(md) {
+        margin: 0;
       }
     }
   }

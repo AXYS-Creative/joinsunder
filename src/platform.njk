@@ -70,6 +70,7 @@ hide_footer: false
 
 <!-- prettier-ignore -->
 {% if page_platform.quotes.toggle_section %}
+  {% set section_id = 'quote-section' %}
   {% set section_title = page_platform.quotes.section_title %}
   {% set quote_list = page_platform.quotes.list %}
   {% include "./_includes/partials/partial-quote.njk" %}
