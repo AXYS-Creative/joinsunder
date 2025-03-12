@@ -1,10 +1,9 @@
 toggle_section: true
-
-graphic: /static/img/Way-OSS-Emblem.png
 section_title: Operation[%br%] Sunder Serves
-section_desc: Experience the joy of giving back through service, adventure, and connection as we help communities in Peru!
+section_desc: Experience the joy of giving back through service, adventure, and
+  connection as we help communities in Peru!
 section_bg: /static/img/Way-OSS-BG.png
-
+graphic: /static/img/Way-OSS-Emblem.png
 cta:
-  text: Learn more
+  text: ""
   url: /join
