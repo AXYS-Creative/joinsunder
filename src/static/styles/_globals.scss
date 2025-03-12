@@ -74,7 +74,6 @@ body {
 }
 
 .site-header {
-  // border: $test;
   @include row-center(space-between);
   position: fixed;
   top: var(--body-padding-sm);
@@ -216,7 +215,7 @@ body {
   height: 100dvh;
   background-color: var(--background-color);
   padding: var(--body-padding-sm);
-  min-height: var(--section-min-height); //Triggers overflow content
+  min-height: var(--section-min-height);
   z-index: $z-index--nav;
 
   @include mq-motion-allow {
@@ -231,7 +230,7 @@ body {
     max-width: var(--header-max-width);
     width: calc(100vw - var(--body-padding-sm-double));
     height: calc(100dvh - var(--body-padding-sm-double));
-    min-height: var(--section-min-height); //Triggers overflow content
+    min-height: var(--section-min-height);
     border-radius: var(--radius);
     padding: var(--body-padding);
     padding-block-start: var(--top-spacing-header);
@@ -291,7 +290,7 @@ body {
         }
       }
 
-      // @include desktop-hover // include hover for mobile/touch
+      // @include desktop-hover // Manual hover for mobile/touch
       &:hover,
       &:focus-visible {
         border-color: var(--hero-color--primary);
@@ -365,10 +364,6 @@ body {
       gap: 64px;
     }
 
-    // .inner-top {
-
-    // }
-
     .inner-bottom {
       @include row-end(space-between);
       width: 100%;
@@ -389,10 +384,6 @@ body {
       grid-template-rows: repeat(4, 1fr);
       grid-auto-flow: column;
     }
-
-    // &__link {
-
-    // }
   }
 }
 

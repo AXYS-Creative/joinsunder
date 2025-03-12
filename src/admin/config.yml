@@ -11,7 +11,7 @@ logo_url: https://joinsunder-dev.netlify.app/static/img/icons/admin-logo.svg # C
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 collections:
   # - name: "blog"
   #   label: "Blog"
@@ -151,13 +151,13 @@ collections:
               - name: text
                 label: Button Text
                 widget: string
-                required: true
+                required: false
                 hint: An empty value removes the button
               - name: url
                 label: Button URL
                 widget: string
-                required: true
-                hint: An empty value removes the button
+                required: false
+                hint: i.e. /join
       - name: "quotes"
         label: "Section - Quote"
         file: "src/_data/page_sunder_way/quotes.yaml"
@@ -238,7 +238,7 @@ collections:
                 label: Button URL
                 widget: string
                 required: false
-                hint: An empty value removes the button
+                hint: i.e. /join
       - name: "installers"
         label: "Section - Installers"
         file: "src/_data/page_platform/installers.yaml"
@@ -375,7 +375,7 @@ collections:
                     label: Button URL
                     widget: string
                     required: false
-                    hint: An empty value removes the button
+                    hint: i.e. /join
       - name: "quotes"
         label: "Section - Quote"
         file: "src/_data/page_platform/quotes.yaml"
