@@ -1,4 +1,4 @@
-import { root, mqMaxLg } from "../util.js";
+import { root } from "../util.js";
 
 const carouselSnap = document.querySelector(".carousel-snap"),
   trackInner = document.querySelector(".carousel-snap__track-inner"),
@@ -13,8 +13,6 @@ let currentX = 0;
 let isDragging = false;
 let translateX = 0;
 
-// Media query for conditional flex wrapping. Remove import if not used
-// if (mqMaxLg) {
 if (carouselSnap) {
   const autoplayClass = "autoplay";
   const autoplayEnabledByAdmin = carouselSnap.classList.contains(autoplayClass);
@@ -164,4 +162,3 @@ if (carouselSnap) {
   updateCarousel();
   startAutoplay();
 }
-// }

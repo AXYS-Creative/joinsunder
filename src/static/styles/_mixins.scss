@@ -104,7 +104,7 @@ $min-breakpoints: (
 @mixin h1 {
   @include heading-text;
   font-size: 96px;
-  line-height: 117.7%;
+  line-height: 107.8%;
 }
 
 @mixin h2 {
@@ -173,7 +173,6 @@ $min-breakpoints: (
 
   @include mq-max(lg) {
     font-size: 16px;
-    font-weight: 800;
   }
 }
 
@@ -288,7 +287,7 @@ $min-breakpoints: (
   border-radius: var(--radius-lg);
   background: linear-gradient(
     to bottom,
-    $sunder-ice-light 0%,
+    var(--surface-color-2) 10%,
     var(--background-color) 500px
   );
 }
@@ -331,6 +330,12 @@ $min-breakpoints: (
   display: flex;
   justify-content: $justify-content;
   align-items: center;
+}
+
+@mixin row-stretch($justify-content: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: stretch;
 }
 
 @mixin row-start($justify-content: center) {

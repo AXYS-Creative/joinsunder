@@ -102,7 +102,7 @@
     .partial-img-hero__inner {
       @include partial-height-section;
 
-      background-color: var(--surface-color-3);
+      background-color: var(--surface-color);
       padding: var(--body-padding-double); // overrides with original above
 
       // Blue gradient

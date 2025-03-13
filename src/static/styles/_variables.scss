@@ -74,8 +74,7 @@ $test-bg: rgba(navy, 0.75);
 
   // Surface Colors
   --surface-color: #{$grey}; // Nav menu bg
-  --surface-color-2: #{$grey-light}; // Section gradient, form field bg
-  --surface-color-3: #d9d9d9; // Tools (partial-img-hero)
+  --surface-color-2: #{$grey-light}; // hero-img-partial bg, form field bg
 
   // Size & Spacing
   --body-padding: 24px;

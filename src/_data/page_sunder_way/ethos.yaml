@@ -1,0 +1,15 @@
+toggle_section: true
+section_title: The[%br%] Sunder[%br%] Way
+section_img: /static/img/Platform-Hero-BG.png
+section_desc: "At Sunder Energy, we believe that trust is earned through honesty, ethics, and transparency. Our commitment is to empowering customers and reps with clear, accurate, and verifiable information—ensuring every decision is made with confidence. We pledge to:"
+values:
+  - title: Be[%br%] honest
+    caption: No misleading claims, no half-truths—just facts.
+  - title: Be[%br%] ethical
+    caption: Treat everyone with respect, fairness, and integrity.
+  - title: Be[%br%] transparent
+    caption: Offer clear terms, real numbers, and full disclosure in every interaction.
+cta_p: Deception has no place in our business. Our reputation is built on the trust of those we serve. At Sunder Energy, we win with integrity—always.
+cta:
+  text: Join the squad
+  url: /join

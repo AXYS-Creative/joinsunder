@@ -10,9 +10,40 @@ hide_header: false
 hide_footer: false
 ---
 
+{% if page_sunder_way.ethos.toggle_section %}
 <section class="section-ethos">
-  <h1 class="section-ethos__title">The Sunder Way</h1>
+  <div class="ethos-top">
+    <h1 class="ethos-top__title">{{ page_sunder_way.ethos.section_title }}</h1>
+    <img
+      class="ethos-top__img"
+      src="{{ page_sunder_way.ethos.section_img }}"
+      alt=""
+    />
+  </div>
+  <div class="ethos-middle">
+    <p class="ethos-middle__p">{{ page_sunder_way.ethos.section_desc }}</p>
+
+    <div class="ethos-middle__panels">
+      <!-- prettier-ignore -->
+      {% for item in page_sunder_way.ethos.values %}
+      <div class="ethos-middle__panels-panel">
+        <h3 class="panel-title">{{ item.title }}</h3>
+        <p class="panel-desc">{{ item.caption }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="ethos-bottom">
+    <p class="ethos-bottom__p">{{ page_sunder_way.ethos.cta_p }}</p>
+
+    <!-- prettier-ignore -->
+    {% set cta_1_text = page_sunder_way.ethos.cta.text %}
+    {% set cta_1_url = page_sunder_way.ethos.cta.url %}
+    {% set cta_1_outline = true %}
+    {% include "./_includes/components/cta-group.njk" %}
+  </div>
 </section>
+{% endif %}
 
 <!-- prettier-ignore -->
 {% set section_id = "operation-sunder-serves" %}

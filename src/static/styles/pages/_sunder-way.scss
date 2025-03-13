@@ -3,15 +3,111 @@
 // }
 
 .section-ethos {
-  height: 100vh;
+  // height: 100vh;
   @include top-fade-section;
+  @include column-center;
+  gap: var(--section-gap-half);
 
-  &__title {
-    @include h1;
+  @include mq-min(lg) {
+    padding-inline: var(--body-padding-double);
+  }
+
+  .ethos-top {
+    @include h1; // used to calc img size (lh)
+    @include row-center;
+    gap: var(--section-gap);
+    width: 100%;
 
     @include mq-max(lg) {
-      @include h3;
-      text-align: center;
+      flex-direction: column;
+    }
+
+    &__title {
+      @include h1;
+
+      @include mq-max(lg) {
+        @include h3;
+        text-align: center;
+      }
+    }
+
+    picture {
+      width: 100%;
+    }
+    &__img {
+      max-height: 3lh;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+  }
+
+  .ethos-middle {
+    @include row-center;
+    gap: var(--section-gap);
+
+    @include mq-max(xl) {
+      flex-direction: column;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    // @include mq-max(lg) {
+    // }
+
+    &__p {
+      @include mq-min(xl) {
+        width: 40%;
+      }
+    }
+
+    &__panels {
+      @include row-stretch(flex-start);
+      gap: 16px;
+      width: 100%;
+      overflow: auto; // needed for scroll-snap
+      scroll-snap-type: x mandatory;
+
+      @include mq-min(xl) {
+        width: 60%;
+      }
+
+      &-panel {
+        background: var(--surface-color);
+        border-radius: var(--radius);
+        padding: var(--body-padding);
+        aspect-ratio: 1;
+        flex: 1 1 auto;
+        flex-shrink: 0;
+        width: 32%;
+        min-width: 248px;
+        scroll-snap-align: start;
+
+        .panel-title {
+          @include h5;
+          margin-block-end: calc(var(--section-gap-half) / 2);
+        }
+      }
+    }
+  }
+
+  .ethos-bottom {
+    @include row-center(space-between);
+    @include dark-theme;
+    width: 100%;
+    background-color: var(--hero-color--primary);
+    padding: var(--body-padding);
+    border-radius: var(--radius);
+    gap: var(--section-gap);
+
+    @include mq-max(lg) {
+      flex-direction: column;
+      padding: var(--body-padding-double);
+    }
+
+    &__p {
+      @include mq-min(lg) {
+        width: min(64%, 664px);
+      }
     }
   }
 }
