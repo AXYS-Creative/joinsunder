@@ -144,7 +144,7 @@ $min-breakpoints: (
 }
 
 @mixin body-font-styles($size: md) {
-  --font-size: 24px;
+  --font-size: #{$body-text-1};
 
   color: var(--font-color--primary);
   font-size: var(--font-size);
@@ -152,17 +152,17 @@ $min-breakpoints: (
 
   @media all {
     @include mq-max(lg) {
-      --font-size: 22px;
+      --font-size: #{$body-text-2};
     }
   }
 
-  @if $size == sm {
-    --font-size: 18px;
+  // @if $size == sm {
+  //   --font-size: 18px;
 
-    @include mq-max(lg) {
-      --font-size: 16px;
-    }
-  }
+  //   @include mq-max(lg) {
+  //     --font-size: 16px;
+  //   }
+  // }
 }
 
 @mixin link-font-styles {

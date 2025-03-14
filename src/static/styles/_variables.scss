@@ -24,6 +24,11 @@ $z-index--nav: 3;
 $z-index--header: 4;
 $z-index--loader: 5;
 
+// Figma Font size (body)
+$body-text-1: 24px;
+$body-text-2: 22px;
+$body-text-3: 15px;
+
 // Easing
 $cubic-ease: cubic-bezier(0.18, 0.97, 0.47, 1);
 $cubic-ease-back: cubic-bezier(0.02, 1.14, 0.7, 1.24);
@@ -38,7 +43,7 @@ $ease-c: 0.82s $cubic-ease;
 
 // Library
 // $magnet: translate 2.5s $cubic-ease-back-strong;
-$magnet: translate 0.025s ease-in;
+// $magnet: translate 0.025s ease-in;
 
 // Debugging
 $test: 2px dashed rgba(coral, 0.75);

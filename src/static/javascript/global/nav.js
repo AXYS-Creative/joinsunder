@@ -53,7 +53,7 @@ const closeNav = () => {
 };
 
 // Close nav vs refresh for active page
-activeNavLink.addEventListener("click", (event) => {
+activeNavLink?.addEventListener("click", (event) => {
   event.preventDefault();
   closeNav();
 });

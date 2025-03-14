@@ -85,7 +85,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
       {
         // Ethos Section
         if (document.querySelector(".section-ethos") && minLg) {
-          const pinDuration = "+=200%";
+          const pinDuration = "+=160%";
           let bodyPadding = maxXl ? 64 : 96;
 
           // Pinning Ethos Section
@@ -136,6 +136,17 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
               });
             });
           }
+
+          // Ethos Bottom slide in
+          let ethosBottom = document.querySelector(".ethos-bottom");
+          gsap.to(ethosBottom, {
+            scrollTrigger: {
+              trigger: ethosBottom,
+              start: "bottom bottom",
+              onEnter: () => ethosBottom.classList.add("active"),
+              onLeaveBack: () => ethosBottom.classList.remove("active"),
+            },
+          });
         }
       }
 

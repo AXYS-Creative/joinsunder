@@ -3,6 +3,8 @@
 // }
 
 .section-ethos {
+  --panel-translate-offset: 128px;
+
   position: relative;
   padding: 0;
 
@@ -12,6 +14,10 @@
     gap: var(--section-gap);
     width: 100%;
 
+    @include mq-max(xl) {
+      @include h3; // One-off to make ethos responsive at 1200px
+    }
+
     @include mq-max(lg) {
       flex-direction: column;
     }
@@ -19,8 +25,12 @@
     &__title {
       @include h1;
 
+      @include mq-max(xl) {
+        @include h3; // One-off to make ethos responsive at 1200px
+      }
+
       @include mq-max(lg) {
-        @include h3;
+        // @include h3; // Font-size usually drops here (see one-off above)
         text-align: center;
       }
     }
@@ -71,6 +81,9 @@
       @include mq-min(xl) {
         width: 40%;
       }
+      @include mq-max(xl) {
+        font-size: $body-text-2;
+      }
     }
 
     &__panels {
@@ -93,17 +106,22 @@
         flex-shrink: 0;
         width: 32%;
         min-width: 248px;
-        scroll-snap-align: start;
 
-        @include mq-motion-allow {
-          @include mq-min(lg) {
+        @include mq-min(lg) {
+          @include mq-motion-allow {
             opacity: 0;
+            translate: var(--panel-translate-offset) 0;
             transition: $ease;
 
             &.active {
+              translate: 0 0;
               opacity: 1;
             }
           }
+        }
+
+        @include mq-max(lg) {
+          scroll-snap-align: start; // placing in mq. Was messing with gsap translate for desktop
         }
 
         .panel-title {
@@ -124,11 +142,21 @@
     gap: var(--section-gap);
     width: calc(100% - var(--body-padding-double) * 2);
 
-    @include mq-max(lg) {
-      width: calc(100% - var(--body-padding-double));
+    @include mq-min(lg) {
+      @include mq-motion-allow {
+        opacity: 0;
+        translate: calc(var(--panel-translate-offset) * -1) 0;
+        transition: $ease;
+
+        &.active {
+          opacity: 1;
+          translate: 0 0;
+        }
+      }
     }
 
     @include mq-max(lg) {
+      width: calc(100% - var(--body-padding-double));
       flex-direction: column;
       padding: var(--body-padding-double);
     }
