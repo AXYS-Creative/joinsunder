@@ -156,13 +156,14 @@ $min-breakpoints: (
     }
   }
 
-  // @if $size == sm {
-  //   --font-size: 18px;
+  // used on form page
+  @if $size == sm {
+    --font-size: 18px;
 
-  //   @include mq-max(lg) {
-  //     --font-size: 16px;
-  //   }
-  // }
+    @include mq-max(lg) {
+      --font-size: 16px;
+    }
+  }
 }
 
 @mixin link-font-styles {

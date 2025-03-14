@@ -38,7 +38,7 @@ hide_footer: false
             loop.index
           }}"
         >
-          <h3 class="panel-title">{{ item.title }}</h3>
+          <h2 class="panel-title">{{ item.title }}</h2>
           <p class="panel-desc">{{ item.caption }}</p>
         </div>
         {% endfor %}
@@ -81,6 +81,7 @@ hide_footer: false
 {% set section_bg = page_sunder_way.oss.section_bg %}
 {% set cta_1_text = page_sunder_way.oss.cta.text %}
 {% set cta_1_url = page_sunder_way.oss.cta.url %}
+{% set cta_1_outline = false %}
 {% set is_hero = false %}
 {% set section_img_hero_class = 'oss' %}
 {% if page_sunder_way.oss.toggle_section %}

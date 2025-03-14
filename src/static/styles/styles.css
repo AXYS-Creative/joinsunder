@@ -1419,6 +1419,7 @@ figure {
   color: var(--font-color--primary);
   font-size: var(--font-size);
   font-weight: 500;
+  --font-size: 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1429,6 +1430,11 @@ figure {
 @media screen and (max-width: 1024px) {
   .form-redirect {
     --font-size: 22px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .form-redirect {
+    --font-size: 16px;
   }
 }
 .form-redirect .form-block {
