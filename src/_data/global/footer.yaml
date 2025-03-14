@@ -1,0 +1,21 @@
+logo_src: /static/img/logo-squad-light.svg
+links:
+  - title: The Sunder Way
+    url: "/sunder-way"
+  - title: The Sunder Platform
+    url: "/platform"
+  - title: About Sunder
+    url: "/about"
+  - title: OSS
+    url: "/"
+  - title: Privacy Policy
+    url: "/"
+  - title: Terms and Conditions
+    url: "/"
+  - title: Contact Us
+    url: "/"
+  - title: Sunder Energy
+    url: "https://sunderenergy.com/"
+cta:
+  text: Join the squad
+  url: /join

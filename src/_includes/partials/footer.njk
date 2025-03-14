@@ -1,32 +1,34 @@
 {% if hide_footer != true %}
 <footer class="site-footer">
   <div class="site-footer__inner">
+    {% if global.footer.logo_src %}
     <div class="inner-top">
       <!-- prettier-ignore -->
-      {% set logo_link_src = "/static/img/logo-squad-light.svg" %}
+      {% set logo_link_src = global.footer.logo_src %}
       {% set logo_link_class = "footer-logo" %}
       {% set page_tabbing = 'tab-element-page' %}
       {% include "../components/logo-link.njk" %}
     </div>
+    {% endif %}
 
     <div class="inner-bottom">
       <ul class="footer-links" aria-label="Footer navigation">
-        {% for item in navigation.footer_links %}
+        {% for item in global.footer.links %}
         <li>
           <a
             class="footer-links__link classic-link tab-element-page"
             href="{{ item.url }}"
           >
-            {{ item.text }}
+            {{ item.title }}
           </a>
         </li>
         {% endfor %}
       </ul>
 
       <!-- prettier-ignore -->
-      {% set cta_1_text = 'Join the squad' %}
       {% set cta_1_outline = true %}
-      {% set cta_1_url = '/join' %}
+      {% set cta_1_text = global.footer.cta.text %}
+      {% set cta_1_url = global.footer.cta.url %}
       {% include "../components/cta-group.njk" %}
     </div>
     <!-- <a

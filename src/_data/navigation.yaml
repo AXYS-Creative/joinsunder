@@ -12,21 +12,3 @@ links:
     url: "about"
   - text: Join [%span.reveal%]Sunder[%span%]
     url: "join"
-
-footer_links:
-  - text: The Sunder Way
-    url: "/sunder-way"
-  - text: The Sunder Platform
-    url: "/platform"
-  - text: About Sunder
-    url: "/about"
-  - text: OSS
-    url: "/"
-  - text: Privacy Policy
-    url: "/"
-  - text: Terms and Conditions
-    url: "/"
-  - text: Contact Us
-    url: "/"
-  - text: Sunder Energy
-    url: "https://sunderenergy.com/"
