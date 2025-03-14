@@ -1277,6 +1277,11 @@ figure {
   background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
   margin-top: var(--top-spacing-header);
 }
+@media screen and (min-width: 1025px) {
+  .section-competitions {
+    padding-inline: var(--body-padding-double);
+  }
+}
 .section-competitions__title {
   font-weight: 900;
   text-transform: uppercase;
@@ -2041,6 +2046,11 @@ figure {
   background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
 }
 
+@media screen and (min-width: 1025px) {
+  .logos-group {
+    padding-inline: var(--body-padding);
+  }
+}
 .logos-group + .logos-group {
   margin-block-start: var(--section-gap-double);
 }

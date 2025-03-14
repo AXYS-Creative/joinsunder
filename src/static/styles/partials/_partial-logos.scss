@@ -3,6 +3,10 @@
 }
 
 .logos-group {
+  @include mq-min(lg) {
+    padding-inline: var(--body-padding);
+  }
+
   & + & {
     margin-block-start: var(--section-gap-double);
   }

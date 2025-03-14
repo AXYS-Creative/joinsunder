@@ -199,6 +199,10 @@
 .section-competitions {
   @include top-fade-section;
 
+  @include mq-min(lg) {
+    padding-inline: var(--body-padding-double);
+  }
+
   &__title {
     @include h3;
 
