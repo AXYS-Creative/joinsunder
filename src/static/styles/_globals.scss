@@ -243,12 +243,12 @@ body {
 
   .nav-links {
     @include column-start;
-    gap: 32px;
     height: 100%;
 
-    @include mq-min(xxl) {
-      gap: 24px;
+    @include mq-max(lg) {
+      gap: 12px;
     }
+
     @include mq-min(lg) {
       margin-inline-start: var(--body-padding-double);
     }
@@ -259,6 +259,8 @@ body {
       color: $white; // Doesn't follow convention for dark theme
       display: inline-flex;
       gap: 0.2ch;
+      outline: none;
+      padding: 12px 0; // fixes edge hover issue
       transition: color $ease;
 
       @include mq-max(xl) {

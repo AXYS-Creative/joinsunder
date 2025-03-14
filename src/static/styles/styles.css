@@ -286,12 +286,11 @@ body:has(.load-complete) .hero div {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 32px;
   height: 100%;
 }
-@media screen and (min-width: 1513px) {
+@media screen and (max-width: 1024px) {
   .site-nav .nav-links {
-    gap: 24px;
+    gap: 12px;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -309,6 +308,8 @@ body:has(.load-complete) .hero div {
   color: #f7f7f7;
   display: inline-flex;
   gap: 0.2ch;
+  outline: none;
+  padding: 12px 0;
   transition: color 0.32s ease;
 }
 @media screen and (max-width: 1200px) {
@@ -1041,19 +1042,8 @@ figure {
 }
 
 .section-ethos {
-  border-radius: var(--radius-lg);
-  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
-  margin-top: var(--top-spacing-header);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: var(--section-gap-half);
-}
-@media screen and (min-width: 1025px) {
-  .section-ethos {
-    padding-inline: var(--body-padding-double);
-  }
+  position: relative;
+  padding: 0;
 }
 .section-ethos .ethos-top {
   font-weight: 900;
@@ -1089,14 +1079,34 @@ figure {
     text-align: center;
   }
 }
-.section-ethos .ethos-top picture {
+.section-ethos .ethos-top__figure {
+  position: relative;
   width: 100%;
-}
-.section-ethos .ethos-top__img {
-  max-height: 3lh;
+  height: 3lh;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: var(--radius);
+  overflow: hidden;
+}
+.section-ethos .ethos-top__figure-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-ethos .ethos-top__figure-img {
+    opacity: 0;
+    transition: 0.32s ease;
+  }
+  .section-ethos .ethos-top__figure-img.active {
+    opacity: 1;
+  }
+}
+.section-ethos .ethos-top__figure .ethos-img-1 {
+  opacity: 1;
 }
 .section-ethos .ethos-middle {
   display: flex;
@@ -1141,6 +1151,15 @@ figure {
   min-width: 248px;
   scroll-snap-align: start;
 }
+@media screen and (prefers-reduced-motion: no-preference) and (min-width: 1025px) {
+  .section-ethos .ethos-middle__panels-panel {
+    opacity: 0;
+    transition: 0.32s ease;
+  }
+  .section-ethos .ethos-middle__panels-panel.active {
+    opacity: 1;
+  }
+}
 .section-ethos .ethos-middle__panels-panel .panel-title {
   font-weight: 900;
   text-transform: uppercase;
@@ -1163,11 +1182,17 @@ figure {
   --btn-color-text--hover: #f7f7f7;
   --btn-color-border--hover: var(--btn-color-bg--hover);
   color: var(--font-color--primary);
-  width: 100%;
+  margin: var(--section-gap-half) auto 0;
   background-color: var(--hero-color--primary);
   padding: var(--body-padding);
   border-radius: var(--radius);
   gap: var(--section-gap);
+  width: calc(100% - var(--body-padding-double) * 2);
+}
+@media screen and (max-width: 1024px) {
+  .section-ethos .ethos-bottom {
+    width: calc(100% - var(--body-padding-double));
+  }
 }
 @media screen and (max-width: 1024px) {
   .section-ethos .ethos-bottom {
@@ -1179,6 +1204,39 @@ figure {
   .section-ethos .ethos-bottom__p {
     width: min(64%, 664px);
   }
+}
+.section-ethos .ethos-pin {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
+  margin-top: var(--top-spacing-header);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--section-gap-half);
+  padding: var(--body-padding-double) var(--body-padding-double) 0;
+}
+@media screen and (max-width: 1024px) {
+  .section-ethos .ethos-pin {
+    padding: var(--body-padding);
+  }
+}
+.section-ethos .ethos-pin-steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100%;
+  opacity: 0;
+}
+.section-ethos .ethos-pin-steps .ethos-pin-step {
+  background: linear-gradient(180deg, #0058f5, transparent);
+  flex: 1;
+  width: 100%;
 }
 
 .error {

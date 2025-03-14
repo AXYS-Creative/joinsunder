@@ -1,6 +1,10 @@
 toggle_section: true
 section_title: The[%br%] Sunder[%br%] Way
-section_img: /static/img/Platform-Hero-BG.png
+section_imgs:
+  - src: /static/img/way-ethos-1.png
+  - src: /static/img/way-ethos-2.png
+  - src: /static/img/way-ethos-3.png
+  - src: /static/img/way-ethos-4.png
 section_desc: "At Sunder Energy, we believe that trust is earned through honesty, ethics, and transparency. Our commitment is to empowering customers and reps with clear, accurate, and verifiable information—ensuring every decision is made with confidence. We pledge to:"
 values:
   - title: Be[%br%] honest

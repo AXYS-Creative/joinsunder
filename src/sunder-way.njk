@@ -12,25 +12,37 @@ hide_footer: false
 
 {% if page_sunder_way.ethos.toggle_section %}
 <section class="section-ethos">
-  <div class="ethos-top">
-    <h1 class="ethos-top__title">{{ page_sunder_way.ethos.section_title }}</h1>
-    <img
-      class="ethos-top__img"
-      src="{{ page_sunder_way.ethos.section_img }}"
-      alt=""
-    />
-  </div>
-  <div class="ethos-middle">
-    <p class="ethos-middle__p">{{ page_sunder_way.ethos.section_desc }}</p>
+  <div class="ethos-pin">
+    <div class="ethos-top">
+      <h1 class="ethos-top__title">
+        {{ page_sunder_way.ethos.section_title }}
+      </h1>
+      <figure class="ethos-top__figure">
+        {% for img in page_sunder_way.ethos.section_imgs %}
+        <img
+          class="ethos-top__figure-img ethos-img-{{ loop.index }}"
+          src="{{ img.src }}"
+          alt=""
+        />
+        {% endfor %}
+      </figure>
+    </div>
+    <div class="ethos-middle">
+      <p class="ethos-middle__p">{{ page_sunder_way.ethos.section_desc }}</p>
 
-    <div class="ethos-middle__panels">
-      <!-- prettier-ignore -->
-      {% for item in page_sunder_way.ethos.values %}
-      <div class="ethos-middle__panels-panel">
-        <h3 class="panel-title">{{ item.title }}</h3>
-        <p class="panel-desc">{{ item.caption }}</p>
+      <div class="ethos-middle__panels">
+        <!-- prettier-ignore -->
+        {% for item in page_sunder_way.ethos.values %}
+        <div
+          class="ethos-middle__panels-panel value-panel value-panel-{{
+            loop.index
+          }}"
+        >
+          <h3 class="panel-title">{{ item.title }}</h3>
+          <p class="panel-desc">{{ item.caption }}</p>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
   <div class="ethos-bottom">
@@ -42,8 +54,23 @@ hide_footer: false
     {% set cta_1_outline = true %}
     {% include "./_includes/components/cta-group.njk" %}
   </div>
+  <div class="ethos-pin-steps">
+    <div class="ethos-pin-step ethos-pin-step-1"></div>
+    {% for item in page_sunder_way.ethos.values %}
+    <div class="ethos-pin-step ethos-pin-step-{{ loop.index + 1 }}"></div>
+    {% endfor %}
+  </div>
 </section>
 {% endif %}
+
+<!-- <iframe
+  class="sample-video-embed"
+  src="https://drive.google.com/file/d/19so7OJN9FwQUdJ7sfoY-n-lZoCV8iWz9/preview"
+  width="640"
+  height="480"
+  allow="autoplay"
+  allowfullscreen
+></iframe> -->
 
 <!-- prettier-ignore -->
 {% set section_id = "operation-sunder-serves" %}

@@ -5,12 +5,15 @@
   aria-hidden="true"
 >
   <div class="site-nav__inner">
-    {% if navigation.items %}
+    {% if navigation.links %}
     <ul class="nav-links">
-      {% for item in navigation.items %}
+      {% for link in navigation.links %}
       <li>
-        <a class="nav-links__link tab-element-nav" href="{{ item.url }}">
-          {{ item.text }}
+        <a
+          class="nav-links__link tab-element-nav {% if path == link.url %}nav-link--active-page{% endif %}"
+          href="/{{ link.url }}"
+        >
+          {{ link.text }}
         </a>
       </li>
       {% endfor %}

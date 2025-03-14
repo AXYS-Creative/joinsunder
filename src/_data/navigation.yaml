@@ -1,16 +1,17 @@
 # Dev use only
 
-show_skip_to_content: true
+# show_skip_to_content: true
 
-items:
+# Missing forward slash to allow active page nav close
+links:
   - text: The [%span.reveal%]Sunder[%span%]Way
-    url: "/sunder-way"
+    url: "sunder-way"
   - text: The [%span.reveal%]Sunder[%span%] Platform
-    url: "/platform"
+    url: "platform"
   - text: About [%span.reveal%]Sunder[%span%]
-    url: "/about"
+    url: "about"
   - text: Join [%span.reveal%]Sunder[%span%]
-    url: "/join"
+    url: "join"
 
 footer_links:
   - text: The Sunder Way

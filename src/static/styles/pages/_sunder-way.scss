@@ -3,14 +3,8 @@
 // }
 
 .section-ethos {
-  // height: 100vh;
-  @include top-fade-section;
-  @include column-center;
-  gap: var(--section-gap-half);
-
-  @include mq-min(lg) {
-    padding-inline: var(--body-padding-double);
-  }
+  position: relative;
+  padding: 0;
 
   .ethos-top {
     @include h1; // used to calc img size (lh)
@@ -31,13 +25,35 @@
       }
     }
 
-    picture {
+    &__figure {
+      // border: $test;
+      position: relative;
       width: 100%;
-    }
-    &__img {
-      max-height: 3lh;
+      height: 3lh;
       object-fit: cover;
       border-radius: var(--radius);
+      overflow: hidden;
+
+      &-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        object-fit: cover;
+
+        @include mq-motion-allow {
+          opacity: 0;
+          transition: $ease;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+
+      .ethos-img-1 {
+        opacity: 1;
+      }
     }
   }
 
@@ -50,9 +66,6 @@
       width: 100%;
       overflow: hidden;
     }
-
-    // @include mq-max(lg) {
-    // }
 
     &__p {
       @include mq-min(xl) {
@@ -82,6 +95,17 @@
         min-width: 248px;
         scroll-snap-align: start;
 
+        @include mq-motion-allow {
+          @include mq-min(lg) {
+            opacity: 0;
+            transition: $ease;
+
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+
         .panel-title {
           @include h5;
           margin-block-end: calc(var(--section-gap-half) / 2);
@@ -93,11 +117,16 @@
   .ethos-bottom {
     @include row-center(space-between);
     @include dark-theme;
-    width: 100%;
+    margin: var(--section-gap-half) auto 0;
     background-color: var(--hero-color--primary);
     padding: var(--body-padding);
     border-radius: var(--radius);
     gap: var(--section-gap);
+    width: calc(100% - var(--body-padding-double) * 2);
+
+    @include mq-max(lg) {
+      width: calc(100% - var(--body-padding-double));
+    }
 
     @include mq-max(lg) {
       flex-direction: column;
@@ -108,6 +137,33 @@
       @include mq-min(lg) {
         width: min(64%, 664px);
       }
+    }
+  }
+
+  .ethos-pin {
+    @include top-fade-section;
+    @include column-center;
+    gap: var(--section-gap-half);
+    padding: var(--body-padding-double) var(--body-padding-double) 0;
+
+    @include mq-max(lg) {
+      padding: var(--body-padding);
+    }
+  }
+
+  .ethos-pin-steps {
+    @include column-start;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 100%;
+    opacity: 0;
+
+    .ethos-pin-step {
+      background: linear-gradient(180deg, $blue, transparent);
+      flex: 1;
+      width: 100%;
     }
   }
 }

@@ -28,10 +28,23 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
       maxSm: "(max-width: 480px)",
       maxMd: "(max-width: 768px)",
       maxLg: "(max-width: 1024px)",
+      maxXl: "(max-width: 1200px)",
       minMd: "(min-width: 769px)",
+      minLg: "(min-width: 1025px)",
     },
     (context) => {
-      let { maxSm, maxMd, maxLg, minMd } = context.conditions;
+      let { maxSm, maxMd, maxLg, maxXl, minMd, minLg } = context.conditions;
+
+      let navyMarkers = {
+        startColor: "navy",
+        endColor: "navy",
+        indent: 128,
+      };
+      let redMarkers = {
+        startColor: "crimson",
+        endColor: "crimson",
+        indent: 256,
+      };
 
       // // TEMPLATE TWEEN - SCRUB
       // gsap.fromTo(
@@ -66,6 +79,64 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
             },
           });
         });
+      }
+
+      // Page - Sunder Way
+      {
+        // Ethos Section
+        if (document.querySelector(".section-ethos") && minLg) {
+          const pinDuration = "+=200%";
+          let bodyPadding = maxXl ? 64 : 96;
+
+          // Pinning Ethos Section
+          gsap.to(".ethos-pin", {
+            scrollTrigger: {
+              trigger: ".ethos-pin",
+              start: `top ${bodyPadding}px`,
+              end: pinDuration,
+              pin: true,
+              // markers: true,
+            },
+          });
+
+          // Step animation (Image cycle and panel reveal)
+          {
+            const steps = document.querySelectorAll(
+              ".ethos-pin-step-1, .ethos-pin-step-2, .ethos-pin-step-3"
+            );
+            const panels = document.querySelectorAll(
+              ".value-panel-1, .value-panel-2, .value-panel-3"
+            );
+            const images = document.querySelectorAll(
+              ".ethos-img-2, .ethos-img-3, .ethos-img-4"
+            );
+
+            steps.forEach((step, index) => {
+              const panel = panels[index];
+              const image = images[index];
+
+              gsap.to(panel, {
+                scrollTrigger: {
+                  trigger: step,
+                  start: `top ${bodyPadding}px`,
+                  end: `bottom top`,
+                  onEnter: () => panel.classList.add("active"),
+                  onLeaveBack: () => panel.classList.remove("active"),
+                },
+              });
+
+              gsap.to(image, {
+                scrollTrigger: {
+                  trigger: step,
+                  start: `top ${bodyPadding}px`,
+                  end: `bottom top`,
+                  onEnter: () => image.classList.add("active"),
+                  onLeaveBack: () => image.classList.remove("active"),
+                },
+              });
+            });
+          }
+        }
       }
 
       // Library - Lift any desired code blocks out, then delete from production
