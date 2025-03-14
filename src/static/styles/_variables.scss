@@ -87,6 +87,8 @@ $test-bg: rgba(navy, 0.75);
   --body-padding-sm: 12px;
   --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
 
+  --panel-gap: 16px;
+
   --content-width: #{$content-width};
 
   --full-width-snip: calc(100vw - var(--body-padding-double));

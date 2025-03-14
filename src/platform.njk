@@ -17,6 +17,7 @@ hide_footer: false
 {% set cta_1_text = page_platform.hero.cta.text %}
 {% set cta_1_url = page_platform.hero.cta.url %}
 {% set is_hero = true %}
+{% set container_tag = 'section' %}
 {% if page_platform.hero.toggle_section %}
   {% include "./_includes/partials/partial-img-hero.njk" %}
 {% endif %}
@@ -54,6 +55,7 @@ hide_footer: false
   <!-- prettier-ignore -->
   {% for tool in page_platform.tools.list %}
     {% set is_hero = false %}
+    {% set container_tag = 'div' %}
     {% set section_h1 = '' %}
     {% set section_h2 = '' %}
     {% set section_id = '' %}

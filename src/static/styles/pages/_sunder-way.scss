@@ -88,7 +88,7 @@
 
     &__panels {
       @include row-stretch(flex-start);
-      gap: 16px;
+      gap: var(--panel-gap);
       width: 100%;
       overflow: auto; // needed for scroll-snap
       scroll-snap-type: x mandatory;
@@ -192,6 +192,108 @@
       background: linear-gradient(180deg, $blue, transparent);
       flex: 1;
       width: 100%;
+    }
+  }
+}
+
+.section-competitions {
+  @include top-fade-section;
+
+  &__title {
+    @include h3;
+
+    @include mq-max(lg) {
+      @include h4;
+      margin-block-end: var(--panel-gap);
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    margin-block-end: var(--section-gap);
+
+    @include mq-max(lg) {
+      text-align: center;
+    }
+  }
+
+  .competition-types {
+    @include row-center(flex-start);
+    gap: var(--panel-gap);
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    align-self: flex-start;
+
+    @include mq-max(lg) {
+      // translate: -30px 0;
+      // padding-inline-start: 48px; // doesn't work for some reason
+      padding-inline-end: 32px;
+      width: calc(100vw - var(--body-padding-double) + 6px);
+      // width: 100vw;
+    }
+
+    &__figure {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      flex: 1;
+      aspect-ratio: 1 / 1.65;
+      min-width: 320px;
+      scroll-snap-align: start;
+
+      @include mq-max(lg) {
+        translate: 30px 0;
+      }
+    }
+
+    &__img {
+      height: 100%;
+    }
+
+    &__caption {
+      @include dark-theme;
+      @include column-start(flex-end);
+      @include blue-gradient(0deg, 50%, 100%);
+      position: absolute;
+      height: 100%;
+      bottom: 0;
+      padding: var(--body-padding);
+
+      opacity: 0;
+      transition: $ease;
+
+      &:hover {
+        opacity: 1;
+
+        .competition-types__caption-title,
+        .competition-types__caption-p {
+          translate: 0 0;
+        }
+      }
+
+      &-title {
+        @include h4;
+        margin-block-end: var(--panel-gap);
+
+        @include mq-motion-allow {
+          translate: 48px 0;
+          transition: $ease;
+        }
+      }
+
+      &-p {
+        height: 9lh;
+        font-size: $body-text-2;
+
+        @include mq-motion-allow {
+          translate: 48px 0;
+          transition: $ease 0.024s;
+        }
+
+        @include mq-max(xxl) {
+          height: 11lh;
+        }
+      }
     }
   }
 }

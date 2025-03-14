@@ -63,6 +63,31 @@ hide_footer: false
 </section>
 {% endif %}
 
+<!-- prettier-ignore -->
+{% if page_sunder_way.competitions.toggle_section %}
+<section class="section-competitions" id="competitions">
+  <h2 class="section-competitions__title">
+    {{ page_sunder_way.competitions.section_title }}
+  </h2>
+  <p class="section-competitions__desc">
+    {{ page_sunder_way.competitions.section_desc }}
+  </p>
+
+  <div class="competition-types">
+    {% for type in page_sunder_way.competitions.types %}
+    <figure class="competition-types__figure">
+      <img class="competition-types__img" src="{{ type.src }}" alt="" />
+
+      <figcaption class="competition-types__caption">
+        <h3 class="competition-types__caption-title">{{ type.title }}</h3>
+        <p class="competition-types__caption-p">{{ type.caption }}</p>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 <!-- <iframe
   class="sample-video-embed"
   src="https://drive.google.com/file/d/19so7OJN9FwQUdJ7sfoY-n-lZoCV8iWz9/preview"
@@ -84,6 +109,7 @@ hide_footer: false
 {% set cta_1_url = page_sunder_way.oss.cta.url %}
 {% set cta_1_outline = false %}
 {% set is_hero = false %}
+{% set container_tag = 'section' %}
 {% set section_img_hero_class = 'oss' %}
 {% if page_sunder_way.oss.toggle_section %}
   {% include "./_includes/partials/partial-img-hero.njk" %}

@@ -59,6 +59,10 @@ collections:
                 label: "Background Image"
                 widget: "image"
                 required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: "logo"
                 label: "Logo"
                 widget: "image"
@@ -89,6 +93,10 @@ collections:
                 label: "Background Image"
                 widget: "image"
                 required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: "logo"
                 label: "Logo"
                 widget: "image"
@@ -141,6 +149,10 @@ collections:
               label: "Image Source"
               widget: "image"
               required: true
+              hint: Keep below 5MB
+              media_library:
+                config:
+                  max_file_size: 5000000 # 1MB = 1,000,000 bytes
           - name: "section_desc"
             label: "Section Description (Middle)"
             widget: "text"
@@ -181,6 +193,47 @@ collections:
                 widget: string
                 required: false
                 hint: i.e. /join
+      - name: "competitions"
+        label: "Section - Competitions"
+        file: "src/_data/page_sunder_way/competitions.yaml"
+        preview_path: "/sunder-way#competitions"
+        editor:
+          preview: false
+        fields:
+          - name: "toggle_section"
+            label: "Show Section (Sunder Way - Competitions)"
+            widget: "boolean"
+            default: true
+          - name: "section_title"
+            label: "Section Title"
+            widget: "string"
+            required: true
+          - name: "section_desc"
+            label: "Section Description"
+            widget: "text"
+            required: true
+          - name: "types"
+            label: "Competition Types"
+            label_singular: "Type"
+            widget: "list"
+            required: true
+            fields:
+              - name: title
+                label: Title
+                widget: string
+                required: true
+              - name: caption
+                label: Caption
+                widget: text
+                required: true
+              - name: src
+                label: Image Source (Banner)
+                widget: image
+                required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
       - name: "oss"
         label: "Section - OSS"
         file: "src/_data/page_sunder_way/oss.yaml"
@@ -205,6 +258,10 @@ collections:
             label: "Section Background Image"
             widget: "image"
             required: true
+            hint: Keep below 5MB
+            media_library:
+              config:
+                max_file_size: 5000000 # 1MB = 1,000,000 bytes
           - name: "graphic"
             label: "Graphic"
             widget: "image"
@@ -254,6 +311,10 @@ collections:
                 label: "Portrait Source"
                 widget: "image"
                 required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: "name"
                 label: "Portrait Name"
                 widget: "string"
@@ -290,6 +351,10 @@ collections:
             label: "Section Background Image"
             widget: "image"
             required: true
+            hint: Keep below 5MB
+            media_library:
+              config:
+                max_file_size: 5000000 # 1MB = 1,000,000 bytes
           - name: "cta"
             label: "Call To Action"
             widget: "object"
@@ -427,6 +492,10 @@ collections:
                 label: "Tool Background Image"
                 widget: "image"
                 required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: "cta"
                 label: "Call To Action"
                 widget: "object"
@@ -472,6 +541,10 @@ collections:
                 label: "Portrait Source"
                 widget: "image"
                 required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: "name"
                 label: "Portrait Name"
                 widget: "string"
@@ -592,7 +665,7 @@ collections:
         editor:
           preview: false
         fields:
-          - name: "social_links"
+          - name: "links"
             label: "Social Media Links"
             label_singular: "Link"
             widget: "list"
@@ -662,3 +735,6 @@ collections:
             default: "https://CHANGE-ME.com/static/img/og-image.png"
             required: true
             hint: "Recommended formats: PNG or JPG. Recommended image dimensions: 1200 x 630 pixels. File size should be under 8 MB."
+            media_library:
+              config:
+                max_file_size: 8000000 # 1MB = 1,000,000 bytes

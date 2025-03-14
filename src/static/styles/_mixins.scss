@@ -293,6 +293,10 @@ $min-breakpoints: (
   );
 }
 
+@mixin blue-gradient($dir: 180deg, $start: 30%, $end: 70%) {
+  background: linear-gradient($dir, rgba($blue, 1) $start, rgba($blue, 0) $end);
+}
+
 @mixin top-fade-section {
   @include section-fade;
   margin-top: var(--top-spacing-header);

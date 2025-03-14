@@ -25,6 +25,7 @@
   --body-padding-double: calc(var(--body-padding) * 2);
   --body-padding-sm: 12px;
   --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
+  --panel-gap: 16px;
   --content-width: 1750px;
   --full-width-snip: calc(100vw - var(--body-padding-double));
   --full-width-snip-sm: calc(100vw - var(--body-padding-sm-double));
@@ -1149,7 +1150,7 @@ figure {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 16px;
+  gap: var(--panel-gap);
   width: 100%;
   overflow: auto;
   scroll-snap-type: x mandatory;
@@ -1269,6 +1270,127 @@ figure {
   background: linear-gradient(180deg, #0058f5, transparent);
   flex: 1;
   width: 100%;
+}
+
+.section-competitions {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
+  margin-top: var(--top-spacing-header);
+}
+.section-competitions__title {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-size: 55px;
+  line-height: 110%;
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions__title {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-size: 36px;
+    margin-block-end: var(--panel-gap);
+    text-align: center;
+  }
+}
+.section-competitions__desc {
+  margin-block-end: var(--section-gap);
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions__desc {
+    text-align: center;
+  }
+}
+.section-competitions .competition-types {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--panel-gap);
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  align-self: flex-start;
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions .competition-types {
+    padding-inline-end: 32px;
+    width: calc(100vw - var(--body-padding-double) + 6px);
+  }
+}
+.section-competitions .competition-types__figure {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  flex: 1;
+  aspect-ratio: 1/1.65;
+  min-width: 320px;
+  scroll-snap-align: start;
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions .competition-types__figure {
+    translate: 30px 0;
+  }
+}
+.section-competitions .competition-types__img {
+  height: 100%;
+}
+.section-competitions .competition-types__caption {
+  --font-color--primary: #f7f7f7;
+  --link-color: #f7f7f7;
+  --link-color-hover: #d9d9d9;
+  --btn-color-bg: #f7f7f7;
+  --btn-color-text: #0058f5;
+  --btn-color-border: var(--btn-color-bg);
+  --btn-color-bg--hover: #0058f5;
+  --btn-color-text--hover: #f7f7f7;
+  --btn-color-border--hover: var(--btn-color-bg--hover);
+  color: var(--font-color--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: linear-gradient(0deg, #0058f5 50%, rgba(0, 88, 245, 0) 100%);
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  padding: var(--body-padding);
+  opacity: 0;
+  transition: 0.32s ease;
+}
+.section-competitions .competition-types__caption:hover {
+  opacity: 1;
+}
+.section-competitions .competition-types__caption:hover .competition-types__caption-title,
+.section-competitions .competition-types__caption:hover .competition-types__caption-p {
+  translate: 0 0;
+}
+.section-competitions .competition-types__caption-title {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-size: 36px;
+  margin-block-end: var(--panel-gap);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-competitions .competition-types__caption-title {
+    translate: 48px 0;
+    transition: 0.32s ease;
+  }
+}
+.section-competitions .competition-types__caption-p {
+  height: 9lh;
+  font-size: 22px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-competitions .competition-types__caption-p {
+    translate: 48px 0;
+    transition: 0.32s ease 0.024s;
+  }
+}
+@media screen and (max-width: 1512px) {
+  .section-competitions .competition-types__caption-p {
+    height: 11lh;
+  }
 }
 
 .error {
