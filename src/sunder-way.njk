@@ -75,6 +75,7 @@ hide_footer: false
 <!-- prettier-ignore -->
 {% set section_id = "operation-sunder-serves" %}
 {% set section_graphic = page_sunder_way.oss.graphic %}
+{% set graphic_title = page_sunder_way.oss.section_title | removeTokens %}
 {% set section_h1 = '' %}
 {% set section_h2 = page_sunder_way.oss.section_title %}
 {% set section_p = page_sunder_way.oss.section_desc %}
@@ -90,6 +91,7 @@ hide_footer: false
 
 <!-- prettier-ignore -->
 {% if page_sunder_way.quotes.toggle_section %}
+  {% set section_id = 'quote-section' %}
   {% set section_title = page_sunder_way.quotes.section_title %}
   {% set quote_list = page_sunder_way.quotes.list %}
   {% include "./_includes/partials/partial-quote.njk" %}

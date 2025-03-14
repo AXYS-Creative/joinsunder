@@ -114,6 +114,73 @@ collections:
   - name: "page_sunder_way"
     label: "Page - Sunder Way"
     files:
+      - name: "ethos"
+        label: "Section - Ethos"
+        file: "src/_data/page_sunder_way/ethos.yaml"
+        preview_path: "/sunder-way"
+        editor:
+          preview: false
+        fields:
+          - name: "toggle_section"
+            label: "Show Section (Sunder Way - Ethos)"
+            widget: "boolean"
+            default: true
+          - name: "section_title"
+            label: "Section Title (Top)"
+            widget: "string"
+            required: true
+            hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+          - name: "section_imgs"
+            label: "Section Images"
+            widget: "list"
+            allow_add: false
+            collapse: true
+            required: true
+            field:
+              name: "src"
+              label: "Image Source"
+              widget: "image"
+              required: true
+          - name: "section_desc"
+            label: "Section Description (Middle)"
+            widget: "text"
+            required: true
+          - name: "values"
+            label: "Value Tiles"
+            widget: "list"
+            collapse: true
+            required: true
+            allow_add: false
+            fields:
+              - name: title
+                label: Title
+                widget: string
+                requried: false
+                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+              - name: caption
+                label: Caption
+                widget: text
+                requried: false
+          - name: "cta_p"
+            label: "Call To Action Paragraph (Bottom)"
+            widget: "text"
+            required: true
+          - name: "cta"
+            label: "Call To Action"
+            widget: "object"
+            summary: "{{ fields.name }}: {{ fields.url }}"
+            required: false
+            fields:
+              - name: text
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
+                hint: i.e. /join
       - name: "oss"
         label: "Section - OSS"
         file: "src/_data/page_sunder_way/oss.yaml"
@@ -122,7 +189,7 @@ collections:
           preview: false
         fields:
           - name: "toggle_section"
-            label: "Show Section (Sunder Way OSS)"
+            label: "Show Section (Sunder Way - OSS)"
             widget: "boolean"
             default: true
           - name: "section_title"
@@ -166,7 +233,7 @@ collections:
           preview: false
         fields:
           - name: "toggle_section"
-            label: "Show Section (Sunder Platform Quote)"
+            label: "Show Section (Sunder Way - Quote)"
             widget: "boolean"
             default: true
           - name: "list"
@@ -207,7 +274,7 @@ collections:
           preview: false
         fields:
           - name: "toggle_section"
-            label: "Show Section (Sunder Platform Hero)"
+            label: "Show Section (Sunder Platform - Hero)"
             widget: "boolean"
             default: true
           - name: "section_title"
@@ -329,7 +396,7 @@ collections:
           preview: false
         fields:
           - name: "toggle_section"
-            label: "Show Section (Sunder Platform Tools)"
+            label: "Show Section (Sunder Platform - Tools)"
             widget: "boolean"
             default: true
           - name: "section_title"
@@ -384,7 +451,7 @@ collections:
           preview: false
         fields:
           - name: "toggle_section"
-            label: "Show Section (Sunder Platform Quote)"
+            label: "Show Section (Sunder Platform - Quote)"
             widget: "boolean"
             default: true
           - name: "list"
