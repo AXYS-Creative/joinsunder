@@ -576,7 +576,7 @@ collections:
             summary: "{{ fields.name }}: {{ fields.url }}"
             required: false
             fields:
-              - name: text
+              - name: title
                 label: Button Text
                 widget: string
                 required: false
