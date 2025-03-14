@@ -2,7 +2,7 @@
 
 # show_skip_to_content: true
 
-# Missing forward slash to allow active page nav close
+# Missing forward slash "/" to allow active page nav close
 links:
   - text: The [%span.reveal%]Sunder[%span%]Way
     url: "sunder-way"
