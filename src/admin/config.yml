@@ -234,6 +234,56 @@ collections:
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
+          - name: yog_logo
+            label: Logo - Year of Gear Logo
+            widget: image
+            required: true
+          - name: yog_merch
+            label: Rows - Year of Gear Merch
+            label_singular: row
+            widget: list
+            summary: "{{ fields.items }}"
+            required: true
+            fields:
+              - name: items
+                label: Items
+                label_singular: item
+                widget: list
+                required: true
+                min: 1
+                max: 3
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                    required: true
+                  - name: src
+                    label: Image Source
+                    widget: image
+                    required: true
+                  - name: rotate
+                    label: Rotation
+                    widget: select
+                    options: ["none", "left", "right"]
+                    multiple: false
+          - name: "yog_types"
+            label: "Year of Gear Types"
+            widget: "list"
+            allow_add: false
+            required: true
+            fields:
+              - name: title
+                label: Title
+                widget: string
+                required: true
+              - name: src
+                label: Image Source (Banner)
+                widget: image
+                required: true
+                hint: Keep below 1MB
+                media_library:
+                  config:
+                    max_file_size: 1000000 # 1MB = 1,000,000 bytes
       - name: "oss"
         label: "Section - OSS"
         file: "src/_data/page_sunder_way/oss.yaml"

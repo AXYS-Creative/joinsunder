@@ -358,6 +358,8 @@
 
         @include mq-max(lg) {
           flex-direction: column;
+          gap: var(--section-gap);
+          margin-block-end: var(--section-gap);
           // @include column-center;
         }
 
@@ -404,13 +406,12 @@
 
     &-types {
       @include row-stretch(space-between);
-      // padding-inline: var(--body-padding-double);
       padding-block-end: var(--body-padding-double);
 
       @include mq-max(md) {
-        gap: var(--body-padding) 0;
+        gap: var(--body-padding-double) 0;
         padding-inline: var(--body-padding);
-        padding-block-end: var(--body-padding);
+        padding-block-end: var(--body-padding-double);
       }
 
       @include mq-max(lg) {
@@ -428,7 +429,7 @@
           max-width: 46%;
         }
 
-        @include mq-max(sm) {
+        @include mq-max(md) {
           padding: 0;
         }
       }
@@ -452,6 +453,10 @@
         width: 4px;
         height: 100%;
         background: var(--background-color);
+
+        @include mq-max(md) {
+          width: 3px;
+        }
 
         @include mq-max(sm) {
           width: 2px;

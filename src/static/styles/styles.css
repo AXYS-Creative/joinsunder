@@ -1456,6 +1456,8 @@ figure {
 @media screen and (max-width: 1024px) {
   .section-competitions .yog-merch__row {
     flex-direction: column;
+    gap: var(--section-gap);
+    margin-block-end: var(--section-gap);
   }
 }
 .section-competitions .yog-merch__row picture {
@@ -1500,9 +1502,9 @@ figure {
 }
 @media screen and (max-width: 768px) {
   .section-competitions .yog-types {
-    gap: var(--body-padding) 0;
+    gap: var(--body-padding-double) 0;
     padding-inline: var(--body-padding);
-    padding-block-end: var(--body-padding);
+    padding-block-end: var(--body-padding-double);
   }
 }
 @media screen and (max-width: 1024px) {
@@ -1521,7 +1523,7 @@ figure {
     max-width: 46%;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .section-competitions .yog-types__img {
     padding: 0;
   }
@@ -1547,6 +1549,11 @@ figure {
   width: 4px;
   height: 100%;
   background: var(--background-color);
+}
+@media screen and (max-width: 768px) {
+  .section-competitions .yog-stripes__stripe {
+    width: 3px;
+  }
 }
 @media screen and (max-width: 480px) {
   .section-competitions .yog-stripes__stripe {

@@ -99,11 +99,12 @@ hide_footer: false
     <div class="yog-merch">
       {% for row in page_sunder_way.competitions.yog_merch %}
       <div class="yog-merch__row">
-        {% for child in row.children %}
+        {% for item in row.items %}
         <img
-          class="yog-merch__row-img gsap-animate {{ child.rotate }}"
-          src="{{ child.src }}"
-          alt="{{ child.title }}"
+          class="yog-merch__row-img gsap-animate {{ item.rotate }}"
+          src="{{ item.src }}"
+          alt="{{ item.title }}"
+          loading="eager"
         />
         {% endfor %}
       </div>

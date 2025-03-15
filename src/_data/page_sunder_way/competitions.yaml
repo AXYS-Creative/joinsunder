@@ -17,34 +17,29 @@ types:
 
 yog_logo: /static/img/Way-YOG-1YOG.svg
 yog_merch:
-  - row: Row 1
-    children:
+  - items:
       - title: hat
         src: /static/img/Way-YOG-2Hat.png
         rotate: none
-  - row: Row 2
-    children:
+  - items:
       - title: sweater
         src: /static/img/Way-YOG-1Shirt.png
         rotate: left
       - title: bag
         src: /static/img/Way-YOG-3Bag.png
         rotate: none
-  - row: Row 3
-    children:
+  - items:
       - title: skateboard
         src: /static/img/Way-YOG-4Skateboard.png
         rotate: left
-  - row: Row 4
-    children:
+  - items:
       - title: jacket
         src: /static/img/Way-YOG-5Jacket.png
         rotate: left
       - title: shirt
         src: /static/img/Way-YOG-7Shirt.png
         rotate: right
-  - row: Row 5
-    children:
+  - items:
       - title: segway
         src: /static/img/Way-YOG-6Segway.png
         rotate: none
