@@ -227,6 +227,7 @@
     overflow: auto;
     scroll-snap-type: x mandatory;
     align-self: flex-start;
+    margin-block-end: var(--section-gap-double);
 
     @include mq-max(lg) {
       // translate: -30px 0;
@@ -248,10 +249,30 @@
       @include mq-max(lg) {
         translate: 30px 0;
       }
+
+      &:hover {
+        .competition-types__img {
+          scale: 1;
+        }
+
+        .competition-types__caption {
+          opacity: 1;
+
+          &-title,
+          &-p {
+            translate: 0 0;
+          }
+        }
+      }
     }
 
     &__img {
       height: 100%;
+
+      @include mq-motion-allow {
+        scale: 1.025;
+        transition: $ease;
+      }
     }
 
     &__caption {
@@ -263,16 +284,9 @@
       bottom: 0;
       padding: var(--body-padding);
 
-      opacity: 0;
-      transition: $ease;
-
-      &:hover {
-        opacity: 1;
-
-        .competition-types__caption-title,
-        .competition-types__caption-p {
-          translate: 0 0;
-        }
+      @include mq-motion-allow {
+        opacity: 0;
+        transition: $ease;
       }
 
       &-title {
@@ -296,6 +310,151 @@
 
         @include mq-max(xxl) {
           height: 11lh;
+        }
+      }
+    }
+  }
+
+  // Year of Gear (YOG)
+  .yog {
+    // border: $test;
+    isolation: isolate;
+    position: relative;
+    @include blue-gradient(0deg, 20%, 80%);
+
+    &-logo {
+      @include row-start;
+      position: sticky;
+      top: 128px;
+      height: 0; // remove white space at start of section
+      z-index: -1;
+
+      @include mq-max(lg) {
+        height: 196px;
+      }
+
+      &__img {
+        width: 420px;
+
+        @include mq-max(md) {
+          width: min(100%, 360px);
+          padding-inline: var(--body-padding-double);
+        }
+      }
+    }
+
+    &-merch {
+      margin: auto;
+      padding-block: 264px 148px; // flag
+      padding-inline: var(--body-padding-double);
+
+      &__row {
+        // border: 2px solid black;
+        @include row-center(space-around);
+
+        @include mq-min(lg) {
+          height: 196px; // flag
+        }
+
+        @include mq-max(lg) {
+          flex-direction: column;
+          // @include column-center;
+        }
+
+        picture {
+          @include row-center;
+        }
+
+        &-img {
+          // background-color: yellow;
+          width: 250px;
+          aspect-ratio: 1;
+          object-fit: contain;
+
+          @include mq-max(lg) {
+            width: 75%;
+          }
+
+          // @include mq-max(sm) {
+          //   width: 100%;
+          // }
+
+          @include mq-motion-allow {
+            opacity: 0;
+            scale: 0.8;
+            transition: $ease 0.125s;
+
+            &.animate {
+              opacity: 1;
+              scale: 1;
+              transition: $ease 0.25s;
+            }
+          }
+
+          &.left {
+            rotate: -12.5deg;
+          }
+
+          &.right {
+            rotate: 12.5deg;
+          }
+        }
+      }
+    }
+
+    &-types {
+      @include row-stretch(space-between);
+      // padding-inline: var(--body-padding-double);
+      padding-block-end: var(--body-padding-double);
+
+      @include mq-max(md) {
+        gap: var(--body-padding) 0;
+        padding-inline: var(--body-padding);
+        padding-block-end: var(--body-padding);
+      }
+
+      @include mq-max(lg) {
+        flex-wrap: wrap;
+      }
+
+      &__img {
+        // border: $test;
+        flex: 1;
+        max-width: 23%;
+        aspect-ratio: 2 / 1;
+        padding: 24px;
+
+        @include mq-max(lg) {
+          max-width: 46%;
+        }
+
+        @include mq-max(sm) {
+          padding: 0;
+        }
+      }
+    }
+
+    &-stripes {
+      @include row-center;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50% 0;
+      width: 50%;
+      height: 100%;
+      z-index: -2;
+
+      @include mq-min(lg) {
+        border-inline: 4px solid var(--background-color);
+      }
+
+      &__stripe {
+        width: 4px;
+        height: 100%;
+        background: var(--background-color);
+
+        @include mq-max(sm) {
+          width: 2px;
         }
       }
     }

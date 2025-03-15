@@ -85,6 +85,41 @@ hide_footer: false
     </figure>
     {% endfor %}
   </div>
+
+  <div class="yog">
+    <figure class="yog-logo">
+      <img
+        class="yog-logo__img"
+        src="{{ page_sunder_way.competitions.yog_logo }}"
+        alt="Year of Gear"
+        eleventy:ignore
+      />
+    </figure>
+
+    <div class="yog-merch">
+      {% for row in page_sunder_way.competitions.yog_merch %}
+      <div class="yog-merch__row">
+        {% for child in row.children %}
+        <img
+          class="yog-merch__row-img gsap-animate {{ child.rotate }}"
+          src="{{ child.src }}"
+          alt="{{ child.title }}"
+        />
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="yog-types">
+      {% for type in page_sunder_way.competitions.yog_types %}
+      <img class="yog-types__img" src="{{ type.src }}" alt="" eleventy:ignore />
+      {% endfor %}
+    </div>
+
+    <div class="yog-stripes">
+      <div class="yog-stripes__stripe"></div>
+    </div>
+  </div>
 </section>
 {% endif %}
 

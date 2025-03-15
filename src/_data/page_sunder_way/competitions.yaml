@@ -14,3 +14,46 @@ types:
   - title: Rapid Sunder
     caption: The OG. Survive and advance in Sunder’s original Team vs Team tournament. Teams earn swag and move up the power rankings by winning weekly matchups that culminate in a 32 team winner-take-all playoff bracket.
     src: /static/img/Way-Competitions-4RS.png
+
+yog_logo: /static/img/Way-YOG-1YOG.svg
+yog_merch:
+  - row: Row 1
+    children:
+      - title: hat
+        src: /static/img/Way-YOG-2Hat.png
+        rotate: none
+  - row: Row 2
+    children:
+      - title: sweater
+        src: /static/img/Way-YOG-1Shirt.png
+        rotate: left
+      - title: bag
+        src: /static/img/Way-YOG-3Bag.png
+        rotate: none
+  - row: Row 3
+    children:
+      - title: skateboard
+        src: /static/img/Way-YOG-4Skateboard.png
+        rotate: left
+  - row: Row 4
+    children:
+      - title: jacket
+        src: /static/img/Way-YOG-5Jacket.png
+        rotate: left
+      - title: shirt
+        src: /static/img/Way-YOG-7Shirt.png
+        rotate: right
+  - row: Row 5
+    children:
+      - title: segway
+        src: /static/img/Way-YOG-6Segway.png
+        rotate: none
+yog_types:
+  - title: The Boom
+    src: /static/img/Way-YOG-2Boom.svg
+  - title: The Drop
+    src: /static/img/Way-YOG-3Drop.svg
+  - title: The Club
+    src: /static/img/Way-YOG-4Club.svg
+  - title: Battle Box
+    src: /static/img/Way-YOG-5Box.svg

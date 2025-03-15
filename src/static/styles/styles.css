@@ -1315,6 +1315,7 @@ figure {
   overflow: auto;
   scroll-snap-type: x mandatory;
   align-self: flex-start;
+  margin-block-end: var(--section-gap-double);
 }
 @media screen and (max-width: 1024px) {
   .section-competitions .competition-types {
@@ -1336,8 +1337,23 @@ figure {
     translate: 30px 0;
   }
 }
+.section-competitions .competition-types__figure:hover .competition-types__img {
+  scale: 1;
+}
+.section-competitions .competition-types__figure:hover .competition-types__caption {
+  opacity: 1;
+}
+.section-competitions .competition-types__figure:hover .competition-types__caption-title, .section-competitions .competition-types__figure:hover .competition-types__caption-p {
+  translate: 0 0;
+}
 .section-competitions .competition-types__img {
   height: 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-competitions .competition-types__img {
+    scale: 1.025;
+    transition: 0.32s ease;
+  }
 }
 .section-competitions .competition-types__caption {
   --font-color--primary: #f7f7f7;
@@ -1359,15 +1375,12 @@ figure {
   height: 100%;
   bottom: 0;
   padding: var(--body-padding);
-  opacity: 0;
-  transition: 0.32s ease;
 }
-.section-competitions .competition-types__caption:hover {
-  opacity: 1;
-}
-.section-competitions .competition-types__caption:hover .competition-types__caption-title,
-.section-competitions .competition-types__caption:hover .competition-types__caption-p {
-  translate: 0 0;
+@media (prefers-reduced-motion: no-preference) {
+  .section-competitions .competition-types__caption {
+    opacity: 0;
+    transition: 0.32s ease;
+  }
 }
 .section-competitions .competition-types__caption-title {
   font-weight: 900;
@@ -1395,6 +1408,149 @@ figure {
 @media screen and (max-width: 1512px) {
   .section-competitions .competition-types__caption-p {
     height: 11lh;
+  }
+}
+.section-competitions .yog {
+  isolation: isolate;
+  position: relative;
+  background: linear-gradient(0deg, #0058f5 20%, rgba(0, 88, 245, 0) 80%);
+}
+.section-competitions .yog-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: sticky;
+  top: 128px;
+  height: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions .yog-logo {
+    height: 196px;
+  }
+}
+.section-competitions .yog-logo__img {
+  width: 420px;
+}
+@media screen and (max-width: 768px) {
+  .section-competitions .yog-logo__img {
+    width: min(100%, 360px);
+    padding-inline: var(--body-padding-double);
+  }
+}
+.section-competitions .yog-merch {
+  margin: auto;
+  padding-block: 264px 148px;
+  padding-inline: var(--body-padding-double);
+}
+.section-competitions .yog-merch__row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (min-width: 1025px) {
+  .section-competitions .yog-merch__row {
+    height: 196px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions .yog-merch__row {
+    flex-direction: column;
+  }
+}
+.section-competitions .yog-merch__row picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-competitions .yog-merch__row-img {
+  width: 250px;
+  aspect-ratio: 1;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions .yog-merch__row-img {
+    width: 75%;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-competitions .yog-merch__row-img {
+    opacity: 0;
+    scale: 0.8;
+    transition: 0.32s ease 0.125s;
+  }
+  .section-competitions .yog-merch__row-img.animate {
+    opacity: 1;
+    scale: 1;
+    transition: 0.32s ease 0.25s;
+  }
+}
+.section-competitions .yog-merch__row-img.left {
+  rotate: -12.5deg;
+}
+.section-competitions .yog-merch__row-img.right {
+  rotate: 12.5deg;
+}
+.section-competitions .yog-types {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding-block-end: var(--body-padding-double);
+}
+@media screen and (max-width: 768px) {
+  .section-competitions .yog-types {
+    gap: var(--body-padding) 0;
+    padding-inline: var(--body-padding);
+    padding-block-end: var(--body-padding);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions .yog-types {
+    flex-wrap: wrap;
+  }
+}
+.section-competitions .yog-types__img {
+  flex: 1;
+  max-width: 23%;
+  aspect-ratio: 2/1;
+  padding: 24px;
+}
+@media screen and (max-width: 1024px) {
+  .section-competitions .yog-types__img {
+    max-width: 46%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section-competitions .yog-types__img {
+    padding: 0;
+  }
+}
+.section-competitions .yog-stripes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 50%;
+  height: 100%;
+  z-index: -2;
+}
+@media screen and (min-width: 1025px) {
+  .section-competitions .yog-stripes {
+    border-inline: 4px solid var(--background-color);
+  }
+}
+.section-competitions .yog-stripes__stripe {
+  width: 4px;
+  height: 100%;
+  background: var(--background-color);
+}
+@media screen and (max-width: 480px) {
+  .section-competitions .yog-stripes__stripe {
+    width: 2px;
   }
 }
 

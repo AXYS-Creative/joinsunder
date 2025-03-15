@@ -62,25 +62,6 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
       //   }
       // );
 
-      // GLOBAL - Animate any element with the class 'gsap-animate' using the 'animate' companion class
-      {
-        const targetElements = document.querySelectorAll(".gsap-animate");
-
-        targetElements.forEach((targetElem) => {
-          gsap.to(targetElem, {
-            scrollTrigger: {
-              trigger: targetElem,
-              start: "top 98%",
-              end: "bottom top",
-              onEnter: () => targetElem.classList.add("animate"),
-              onLeave: () => targetElem.classList.remove("animate"),
-              onEnterBack: () => targetElem.classList.add("animate"),
-              onLeaveBack: () => targetElem.classList.remove("animate"),
-            },
-          });
-        });
-      }
-
       // Page - Sunder Way
       {
         // Ethos Section
@@ -148,6 +129,39 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
             },
           });
         }
+
+        // Competitions Section
+        if (document.querySelector(".section-competitions")) {
+          // Fade Year of Gear (YOG) logo
+          gsap.to(".yog-logo", {
+            opacity: 0,
+            scrollTrigger: {
+              trigger: ".yog-types",
+              start: "top 90%",
+              end: "top 40%",
+              scrub: 0,
+            },
+          });
+        }
+      }
+
+      // GLOBAL (place under other tweens i.e. pinned sections) - Animate any element with the class 'gsap-animate' using the 'animate' companion class
+      {
+        const targetElements = document.querySelectorAll(".gsap-animate");
+
+        targetElements.forEach((targetElem) => {
+          gsap.to(targetElem, {
+            scrollTrigger: {
+              trigger: targetElem,
+              start: "top 98%",
+              end: "bottom top",
+              onEnter: () => targetElem.classList.add("animate"),
+              onLeave: () => targetElem.classList.remove("animate"),
+              onEnterBack: () => targetElem.classList.add("animate"),
+              onLeaveBack: () => targetElem.classList.remove("animate"),
+            },
+          });
+        });
       }
 
       // Library - Lift any desired code blocks out, then delete from production
