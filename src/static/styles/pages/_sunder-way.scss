@@ -1,7 +1,3 @@
-// .main-sunder-way {
-//   padding: var(--body-padding-sm);
-// }
-
 .section-ethos {
   --panel-translate-offset: 128px;
 
@@ -197,29 +193,7 @@
 }
 
 .section-competitions {
-  @include top-fade-section;
-
-  @include mq-min(lg) {
-    padding-inline: var(--body-padding-double);
-  }
-
-  &__title {
-    @include h3;
-
-    @include mq-max(lg) {
-      @include h4;
-      margin-block-end: var(--panel-gap);
-      text-align: center;
-    }
-  }
-
-  &__desc {
-    margin-block-end: var(--section-gap);
-
-    @include mq-max(lg) {
-      text-align: center;
-    }
-  }
+  // using section-gradient util
 
   .competition-types {
     @include row-center(flex-start);
@@ -469,4 +443,18 @@
       }
     }
   }
+}
+
+.section-experiences {
+  // using section-gradient util
+
+  border: none;
+
+  // .video-carousel {
+
+  // }
+
+  // .collage {
+
+  // }
 }

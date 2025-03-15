@@ -1,11 +1,11 @@
 import { root } from "../util.js";
 
-const carouselSnap = document.querySelector(".carousel-snap"),
-  trackInner = document.querySelector(".carousel-snap__track-inner"),
-  prevBtn = document.querySelector(".carousel-snap-btn-prev"),
-  nextBtn = document.querySelector(".carousel-snap-btn-next");
+const carousel = document.querySelector(".carousel"),
+  trackInner = document.querySelector(".carousel__track-inner"),
+  prevBtn = document.querySelector(".carousel-btn-prev"),
+  nextBtn = document.querySelector(".carousel-btn-next");
 
-const items = document.querySelectorAll(".carousel-snap__track-item");
+const items = document.querySelectorAll(".carousel__track-item");
 
 let currentIndex = 0;
 let startX = 0;
@@ -13,25 +13,18 @@ let currentX = 0;
 let isDragging = false;
 let translateX = 0;
 
-if (carouselSnap) {
+if (carousel) {
   const autoplayClass = "autoplay";
-  const autoplayEnabledByAdmin = carouselSnap.classList.contains(autoplayClass);
+  const autoplayEnabledByAdmin = carousel.classList.contains(autoplayClass);
   const autoplayIntervalTime =
-    parseInt(carouselSnap.dataset.autoplayInterval, 10) || 5000;
+    parseInt(carousel.dataset.autoplayInterval, 10) || 5000;
   let autoplayEnabled = autoplayEnabledByAdmin;
   let autoplayInterval;
 
-  // ✅ Check if visitor preference exists
-  const savedAutoplaySetting = localStorage.getItem("carouselAutoplay");
-  if (savedAutoplaySetting !== null) {
-    autoplayEnabled = savedAutoplaySetting === "true";
-  }
-
   const updateCarousel = () => {
     const trackGap =
-      parseFloat(
-        getComputedStyle(root).getPropertyValue("--carousel-snap-gap")
-      ) || 0;
+      parseFloat(getComputedStyle(root).getPropertyValue("--carousel-gap")) ||
+      0;
     const itemWidth = items[0].offsetWidth + trackGap;
     const containerWidth =
       trackInner.parentElement.offsetWidth + trackGap * 1.5;
@@ -107,7 +100,7 @@ if (carouselSnap) {
   trackInner.addEventListener("touchmove", onDrag);
   trackInner.addEventListener("touchend", endDrag);
 
-  // ✅ Autoplay Logic
+  // Autoplay Logic
   const startAutoplay = () => {
     if (!autoplayEnabled) return;
     stopAutoplay();
@@ -126,19 +119,17 @@ if (carouselSnap) {
     startAutoplay();
   };
 
-  // ✅ Accessible Toggle Button Logic
+  // Accessible Toggle Button Logic
   // This logic could be thrown in a buttons.js file? Reuse across different button--toggle components
-  const autoplayToggle = document.querySelector(
-      ".carousel-snap-autoplay-toggle"
-    ),
+  const autoplayToggle = document.querySelector(".carousel-autoplay-toggle"),
     autoplayToggleLabel = document.querySelector(
-      ".carousel-snap-autoplay-toggle__label"
+      ".carousel-autoplay-toggle__label"
     ).innerHTML,
     autoplayToggleLabelTrue = document
-      .querySelector(".carousel-snap-autoplay-toggle__switch")
+      .querySelector(".carousel-autoplay-toggle__switch")
       .getAttribute("data-label-true"),
     autoplayToggleLabelFalse = document
-      .querySelector(".carousel-snap-autoplay-toggle__switch")
+      .querySelector(".carousel-autoplay-toggle__switch")
       .getAttribute("data-label-false");
 
   // This logic could be thrown in a buttons.js file? Reuse across different button--toggle components
@@ -147,7 +138,6 @@ if (carouselSnap) {
 
     autoplayToggle.addEventListener("click", () => {
       autoplayEnabled = !autoplayEnabled;
-      localStorage.setItem("carouselAutoplay", autoplayEnabled); // Save preference
       autoplayToggle.setAttribute("aria-pressed", autoplayEnabled.toString());
       autoplayToggle.setAttribute(
         "aria-label",

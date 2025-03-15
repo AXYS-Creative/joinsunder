@@ -1,0 +1,9 @@
+toggle_section: true
+section_title: Experiences
+section_desc: From exhilarating excursions to inspiring events, explore experiences that take you to new heights
+
+videos:
+  - title: Xcaret
+    desc: Xcaret
+    img_src: Xcaret
+    vid_src: Xcaret

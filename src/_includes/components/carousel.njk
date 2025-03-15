@@ -1,0 +1,47 @@
+<div
+  class="
+    carousel 
+    {{ carousel_class }} 
+    {% if carousel_autoplay.enabled %}autoplay{% endif %}
+    "
+  id="carousel"
+  data-autoplay-interval="{{ carousel_autoplay.interval }}"
+>
+  <div class="carousel__track" id="carousel__track">
+    <div class="carousel__track-inner">
+      {% for item in list %}
+      <div class="carousel__track-item">
+        <img src="{{ item.image }}" alt="{{ item.alt }}" />
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="carousel__controls">
+    <div class="carousel__conrols-slider">
+      <button
+        class="carousel-btn-prev cta-1 tab-element-page"
+        aria-label="previous slide"
+        aria-controls="carousel__track"
+      >
+        Prev
+      </button>
+      <button
+        class="carousel-btn-next cta-1 tab-element-page"
+        aria-label="next slide"
+        aria-controls="carousel__track"
+      >
+        Next
+      </button>
+    </div>
+
+    <div class="carousel__controls-autoplay">
+      <!-- prettier-ignore -->
+      {% set btn_toggle_class = "carousel-autoplay-toggle" %}
+      {% set btn_toggle_label = "autoplay:" %}
+      {% include "./button-toggle.njk" %}
+    </div>
+  </div>
+</div>

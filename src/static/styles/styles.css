@@ -25,6 +25,9 @@
   --body-padding-double: calc(var(--body-padding) * 2);
   --body-padding-sm: 12px;
   --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
+  --section-gap: 64px;
+  --section-gap-double: calc(var(--section-gap) * 2);
+  --section-gap-half: calc(var(--section-gap) / 2);
   --panel-gap: 16px;
   --content-width: 1750px;
   --full-width-snip: calc(100vw - var(--body-padding-double));
@@ -33,9 +36,6 @@
   --full-height-snip-sm: calc(100vh - var(--body-padding-sm-double));
   --paragraph-snip: 572px;
   --section-min-height: 720px;
-  --section-gap: 64px;
-  --section-gap-double: calc(var(--section-gap) * 2);
-  --section-gap-half: calc(var(--section-gap) / 2);
   --header-height: 36px;
   --header-max-width: calc(
     var(--content-width) - var(--body-padding-sm-double)
@@ -72,7 +72,7 @@
 }
 
 :root {
-  --carousel-snap-gap: 24px;
+  --carousel-gap: 24px;
 }
 
 * {
@@ -470,6 +470,52 @@ body:has(.load-complete) .hero div {
 section {
   padding-inline: var(--body-padding);
   padding-block: var(--body-padding-double);
+}
+
+.section-gradient {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
+  margin-top: var(--top-spacing-header);
+}
+@media screen and (min-width: 1025px) {
+  .section-gradient {
+    padding-inline: var(--body-padding-double);
+  }
+}
+.section-gradient__title {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-size: 55px;
+  line-height: 110%;
+}
+@media screen and (max-width: 1024px) {
+  .section-gradient__title {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-size: 36px;
+    margin-block-end: var(--panel-gap);
+    text-align: center;
+  }
+}
+.section-gradient__desc {
+  margin-block-end: var(--section-gap);
+}
+@media screen and (min-width: 769px) {
+  .section-gradient__desc {
+    width: var(--paragraph-snip);
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-gradient__desc {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-gradient__desc {
+    text-align: center;
+  }
 }
 
 h1 {
@@ -1272,41 +1318,6 @@ figure {
   width: 100%;
 }
 
-.section-competitions {
-  border-radius: var(--radius-lg);
-  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
-  margin-top: var(--top-spacing-header);
-}
-@media screen and (min-width: 1025px) {
-  .section-competitions {
-    padding-inline: var(--body-padding-double);
-  }
-}
-.section-competitions__title {
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-  font-size: 55px;
-  line-height: 110%;
-}
-@media screen and (max-width: 1024px) {
-  .section-competitions__title {
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-    font-size: 36px;
-    margin-block-end: var(--panel-gap);
-    text-align: center;
-  }
-}
-.section-competitions__desc {
-  margin-block-end: var(--section-gap);
-}
-@media screen and (max-width: 1024px) {
-  .section-competitions__desc {
-    text-align: center;
-  }
-}
 .section-competitions .competition-types {
   display: flex;
   justify-content: flex-start;
@@ -1562,6 +1573,10 @@ figure {
   }
 }
 
+.section-experiences {
+  border: none;
+}
+
 .error {
   display: flex;
   flex-direction: column;
@@ -1653,52 +1668,49 @@ figure {
   flex-shrink: 0;
 }
 
-.carousel-snap-section {
+.carousel-section {
   overflow: hidden;
 }
 
-.carousel-snap__controls {
+.carousel__controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-block: 24px;
 }
-.carousel-snap__controls button {
-  color: var(--font-color--primary);
-}
-.carousel-snap__controls button[disabled] {
+.carousel__controls button[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.carousel-snap__track {
+.carousel__track {
   overflow: hidden;
   position: relative;
   cursor: grab;
 }
-.carousel-snap__track:active {
+.carousel__track:active {
   cursor: grabbing;
 }
-.carousel-snap__track-inner {
+.carousel__track-inner {
   display: flex;
-  gap: var(--carousel-snap-gap);
+  gap: var(--carousel-gap);
   transition: transform 0.3s ease-in-out;
   will-change: transform;
 }
-.carousel-snap__track-item {
+.carousel__track-item {
   flex: 1;
-  min-width: calc(33% - var(--carousel-snap-gap) / 3);
+  min-width: calc(33% - var(--carousel-gap) / 3);
 }
 @media screen and (max-width: 1024px) {
-  .carousel-snap__track-item {
+  .carousel__track-item {
     min-width: 500px;
   }
 }
 @media screen and (max-width: 768px) {
-  .carousel-snap__track-item {
+  .carousel__track-item {
     min-width: 250px;
   }
 }
-.carousel-snap__track-item img {
+.carousel__track-item img {
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;

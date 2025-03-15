@@ -200,22 +200,22 @@ collections:
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Way - Competitions)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Way - Competitions)
+            widget: boolean
             default: true
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
-          - name: "section_desc"
-            label: "Section Description"
-            widget: "text"
+          - name: section_desc
+            label: Section Description
+            widget: text
             required: true
-          - name: "types"
-            label: "Competition Types"
-            label_singular: "Type"
-            widget: "list"
+          - name: types
+            label: Competition Types
+            label_singular: Type
+            widget: list
             required: true
             fields:
               - name: title
@@ -665,24 +665,24 @@ collections:
             label: "Section Title"
             widget: "string"
             required: true
-  - name: "global"
-    label: "Global"
+  - name: global
+    label: Global
     files:
-      - name: "footer"
-        label: "Site Footer"
-        file: "src/_data/global/footer.yaml"
+      - name: footer
+        label: Site Footer
+        file: src/_data/global/footer.yaml
         editor:
           preview: false
         fields:
-          - name: "logo_src"
-            label: "Logo Image Source"
-            widget: "image"
+          - name: logo_src
+            label: Logo Image Source
+            widget: image
             required: false
             hint: An empty value removes the logo
-          - name: "links"
-            label: "Footer Links"
-            label_singular: "Link"
-            widget: "list"
+          - name: links
+            label: Footer Links
+            label_singular: Link
+            widget: list
             required: false
             fields:
               - name: title
@@ -693,9 +693,9 @@ collections:
                 label: URL
                 widget: string
                 required: true
-          - name: "cta"
-            label: "Call To Action"
-            widget: "object"
+          - name: cta
+            label: Call To Action
+            widget: object
             summary: "{{ fields.name }}: {{ fields.url }}"
             required: false
             fields:
@@ -709,16 +709,16 @@ collections:
                 widget: string
                 required: false
                 hint: i.e. /join
-      - name: "social_media"
-        label: "Social Media"
-        file: "src/_data/global/social_media.yaml"
+      - name: social_media
+        label: Social Media
+        file: src/_data/global/social_media.yaml
         editor:
           preview: false
         fields:
-          - name: "links"
-            label: "Social Media Links"
-            label_singular: "Link"
-            widget: "list"
+          - name: links
+            label: Social Media Links
+            label_singular: Link
+            widget: list
             required: false
             fields:
               - name: title
@@ -733,55 +733,55 @@ collections:
                 label: Icon Source
                 widget: image
                 required: true
-  - name: "meta_data"
-    label: "Meta Data"
+  - name: meta_data
+    label: Meta Data
     description: >
       Edit the site's meta data here. Open Graph dimensions: 1200x630. Open graph file name: open-graph.png
     files:
-      - name: "meta_data"
-        label: "Meta Data"
-        file: "src/_data/meta_data.yaml"
+      - name: meta_data
+        label: Meta Data
+        file: src/_data/meta_data.yaml
         editor:
           preview: false
         fields:
-          - name: "site_name"
-            label: "Site Name"
-            widget: "string"
+          - name: site_name
+            label: Site Name
+            widget: string
             required: true
-            hint: "Sample Business Co"
-          - name: "url"
-            label: "URL"
-            widget: "string"
+            hint: Sample Business Co
+          - name: url
+            label: URL
+            widget: string
             required: true
-            hint: "Full URL to your site"
-          - name: "author"
-            label: "Author"
-            widget: "string"
+            hint: Full URL to your site
+          - name: author
+            label: Author
+            widget: string
             required: true
-            hint: "Person or company name"
-          - name: "contact_email"
-            label: "Contact Email"
-            widget: "string"
+            hint: Person or company name
+          - name: contact_email
+            label: Contact Email
+            widget: string
             required: true
-            hint: "Email address for rich results schema"
-          - name: "theme_color"
-            label: "Theme Color"
-            widget: "color"
+            hint: Email address for rich results schema
+          - name: theme_color
+            label: Theme Color
+            widget: color
             required: true
-            hint: "Hex color code for overflow color on some devices"
-          - name: "og_title"
-            label: "Open Graph Title"
-            widget: "string"
+            hint: Hex code for overflow color on some devices
+          - name: og_title
+            label: Open Graph Title
+            widget: string
             required: true
-            hint: "Sample Business | Motto here"
-          - name: "og_description"
-            label: "Open Graph Description"
-            widget: "string"
+            hint: Sample Business | Motto here
+          - name: og_description
+            label: Open Graph Description
+            widget: string
             required: true
-            hint: "Keep at least 100 characters"
-          - name: "og_image"
-            label: "Open Graph Image"
-            widget: "image"
+            hint: Keep at least 100 characters
+          - name: og_image
+            label: Open Graph Image
+            widget: image
             default: "https://CHANGE-ME.com/static/img/og-image.png"
             required: true
             hint: "Recommended formats: PNG or JPG. Recommended image dimensions: 1200 x 630 pixels. File size should be under 8 MB."

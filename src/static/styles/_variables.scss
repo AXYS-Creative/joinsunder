@@ -87,6 +87,10 @@ $test-bg: rgba(navy, 0.75);
   --body-padding-sm: 12px;
   --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
 
+  --section-gap: 64px;
+  --section-gap-double: calc(var(--section-gap) * 2);
+  --section-gap-half: calc(var(--section-gap) / 2);
+
   --panel-gap: 16px;
 
   --content-width: #{$content-width};
@@ -100,10 +104,6 @@ $test-bg: rgba(navy, 0.75);
   --paragraph-snip: 572px; // for larger than md
 
   --section-min-height: 720px;
-
-  --section-gap: 64px;
-  --section-gap-double: calc(var(--section-gap) * 2);
-  --section-gap-half: calc(var(--section-gap) / 2);
 
   --header-height: 36px;
   --header-max-width: calc(
@@ -154,5 +154,5 @@ $test-bg: rgba(navy, 0.75);
 
 // Library
 :root {
-  --carousel-snap-gap: 24px;
+  --carousel-gap: 24px;
 }

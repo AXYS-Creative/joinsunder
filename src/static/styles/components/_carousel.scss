@@ -1,0 +1,52 @@
+.carousel-section {
+  overflow: hidden;
+}
+
+.carousel {
+  &__controls {
+    @include row-center(space-between);
+    padding-block: 24px;
+
+    button {
+      &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__track {
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &-inner {
+      display: flex;
+      gap: var(--carousel-gap);
+      transition: transform 0.3s ease-in-out;
+      will-change: transform;
+    }
+  }
+
+  &__track-item {
+    flex: 1;
+    min-width: calc(33% - var(--carousel-gap) / 3);
+
+    @include mq-max(lg) {
+      min-width: 500px;
+    }
+
+    @include mq-max(md) {
+      min-width: 250px;
+    }
+
+    img {
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+}

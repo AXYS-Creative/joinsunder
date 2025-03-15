@@ -65,11 +65,11 @@ hide_footer: false
 
 <!-- prettier-ignore -->
 {% if page_sunder_way.competitions.toggle_section %}
-<section class="section-competitions" id="competitions">
-  <h2 class="section-competitions__title">
+<section class="section-competitions section-gradient" id="competitions">
+  <h2 class="section-gradient__title">
     {{ page_sunder_way.competitions.section_title }}
   </h2>
-  <p class="section-competitions__desc">
+  <p class="section-gradient__desc">
     {{ page_sunder_way.competitions.section_desc }}
   </p>
 
@@ -122,16 +122,22 @@ hide_footer: false
     </div>
   </div>
 </section>
-{% endif %}
+{% endif %} {% if page_sunder_way.experiences.toggle_section %}
+<section class="section-experiences section-gradient">
+  <h2 class="section-gradient__title section-experiences__title">
+    {{ page_sunder_way.experiences.section_title }}
+  </h2>
+  <p class="section-gradient__desc section-experiences__desc">
+    {{ page_sunder_way.experiences.section_desc }}
+  </p>
 
-<!-- <iframe
-  class="sample-video-embed"
-  src="https://drive.google.com/file/d/19so7OJN9FwQUdJ7sfoY-n-lZoCV8iWz9/preview"
-  width="640"
-  height="480"
-  allow="autoplay"
-  allowfullscreen
-></iframe> -->
+  <!-- prettier-ignore -->
+  {% set carousel_class = 'video-carousel' %}
+  {% include "./_includes/components/carousel.njk" %}
+
+  <div class="collage"></div>
+</section>
+{% endif %}
 
 <!-- prettier-ignore -->
 {% set section_id = "operation-sunder-serves" %}

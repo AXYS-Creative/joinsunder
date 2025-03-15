@@ -417,6 +417,33 @@ section {
   @include section-padding;
 }
 
+.section-gradient {
+  @include top-fade-section;
+
+  @include mq-min(lg) {
+    padding-inline: var(--body-padding-double);
+  }
+
+  &__title {
+    @include h3;
+
+    @include mq-max(lg) {
+      @include h4;
+      margin-block-end: var(--panel-gap);
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    @include paragraph-width-snip;
+    margin-block-end: var(--section-gap);
+
+    @include mq-max(lg) {
+      text-align: center;
+    }
+  }
+}
+
 h1 {
   @include h1;
 
