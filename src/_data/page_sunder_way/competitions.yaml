@@ -18,29 +18,29 @@ types:
 yog_logo: /static/img/Way-YOG-1YOG.svg
 yog_merch:
   - items:
-      - title: hat
+      - title: Blue Sunder hat
         src: /static/img/Way-YOG-2Hat.png
         rotate: none
   - items:
-      - title: sweater
+      - title: Black long sleave Sunder shirt
         src: /static/img/Way-YOG-1Shirt.png
         rotate: left
-      - title: bag
+      - title: Louis Vuitton bag
         src: /static/img/Way-YOG-3Bag.png
         rotate: none
   - items:
-      - title: skateboard
+      - title: Sunder skateboard
         src: /static/img/Way-YOG-4Skateboard.png
         rotate: left
   - items:
-      - title: jacket
+      - title: Sunder jacket
         src: /static/img/Way-YOG-5Jacket.png
         rotate: left
-      - title: shirt
+      - title: Sunder t-shirt
         src: /static/img/Way-YOG-7Shirt.png
         rotate: right
   - items:
-      - title: segway
+      - title: Black segway
         src: /static/img/Way-YOG-6Segway.png
         rotate: none
 yog_types:

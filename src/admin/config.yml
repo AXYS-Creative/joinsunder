@@ -242,7 +242,7 @@ collections:
             label: Rows - Year of Gear Merch
             label_singular: row
             widget: list
-            summary: "{{ fields.items }}"
+            summary: "Row: {{fields.items.0.title}} {{fields.items.1.title}} {{fields.items.2.title}}"
             required: true
             fields:
               - name: items

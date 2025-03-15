@@ -447,6 +447,11 @@
 
       @include mq-min(lg) {
         border-inline: 4px solid var(--background-color);
+        background: linear-gradient(
+          0deg,
+          rgba($blue, 1) 20%,
+          rgba($white, 1) 72.5%
+        );
       }
 
       &__stripe {

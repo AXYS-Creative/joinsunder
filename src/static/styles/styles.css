@@ -1543,6 +1543,7 @@ figure {
 @media screen and (min-width: 1025px) {
   .section-competitions .yog-stripes {
     border-inline: 4px solid var(--background-color);
+    background: linear-gradient(0deg, #0058f5 20%, #f7f7f7 72.5%);
   }
 }
 .section-competitions .yog-stripes__stripe {
