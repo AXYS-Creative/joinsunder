@@ -291,10 +291,9 @@
 
   // Year of Gear (YOG)
   .yog {
-    // border: $test;
+    @include blue-gradient(0deg, 20%, 80%);
     isolation: isolate;
     position: relative;
-    @include blue-gradient(0deg, 20%, 80%);
 
     &-logo {
       @include row-start;
@@ -320,10 +319,8 @@
     &-merch {
       margin: auto;
       padding-block: 264px 148px; // flag
-      padding-inline: var(--body-padding-double);
 
       &__row {
-        // border: 2px solid black;
         @include row-center(space-around);
 
         @include mq-min(lg) {
@@ -334,7 +331,6 @@
           flex-direction: column;
           gap: var(--section-gap);
           margin-block-end: var(--section-gap);
-          // @include column-center;
         }
 
         picture {
@@ -342,7 +338,6 @@
         }
 
         &-img {
-          // background-color: yellow;
           width: 250px;
           aspect-ratio: 1;
           object-fit: contain;
@@ -350,10 +345,6 @@
           @include mq-max(lg) {
             width: 75%;
           }
-
-          // @include mq-max(sm) {
-          //   width: 100%;
-          // }
 
           @include mq-motion-allow {
             opacity: 0;
@@ -393,7 +384,6 @@
       }
 
       &__img {
-        // border: $test;
         flex: 1;
         max-width: 23%;
         aspect-ratio: 2 / 1;
@@ -445,16 +435,24 @@
   }
 }
 
-.section-experiences {
-  // using section-gradient util
+// .section-experiences {
+// using section-gradient util
 
-  border: none;
+// .carousel {
+// border: $test;
 
-  // .video-carousel {
+// &__track {
+//   &-item {
+//     border: $test;
+//   }
+// }
 
-  // }
+// &__controls {
 
-  // .collage {
+// }
+// }
 
-  // }
-}
+// .collage {
+
+// }
+// }

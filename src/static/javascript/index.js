@@ -1,6 +1,6 @@
 import "./util.js";
 
-// import "./components/carousel-snap.js";
+import "./components/carousel.js";
 
 import "./global/animations.js";
 import "./global/loader.js";

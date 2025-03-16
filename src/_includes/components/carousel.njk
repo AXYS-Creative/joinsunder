@@ -1,9 +1,5 @@
 <div
-  class="
-    carousel 
-    {{ carousel_class }} 
-    {% if carousel_autoplay.enabled %}autoplay{% endif %}
-    "
+  class="carousel {% if carousel_autoplay.enabled %}autoplay{% endif %}"
   id="carousel"
   data-autoplay-interval="{{ carousel_autoplay.interval }}"
 >
@@ -11,29 +7,36 @@
     <div class="carousel__track-inner">
       {% for item in list %}
       <div class="carousel__track-item">
-        <img src="{{ item.image }}" alt="{{ item.alt }}" />
+        <img src="{{ item.img_src }}" alt="{{ item.alt }}" />
         <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
+        <p>{{ item.desc }}</p>
       </div>
       {% endfor %}
     </div>
   </div>
 
   <div class="carousel__controls">
-    <div class="carousel__conrols-slider">
+    {% if carousel_cta_text %}
+    <div class="carousel__controls-cta">
+      <!-- prettier-ignore -->
+      <button class="carousel-cta cta-1 tab-element-page">{{ carousel_cta_text }}</button>
+    </div>
+    {% endif %}
+
+    <div class="carousel__controls-slider">
       <button
-        class="carousel-btn-prev cta-1 tab-element-page"
+        class="carousel-btn-prev tab-element-page"
         aria-label="previous slide"
         aria-controls="carousel__track"
       >
-        Prev
+        <img src="{{ global.carousel.arrow_img }}" alt="" eleventy:ignore />
       </button>
       <button
-        class="carousel-btn-next cta-1 tab-element-page"
+        class="carousel-btn-next tab-element-page"
         aria-label="next slide"
         aria-controls="carousel__track"
       >
-        Next
+        <img src="{{ global.carousel.arrow_img }}" alt="" eleventy:ignore />
       </button>
     </div>
 

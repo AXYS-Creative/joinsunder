@@ -3,22 +3,11 @@
 }
 
 .carousel {
-  &__controls {
-    @include row-center(space-between);
-    padding-block: 24px;
-
-    button {
-      &[disabled] {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-    }
-  }
-
   &__track {
     overflow: hidden;
     position: relative;
     cursor: grab;
+    margin-block-end: var(--section-gap-half);
 
     &:active {
       cursor: grabbing;
@@ -47,6 +36,48 @@
     img {
       pointer-events: none;
       user-select: none;
+    }
+  }
+
+  &__controls {
+    @include row-center(space-between);
+    justify-content: flex-end;
+
+    &-slider {
+      @include row-center;
+      gap: var(--panel-gap);
+    }
+
+    &-cta {
+      .carousel-cta {
+        padding: var(--btn-padding);
+      }
+    }
+
+    &-autoplay {
+      display: none;
+    }
+
+    button {
+      @include row-center;
+      padding: 4px 2px;
+
+      &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      img {
+        width: 24px;
+      }
+    }
+
+    .carousel-btn-prev {
+      img {
+        rotate: 180deg;
+        user-select: none;
+        pointer-events: none;
+      }
     }
   }
 }

@@ -74,6 +74,8 @@ $test-bg: rgba(navy, 0.75);
   --btn-color-2-text--hover: #{$white};
   --btn-color-2-border--hover: var(--btn-color-2-bg--hover);
 
+  --btn-padding: 8px 20px;
+
   --link-color: #{$blue};
   --link-color-hover: #{$white};
 
@@ -117,10 +119,13 @@ $test-bg: rgba(navy, 0.75);
   --border-bold-girth: 4px;
   --border-bold-color: #{$grey};
 
-  --radius-sm: 5px; // form input fields
+  --radius-sm: 6px; // form input fields, carousel images
   --radius: 8px; // full-width panels & nav
   --radius-lg: 24px; // sections & footer
   --radius-btn: 10px;
+
+  // Components / JS
+  --carousel-gap: var(--panel-gap);
 
   @media (max-width: 1512px) {
     --section-min-height: 580px;
@@ -151,8 +156,3 @@ $test-bg: rgba(navy, 0.75);
 //     --font-color--primary: #{$white};
 //   }
 // }
-
-// Library
-:root {
-  --carousel-gap: 24px;
-}

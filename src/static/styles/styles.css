@@ -17,6 +17,7 @@
   --btn-color-2-bg--hover: #0058f5;
   --btn-color-2-text--hover: #f7f7f7;
   --btn-color-2-border--hover: var(--btn-color-2-bg--hover);
+  --btn-padding: 8px 20px;
   --link-color: #0058f5;
   --link-color-hover: #f7f7f7;
   --surface-color: #d9d9d9;
@@ -45,10 +46,11 @@
   --top-spacing-header: calc(var(--header-height) + var(--body-padding) * 2);
   --border-bold-girth: 4px;
   --border-bold-color: #d9d9d9;
-  --radius-sm: 5px;
+  --radius-sm: 6px;
   --radius: 8px;
   --radius-lg: 24px;
   --radius-btn: 10px;
+  --carousel-gap: var(--panel-gap);
 }
 @media (max-width: 1512px) {
   :root {
@@ -69,10 +71,6 @@
     --border-bold-girth: 2px;
     --radius: 5px;
   }
-}
-
-:root {
-  --carousel-gap: 24px;
 }
 
 * {
@@ -1422,9 +1420,9 @@ figure {
   }
 }
 .section-competitions .yog {
+  background: linear-gradient(0deg, #0058f5 20%, rgba(0, 88, 245, 0) 80%);
   isolation: isolate;
   position: relative;
-  background: linear-gradient(0deg, #0058f5 20%, rgba(0, 88, 245, 0) 80%);
 }
 .section-competitions .yog-logo {
   display: flex;
@@ -1452,7 +1450,6 @@ figure {
 .section-competitions .yog-merch {
   margin: auto;
   padding-block: 264px 148px;
-  padding-inline: var(--body-padding-double);
 }
 .section-competitions .yog-merch__row {
   display: flex;
@@ -1573,10 +1570,6 @@ figure {
   }
 }
 
-.section-experiences {
-  border: none;
-}
-
 .error {
   display: flex;
   flex-direction: column;
@@ -1618,7 +1611,7 @@ figure {
   border-radius: var(--radius-btn);
   background: var(--btn-color-bg);
   color: var(--btn-color-text);
-  padding: 8px 20px;
+  padding: var(--btn-padding);
   flex-shrink: 0;
 }
 @media screen and (max-width: 1024px) {
@@ -1672,20 +1665,11 @@ figure {
   overflow: hidden;
 }
 
-.carousel__controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: 24px;
-}
-.carousel__controls button[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
 .carousel__track {
   overflow: hidden;
   position: relative;
   cursor: grab;
+  margin-block-end: var(--section-gap-half);
 }
 .carousel__track:active {
   cursor: grabbing;
@@ -1715,6 +1699,44 @@ figure {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+.carousel__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-end;
+}
+.carousel__controls-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--panel-gap);
+}
+.carousel__controls-cta .carousel-cta {
+  padding: var(--btn-padding);
+}
+.carousel__controls-autoplay {
+  display: none;
+}
+.carousel__controls button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 2px;
+}
+.carousel__controls button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.carousel__controls button img {
+  width: 24px;
+}
+.carousel__controls .carousel-btn-prev img {
+  rotate: 180deg;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .form-redirect {

@@ -3,7 +3,27 @@ section_title: Experiences
 section_desc: From exhilarating excursions to inspiring events, explore experiences that take you to new heights
 
 videos:
-  - title: Xcaret
-    desc: Xcaret
-    img_src: Xcaret
-    vid_src: Xcaret
+  - details: XCARET
+    img_src: /static/img/Way-Experience-1Video.png
+    vid_src:
+  - details: SUNDYS
+    img_src: /static/img/Way-Experience-2Video.png
+    vid_src:
+  - details: SUMMIT
+    img_src: /static/img/Way-Experience-3Video.png
+    vid_src:
+  - details: LVE
+    img_src: /static/img/Way-Experience-4Video.png
+    vid_src:
+  - details: COSTA RICA
+    img_src: /static/img/Way-Experience-5Video.png
+    vid_src:
+  - details: ALASKA
+    img_src: /static/img/Way-Experience-6Video.png
+    vid_src:
+  - details: PIRATES COVE
+    img_src: /static/img/Way-Experience-7Video.png
+    vid_src:
+  - details: ELITE
+    img_src: /static/img/Way-Experience-8Video.png
+    vid_src:

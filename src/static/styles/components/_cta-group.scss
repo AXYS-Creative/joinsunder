@@ -5,7 +5,7 @@
   border-radius: var(--radius-btn);
   background: var(--btn-color-bg);
   color: var(--btn-color-text);
-  padding: 8px 20px;
+  padding: var(--btn-padding);
   flex-shrink: 0;
 
   @include mq-motion-allow {
