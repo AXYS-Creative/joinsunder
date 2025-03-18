@@ -2,28 +2,32 @@ toggle_section: true
 section_title: Experiences
 section_desc: From exhilarating excursions to inspiring events, explore experiences that take you to new heights
 
+carousel_autoplay:
+  enabled: false
+  interval: 3200 # set min of 1500
+
 videos:
   - details: XCARET
-    img_src: /static/img/Way-Experience-1Video.png
-    vid_src:
+    poster: /static/img/Way-Experience-1Video.png
+    src: https://www.dropbox.com/scl/fi/8qo3r1kd3wzqw2gu9064i/Way-Experience-2Video.mp4?rlkey=mpa9mf541nd8zu8i862776t84&st=d6g9ghwo&dl=0
   - details: SUNDYS
-    img_src: /static/img/Way-Experience-2Video.png
-    vid_src:
+    poster: /static/img/Way-Experience-2Video.png
+    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
   - details: SUMMIT
-    img_src: /static/img/Way-Experience-3Video.png
-    vid_src:
+    poster: /static/img/Way-Experience-3Video.png
+    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
   - details: LVE
-    img_src: /static/img/Way-Experience-4Video.png
-    vid_src:
+    poster: /static/img/Way-Experience-4Video.png
+    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
   - details: COSTA RICA
-    img_src: /static/img/Way-Experience-5Video.png
-    vid_src:
+    poster: /static/img/Way-Experience-5Video.png
+    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
   - details: ALASKA
-    img_src: /static/img/Way-Experience-6Video.png
-    vid_src:
+    poster: /static/img/Way-Experience-6Video.png
+    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
   - details: PIRATES COVE
-    img_src: /static/img/Way-Experience-7Video.png
-    vid_src:
+    poster: /static/img/Way-Experience-7Video.png
+    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
   - details: ELITE
-    img_src: /static/img/Way-Experience-8Video.png
-    vid_src:
+    poster: /static/img/Way-Experience-8Video.png
+    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0

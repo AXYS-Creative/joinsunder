@@ -1,154 +1,224 @@
-import { root } from "../util.js";
+import { root, mqMouse } from "../util.js";
 
 const carousel = document.querySelector(".carousel"),
+  track = document.querySelector(".carousel__track"),
   trackInner = document.querySelector(".carousel__track-inner"),
   prevBtn = document.querySelector(".carousel-btn-prev"),
-  nextBtn = document.querySelector(".carousel-btn-next");
+  nextBtn = document.querySelector(".carousel-btn-next"),
+  progressBar = document.querySelector(".carousel__progress-bar");
 
 const items = document.querySelectorAll(".carousel__track-item");
 
-let currentIndex = 0;
-let startX = 0;
-let currentX = 0;
-let isDragging = false;
-let translateX = 0;
-
 if (carousel) {
-  const autoplayClass = "autoplay";
-  const autoplayEnabledByAdmin = carousel.classList.contains(autoplayClass);
-  const autoplayIntervalTime =
-    parseInt(carousel.dataset.autoplayInterval, 10) || 5000;
-  let autoplayEnabled = autoplayEnabledByAdmin;
-  let autoplayInterval;
+  const trackGap =
+    parseFloat(getComputedStyle(root).getPropertyValue("--carousel-gap")) || 0;
 
-  const updateCarousel = () => {
-    const trackGap =
-      parseFloat(getComputedStyle(root).getPropertyValue("--carousel-gap")) ||
-      0;
-    const itemWidth = items[0].offsetWidth + trackGap;
-    const containerWidth =
-      trackInner.parentElement.offsetWidth + trackGap * 1.5;
-    const trackWidth = items.length * itemWidth;
+  let currentIndex = 0;
+  const itemCount = items.length;
+  let autoplayInterval = null;
 
-    const maxTranslateX = Math.min(0, containerWidth - trackWidth);
+  // Get autoplay settings from data attributes
+  const isAutoplayEnabled = carousel.classList.contains("autoplay");
+  const autoplayDelay = parseInt(carousel.dataset.autoplayInterval) || 3200;
 
-    translateX = Math.max(-(currentIndex * itemWidth), maxTranslateX);
-    trackInner.style.transition = "transform 0.3s ease-in-out";
-    trackInner.style.transform = `translateX(${translateX}px)`;
-
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = translateX === maxTranslateX;
+  // Check if we're at the end of scrollable content
+  const isAtEnd = () => {
+    const scrollWidth = track.scrollWidth;
+    const clientWidth = track.clientWidth;
+    const scrollLeft = track.scrollLeft;
+    return Math.abs(scrollWidth - clientWidth - scrollLeft) <= 1;
   };
 
-  nextBtn.addEventListener("click", () => {
-    if (currentIndex < items.length - 1) {
-      currentIndex++;
-    } else {
+  // Check if we're at the beginning of scrollable content
+  const isAtStart = () => {
+    return track.scrollLeft <= 1;
+  };
+
+  // Update progress bar based on current position
+  const updateProgressBar = () => {
+    if (!progressBar) return;
+
+    // Calculate progress percentage based on current index
+    // If we have 5 items (0-4), then item 0 = 0%, item 4 = 100%
+    const progress =
+      itemCount <= 1 ? 100 : (currentIndex / (itemCount - 1)) * 100;
+
+    // Update progress bar width
+    progressBar.style.width = `${progress}%`;
+  };
+
+  // Update button states based on scroll position
+  const updateButtonStates = () => {
+    prevBtn.disabled = isAtStart();
+    nextBtn.disabled = isAtEnd();
+  };
+
+  // Initialize button states and progress bar
+  updateButtonStates();
+  updateProgressBar();
+
+  // Function to scroll to a specific item
+  const scrollToItem = (index) => {
+    if (index < 0) {
+      index = 0;
+    } else if (index >= itemCount) {
+      index = itemCount - 1;
+    }
+
+    currentIndex = index;
+
+    // Get the target item
+    const targetItem = items[index];
+
+    // Calculate the scroll position
+    track.scrollTo({
+      left: targetItem.offsetLeft - track.offsetLeft,
+      behavior: "smooth",
+    });
+
+    // Update button states and progress bar after scrolling
+    setTimeout(() => {
+      updateButtonStates();
+      updateProgressBar();
+    }, 500);
+  };
+
+  // Function to advance to the next slide (for autoplay)
+  const advanceToNextSlide = () => {
+    if (isAtEnd()) {
+      // If at the end, go back to the first slide
       currentIndex = 0;
-    }
-    updateCarousel();
-    resetAutoplay();
-  });
-
-  prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
+      track.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
     } else {
-      currentIndex = items.length - 1;
+      // Otherwise go to next slide
+      scrollToItem(currentIndex + 1);
     }
-    updateCarousel();
-    resetAutoplay();
+
+    // Update progress bar
+    updateProgressBar();
+  };
+
+  // Start autoplay
+  const startAutoplay = () => {
+    if (!isAutoplayEnabled) return;
+
+    // Clear any existing interval first
+    stopAutoplay();
+
+    // Set new interval
+    autoplayInterval = setInterval(advanceToNextSlide, autoplayDelay);
+  };
+
+  // Stop autoplay
+  const stopAutoplay = () => {
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval);
+      autoplayInterval = null;
+    }
+  };
+
+  // Previous button click handler
+  prevBtn.addEventListener("click", () => {
+    scrollToItem(currentIndex - 1);
+    // Restart autoplay after user interaction
+    startAutoplay();
   });
 
-  const startDrag = (event) => {
-    isDragging = true;
-    trackInner.style.transition = "none";
-    startX = event.touches ? event.touches[0].clientX : event.clientX;
-    stopAutoplay();
-  };
-
-  const onDrag = (event) => {
-    if (!isDragging) return;
-    currentX = event.touches ? event.touches[0].clientX : event.clientX;
-    let movement = currentX - startX;
-    trackInner.style.transform = `translateX(${translateX + movement}px)`;
-  };
-
-  const endDrag = () => {
-    if (!isDragging) return;
-    isDragging = false;
-
-    let movement = currentX - startX;
-    const threshold = items[0].offsetWidth * 0.3;
-
-    if (movement > threshold && currentIndex > 0) {
-      currentIndex--;
-    } else if (movement < -threshold && currentIndex < items.length - 1) {
-      currentIndex++;
-    }
-
-    updateCarousel();
-    resetAutoplay();
-  };
-
-  trackInner.addEventListener("mousedown", startDrag);
-  trackInner.addEventListener("mousemove", onDrag);
-  trackInner.addEventListener("mouseup", endDrag);
-  trackInner.addEventListener("mouseleave", endDrag);
-
-  trackInner.addEventListener("touchstart", startDrag);
-  trackInner.addEventListener("touchmove", onDrag);
-  trackInner.addEventListener("touchend", endDrag);
-
-  // Autoplay Logic
-  const startAutoplay = () => {
-    if (!autoplayEnabled) return;
-    stopAutoplay();
-    autoplayInterval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % items.length;
-      updateCarousel();
-    }, autoplayIntervalTime);
-  };
-
-  const stopAutoplay = () => {
-    clearInterval(autoplayInterval);
-  };
-
-  const resetAutoplay = () => {
-    stopAutoplay();
+  // Next button click handler
+  nextBtn.addEventListener("click", () => {
+    scrollToItem(currentIndex + 1);
+    // Restart autoplay after user interaction
     startAutoplay();
-  };
+  });
 
-  // Accessible Toggle Button Logic
-  // This logic could be thrown in a buttons.js file? Reuse across different button--toggle components
-  const autoplayToggle = document.querySelector(".carousel-autoplay-toggle"),
-    autoplayToggleLabel = document.querySelector(
-      ".carousel-autoplay-toggle__label"
-    ).innerHTML,
-    autoplayToggleLabelTrue = document
-      .querySelector(".carousel-autoplay-toggle__switch")
-      .getAttribute("data-label-true"),
-    autoplayToggleLabelFalse = document
-      .querySelector(".carousel-autoplay-toggle__switch")
-      .getAttribute("data-label-false");
+  // Scroll event handler with debounce
+  let scrollTimeout;
+  track.addEventListener("scroll", () => {
+    // Clear the timeout on each scroll event
+    clearTimeout(scrollTimeout);
 
-  // This logic could be thrown in a buttons.js file? Reuse across different button--toggle components
-  if (autoplayToggle) {
-    autoplayToggle.setAttribute("aria-pressed", autoplayEnabled.toString());
+    // Temporarily pause autoplay during manual scrolling
+    stopAutoplay();
 
-    autoplayToggle.addEventListener("click", () => {
-      autoplayEnabled = !autoplayEnabled;
-      autoplayToggle.setAttribute("aria-pressed", autoplayEnabled.toString());
-      autoplayToggle.setAttribute(
-        "aria-label",
-        `${autoplayToggleLabel}${
-          autoplayEnabled ? autoplayToggleLabelTrue : autoplayToggleLabelFalse
-        }`
-      );
-      resetAutoplay();
+    scrollTimeout = setTimeout(() => {
+      // Find which item is most visible
+      const scrollPosition = track.scrollLeft;
+      updateButtonStates();
+
+      // Find the closest item
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      items.forEach((item, index) => {
+        const distance = Math.abs(
+          item.offsetLeft - track.offsetLeft - scrollPosition
+        );
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      if (currentIndex !== closestIndex) {
+        currentIndex = closestIndex;
+        // Update progress bar when the current index changes
+        updateProgressBar();
+      }
+
+      // Restart autoplay after scrolling stops
+      startAutoplay();
+    }, 150);
+  });
+
+  // Also update progress during scroll for a more dynamic feel
+  track.addEventListener(
+    "scroll",
+    () => {
+      if (!progressBar) return;
+
+      // Calculate progress based on scroll position
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 0) {
+        progressBar.style.width = "100%";
+        return;
+      }
+
+      const scrollPercentage = (track.scrollLeft / maxScroll) * 100;
+      progressBar.style.width = `${scrollPercentage}%`;
+    },
+    { passive: true }
+  );
+
+  // Pause autoplay when user interacts with the carousel
+  track.addEventListener("mouseenter", stopAutoplay);
+  track.addEventListener("touchstart", stopAutoplay, { passive: true });
+
+  // Resume autoplay when user stops interacting
+  track.addEventListener("mouseleave", startAutoplay);
+  track.addEventListener("touchend", startAutoplay);
+
+  // Also listen for the scrollend event if available
+  if ("onscrollend" in window) {
+    track.addEventListener("scrollend", () => {
+      updateButtonStates();
+      updateProgressBar();
+      startAutoplay();
     });
   }
 
-  updateCarousel();
-  startAutoplay();
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    updateButtonStates();
+    updateProgressBar();
+    startAutoplay();
+  });
+
+  // Initialize autoplay if enabled
+  if (isAutoplayEnabled) {
+    // Start autoplay after a short delay to ensure everything is loaded
+    setTimeout(startAutoplay, 100);
+  }
 }

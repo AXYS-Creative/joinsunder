@@ -133,7 +133,10 @@ hide_footer: false
 
   <!-- prettier-ignore -->
   {% set list = page_sunder_way.experiences.videos %}
+  {% set video_carousel = true %}
+  {% set carousel_autoplay = page_sunder_way.experiences.carousel_autoplay %}
   {% set carousel_cta_text = "" %}
+  {% set carousel_progress = true %}
   {% include "./_includes/components/carousel.njk" %}
 
   <div class="collage"></div>

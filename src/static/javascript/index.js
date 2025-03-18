@@ -1,6 +1,7 @@
 import "./util.js";
 
 import "./components/carousel.js";
+import "./components/video-overlay.js";
 
 import "./global/animations.js";
 import "./global/loader.js";

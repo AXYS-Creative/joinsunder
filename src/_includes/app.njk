@@ -116,6 +116,14 @@
     {%include "./partials/footer.njk" %}
 
     <!-- prettier-ignore -->
+    {% 
+      if path == "sunder-way" 
+      or path == "oss" 
+    %}
+      {% include "./components/video-overlay.njk" %}
+    {% endif %}
+
+    <!-- prettier-ignore -->
     {% include "./partials/scripts.njk" %}
   </body>
 </html>
