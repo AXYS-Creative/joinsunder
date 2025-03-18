@@ -1,0 +1,37 @@
+.collage {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--panel-gap);
+  overflow: hidden;
+
+  &__column {
+    @include column-center;
+    gap: var(--panel-gap);
+    flex: 1;
+
+    img {
+      border-radius: var(--radius);
+      object-fit: cover;
+      object-position: center;
+
+      &.portrait {
+        aspect-ratio: 1 / 1.5;
+      }
+
+      &.landscape {
+        aspect-ratio: 1.5 / 1;
+      }
+    }
+  }
+
+  &__column-4 {
+    @include mq-max("xl") {
+      display: none;
+    }
+  }
+  &__column-3 {
+    @include mq-max("lg") {
+      display: none;
+    }
+  }
+}

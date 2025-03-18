@@ -68,6 +68,7 @@
   :root {
     --body-padding: 18px;
     --logo-offset: 6px;
+    --panel-gap: 12px;
     --border-bold-girth: 2px;
     --radius: 5px;
   }
@@ -1571,6 +1572,9 @@ figure {
   }
 }
 
+.section-experiences .carousel {
+  margin-block-end: var(--section-gap-double);
+}
 .section-experiences .carousel__track-inner {
   padding-block: 4px;
 }
@@ -1789,6 +1793,44 @@ figure {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.collage {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--panel-gap);
+  overflow: hidden;
+}
+.collage__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--panel-gap);
+  flex: 1;
+}
+.collage__column img {
+  border-radius: var(--radius);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.collage__column img.portrait {
+  aspect-ratio: 1/1.5;
+}
+.collage__column img.landscape {
+  aspect-ratio: 1.5/1;
+}
+@media screen and (max-width: 1200px) {
+  .collage__column-4 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .collage__column-3 {
+    display: none;
+  }
 }
 
 .form-redirect {

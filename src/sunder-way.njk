@@ -135,14 +135,54 @@ hide_footer: false
   </p>
 
   <!-- prettier-ignore -->
-  {% set list = page_sunder_way.experiences.videos %}
   {% set video_carousel = true %}
+  {% set list = page_sunder_way.experiences.videos %}
   {% set carousel_autoplay = page_sunder_way.experiences.carousel_autoplay %}
   {% set carousel_cta_text = "" %}
   {% set carousel_progress = true %}
   {% include "./_includes/components/carousel.njk" %}
 
-  <div class="collage"></div>
+  {% if page_sunder_way.experiences.toggle_collage %}
+  <div class="collage">
+    <div class="collage__column collage__column-1">
+      {% for img in page_sunder_way.experiences.collage.column_1 %}
+      <img
+        class="{%if loop.index0 % 2 == 0%}portrait{%else%}landscape{%endif%}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
+      {% endfor %}
+    </div>
+    <div class="collage__column collage__column-2">
+      {% for img in page_sunder_way.experiences.collage.column_2 %}
+      <img
+        class="{%if loop.index0 % 2 == 0%}landscape{%else%}portrait{%endif%}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+        loading="eager"
+      />
+      {% endfor %}
+    </div>
+    <div class="collage__column collage__column-3">
+      {% for img in page_sunder_way.experiences.collage.column_3 %}
+      <img
+        class="{%if loop.index0 % 2 == 0%}portrait{%else%}landscape{%endif%}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
+      {% endfor %}
+    </div>
+    <div class="collage__column collage__column-4">
+      {% for img in page_sunder_way.experiences.collage.column_4 %}
+      <img
+        class="{%if loop.index0 % 2 == 0%}landscape{%else%}portrait{%endif%}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 </section>
 {% endif %}
 

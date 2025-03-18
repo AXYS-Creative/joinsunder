@@ -28,12 +28,14 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
       maxSm: "(max-width: 480px)",
       maxMd: "(max-width: 768px)",
       maxLg: "(max-width: 1024px)",
+      maxXxl: "(max-width: 1512px)",
       maxXl: "(max-width: 1200px)",
       minMd: "(min-width: 769px)",
       minLg: "(min-width: 1025px)",
     },
     (context) => {
-      let { maxSm, maxMd, maxLg, maxXl, minMd, minLg } = context.conditions;
+      let { maxSm, maxMd, maxLg, maxXl, maxXxl, minMd, minLg } =
+        context.conditions;
 
       let navyMarkers = {
         startColor: "navy",
@@ -142,6 +144,31 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
               scrub: 0,
             },
           });
+        }
+
+        // Experience Section (Collage)
+        if (document.querySelector(".collage")) {
+          const yVal = maxMd ? "-17%" : maxXxl ? "-17.125%" : "-17.15%";
+
+          const collageSlide = (el, distance) => {
+            const element = document.querySelector(el);
+            if (element) {
+              gsap.to(el, {
+                y: distance,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: ".collage",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 0.2,
+                  // markers: true,
+                },
+              });
+            }
+          };
+
+          collageSlide(".collage__column-1", yVal);
+          collageSlide(".collage__column-3", yVal);
         }
       }
 

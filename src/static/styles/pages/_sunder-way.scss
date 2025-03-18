@@ -439,6 +439,8 @@
   // using section-gradient util
 
   .carousel {
+    margin-block-end: var(--section-gap-double);
+
     &__track {
       &-inner {
         padding-block: 4px;
