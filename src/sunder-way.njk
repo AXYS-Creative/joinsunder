@@ -122,8 +122,11 @@ hide_footer: false
     </div>
   </div>
 </section>
-{% endif %} {% if page_sunder_way.experiences.toggle_section %}
-<section class="section-experiences section-gradient">
+{% endif %}
+
+<!-- prettier-ignore -->
+{% if page_sunder_way.experiences.toggle_section %}
+<section class="section-experiences section-gradient" id="experiences">
   <h2 class="section-gradient__title section-experiences__title">
     {{ page_sunder_way.experiences.section_title }}
   </h2>

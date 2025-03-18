@@ -513,6 +513,7 @@ section {
 @media screen and (max-width: 1024px) {
   .section-gradient__desc {
     text-align: center;
+    text-wrap: balance;
   }
 }
 
@@ -2043,8 +2044,10 @@ figure {
 
 .video-overlay {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: var(--section-gap);
   position: fixed;
   top: 0;
   left: 50%;
@@ -2065,6 +2068,37 @@ figure {
   max-width: var(--full-width-snip-sm);
   width: auto;
   background: black;
+}
+.video-overlay__close {
+  border: 1px solid var(--hero-color--primary);
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.32s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .video-overlay__close:hover, .video-overlay__close:focus-visible {
+    scale: 1.1;
+  }
+}
+.video-overlay__close:active {
+  scale: 0.9;
+}
+.video-overlay__close-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 72%;
+  height: 3px;
+  background: var(--hero-color--primary);
+}
+.video-overlay__close-line:first-of-type {
+  rotate: -45deg;
+}
+.video-overlay__close-line:last-of-type {
+  rotate: 45deg;
 }
 .video-overlay--inactive {
   opacity: 0;
@@ -2550,5 +2584,10 @@ figure {
     font-size: 36px;
     text-align: center;
     margin-block-end: var(--section-gap-half);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .partial-quote .quote__text-block blockquote {
+    text-wrap: balance;
   }
 }/*# sourceMappingURL=styles.css.map */

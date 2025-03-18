@@ -9,7 +9,8 @@ $max-breakpoints: (
   "lg": 1024px,
   "xl": 1200px,
   "xxl": 1512px,
-  "xxxl": 1920px,
+  "xxxl": 1750px,
+  // was 1920
 );
 
 @mixin mq-max($breakpoint) {
@@ -26,7 +27,7 @@ $min-breakpoints: (
   "lg": 1025px,
   "xl": 1201px,
   "xxl": 1513px,
-  "xxxl": 1921px,
+  "xxxl": 1751px,
 );
 
 @mixin mq-min($breakpoint) {
@@ -320,10 +321,10 @@ $min-breakpoints: (
 }
 
 @mixin right-spacing {
-  right: var(--body-padding);
+  right: var(--body-padding-double);
 
   @include mq-min(xxxl) {
-    right: calc(50% - calc($content-width / 2 - var(--body-padding)));
+    right: calc(50% - calc($content-width / 2 - var(--body-padding-double)));
   }
 }
 

@@ -96,6 +96,12 @@
           margin-block-end: var(--section-gap-half);
         }
       }
+
+      blockquote {
+        @include mq-max(lg) {
+          text-wrap: balance;
+        }
+      }
     }
   }
 }

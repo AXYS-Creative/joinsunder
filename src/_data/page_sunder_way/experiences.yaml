@@ -7,27 +7,27 @@ carousel_autoplay:
   interval: 3200 # set min of 1500
 
 videos:
-  - details: XCARET
+  - title: XCaret - 2025 Top Performers
     poster: /static/img/Way-Experience-1Video.png
     src: https://www.dropbox.com/scl/fi/8qo3r1kd3wzqw2gu9064i/Way-Experience-2Video.mp4?rlkey=mpa9mf541nd8zu8i862776t84&st=d6g9ghwo&dl=0
-  - details: SUNDYS
+  - title: Sundys - 2024 Awards
     poster: /static/img/Way-Experience-2Video.png
     src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
-  - details: SUMMIT
+  - title: 2024 Sunder Summit
     poster: /static/img/Way-Experience-3Video.png
     src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
-  - details: LVE
+  - title: LVE - Rapid Sunder Champions
     poster: /static/img/Way-Experience-4Video.png
     src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
-  - details: COSTA RICA
+  - title: Operation Sunder Serves - Costa Rica
     poster: /static/img/Way-Experience-5Video.png
     src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
-  - details: ALASKA
+  - title: Reign Champions - Alaska
     poster: /static/img/Way-Experience-6Video.png
     src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
-  - details: PIRATES COVE
+  - title: Sunder Dome Champions - Pirates Cove
     poster: /static/img/Way-Experience-7Video.png
     src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
-  - details: ELITE
+  - title: 2024 Sunder Elite
     poster: /static/img/Way-Experience-8Video.png
     src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0

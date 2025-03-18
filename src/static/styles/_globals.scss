@@ -440,6 +440,7 @@ section {
 
     @include mq-max(lg) {
       text-align: center;
+      text-wrap: balance;
     }
   }
 }

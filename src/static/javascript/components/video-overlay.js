@@ -1,10 +1,16 @@
 import { tabElementsPage } from "../global/nav.js";
+import { headerLogo, menuBtn } from "../global/header.js";
 import { lenis } from "../util.js";
 
 const videoOverlay = document.querySelector(".video-overlay"),
-  videoPlayer = document.querySelector(".video-player");
+  videoPlayer = document.querySelector(".video-player"),
+  videoCloseBtn = document.querySelector(".video-overlay__close");
 
 const videoToggle = document.querySelectorAll(".video-toggle");
+
+let nonVideoOverlayTabElements = [...tabElementsPage, headerLogo, menuBtn];
+
+videoCloseBtn.setAttribute("tabindex", "-1");
 
 // For Dropbox, replace end of link's string to allow video embed
 if (videoToggle) {
@@ -24,11 +30,14 @@ export const openvideoOverlay = (src) => {
 
   if (src) videoPlayer.src = src; // Inject video source
 
-  tabElementsPage.forEach((el) => el.setAttribute("tabindex", "-1"));
+  videoCloseBtn.focus();
+
+  videoCloseBtn.setAttribute("tabindex", "0");
+  nonVideoOverlayTabElements.forEach((el) => el.setAttribute("tabindex", "-1"));
 
   lenis.stop();
 
-  // // Notify other modules about the state change
+  // // Notify other modules about the state change (from old sunder site)
   // document.dispatchEvent(
   //   new CustomEvent("videoOverlayStateChange", {
   //     detail: isvideoOverlayOpen,
@@ -54,7 +63,8 @@ export const closevideoOverlay = () => {
     videoPlayer.src = ""; // Remove src to stop the video
   }, 300);
 
-  tabElementsPage.forEach((el) => el.setAttribute("tabindex", "0"));
+  videoCloseBtn.setAttribute("tabindex", "-1");
+  nonVideoOverlayTabElements.forEach((el) => el.setAttribute("tabindex", "0"));
 
   lenis.start();
 
@@ -72,3 +82,5 @@ videoOverlay?.addEventListener("click", (e) => {
     closevideoOverlay();
   }
 });
+
+videoCloseBtn.addEventListener("click", () => closevideoOverlay());

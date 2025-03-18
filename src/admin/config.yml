@@ -284,6 +284,68 @@ collections:
                 media_library:
                   config:
                     max_file_size: 1000000 # 1MB = 1,000,000 bytes
+      - name: experiences
+        label: Section - Experiences
+        file: src/_data/page_sunder_way/experiences.yaml
+        preview_path: /sunder-way#experiences
+        editor:
+          preview: false
+        fields:
+          - name: toggle_section
+            label: Show Section (Sunder Way - Experiences)
+            widget: boolean
+            default: true
+          - name: section_title
+            label: Section Title
+            widget: string
+            required: true
+            hint: "Customize text with tokens. Visit https://axyscreative.com/tokens to learn more."
+          - name: section_desc
+            label: Section Description
+            widget: text
+            required: true
+          - name: "carousel_autoplay"
+            label: "Carousel Autoplay"
+            widget: "object"
+            summary: "{{ fields.enabled }}: {{ fields.interval }}"
+            required: false
+            fields:
+              - name: enabled
+                label: Toggle Autoplay
+                widget: boolean
+                default: false
+                hint: Optional feature to have the video carousel automatically change slides.
+              - name: interval
+                label: Autoplay Interval
+                widget: number
+                min: 1500
+                max: 7500
+                required: true
+                hint: The time (in milliseconds) between the slide transition. 1000ms = 1 second
+          - name: "videos"
+            label: "Carousel Videos"
+            label_singular: "Video"
+            widget: "list"
+            collapsed: true
+            required: true
+            fields:
+              - name: title
+                label: Title
+                widget: string
+                required: true
+              - name: poster
+                label: Poster
+                widget: image
+                required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
+              - name: src
+                label: Video Source
+                widget: string
+                required: true
+                hint: Paste link from DropBox. Select your video, click 'share', then 'copy link'.
       - name: "oss"
         label: "Section - OSS"
         file: "src/_data/page_sunder_way/oss.yaml"

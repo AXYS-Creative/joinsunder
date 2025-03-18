@@ -1,5 +1,3 @@
-import { root, mqMouse } from "../util.js";
-
 const carousel = document.querySelector(".carousel"),
   track = document.querySelector(".carousel__track"),
   trackInner = document.querySelector(".carousel__track-inner"),
@@ -10,9 +8,6 @@ const carousel = document.querySelector(".carousel"),
 const items = document.querySelectorAll(".carousel__track-item");
 
 if (carousel) {
-  const trackGap =
-    parseFloat(getComputedStyle(root).getPropertyValue("--carousel-gap")) || 0;
-
   let currentIndex = 0;
   const itemCount = items.length;
   let autoplayInterval = null;

@@ -9,14 +9,14 @@
       <button
         class="video-toggle carousel__track-item tab-element-page"
         data-src="{{ item.src }}"
-        aria-label="Play video: {{ item.details }}"
+        aria-label="Play video: {{ item.title }}"
         aria-controls="video-overlay"
       >
-        <img src="{{ item.poster }}" alt="{{ item.details }}" />
+        <img src="{{ item.poster }}" alt="{{ item.title }}" />
       </button>
       {% else %}
       <div class="carousel__track-item">
-        <img src="{{ item.poster }}" alt="{{ item.details }}" />
+        <img src="{{ item.poster }}" alt="{{ item.title }}" />
         <p class="carousel__track-desc">hello</p>
       </div>
       {% endif %} {% endfor %}
