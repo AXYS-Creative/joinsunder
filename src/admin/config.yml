@@ -307,7 +307,7 @@ collections:
           - name: "carousel_autoplay"
             label: "Carousel Autoplay"
             widget: "object"
-            summary: "{{ fields.enabled }}: {{ fields.interval }}"
+            summary: "Autoplay: {{ fields.enabled }} - Interval: {{ fields.interval }}"
             required: false
             fields:
               - name: enabled
