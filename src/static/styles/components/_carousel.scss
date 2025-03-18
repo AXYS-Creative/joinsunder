@@ -90,6 +90,10 @@
     width: 66%;
     height: 3px;
 
+    @include mq-max(lg) {
+      display: none;
+    }
+
     &-bar {
       height: 100%;
       background: var(--hero-color--primary);

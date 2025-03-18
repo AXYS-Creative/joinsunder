@@ -1774,6 +1774,11 @@ figure {
   width: 66%;
   height: 3px;
 }
+@media screen and (max-width: 1024px) {
+  .carousel__progress {
+    display: none;
+  }
+}
 .carousel__progress-bar {
   height: 100%;
   background: var(--hero-color--primary);
