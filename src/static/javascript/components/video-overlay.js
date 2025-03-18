@@ -10,7 +10,7 @@ const videoToggle = document.querySelectorAll(".video-toggle");
 
 let nonVideoOverlayTabElements = [...tabElementsPage, headerLogo, menuBtn];
 
-videoCloseBtn.setAttribute("tabindex", "-1");
+videoCloseBtn?.setAttribute("tabindex", "-1");
 
 // For Dropbox, replace end of link's string to allow video embed
 if (videoToggle) {
@@ -83,4 +83,4 @@ videoOverlay?.addEventListener("click", (e) => {
   }
 });
 
-videoCloseBtn.addEventListener("click", () => closevideoOverlay());
+videoCloseBtn?.addEventListener("click", () => closevideoOverlay());
