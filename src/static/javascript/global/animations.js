@@ -161,7 +161,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   start: "top top",
                   end: "bottom bottom",
                   scrub: 0.2,
-                  // markers: true,
+                  markers: false,
                 },
               });
             }
