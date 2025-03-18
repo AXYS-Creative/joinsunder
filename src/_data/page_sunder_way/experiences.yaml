@@ -59,9 +59,9 @@ collage:
     - title: Two women at an outing
       src: /static/img/Way-Experience-11Photo.png
     - title: Sunder rep smiling
-      src: /static/img/Way-Experience-12Photo.jpg
+      src: /static/img/Way-Experience-12Photo.JPG
     - title: Dune buggy
-      src: /static/img/Way-Experience-13Photo.png
+      src: /static/img/Way-Experience-13Photo.PNG
     - title: Canoe by a bear
       src: /static/img/Way-Experience-14Photo.png
     - title: Group posing at service
@@ -74,7 +74,7 @@ collage:
     - title: Posing with a fish
       src: /static/img/Way-Experience-18Photo.png
     - title: ATV on the beach
-      src: /static/img/Way-Experience-19Photo.png
+      src: /static/img/Way-Experience-19Photo.PNG
     - title: Group of reps cheering
       src: /static/img/Way-Experience-20Photo.png
     - title: Beach resort
@@ -82,7 +82,7 @@ collage:
     - title: Reps in the pool
       src: /static/img/Way-Experience-22Photo.jpg
     - title: Max and Eric speaking
-      src: /static/img/Way-Experience-23Photo.jpg
+      src: /static/img/Way-Experience-23Photo.JPG
   column_4:
     - title: Group holding a trophy
       src: /static/img/Way-Experience-24Photo.jpg
