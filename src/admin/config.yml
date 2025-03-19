@@ -304,9 +304,10 @@ collections:
             label: Section Description
             widget: text
             required: true
-          - name: "carousel_autoplay"
-            label: "Carousel Autoplay"
-            widget: "object"
+          - name: carousel_autoplay
+            label: Carousel Autoplay
+            widget: object
+            collapsed: true
             summary: "Autoplay: {{ fields.enabled }} - Interval: {{ fields.interval }}"
             required: false
             fields:
@@ -322,10 +323,11 @@ collections:
                 max: 7500
                 required: true
                 hint: The time (in milliseconds) between the slide transition. 1000ms = 1 second
-          - name: "videos"
-            label: "Carousel Videos"
-            label_singular: "Video"
-            widget: "list"
+          - name: videos
+            label: Carousel Videos
+            label_singular: Video
+            widget: list
+            add_to_top: true
             collapsed: true
             required: true
             fields:
@@ -346,41 +348,127 @@ collections:
                 widget: string
                 required: true
                 hint: Paste link from DropBox. Select your video, click 'share', then 'copy link'.
-      - name: "oss"
-        label: "Section - OSS"
-        file: "src/_data/page_sunder_way/oss.yaml"
-        preview_path: "/sunder-way#operation-sunder-serves"
+          - name: toggle_collage
+            label: Show Collage
+            widget: boolean
+            default: true
+          - name: collage
+            label: Collage Images
+            widget: object
+            collapsed: true
+            required: true
+            fields:
+              - name: column_1
+                label: Column 1
+                label_singular: Image
+                widget: list
+                collapsed: true
+                required: true
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                    required: true
+                  - name: src
+                    label: Image Source
+                    widget: image
+                    required: true
+                    hint: Keep below 5MB
+                    media_library:
+                      config:
+                        max_file_size: 5000000 # 1MB = 1,000,000 bytes
+              - name: column_2
+                label: Column 2
+                label_singular: Image
+                widget: list
+                collapsed: true
+                required: true
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                    required: true
+                  - name: src
+                    label: Image Source
+                    widget: image
+                    required: true
+                    hint: Keep below 5MB
+                    media_library:
+                      config:
+                        max_file_size: 5000000 # 1MB = 1,000,000 bytes
+              - name: column_3
+                label: Column 3
+                label_singular: Image
+                widget: list
+                collapsed: true
+                required: true
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                    required: true
+                  - name: src
+                    label: Image Source
+                    widget: image
+                    required: true
+                    hint: Keep below 5MB
+                    media_library:
+                      config:
+                        max_file_size: 5000000 # 1MB = 1,000,000 bytes
+              - name: column_4
+                label: Column 4
+                label_singular: Image
+                widget: list
+                collapsed: true
+                required: true
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                    required: true
+                  - name: src
+                    label: Image Source
+                    widget: image
+                    required: true
+                    hint: Keep below 5MB
+                    media_library:
+                      config:
+                        max_file_size: 5000000 # 1MB = 1,000,000 bytes
+      - name: oss
+        label: Section - OSS
+        file: src/_data/page_sunder_way/oss.yaml
+        preview_path: /sunder-way#operation-sunder-serves
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Way - OSS)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Way - OSS)
+            widget: boolean
             default: true
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
             hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-          - name: "section_desc"
-            label: "Section Description"
-            widget: "text"
+          - name: section_desc
+            label: Section Description
+            widget: text
             required: true
-          - name: "section_bg"
-            label: "Section Background Image"
-            widget: "image"
+          - name: section_bg
+            label: Section Background Image
+            widget: image
             required: true
             hint: Keep below 5MB
             media_library:
               config:
                 max_file_size: 5000000 # 1MB = 1,000,000 bytes
-          - name: "graphic"
-            label: "Graphic"
-            widget: "image"
+          - name: graphic
+            label: Graphic
+            widget: image
             required: false
-          - name: "cta"
-            label: "Call To Action"
-            widget: "object"
+          - name: cta
+            label: Call To Action
+            widget: object
             summary: "{{ fields.name }}: {{ fields.url }}"
             required: false
             fields:
@@ -394,47 +482,47 @@ collections:
                 widget: string
                 required: false
                 hint: i.e. /join
-      - name: "quotes"
-        label: "Section - Quote"
-        file: "src/_data/page_sunder_way/quotes.yaml"
-        preview_path: "/sunder-way#quote-section"
+      - name: quotes
+        label: Section - Quote
+        file: src/_data/page_sunder_way/quotes.yaml
+        preview_path: /sunder-way#quote-section
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Way - Quote)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Way - Quote)
+            widget: boolean
             default: true
-          - name: "list"
-            label: "All Quotes"
-            label_singular: "Quote"
-            widget: "list"
+          - name: list
+            label: All Quotes
+            label_singular: Quote
+            widget: list
             required: true
             fields:
-              - name: "title"
-                label: "Title"
-                widget: "string"
+              - name: title
+                label: Title
+                widget: string
                 required: true
-              - name: "quote"
-                label: "Quote"
-                widget: "text"
+              - name: quote
+                label: Quote
+                widget: text
                 required: true
-              - name: "img_src"
-                label: "Portrait Source"
-                widget: "image"
+              - name: img_src
+                label: Portrait Source
+                widget: image
                 required: true
                 hint: Keep below 5MB
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
-              - name: "name"
-                label: "Portrait Name"
-                widget: "string"
+              - name: name
+                label: Portrait Name
+                widget: string
                 required: true
                 hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-              - name: "role"
-                label: "Portrait Role"
-                widget: "string"
+              - name: role
+                label: Portrait Role
+                widget: string
                 required: true
   - name: "page_platform"
     label: "Page - Sunder Platform"
