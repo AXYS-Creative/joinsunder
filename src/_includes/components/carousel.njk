@@ -3,7 +3,7 @@
   id="carousel"
   data-autoplay-interval="{{ carousel_autoplay.interval }}"
 >
-  <div class="carousel__track" id="carousel__track">
+  <div class="carousel__track" id="carousel__track" tabindex="-1">
     <div class="carousel__track-inner">
       {% for item in list %} {% if video_carousel %}
       <button

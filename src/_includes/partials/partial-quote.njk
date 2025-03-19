@@ -1,13 +1,11 @@
 <section class="partial-quote" id="{{ section_id }}">
   {% for quote_block in quote_list %}
   <div class="quote">
-    <figure class="quote__figure">
-      <img class="quote__figure-img" src="{{ quote_block.img_src }}" alt="" />
-      <figcaption class="quote__figure-caption">
-        <h3 class="quote__figure-caption-name">{{ quote_block.name }}</h3>
-        <h4 class="quote__figure-caption-role">{{ quote_block.role }}</h4>
-      </figcaption>
-    </figure>
+    <!-- prettier-ignore -->
+    {% set src = quote_block.img_src %}
+    {% set name = quote_block.name %}
+    {% set role = quote_block.role %}
+    {% include "../components/portrait-gradient.njk" %}
 
     <div class="quote__text-block">
       <h2 class="quote__text-block-title">

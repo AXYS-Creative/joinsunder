@@ -347,7 +347,7 @@ collections:
                 label: Video Source
                 widget: string
                 required: true
-                hint: Paste link from DropBox. Select your video, click 'share', then 'copy link'.
+                hint: Paste the link from DropBox. Select your video, click 'share', then 'copy link'.
           - name: toggle_collage
             label: Show Collage
             widget: boolean
@@ -754,20 +754,96 @@ collections:
                 label: "Portrait Role"
                 widget: "string"
                 required: true
-  - name: "page_spare_1"
-    label: "Page - Spare"
+  - name: page_about
+    label: Page - About
     files:
-      - name: "hero"
-        label: "Section - Hero"
-        file: "src/_data/page_join/hero.yaml"
-        preview_path: "/join"
+      - name: values
+        label: Section - Core Values
+        file: src/_data/page_about/values.yaml
+        preview_path: /about
         editor:
           preview: false
         fields:
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Hero)
+            widget: boolean
+            default: true
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
+      - name: mission
+        label: Section - Our Mission
+        file: src/_data/page_about/mission.yaml
+        preview_path: /about#mission
+        editor:
+          preview: false
+        fields:
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Hero)
+            widget: boolean
+            default: true
+          - name: section_title
+            label: Section Title
+            widget: string
+            required: true
+      - name: growth
+        label: Section - Growth History
+        file: src/_data/page_about/growth.yaml
+        preview_path: /about#growth
+        editor:
+          preview: false
+        fields:
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Hero)
+            widget: boolean
+            default: true
+          - name: section_title
+            label: Section Title
+            widget: string
+            required: true
+      - name: leadership
+        label: Section - Leadership
+        file: src/_data/page_about/leadership.yaml
+        preview_path: /about#leadership
+        editor:
+          preview: false
+        fields:
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Hero)
+            widget: boolean
+            default: true
+          - name: section_title
+            label: Section Title
+            widget: string
+            required: true
+          - name: section_desc
+            label: Section Description
+            widget: string
+            required: true
+          - name: list
+            label: Leadership Portraits
+            label_singular: Image
+            widget: list
+            required: true
+            fields:
+              - name: name
+                label: Name
+                widget: string
+                required: true
+                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+              - name: role
+                label: Role
+                widget: string
+                required: true
+              - name: src
+                label: Image Source
+                widget: image
+                required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
   - name: "page_join"
     label: "Page - Join"
     files:

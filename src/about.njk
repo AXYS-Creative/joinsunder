@@ -1,6 +1,6 @@
 ---
 layout: app
-path: join
+path: about
 
 title: About
 description: #CHANGE ME
@@ -8,10 +8,48 @@ description: #CHANGE ME
 # master props
 hide_header: false
 hide_footer: false
-# Page notes
-# Using eager loading for computed/dynamic height. Only use fetchpriority sparingly
 ---
 
-<section class="">
-  <h1>About Page</h1>
+<section class="section-values section-gradient">
+  <h1>Core Values</h1>
+  <p class="section-gradient__desc">
+    Our core values are the foundation of everything we do, guiding our
+    decisions, shaping our culture, and driving us toward a meaningful future.
+  </p>
+
+  <!-- prettier-ignore -->
+  {% set cta_1_text = 'Join the squad' %}
+  {% set cta_1_url = '/join' %}
+  {% include "./_includes/components/cta-group.njk" %}
 </section>
+
+<section class="section-mission">
+  <div class="section-mission__pin">
+    <h2>Our Mission</h2>
+  </div>
+</section>
+
+{% if page_about.leadership.toggle_section %}
+<section class="section-leadership section-gradient">
+  <h2 class="section-gradient__title">
+    {{ page_about.leadership.section_title }}
+  </h2>
+  <p class="section-gradient__desc">
+    {{ page_about.leadership.section_desc }}
+  </p>
+
+  <div class="leadership-portraits">
+    <!-- prettier-ignore -->
+    {% for img in page_about.leadership.list %}
+      {% set src = img.src %}
+      {% set name = img.name %}
+      {% set role = img.role %}
+      {% set class = '' %}
+      {% if loop.index <= 3 %}
+        {% set class = 'big-three' %}
+      {% endif %}
+      {% include "./_includes/components/portrait-gradient.njk" %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

@@ -9,7 +9,8 @@
 
 // Pages
 // prettier-ignore
-@import "./pages/home",
+@import "./pages/about",
+ "./pages/home",
  "./pages/join",
  "./pages/sunder-way",
  "./pages/404";
@@ -21,6 +22,7 @@
 "./components/collage",
 "./components/contact-form",
 "./components/logo-link",
+"./components/portrait-gradient",
 "./components/social-media",
 "./components/video-overlay";
 

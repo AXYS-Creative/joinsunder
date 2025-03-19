@@ -9,28 +9,28 @@ carousel_autoplay:
 videos:
   - title: XCaret - 2025 Top Performers
     poster: /static/img/Way-Experience-1Video.png
-    src: https://www.dropbox.com/scl/fi/sberrumdv76x6p7lezd0m/Way-Experience-1Video.mov?rlkey=kqwwwxs8c7j2e007bue91ls1d&st=lkwsfckp&dl=0
+    src: https://www.dropbox.com/scl/fi/gkfzto0gk50ux9hoidwes/Way-Experience-1Video.mov?rlkey=z18lot4x4ul79abjqybg0gwsd&st=vrfv0oy7&dl=0
   - title: Sundys - 2024 Awards
     poster: /static/img/Way-Experience-2Video.png
-    src: https://www.dropbox.com/scl/fo/afbptcrbbnw81ii31ah75/AMGM4I5pcZiIOjbMdHc8Ve8?e=1&preview=Way-Experience-1Video.mov&rlkey=8zkz7ryn6hcb9emczsd07icqe&st=xdfwahgo&dl=0
+    src: https://www.dropbox.com/scl/fi/zvl1g4ouji8f96ahf20es/Way-Experience-2Video.mp4?rlkey=131a48hraz7r8d3jtw8ibkyyr&st=t5wmpt02&dl=0
   - title: 2024 Sunder Summit
     poster: /static/img/Way-Experience-3Video.png
-    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
+    src: https://www.dropbox.com/scl/fi/oj1algma3l6w09q1o48e6/Way-Experience-3Video.mp4?rlkey=zczhrv0so58acoh5eyao9moiz&st=2gu0ql6i&dl=0
   - title: LVE - Rapid Sunder Champions
     poster: /static/img/Way-Experience-4Video.png
-    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
+    src: https://www.dropbox.com/scl/fi/3ufeqr0k72g11s5y1hsuc/Way-Experience-4Video.mov?rlkey=hnl4d0o3dfhutpvbi4bwk74ki&st=w5d920qp&dl=0
   - title: Operation Sunder Serves - Costa Rica
     poster: /static/img/Way-Experience-5Video.png
-    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
+    src: https://www.dropbox.com/scl/fi/l0ex0t9d544k8k9iexk6o/Way-Experience-5Video.mov?rlkey=zouuokcysao2iwu81wyopiubo&st=whfevsvo&dl=0
   - title: Reign Champions - Alaska
     poster: /static/img/Way-Experience-6Video.png
-    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
+    src: https://www.dropbox.com/scl/fi/f5ghg5819otf0zqunm5ug/Way-Experience-6Video.mov?rlkey=91pnk992su8u3vui9ca6i29t4&st=c16x1dx1&dl=0
   - title: Sunder Dome Champions - Pirates Cove
     poster: /static/img/Way-Experience-7Video.png
-    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
+    src: https://www.dropbox.com/scl/fi/zp5vspmcvqyqdq28qulrb/Way-Experience-7Video.mov?rlkey=829pouz0sasd31uc6qn37nx4c&st=zul09pkb&dl=0
   - title: 2024 Sunder Elite
     poster: /static/img/Way-Experience-8Video.png
-    src: https://www.dropbox.com/scl/fi/jnubin7hayzjp0isan04x/home.mp4?rlkey=o4vcowa3l2s37zcup6wq0r3fy&st=k8cd3p69&dl=0
+    src: https://www.dropbox.com/scl/fi/qc0h2da9h0njdrgynowmm/Way-Experience-8Video.mov?rlkey=toj4ii1zzf766r2tzqdddi5vc&st=r4t56ycg&dl=0
 
 toggle_collage: true
 collage:

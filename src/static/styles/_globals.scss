@@ -350,6 +350,7 @@ body {
   @include dark-theme;
   background-color: var(--hero-color--primary);
   width: calc(100vw - var(--body-padding-sm-double));
+  max-width: var(--header-max-width);
   // max-width: unset; // toggle for ultra-wide behavior
   padding: var(--body-padding-double);
   margin-bottom: var(--body-padding-sm);

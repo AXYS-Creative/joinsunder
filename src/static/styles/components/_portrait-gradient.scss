@@ -1,0 +1,41 @@
+.portrait-gradient {
+  @include dark-theme;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  // width:
+  // aspect-ratio:
+
+  &::before {
+    @include blue-gradient(0deg, 20%, 50%);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__img {
+    @include absolute-center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__caption {
+    position: absolute;
+    bottom: var(--body-padding);
+    left: var(--body-padding);
+    z-index: 1;
+
+    &-name {
+      @include h3;
+    }
+
+    &-role {
+      @include h6;
+    }
+  }
+}
