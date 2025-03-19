@@ -9,13 +9,17 @@
     gap: var(--panel-gap);
     flex: 1;
 
+    picture {
+      display: flex;
+    }
+
     img {
       border-radius: var(--radius);
       object-fit: cover;
       object-position: center;
 
       &.portrait {
-        aspect-ratio: 1 / 1.5;
+        aspect-ratio: 1 / 1.25;
       }
 
       &.landscape {

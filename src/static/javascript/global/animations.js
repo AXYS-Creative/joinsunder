@@ -148,7 +148,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
         // Experience Section (Collage)
         if (document.querySelector(".collage")) {
-          const yVal = maxMd ? "-17%" : maxXxl ? "-17.125%" : "-17.15%";
+          const yVal = maxMd ? "-16.15%" : maxXxl ? "-16.225%" : "-16.2%";
 
           const collageSlide = (el, distance) => {
             const element = document.querySelector(el);

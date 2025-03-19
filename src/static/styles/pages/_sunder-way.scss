@@ -322,6 +322,11 @@
 
       &__row {
         @include row-center(space-around);
+        gap: 12vw;
+
+        @include mq-min(xxxl) {
+          gap: 250px;
+        }
 
         @include mq-min(lg) {
           height: 196px; // flag
@@ -338,6 +343,8 @@
         }
 
         &-img {
+          $rotation: 15deg;
+
           width: 250px;
           aspect-ratio: 1;
           object-fit: contain;
@@ -359,11 +366,11 @@
           }
 
           &.left {
-            rotate: -12.5deg;
+            rotate: -$rotation;
           }
 
           &.right {
-            rotate: 12.5deg;
+            rotate: $rotation;
           }
         }
       }
@@ -480,6 +487,6 @@
   }
 
   // .collage {
-
+  // see _collage.scss
   // }
 }

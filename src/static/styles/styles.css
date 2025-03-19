@@ -1457,6 +1457,12 @@ figure {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 12vw;
+}
+@media screen and (min-width: 1751px) {
+  .section-competitions .yog-merch__row {
+    gap: 250px;
+  }
 }
 @media screen and (min-width: 1025px) {
   .section-competitions .yog-merch__row {
@@ -1499,10 +1505,10 @@ figure {
   }
 }
 .section-competitions .yog-merch__row-img.left {
-  rotate: -12.5deg;
+  rotate: -15deg;
 }
 .section-competitions .yog-merch__row-img.right {
-  rotate: 12.5deg;
+  rotate: 15deg;
 }
 .section-competitions .yog-types {
   display: flex;
@@ -1809,6 +1815,9 @@ figure {
   gap: var(--panel-gap);
   flex: 1;
 }
+.collage__column picture {
+  display: flex;
+}
 .collage__column img {
   border-radius: var(--radius);
   -o-object-fit: cover;
@@ -1817,7 +1826,7 @@ figure {
      object-position: center;
 }
 .collage__column img.portrait {
-  aspect-ratio: 1/1.5;
+  aspect-ratio: 1/1.25;
 }
 .collage__column img.landscape {
   aspect-ratio: 1.5/1;
@@ -2106,7 +2115,7 @@ figure {
   }
 }
 .video-overlay .video-player {
-  height: 50%;
+  height: 70%;
   max-width: var(--full-width-snip-sm);
   width: auto;
   background: black;
