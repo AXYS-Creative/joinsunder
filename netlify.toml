@@ -1,14 +1,8 @@
 [build]
   publish = "_site"
-  command = "ELEVENTY_INCREMENTAL=true npm run build"
+  command = "npm run build"
 
 [[redirects]]
 from = "/*"
 to = "404/index.html"
 status = 404
-
-[[plugins]]
-package = "@netlify/plugin-cache"
-
-  [plugins.inputs]
-  paths = [".cache/eleventy-img"]
