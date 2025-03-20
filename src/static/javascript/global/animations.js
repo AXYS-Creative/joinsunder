@@ -138,9 +138,9 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
           gsap.to(".yog-logo", {
             opacity: 0,
             scrollTrigger: {
-              trigger: ".yog-types",
-              start: "top 90%",
-              end: "top 40%",
+              trigger: ".yog",
+              start: "85% 90%",
+              end: "85% 40%",
               scrub: 0,
             },
           });

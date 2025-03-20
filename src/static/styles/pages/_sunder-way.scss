@@ -32,7 +32,6 @@
     }
 
     &__figure {
-      // border: $test;
       position: relative;
       width: 100%;
       height: 3lh;
@@ -49,7 +48,7 @@
 
         @include mq-motion-allow {
           opacity: 0;
-          transition: $ease;
+          transition: opacity $ease;
 
           &.active {
             opacity: 1;

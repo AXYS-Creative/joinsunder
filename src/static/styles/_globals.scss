@@ -74,11 +74,10 @@ body {
 }
 
 .site-header {
+  @include header-spacing;
   @include row-center(space-between);
   position: fixed;
   top: var(--body-padding-sm);
-  left: 50%;
-  translate: -50% 0;
   // height: var(--header-height);
   z-index: $z-index--header;
   width: var(--full-width-snip-sm);
@@ -86,25 +85,13 @@ body {
   padding: var(--body-padding);
   border: 1px solid transparent;
   border-radius: var(--radius);
-  transition: $ease, width 0s;
+  transition: transform $ease, border $ease, background $ease;
 
   // :focus-within causes the header to persist on click, creating unwanted visibility on scroll
   &:has(.header-logo:focus-visible),
   &:has(.site-nav-btn:focus-visible) {
-    translate: -50% 0 !important;
+    transform: translateY(0) !important;
   }
-
-  // & > * {
-  //   position: fixed;
-  //   z-index: $z-index--header;
-  //   transition: opacity 0.5s ease;
-  // }
-
-  // .header-logo {
-  //   // see logo-link.scss for full styles
-  //   @include left-spacing;
-  //   top: calc(var(--body-padding) + var(--logo-offset));
-  // }
 
   .site-nav-btn-wrapper {
     --nav-btn-height: 36px;
@@ -189,16 +176,16 @@ body {
 
   &.near-bottom {
     @include mq-max(lg) {
-      translate: -50% calc(-100% - var(--body-padding-sm));
+      transform: translateY(calc(-100% - var(--body-padding-sm)));
     }
   }
 
   &.scrolling-down {
-    translate: -50% calc(-100% - var(--body-padding-sm));
+    transform: translateY(calc(-100% - var(--body-padding-sm)));
   }
 
   &.nav-active {
-    translate: -50% 0;
+    transform: translateY(0);
     background: transparent;
     border: 1px solid transparent;
   }

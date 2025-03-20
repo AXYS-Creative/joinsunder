@@ -22,8 +22,19 @@
 }
 
 .section-leadership {
-  @include mq-max(lg) {
+  @include mq-max(md) {
     @include column-center;
+  }
+
+  &__title,
+  &__desc {
+    // This block is a one-off to center text at md vs lg
+    // If you delete it, remove the classes off the elements too
+    text-align: left;
+
+    @include mq-max(md) {
+      text-align: center;
+    }
   }
 
   .leadership-portraits {

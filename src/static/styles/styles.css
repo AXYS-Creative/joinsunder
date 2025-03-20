@@ -127,23 +127,27 @@ body:has(.load-complete) .hero div {
 }
 
 .site-header {
+  left: var(--body-padding-sm);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: var(--body-padding-sm);
-  left: 50%;
-  translate: -50% 0;
   z-index: 4;
   width: var(--full-width-snip-sm);
   max-width: var(--header-max-width);
   padding: var(--body-padding);
   border: 1px solid transparent;
   border-radius: var(--radius);
-  transition: 0.32s ease, width 0s;
+  transition: transform 0.32s ease, border 0.32s ease, background 0.32s ease;
+}
+@media screen and (min-width: 1751px) {
+  .site-header {
+    left: calc(50% - 875px + var(--body-padding-sm));
+  }
 }
 .site-header:has(.header-logo:focus-visible), .site-header:has(.site-nav-btn:focus-visible) {
-  translate: -50% 0 !important;
+  transform: translateY(0) !important;
 }
 .site-header .site-nav-btn-wrapper {
   --nav-btn-height: 36px;
@@ -217,14 +221,14 @@ body:has(.load-complete) .hero div {
 }
 @media screen and (max-width: 1024px) {
   .site-header.near-bottom {
-    translate: -50% calc(-100% - var(--body-padding-sm));
+    transform: translateY(calc(-100% - var(--body-padding-sm)));
   }
 }
 .site-header.scrolling-down {
-  translate: -50% calc(-100% - var(--body-padding-sm));
+  transform: translateY(calc(-100% - var(--body-padding-sm)));
 }
 .site-header.nav-active {
-  translate: -50% 0;
+  transform: translateY(0);
   background: transparent;
   border: 1px solid transparent;
 }
@@ -854,12 +858,20 @@ figure {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .section-leadership {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+.section-leadership__title, .section-leadership__desc {
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .section-leadership__title, .section-leadership__desc {
+    text-align: center;
   }
 }
 .section-leadership .leadership-portraits {
@@ -1294,7 +1306,7 @@ figure {
 @media (prefers-reduced-motion: no-preference) {
   .section-ethos .ethos-top__figure-img {
     opacity: 0;
-    transition: 0.32s ease;
+    transition: opacity 0.32s ease;
   }
   .section-ethos .ethos-top__figure-img.active {
     opacity: 1;

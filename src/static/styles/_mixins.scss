@@ -312,6 +312,14 @@ $min-breakpoints: (
   }
 }
 
+@mixin header-spacing {
+  left: var(--body-padding-sm);
+
+  @include mq-min(xxxl) {
+    left: calc(50% - calc($content-width / 2) + var(--body-padding-sm));
+  }
+}
+
 @mixin left-spacing {
   left: var(--body-padding);
 

@@ -1,6 +1,10 @@
 <figure class="portrait-gradient {{ class }}">
-  <img class="portrait-gradient__img" src="{{ src }}" alt="" />
-  <figcaption class="portrait-gradient__caption">
+  <img
+    class="portrait-gradient__img"
+    src="{{ src }}"
+    alt="{{ name | removeTokens }} {{ role | removeTokens }}"
+  />
+  <figcaption class="portrait-gradient__caption" aria-hidden="true">
     <h3 class="portrait-gradient__caption-name">{{ name }}</h3>
     <h4 class="portrait-gradient__caption-role">{{ role }}</h4>
   </figcaption>
