@@ -48,6 +48,8 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
         indent: 256,
       };
 
+      let bodyPaddingSm = 12;
+
       // // TEMPLATE TWEEN - SCRUB
       // gsap.fromTo(
       //   ".slider__inner",
@@ -169,6 +171,70 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
           collageSlide(".collage__column-1", yVal);
           collageSlide(".collage__column-3", yVal);
+        }
+      }
+
+      // Page - About
+      {
+        if (document.querySelector(".section-mission")) {
+          const pinDuration = "+=250%";
+
+          // Pinning Ethos Section
+          gsap.to(".mission-pin", {
+            scrollTrigger: {
+              trigger: ".mission-pin",
+              start: `top ${bodyPaddingSm}px`,
+              end: pinDuration,
+              pin: true,
+            },
+          });
+
+          // Text/Line Animations
+          {
+            const missionLines = document.querySelectorAll(
+              ".mission-title__line"
+            );
+            missionLines.forEach((line, index) => {
+              gsap.fromTo(
+                line,
+                { y: 64, opacity: 0 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  scrollTrigger: {
+                    trigger: `.mission-pin-step-${index + 1}`,
+                    start: `top ${bodyPaddingSm}px`,
+                    end: `bottom ${bodyPaddingSm}px`,
+                    scrub: 0.25,
+                  },
+                }
+              );
+            });
+          }
+
+          // Ripple Animations
+          {
+            const ripples = document.querySelectorAll(".mission-ripple");
+
+            ripples.forEach((ripple, index) => {
+              gsap
+                .timeline({
+                  scrollTrigger: {
+                    trigger: `.mission-pin-step-${(index + 1) * 2 - 1}`, // Adjust trigger dynamically
+                    start: `top ${bodyPaddingSm}px`,
+                    end: "+=120%", // Overlap ripples here
+                    // end: `bottom ${bodyPaddingSm}px`,
+                    scrub: 0.25,
+                  },
+                })
+                .fromTo(
+                  ripple,
+                  { scale: 1, opacity: 0 },
+                  { scale: 2, opacity: 1, ease: "none" }
+                )
+                .to(ripple, { scale: 2.5, opacity: 0, ease: "none" });
+            });
+          }
         }
       }
 

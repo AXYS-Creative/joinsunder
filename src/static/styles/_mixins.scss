@@ -305,7 +305,7 @@ $min-breakpoints: (
 
 @mixin paragraph-width-snip {
   @include mq-min(md) {
-    width: var(--paragraph-snip);
+    max-width: var(--paragraph-snip);
   }
   @include mq-max(md) {
     text-align: center;

@@ -175,19 +175,8 @@
   }
 
   .ethos-pin-steps {
-    @include column-start;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 12px;
-    height: 100%;
-    opacity: 0;
-
-    .ethos-pin-step {
-      background: linear-gradient(180deg, $blue, transparent);
-      flex: 1;
-      width: 100%;
-    }
+    // full styles in _util.scss
+    padding-top: 48px; // delay animation
   }
 }
 

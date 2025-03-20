@@ -42,7 +42,7 @@ collections:
       - name: "hero"
         label: "Section - Hero"
         file: "src/_data/page_home/hero.yaml"
-        preview_path: "#"
+        preview_path: "/"
         editor:
           preview: false
         fields:
@@ -266,6 +266,7 @@ collections:
                     widget: select
                     options: ["none", "left", "right"]
                     multiple: false
+                    create: false
           - name: "yog_types"
             label: "Year of Gear Types"
             widget: "list"
@@ -780,13 +781,28 @@ collections:
           preview: false
         fields:
           - name: toggle_section
-            label: Show Section (Sunder Platform - Hero)
+            label: Show Section (Sunder Platform - Our Mission)
             widget: boolean
             default: true
-          - name: section_title
-            label: Section Title
-            widget: string
+          - name: title
+            label: Title Lines
+            label_singular: Line
+            widget: list
+            allow_add: true
+            min: 4
+            max: 6
             required: true
+            fields:
+              - name: text
+                label: Text
+                widget: string
+                required: true
+              - name: style
+                label: Font Style
+                widget: select
+                options: ["light", "heavy"]
+                multiple: false
+                create: false
       - name: growth
         label: Section - Growth History
         file: src/_data/page_about/growth.yaml

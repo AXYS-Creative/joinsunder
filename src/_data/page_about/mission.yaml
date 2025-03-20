@@ -1,0 +1,17 @@
+toggle_section: true
+
+title:
+  - text: Our
+    style: light
+  - text: mission
+    style: heavy
+  - text: is to give people the
+    style: light
+  - text: power
+    style: heavy
+  - text: to change the
+    style: light
+  - text: future
+    style: heavy
+
+ripple_count: 3 # Dev use only

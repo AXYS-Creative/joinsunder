@@ -86,9 +86,9 @@ $test-bg: rgba(navy, 0.75);
 
   // Size & Spacing
   --body-padding: 24px;
-  --body-padding-double: calc(var(--body-padding) * 2);
+  --body-padding-double: calc(var(--body-padding) * 2); // account for edges
   --body-padding-sm: 12px;
-  --body-padding-sm-double: calc(var(--body-padding-sm) * 2);
+  --body-padding-sm-double: calc(var(--body-padding-sm) * 2); // account edges
 
   --section-gap: 64px;
   --section-gap-double: calc(var(--section-gap) * 2);
@@ -134,9 +134,14 @@ $test-bg: rgba(navy, 0.75);
     --section-gap: 48px;
   }
 
+  @media (max-width: 1200px) {
+    --border-bold-girth: 3px;
+  }
+
   @media (max-width: 1024px) {
     --section-gap--lg: 24px;
     --header-height: 32px;
+    --border-bold-girth: 2px;
   }
 
   @media (max-width: 768px) {
@@ -145,8 +150,6 @@ $test-bg: rgba(navy, 0.75);
     --logo-offset: 6px;
 
     --panel-gap: 12px;
-
-    --border-bold-girth: 2px;
 
     --radius: 5px;
   }

@@ -47,6 +47,22 @@
   }
 }
 
+.pin-steps {
+  @include hide-content;
+  @include column-start;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100%;
+
+  .pin-step {
+    background: linear-gradient(180deg, $blue, $white);
+    flex: 1;
+    width: 100%;
+  }
+}
+
 // // Library
 // @media all {
 //   .magnet {
