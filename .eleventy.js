@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  // 11ty-img optimizing
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "jpeg"], // Modern formats
     widths: [320, 640, 1280, 1920], // No extra-large images
@@ -29,6 +30,10 @@ module.exports = function (eleventyConfig) {
         decoding: "async",
       },
       pictureAttributes: {},
+    },
+    cacheOptions: {
+      duration: "30d", // Cache images for 30 days
+      directory: ".cache/eleventy-img", // Use persistent cache directory
     },
   });
 

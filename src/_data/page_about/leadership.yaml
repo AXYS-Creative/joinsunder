@@ -9,10 +9,10 @@ list:
     src: /static/img/About-Leadership-1Max.png
   - name: Eric[%br%] Nielsen
     role: President
-    src: /static/img/About-Leadership-2Eric.PNG
+    src: /static/img/About-Leadership-2Eric.png
   - name: Devon[%br%] Glassman
     role: COO
-    src: /static/img/About-Leadership-3Devon.PNG
+    src: /static/img/About-Leadership-3Devon.png
   - name: Cary[%br%] Jenkins
     role: CTO
     src: /static/img/About-Leadership-4Cary.png
@@ -21,10 +21,10 @@ list:
     src: /static/img/About-Leadership-5Yan.png
   - name: Bryan[%br%] Smith
     role: CMO
-    src: /static/img/About-Leadership-6Bryan.PNG
+    src: /static/img/About-Leadership-6Bryan.png
   - name: Brett[%br%] Jaynes
     role: CFO
-    src: /static/img/About-Leadership-7Brett.PNG
+    src: /static/img/About-Leadership-7Brett.png
   - name: Kerstin[%br%] Larsen
     role: VP Sales Operations
     src: /static/img/About-Leadership-8Kerstin.png
