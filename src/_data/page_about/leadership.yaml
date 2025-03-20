@@ -6,34 +6,33 @@ section_desc: Our leadership team is driven by your success, ensuring you have t
 list:
   - name: Max[%br%] Britton
     role: CEO
-    src: /static/img/About-Leadership-1Max.png
+
   - name: Eric[%br%] Nielsen
     role: President
-    src: /static/img/About-Leadership-2Eric.png
+
   - name: Devon[%br%] Glassman
     role: COO
-    src: /static/img/About-Leadership-3Devon.png
+
   - name: Cary[%br%] Jenkins
     role: CTO
-    src: /static/img/About-Leadership-4Cary.png
+
   - name: Yan[%br%] Purba
     role: CXO
-    src: /static/img/About-Leadership-5Yan.png
+
   - name: Bryan[%br%] Smith
     role: CMO
-    src: /static/img/About-Leadership-6Bryan.png
+
   - name: Brett[%br%] Jaynes
     role: CFO
-    src: /static/img/About-Leadership-7Brett.png
+
   - name: Kerstin[%br%] Larsen
     role: VP Sales Operations
-    src: /static/img/About-Leadership-8Kerstin.png
+
   - name: Wyler[%br%] Wittwer
     role: VP Sales
-    src: /static/img/About-Leadership-9Wyler.png
+
   - name: Brady[%br%] Jones
     role: VP Partners
-    src: /static/img/About-Leadership-10Brady.png
+
   - name: Daniel[%br%] Garcia
     role: Creative Director
-    src: /static/img/About-Leadership-11Daniel.png
