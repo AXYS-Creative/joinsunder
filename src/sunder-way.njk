@@ -23,7 +23,6 @@ hide_footer: false
           class="ethos-top__figure-img ethos-img-{{ loop.index }}"
           src="{{ img.src }}"
           alt=""
-          loading="eager"
         />
         {% endfor %}
       </figure>
@@ -79,12 +78,7 @@ hide_footer: false
   <div class="competition-types">
     {% for type in page_sunder_way.competitions.types %}
     <figure class="competition-types__figure">
-      <img
-        class="competition-types__img"
-        src="{{ type.src }}"
-        alt=""
-        loading="eager"
-      />
+      <img class="competition-types__img" src="{{ type.src }}" alt="" />
 
       <figcaption class="competition-types__caption">
         <h3 class="competition-types__caption-title">{{ type.title }}</h3>
@@ -112,7 +106,6 @@ hide_footer: false
           class="yog-merch__row-img gsap-animate {{ item.rotate }}"
           src="{{ item.src }}"
           alt="{{ item.title }}"
-          loading="eager"
         />
         {% endfor %}
       </div>
