@@ -32,9 +32,10 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
       maxXl: "(max-width: 1200px)",
       minMd: "(min-width: 769px)",
       minLg: "(min-width: 1025px)",
+      noMotion: "(prefers-reduced-motion: reduce)",
     },
     (context) => {
-      let { maxSm, maxMd, maxLg, maxXl, maxXxl, minMd, minLg } =
+      let { maxSm, maxMd, maxLg, maxXl, maxXxl, minMd, minLg, noMotion } =
         context.conditions;
 
       let navyMarkers = {
@@ -49,6 +50,8 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
       };
 
       let bodyPaddingSm = 12;
+      let bodyPadding = 24;
+      let bodyPaddingDouble = bodyPadding * 2;
 
       // // TEMPLATE TWEEN - SCRUB
       // gsap.fromTo(
@@ -177,10 +180,11 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
       // Page - About
       {
+        // Mission Section
         if (document.querySelector(".section-mission")) {
           const pinDuration = "+=250%";
 
-          // Pinning Ethos Section
+          // Pinning Mission Section
           gsap.to(".mission-pin", {
             scrollTrigger: {
               trigger: ".mission-pin",
@@ -235,6 +239,237 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 )
                 .to(ripple, { scale: 2.5, opacity: 0, ease: "none" });
             });
+          }
+        }
+
+        // Growth History (USA map)
+        if (document.querySelector(".section-growth")) {
+          const pinDuration = "+=400%";
+          const pinDurationExtended = "+=480%";
+          const growthPinSteps = document.querySelectorAll(".growth-pin-step");
+          // const startPoint = "-2px center";
+          const startPoint = `${bodyPaddingDouble} top`;
+          const endPoint = `bottom top`;
+
+          // Pinning the Growth Section
+          {
+            gsap.to(".growth-pin", {
+              scrollTrigger: {
+                trigger: ".growth-pin",
+                start: "top top",
+                end: pinDuration,
+                pin: true,
+              },
+            });
+          }
+
+          // // Fading in USA Map
+          // {
+          //   gsap.fromTo(
+          //     ".growth-map__map",
+          //     {
+          //       opacity: 0,
+          //       y: "-50%",
+          //     },
+          //     {
+          //       opacity: 1,
+          //       y: "0%",
+          //       scrollTrigger: {
+          //         trigger: ".growth-pin",
+          //         start: "-70% top",
+          //         end: "top top",
+          //         scrub: 0,
+          //       },
+          //     }
+          //   );
+          // }
+
+          // Display Growth Elements
+          {
+            const fadeElements = [
+              ".growth-title",
+              ".growth-links",
+              ".growth-counter",
+              ".growth-key",
+            ];
+
+            fadeElements.forEach((selector) => {
+              const element = document.querySelector(selector);
+
+              ScrollTrigger.create({
+                trigger: ".growth-pin",
+                start: "top top",
+                end: pinDurationExtended,
+                toggleClass: { targets: element, className: "show-item" },
+              });
+            });
+          }
+
+          // Growth Link Highlight
+          {
+            const growthLinks = document.querySelectorAll(".growth-link");
+
+            growthPinSteps.forEach((marker, index) => {
+              const link = growthLinks[index];
+
+              ScrollTrigger.create({
+                trigger: marker,
+                start: startPoint,
+                end: endPoint,
+                onEnter: () => link.classList.add("active"),
+                onEnterBack: () => link.classList.add("active"),
+                onLeave: () => link.classList.remove("active"),
+                onLeaveBack: () => link.classList.remove("active"),
+                // markers: whiteMarkers,
+              });
+            });
+          }
+
+          // Number Ticker Animation
+          {
+            const numberCounter = document.querySelector(".number-counter");
+
+            growthPinSteps.forEach((marker, index) => {
+              const targetValue = marker.getAttribute("data-counter-value");
+
+              const isFirstMarker = index === 0;
+
+              ScrollTrigger.create({
+                trigger: marker,
+                start: startPoint,
+                end: endPoint,
+                scrub: true,
+                onEnter: () => updateCounter(numberCounter, targetValue),
+                onEnterBack: () => updateCounter(numberCounter, targetValue),
+                onLeaveBack: () => {
+                  if (isFirstMarker) updateCounter(numberCounter, "00");
+                },
+              });
+            });
+
+            const updateCounter = (counter, value) => {
+              const digits = [...value.padStart(2, "0")].map(Number); // Ensure "07" is always [0, 7]
+              const digitElements = counter.querySelectorAll(".digit");
+
+              digits.forEach((digitValue, index) => {
+                const sequence =
+                  digitElements[index]?.querySelector(".sequence");
+
+                gsap.to(sequence, {
+                  y: `-${digitValue * 10}%`,
+                  duration: noMotion ? 0 : 0.5,
+                  ease: "ease",
+                });
+              });
+            };
+          }
+
+          // State highlight
+          {
+            const highlightGroups = [
+              {
+                elements: document.querySelectorAll(".state-2019"),
+                trigger: ".growth-pin-step-1",
+                start: startPoint,
+                end: pinDurationExtended,
+                toggleClass: "active",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2019"),
+                trigger: ".growth-pin-step-1",
+                start: startPoint,
+                end: endPoint,
+                toggleClass: "active-pending",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2019"),
+                trigger: ".growth-pin-step-2",
+                start: startPoint,
+                end: pinDurationExtended,
+                toggleClass: "active",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2020"),
+                trigger: ".growth-pin-step-2",
+                start: startPoint,
+                end: endPoint,
+                toggleClass: "active-pending",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2020"),
+                trigger: ".growth-pin-step-3",
+                start: startPoint,
+                end: pinDurationExtended,
+                toggleClass: "active",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2021"),
+                trigger: ".growth-pin-step-3",
+                start: startPoint,
+                end: endPoint,
+                toggleClass: "active-pending",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2021"),
+                trigger: ".growth-pin-step-4",
+                start: startPoint,
+                end: pinDurationExtended,
+                toggleClass: "active",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2022"),
+                trigger: ".growth-pin-step-4",
+                start: startPoint,
+                end: endPoint,
+                toggleClass: "active-pending",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2022"),
+                trigger: ".growth-pin-step-5",
+                start: startPoint,
+                end: pinDurationExtended,
+                toggleClass: "active",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2023"),
+                trigger: ".growth-pin-step-5",
+                start: startPoint,
+                end: endPoint,
+                toggleClass: "active-pending",
+                markers: false,
+              },
+              {
+                elements: document.querySelectorAll(".pending-2023"),
+                trigger: ".growth-pin-step-6",
+                start: startPoint,
+                end: pinDurationExtended,
+                toggleClass: "active",
+                markers: false,
+              },
+            ];
+
+            highlightGroups.forEach(
+              ({ elements, trigger, start, end, toggleClass, markers }) => {
+                elements.forEach((element) => {
+                  ScrollTrigger.create({
+                    trigger,
+                    start,
+                    end,
+                    toggleClass: { targets: element, className: toggleClass },
+                    markers: markers,
+                  });
+                });
+              }
+            );
           }
         }
       }

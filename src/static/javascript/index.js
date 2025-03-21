@@ -10,7 +10,8 @@ import "./global/loader.js";
 import "./global/nav.js";
 import "./global/scroll.js";
 
-import "./pages/join-carousel.js";
+import "./pages/about.js";
+import "./pages/join.js";
 
 // import "./library/accordion.js";
 // import "./library/carousel-snap.js";

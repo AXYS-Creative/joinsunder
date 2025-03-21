@@ -107,6 +107,334 @@
   }
 }
 
+.section-growth {
+  $color-active: $blue;
+  $color-pending: $grey;
+  $transition-duration: 0.5s;
+
+  position: relative;
+
+  .growth-pin {
+    @include column-start(flex-start);
+    gap: var(--section-gap-double);
+    height: 100dvh;
+    min-height: 720px;
+    padding-block: var(--body-padding-double);
+
+    @include mq-max(xl) {
+      min-height: 650px;
+    }
+
+    @include mq-max(md) {
+      gap: var(--section-gap);
+      justify-content: space-between;
+      padding-block-end: 128px;
+      min-height: 750px;
+    }
+    @include mq-max(sm) {
+      min-height: 500px;
+    }
+  }
+
+  .growth-title {
+    @include h3;
+
+    @include mq-max(lg) {
+      @include h4;
+    }
+
+    @include mq-max(md) {
+      align-self: center;
+    }
+
+    // @include mq-motion-allow {
+    //   @include hide-content;
+    //   transition: $transition-duration ease;
+
+    //   &.show-item {
+    //     @include show-content;
+    //   }
+    // }
+  }
+
+  .growth-links {
+    @include column-start;
+    gap: 40px;
+    width: 96px;
+    position: relative;
+
+    @include mq-motion-allow {
+      &.show-item {
+        // &::after {
+        //   height: 100%;
+
+        //   @include mq-max(md) {
+        //     height: 1px;
+        //     width: 100%;
+        //   }
+        // }
+
+        .growth-link {
+          opacity: 1;
+
+          @for $i from 1 through 10 {
+            &:nth-of-type(#{$i}) {
+              transition: 0.3s ease,
+                opacity $transition-duration ease 0.05s * $i;
+            }
+          }
+        }
+      }
+    }
+
+    @include mq-max(xl) {
+      gap: 32px;
+    }
+
+    @include mq-max(md) {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+    }
+
+    // &::after {
+    //   content: "";
+    //   background: var(--font-color--primary);
+    //   position: absolute;
+    //   top: 0;
+    //   height: 100%;
+    //   right: -48px;
+    //   width: 1px;
+
+    //   @include mq-motion-allow {
+    //     height: 0;
+    //     transition: $transition-duration ease;
+
+    //     @include mq-max(md) {
+    //       height: 1px;
+    //       top: auto;
+    //       bottom: 7ch;
+    //       left: 0;
+    //       width: 0;
+    //     }
+    //   }
+
+    //   @include mq-max(lg) {
+    //     right: -24px;
+    //   }
+
+    //   @include mq-max(md) {
+    //     right: auto;
+    //     left: 0;
+    //     height: 1px;
+    //     width: 0;
+    //   }
+    // }
+
+    .growth-link {
+      @include h5;
+      border-color: transparent;
+
+      @include mq-motion-allow {
+        opacity: 0;
+        transition: border 0.3s ease, opacity $transition-duration ease;
+
+        @for $i from 1 through 10 {
+          &:nth-last-of-type(#{$i}) {
+            transition: 0.3s ease, opacity $transition-duration ease 0.05s * $i;
+          }
+        }
+      }
+
+      // @include desktop-hover {
+      //   border-color: var(--hero-color--primary);
+      //   background: transparent;
+      // }
+
+      @include mq-max(md) {
+        @include link-font-styles;
+      }
+
+      &.active {
+        translate: 12px 0;
+
+        @include mq-max(md) {
+          translate: 0 -4px;
+        }
+      }
+    }
+  }
+
+  .growth-details {
+    @include column-center;
+    position: absolute;
+    bottom: var(--body-padding-double);
+    right: 0;
+    gap: var(--section-gap-half);
+
+    @include mq-max(md) {
+      @include row-end(space-between);
+      flex-direction: row-reverse;
+      width: 100%;
+    }
+  }
+
+  .growth-counter {
+    $ease: cubic-bezier(0.14, 1.18, 0.8, 1);
+
+    @include column-center;
+
+    @include mq-motion-allow {
+      opacity: 0;
+      transition: $transition-duration ease;
+
+      &.show-item {
+        opacity: 1;
+      }
+    }
+
+    @include mq-max(md) {
+      align-items: flex-end;
+    }
+
+    .number-counter {
+      @include h1;
+      display: flex;
+
+      @include mq-max(xl) {
+        @include h3;
+      }
+
+      @include mq-max(md) {
+        @include h4;
+      }
+    }
+
+    .digit {
+      display: block;
+      width: 0.9ch;
+      height: 1.5ch;
+      font-variant-numeric: tabular-nums;
+      overflow: hidden;
+
+      &:nth-of-type(2) {
+        .sequence {
+          @include mq-motion-allow {
+            transition: transform 1.35s $ease;
+          }
+        }
+      }
+    }
+
+    .sequence {
+      display: block;
+
+      @include mq-motion-allow {
+        transition: transform 1s $ease;
+      }
+    }
+
+    &__label {
+      @include h4;
+
+      @include mq-max(md) {
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+  }
+
+  .growth-map {
+    // @include absolute-center; // issue with map blinking in? Works with top 50vh though...
+    @include column-center;
+    position: absolute;
+    top: 50vh; // fixes map flickering in
+    left: 50%;
+    translate: -50% -50%;
+    width: min(50%, 1200px);
+
+    @include mq-max(xxl) {
+      width: 60%;
+    }
+    @include mq-max(md) {
+      width: min(100%, 520px);
+    }
+
+    &__map {
+      width: 100%;
+      height: 100%;
+
+      .state {
+        stroke: $blue;
+        fill: $white;
+
+        @include mq-motion-allow {
+          transition: fill $transition-duration ease;
+        }
+
+        &.active {
+          fill: $color-active;
+          stroke: $white;
+        }
+        &.active-pending {
+          stroke: $blue;
+          fill: $color-pending;
+        }
+      }
+    }
+  }
+
+  .growth-key {
+    @include row-center;
+    gap: var(--panel-gap);
+
+    @include mq-motion-allow {
+      opacity: 0;
+      transition: $transition-duration ease;
+
+      &.show-item {
+        opacity: 1;
+      }
+    }
+
+    span {
+      @include body-font-styles;
+      @include row-center;
+      gap: 1ch;
+      color: $white;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+
+      @include mq-max(xl) {
+        --font-size: #{$body-text-2};
+      }
+
+      @include mq-max(md) {
+        font-size: 15px;
+      }
+    }
+
+    &__active {
+      background-color: $color-active;
+    }
+    &__pending {
+      background-color: $color-pending;
+    }
+  }
+
+  .growth-pin-steps {
+    // full styles in _util.scss
+    top: var(--body-padding-double);
+    padding-bottom: 75vh; // Adjust end of animation (also see pinDuration)
+
+    .growth-pin-step {
+      scroll-margin-top: -248px; // Really crossing the threshold
+    }
+  }
+}
+
 .section-leadership {
   @include mq-max(md) {
     @include column-center;

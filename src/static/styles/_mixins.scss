@@ -176,6 +176,10 @@ $min-breakpoints: (
   @include mq-max(lg) {
     font-size: 16px;
   }
+
+  @include mq-max(md) {
+    font-size: 14px;
+  }
 }
 
 @mixin inherit-font {

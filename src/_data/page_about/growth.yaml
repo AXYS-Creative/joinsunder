@@ -1,0 +1,16 @@
+toggle_section: true
+section_title: Growth[%br%] History
+
+history:
+  - year: 2019
+    state_count: 7
+  - year: 2020
+    state_count: 18
+  - year: 2021
+    state_count: 23
+  - year: 2022
+    state_count: 28
+  - year: 2023
+    state_count: 39
+  - year: 2024
+    state_count: 44
