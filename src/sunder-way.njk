@@ -23,6 +23,7 @@ hide_footer: false
           class="ethos-top__figure-img ethos-img-{{ loop.index }}"
           src="{{ img.src }}"
           alt=""
+          loading="eager"
         />
         {% endfor %}
       </figure>
@@ -78,7 +79,12 @@ hide_footer: false
   <div class="competition-types">
     {% for type in page_sunder_way.competitions.types %}
     <figure class="competition-types__figure">
-      <img class="competition-types__img" src="{{ type.src }}" alt="" />
+      <img
+        class="competition-types__img"
+        src="{{ type.src }}"
+        alt=""
+        loading="eager"
+      />
 
       <figcaption class="competition-types__caption">
         <h3 class="competition-types__caption-title">{{ type.title }}</h3>
