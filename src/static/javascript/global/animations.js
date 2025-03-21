@@ -47,6 +47,11 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
         endColor: "crimson",
         indent: 256,
       };
+      let transparentMarkers = {
+        startColor: "transparent",
+        endColor: "transparent",
+        indent: 0,
+      };
 
       let bodyPaddingSm = 12;
 
@@ -164,7 +169,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   start: maxSm ? "top 10%" : "top top",
                   end: maxSm ? "98% bottom" : "99% bottom",
                   scrub: 0.2,
-                  // markers: true,
+                  markers: transparentMarkers,
                 },
               });
             }
