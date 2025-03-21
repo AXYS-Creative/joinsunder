@@ -49,6 +49,10 @@
     &-slider {
       @include row-center;
       gap: var(--panel-gap);
+
+      @include mq-max(lg) {
+        display: none;
+      }
     }
 
     &-cta {

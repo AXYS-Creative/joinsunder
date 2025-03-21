@@ -483,7 +483,7 @@ section {
 
 .section-gradient {
   border-radius: var(--radius-lg);
-  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
+  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 50%);
   margin-top: var(--top-spacing-header);
 }
 @media screen and (min-width: 1025px) {
@@ -1551,7 +1551,7 @@ figure {
 }
 .section-ethos .ethos-pin {
   border-radius: var(--radius-lg);
-  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
+  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 50%);
   margin-top: var(--top-spacing-header);
   display: flex;
   flex-direction: column;
@@ -2002,6 +2002,11 @@ figure {
   align-items: center;
   gap: var(--panel-gap);
 }
+@media screen and (max-width: 1024px) {
+  .carousel__controls-slider {
+    display: none;
+  }
+}
 .carousel__controls-cta .carousel-cta {
   padding: var(--btn-padding);
 }
@@ -2066,6 +2071,11 @@ figure {
   gap: var(--panel-gap);
   flex: 1;
 }
+@media screen and (max-width: 1024px) {
+  .collage__column {
+    display: none;
+  }
+}
 .collage__column picture {
   display: flex;
 }
@@ -2090,6 +2100,14 @@ figure {
 @media screen and (max-width: 1024px) {
   .collage__column-3 {
     display: none;
+  }
+}
+.collage__column-mobile {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .collage__column-mobile {
+    display: flex;
   }
 }
 
@@ -2478,7 +2496,7 @@ figure {
   --btn-color-border--hover: var(--btn-color-bg--hover);
   color: var(--font-color--primary);
   border-radius: var(--radius-lg);
-  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
+  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 50%);
   margin-top: var(--top-spacing-header);
   padding: var(--body-padding);
 }
@@ -2717,7 +2735,7 @@ figure {
 
 .section-logos {
   border-radius: var(--radius-lg);
-  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 500px);
+  background: linear-gradient(to bottom, var(--surface-color-2) 10%, var(--background-color) 50%);
 }
 
 @media screen and (min-width: 1025px) {

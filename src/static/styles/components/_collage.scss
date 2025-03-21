@@ -9,6 +9,10 @@
     gap: var(--panel-gap);
     flex: 1;
 
+    @include mq-max(lg) {
+      display: none;
+    }
+
     picture {
       display: flex;
     }
@@ -36,6 +40,16 @@
   &__column-3 {
     @include mq-max("lg") {
       display: none;
+    }
+  }
+
+  // mobile
+
+  &__column-mobile {
+    display: none;
+
+    @include mq-max(lg) {
+      display: flex;
     }
   }
 }

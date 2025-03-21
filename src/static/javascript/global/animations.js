@@ -134,9 +134,9 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
           });
         }
 
-        // Competitions Section
+        // Competitions Section (YOG)
         if (document.querySelector(".section-competitions")) {
-          // Fade Year of Gear (YOG) logo
+          // Fade YOG logo
           gsap.to(".yog-logo", {
             opacity: 0,
             scrollTrigger: {
@@ -151,6 +151,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
         // Experience Section (Collage)
         if (document.querySelector(".collage")) {
           const yVal = maxMd ? "-16.15%" : maxXxl ? "-16.225%" : "-16.2%";
+          const yValMobile = "-24%";
 
           const collageSlide = (el, distance) => {
             const element = document.querySelector(el);
@@ -160,10 +161,10 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 ease: "none",
                 scrollTrigger: {
                   trigger: ".collage",
-                  start: "top top",
-                  end: "bottom bottom",
+                  start: maxSm ? "top 10%" : "top top",
+                  end: maxSm ? "98% bottom" : "99% bottom",
                   scrub: 0.2,
-                  markers: false,
+                  // markers: true,
                 },
               });
             }
@@ -171,6 +172,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
           collageSlide(".collage__column-1", yVal);
           collageSlide(".collage__column-3", yVal);
+          collageSlide(".collage__column-mobile-1", yValMobile);
         }
       }
 

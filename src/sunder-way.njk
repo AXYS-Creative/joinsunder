@@ -152,6 +152,7 @@ hide_footer: false
         class="{%if loop.index0 % 2 == 0%}portrait{%else%}landscape{%endif%}"
         src="{{ img.src }}"
         alt="{{ img.title }}"
+        loading="eager"
       />
       {% endfor %}
     </div>
@@ -171,6 +172,7 @@ hide_footer: false
         class="{%if loop.index0 % 2 == 0%}portrait{%else%}landscape{%endif%}"
         src="{{ img.src }}"
         alt="{{ img.title }}"
+        loading="eager"
       />
       {% endfor %}
     </div>
@@ -180,6 +182,33 @@ hide_footer: false
         class="{%if loop.index0 % 2 == 0%}landscape{%else%}portrait{%endif%}"
         src="{{ img.src }}"
         alt="{{ img.title }}"
+        loading="eager"
+      />
+      {% endfor %}
+    </div>
+
+    <!-- mobile -->
+    <div
+      class="collage__column collage__column-mobile collage__column-mobile-1"
+    >
+      {% for img in page_sunder_way.experiences.collage.column_1_mobile %}
+      <img
+        class="{%if loop.index0 % 2 == 1%}portrait{%else%}landscape{%endif%}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+        loading="eager"
+      />
+      {% endfor %}
+    </div>
+    <div
+      class="collage__column collage__column-mobile collage__column-mobile-2"
+    >
+      {% for img in page_sunder_way.experiences.collage.column_2_mobile %}
+      <img
+        class="{%if loop.index0 % 2 == 1%}portrait{%else%}landscape{%endif%}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+        loading="eager"
       />
       {% endfor %}
     </div>

@@ -98,3 +98,65 @@ collage:
       src: /static/img/Way-Experience-29Photo.png
     - title: Beach volleyball
       src: /static/img/Way-Experience-30Photo.png
+  column_1_mobile:
+    - title: Group by a plane
+      src: /static/img/Way-Experience-9Photo.png
+    - title: Man riding a horse
+      src: /static/img/Way-Experience-10Photo.png
+    - title: Two women at an outing
+      src: /static/img/Way-Experience-11Photo.png
+    - title: Sunder rep smiling
+      src: /static/img/Way-Experience-12Photo.JPG
+    - title: Dune buggy
+      src: /static/img/Way-Experience-13Photo.PNG
+    - title: Canoeing by a bear
+      src: /static/img/Way-Experience-14Photo.png
+    - title: Group posing at service
+      src: /static/img/Way-Experience-15Photo.png
+    - title: Reps cheering
+      src: /static/img/Way-Experience-1Photo.jpg
+    - title: A group of reps on a retreat
+      src: /static/img/Way-Experience-2Photo.png
+    - title: Baseball field and bleachers
+      src: /static/img/Way-Experience-3Photo.png
+    - title: Group posing for a photo at Sundys
+      src: /static/img/Way-Experience-4Photo.jpg
+    - title: Waterslide
+      src: /static/img/Way-Experience-5Photo.png
+    - title: Group posing outside
+      src: /static/img/Way-Experience-6Photo.png
+    - title: Max prepping food
+      src: /static/img/Way-Experience-7Photo.png
+    - title: Reps in a pool
+      src: /static/img/Way-Experience-8Photo.png
+    - title: Reps in the pool
+      src: /static/img/Way-Experience-22Photo.jpg
+    - title: Max and Eric speaking
+      src: /static/img/Way-Experience-23Photo.JPG
+  column_2_mobile:
+    - title: Group holding a trophy
+      src: /static/img/Way-Experience-24Photo.jpg
+    - title: Butterfly on nose
+      src: /static/img/Way-Experience-25Photo.png
+    - title: Rep smiling
+      src: /static/img/Way-Experience-26Photo.jpg
+    - title: Canoeing
+      src: /static/img/Way-Experience-27Photo.jpg
+    - title: Referees at a field event
+      src: /static/img/Way-Experience-28Photo.png
+    - title: Two men holding trophies
+      src: /static/img/Way-Experience-29Photo.png
+    - title: Beach volleyball
+      src: /static/img/Way-Experience-30Photo.png
+    - title: Two reps at the pool
+      src: /static/img/Way-Experience-16Photo.png
+    - title: Rock climbing
+      src: /static/img/Way-Experience-17Photo.png
+    - title: Posing with a fish
+      src: /static/img/Way-Experience-18Photo.png
+    - title: ATV on the beach
+      src: /static/img/Way-Experience-19Photo.PNG
+    - title: Group of reps cheering
+      src: /static/img/Way-Experience-20Photo.png
+    - title: Beach resort
+      src: /static/img/Way-Experience-21Photo.png
