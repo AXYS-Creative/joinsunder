@@ -104,7 +104,7 @@ collections:
         file: src/_data/page_sunder_way/ethos.yaml
         preview_path: /sunder-way
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - Ethos)
@@ -175,7 +175,7 @@ collections:
         file: src/_data/page_sunder_way/competitions.yaml
         preview_path: /sunder-way#competitions
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - Competitions)
@@ -272,7 +272,7 @@ collections:
         file: src/_data/page_sunder_way/experiences.yaml
         preview_path: /sunder-way#experiences
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - Experiences)
@@ -466,7 +466,7 @@ collections:
         file: src/_data/page_sunder_way/oss.yaml
         preview_path: /sunder-way#operation-sunder-serves
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - OSS)
@@ -514,7 +514,7 @@ collections:
         file: src/_data/page_sunder_way/quotes.yaml
         preview_path: /sunder-way#quote-section
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - Quote)
