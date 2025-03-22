@@ -383,17 +383,20 @@
     translate: -50% -50%;
     width: min(50%, 1200px);
 
-    @include mq-max(xxl) {
-      width: 60%;
-    }
-
-    @include mq-max(xl) {
-      left: 56%;
-    }
-
-    @include mq-max(md) {
-      left: 50%;
-      width: min(100%, 520px);
+    @media all {
+      @include mq-max(xxl) {
+        width: 60%;
+      }
+      @include mq-max(xl) {
+        left: 56%;
+      }
+      @include mq-max(md) {
+        left: 50%;
+        width: min(100%, 520px);
+      }
+      @include mq-max(sm) {
+        top: 46vh;
+      }
     }
 
     &__map {
