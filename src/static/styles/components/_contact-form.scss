@@ -77,10 +77,15 @@
       }
     }
     .input {
-      border: none;
+      border: 1px solid transparent;
       background-color: var(--surface-color-2);
       border-radius: var(--radius-sm);
       resize: none;
+      transition: border $ease;
+
+      @include desktop-hover {
+        border: 1px solid var(--hero-color--primary);
+      }
     }
   }
 

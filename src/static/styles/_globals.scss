@@ -11,7 +11,7 @@
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus-visible {
     -webkit-text-fill-color: var(--font-color--primary);
-    -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--surface-color-2) inset;
   }
 
   // This hides the default buttons on input type="number"

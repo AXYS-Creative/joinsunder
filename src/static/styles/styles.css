@@ -89,7 +89,7 @@
 }
 *:-webkit-autofill, *:-webkit-autofill:hover, *:-webkit-autofill:focus-visible {
   -webkit-text-fill-color: var(--font-color--primary);
-  -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--surface-color-2) inset;
 }
 * input::-webkit-outer-spin-button,
 * input::-webkit-inner-spin-button {
@@ -2663,10 +2663,16 @@ figure {
   color: var(--font-color--error);
 }
 .form-redirect .form-block .input {
-  border: none;
+  border: 1px solid transparent;
   background-color: var(--surface-color-2);
   border-radius: var(--radius-sm);
   resize: none;
+  transition: border 0.32s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .form-redirect .form-block .input:hover, .form-redirect .form-block .input:focus-visible {
+    border: 1px solid var(--hero-color--primary);
+  }
 }
 .form-redirect .form-block-group {
   display: flex;
