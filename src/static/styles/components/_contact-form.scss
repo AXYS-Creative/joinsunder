@@ -17,8 +17,23 @@
     //   }
     // }
 
-    &:has(textarea) {
+    &--discovery {
       height: 6em;
+    }
+
+    &--awareness {
+      @include row-center;
+      gap: 1ch;
+      height: 2em;
+
+      .checkbox {
+        cursor: pointer;
+      }
+
+      .checkbox-label {
+        font-size: inherit;
+        cursor: pointer;
+      }
     }
 
     .label,
@@ -92,6 +107,7 @@
   }
 
   .recaptcha {
+    border: $test;
     width: 304px;
     height: 78px;
 

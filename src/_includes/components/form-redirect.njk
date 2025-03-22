@@ -1,11 +1,12 @@
+<!-- prettier-ignore -->
 <form
   class="form-redirect"
   action="/form-submit"
   method="post"
-  name="form-redirect"
+  name="join-sunder-form"
   netlify
   netlify-honeypot="bot-field"
-  {% if form_data.show_recaptcha == true %}
+  {% if form_data.show_recaptcha %}
     data-netlify-recaptcha="true"
     hidden
   {% endif %}
@@ -120,11 +121,11 @@
     <textarea
       class="input input--textarea tab-element-page"
       id="discovery"
-      maxlength="{{ form_data.max_count_discovery }}"
+      maxlength="{{ form_data.max_count_discovery or 250}}"
       spellcheck="true"
-      name="How did you hear about us?"
-      title="How did you hear about us?"
-      aria-label="How did you hear about us?"
+      name="{{ form_data.label_discovery }}"
+      title="{{ form_data.label_discovery }}"
+      aria-label="{{ form_data.label_discovery }}"
       placeholder=" "
       required
     ></textarea>
@@ -134,7 +135,7 @@
       for="discovery"
       aria-live="assertive"
     >
-      How did you hear about us?
+      {{ form_data.label_discovery }}
       <!-- prettier-ignore -->
       {% if form_data.max_count_discovery %}
       <span class="nested-label"></span>
@@ -144,7 +145,25 @@
   {% endif %}
 
   <!-- prettier-ignore -->
-  {% if form_data.show_recaptcha == true %}
+  {% if form_data.show_checkbox_awareness %}
+  <div class="form-block form-block--awareness">
+    <input
+      class="checkbox tab-element-page"
+      id="awareness"
+      name="awareness"
+      type="checkbox"
+      title="{{ form_data.label_checkbox_awareness }}"
+      aria-label="{{ form_data.label_checkbox_awareness }}"
+      required
+    />
+    <label class="checkbox-label" for="awareness">
+      {{ form_data.label_checkbox_awareness }}
+    </label>
+  </div>
+  {% endif %}
+
+  <!-- prettier-ignore -->
+  {% if form_data.show_recaptcha %}
   <div data-netlify-recaptcha="true" class="recaptcha" style="width: 304px; height: 78px;"></div>
   {% endif %}
 

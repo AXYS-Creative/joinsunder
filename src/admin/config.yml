@@ -804,7 +804,7 @@ collections:
           preview: false
         fields:
           - name: toggle_section
-            label: Show Section (Sunder Platform - Hero)
+            label: Show Section (About Sunder - Hero)
             widget: boolean
             default: true
           - name: section_title
@@ -819,7 +819,7 @@ collections:
           preview: false
         fields:
           - name: toggle_section
-            label: Show Section (Sunder Platform - Our Mission)
+            label: Show Section (About Sunder - Our Mission)
             widget: boolean
             default: true
           - name: title
