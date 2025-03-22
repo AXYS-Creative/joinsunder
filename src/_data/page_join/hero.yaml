@@ -15,5 +15,5 @@ form_data:
   label_discovery: How did you hear about us?
   max_count_discovery: 250
   show_checkbox_awareness: true
-  label_checkbox_awareness: I'm aware that this is a direct sales job.
+  label_checkbox_awareness: I am aware that this is a direct sales job.
   show_recaptcha: true

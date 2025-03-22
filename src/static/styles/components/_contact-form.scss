@@ -28,6 +28,8 @@
 
       .checkbox {
         cursor: pointer;
+        width: 16px;
+        height: 16px;
       }
 
       .checkbox-label {
@@ -107,7 +109,6 @@
   }
 
   .recaptcha {
-    border: $test;
     width: 304px;
     height: 78px;
 

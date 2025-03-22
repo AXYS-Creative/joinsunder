@@ -13,153 +13,130 @@ logo_url: https://joinsunder-dev.netlify.app/static/img/icons/admin-logo.svg # C
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  # - name: "blog"
-  #   label: "Blog"
-  #   folder: "src/posts"
-  #   preview_path: "posts/blog/{{filename}}/"
-  #   create: true
-  #   editor:
-  #     preview: false
-  #   fields:
-  #     - { label: "Title", name: "title", widget: "string" }
-  #     - { label: "Description", name: "description", widget: "string" }
-  #     - { label: "Author", name: "author", widget: "string" }
-  #     - { label: "Publish Date", name: "date", widget: "datetime" }
-  #     - { label: "Body", name: "body", widget: "markdown" }
-  #     - widget: select
-  #       label: "tags"
-  #       name: "tags"
-  #       multiple: true
-  #       create: true
-  #       options: ["Tags", "created", "from", "config.yml"]
-  #     - label: "Cover Image" # Only seems to work with .md collections
-  #       name: "image"
-  #       widget: "image"
-  #       required: false
-  - name: "page_home"
-    label: "Page - Home"
+  - name: page_home
+    label: Page - Home
     files:
-      - name: "hero"
-        label: "Section - Hero"
-        file: "src/_data/page_home/hero.yaml"
-        preview_path: "/"
+      - name: hero
+        label: Section - Hero
+        file: src/_data/page_home/hero.yaml
+        preview_path: /
         editor:
           preview: false
         fields:
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
             hint: Semantic page heading for accessibility and SEO. Not visually shown on the page (per design) but improves site indexing and other areas. If left blank, defaults to 'Welcome to Sunder Energy'
-          - name: "external_panel"
-            label: "External Panel (sunderenergy.com)"
-            widget: "object"
+          - name: external_panel
+            label: External Panel (sunderenergy.com)
+            widget: object
             fields:
-              - name: "bg_img"
-                label: "Background Image"
-                widget: "image"
+              - name: bg_img
+                label: Background Image
+                widget: image
                 required: true
                 hint: Keep below 5MB
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
-              - name: "logo"
-                label: "Logo"
-                widget: "image"
+              - name: logo
+                label: Logo
+                widget: image
                 required: true
-                hint: "Recommended to use an SVG file"
-              - name: "pre_title"
-                label: "Small Title"
-                widget: "string"
+                hint: Recommended to use an SVG file
+              - name: pre_title
+                label: Small Title
+                widget: string
                 required: true
-              - name: "title"
-                label: "Large Title"
-                widget: "string"
+              - name: title
+                label: Large Title
+                widget: string
                 required: true
-              - name: "cta_text"
-                label: "Button Text"
-                widget: "string"
+              - name: cta_text
+                label: Button Text
+                widget: string
                 required: true
-                hint: "Leave empty to remove the button"
-              - name: "cta_url"
-                label: "Button URL"
-                widget: "string"
+                hint: Leave empty to remove the button
+              - name: cta_url
+                label: Button URL
+                widget: string
                 required: true
-          - name: "internal_panel"
-            label: "Internal Panel (joinsunder.com)"
-            widget: "object"
+          - name: internal_panel
+            label: Internal Panel (joinsunder.com)
+            widget: object
             fields:
-              - name: "bg_img"
-                label: "Background Image"
-                widget: "image"
+              - name: bg_img
+                label: Background Image
+                widget: image
                 required: true
                 hint: Keep below 5MB
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
-              - name: "logo"
-                label: "Logo"
-                widget: "image"
+              - name: logo
+                label: Logo
+                widget: image
                 required: true
-                hint: "Recommended to use an SVG file"
-              - name: "pre_title"
-                label: "Small Title"
-                widget: "string"
+                hint: Recommended to use an SVG file
+              - name: pre_title
+                label: Small Title
+                widget: string
                 required: true
-              - name: "title"
-                label: "Large Title"
-                widget: "string"
+              - name: title
+                label: Large Title
+                widget: string
                 required: true
-              - name: "cta_text"
-                label: "Button Text"
-                widget: "string"
+              - name: cta_text
+                label: Button Text
+                widget: string
                 required: true
-                hint: "Leave empty to remove the button"
-              - name: "cta_url"
-                label: "Button URL"
-                widget: "string"
+                hint: Leave empty to remove the button
+              - name: cta_url
+                label: Button URL
+                widget: string
                 required: true
-  - name: "page_sunder_way"
-    label: "Page - Sunder Way"
+  - name: page_sunder_way
+    label: Page - Sunder Way
     files:
-      - name: "ethos"
-        label: "Section - Ethos"
-        file: "src/_data/page_sunder_way/ethos.yaml"
-        preview_path: "/sunder-way"
+      - name: ethos
+        label: Section - Ethos
+        file: src/_data/page_sunder_way/ethos.yaml
+        preview_path: /sunder-way
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Way - Ethos)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Way - Ethos)
+            widget: boolean
             default: true
-          - name: "section_title"
-            label: "Section Title (Top)"
-            widget: "string"
+          - name: section_title
+            label: Section Title (Top)
+            widget: string
             required: true
             hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-          - name: "section_imgs"
-            label: "Section Images"
-            widget: "list"
+          - name: section_imgs
+            label: Section Images
+            widget: list
             allow_add: false
             collapse: true
             required: true
             field:
-              name: "src"
-              label: "Image Source"
-              widget: "image"
+              name: src
+              label: Image Source
+              widget: image
               required: true
               hint: Keep below 5MB
               media_library:
                 config:
                   max_file_size: 5000000 # 1MB = 1,000,000 bytes
-          - name: "section_desc"
-            label: "Section Description (Middle)"
-            widget: "text"
+          - name: section_desc
+            label: Section Description (Middle)
+            widget: text
             required: true
-          - name: "values"
-            label: "Value Tiles"
-            widget: "list"
+          - name: values
+            label: Value Tiles
+            widget: list
             collapse: true
             required: true
             allow_add: false
@@ -173,13 +150,13 @@ collections:
                 label: Caption
                 widget: text
                 requried: false
-          - name: "cta_p"
-            label: "Call To Action Paragraph (Bottom)"
-            widget: "text"
+          - name: cta_p
+            label: Call To Action Paragraph (Bottom)
+            widget: text
             required: true
-          - name: "cta"
-            label: "Call To Action"
-            widget: "object"
+          - name: cta
+            label: Call To Action
+            widget: object
             summary: "{{ fields.name }}: {{ fields.url }}"
             required: false
             fields:
@@ -193,10 +170,10 @@ collections:
                 widget: string
                 required: false
                 hint: i.e. /join
-      - name: "competitions"
-        label: "Section - Competitions"
-        file: "src/_data/page_sunder_way/competitions.yaml"
-        preview_path: "/sunder-way#competitions"
+      - name: competitions
+        label: Section - Competitions
+        file: src/_data/page_sunder_way/competitions.yaml
+        preview_path: /sunder-way#competitions
         editor:
           preview: false
         fields:
@@ -242,7 +219,7 @@ collections:
             label: Rows - Year of Gear Merch
             label_singular: row
             widget: list
-            summary: "Row: {{fields.items.0.title}} {{fields.items.1.title}} {{fields.items.2.title}}"
+            summary: "Row: {{fields.items.0.title}} ... {{fields.items.1.title}}"
             required: true
             fields:
               - name: items
@@ -257,19 +234,24 @@ collections:
                     label: Title
                     widget: string
                     required: true
+                    hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
                   - name: src
                     label: Image Source
                     widget: image
                     required: true
+                    hint: Keep below 5MB
+                    media_library:
+                      config:
+                        max_file_size: 5000000 # 1MB = 1,000,000 bytes
                   - name: rotate
                     label: Rotation
                     widget: select
                     options: ["none", "left", "right"]
                     multiple: false
                     create: false
-          - name: "yog_types"
-            label: "Year of Gear Types"
-            widget: "list"
+          - name: yog_types
+            label: Year of Gear Types
+            widget: list
             allow_add: false
             required: true
             fields:
@@ -370,6 +352,7 @@ collections:
                     label: Title
                     widget: string
                     required: true
+                    hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
                   - name: src
                     label: Image Source
                     widget: image
@@ -389,6 +372,7 @@ collections:
                     label: Title
                     widget: string
                     required: true
+                    hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
                   - name: src
                     label: Image Source
                     widget: image
@@ -408,6 +392,7 @@ collections:
                     label: Title
                     widget: string
                     required: true
+                    hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
                   - name: src
                     label: Image Source
                     widget: image
@@ -427,6 +412,7 @@ collections:
                     label: Title
                     widget: string
                     required: true
+                    hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
                   - name: src
                     label: Image Source
                     widget: image
@@ -446,6 +432,7 @@ collections:
                     label: Title
                     widget: string
                     required: true
+                    hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
                   - name: src
                     label: Image Source
                     widget: image
@@ -465,6 +452,7 @@ collections:
                     label: Title
                     widget: string
                     required: true
+                    hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
                   - name: src
                     label: Image Source
                     widget: image
@@ -563,40 +551,40 @@ collections:
                 label: Portrait Role
                 widget: string
                 required: true
-  - name: "page_platform"
-    label: "Page - Sunder Platform"
+  - name: page_platform
+    label: Page - Sunder Platform
     files:
-      - name: "hero"
-        label: "Section - Hero"
-        file: "src/_data/page_platform/hero.yaml"
-        preview_path: "/platform"
+      - name: hero
+        label: Section - Hero
+        file: src/_data/page_platform/hero.yaml
+        preview_path: /platform
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Platform - Hero)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Hero)
+            widget: boolean
             default: true
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
             hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-          - name: "section_desc"
-            label: "Section Description"
-            widget: "text"
+          - name: section_desc
+            label: Section Description
+            widget: text
             required: true
-          - name: "section_bg"
-            label: "Section Background Image"
-            widget: "image"
+          - name: section_bg
+            label: Section Background Image
+            widget: image
             required: true
             hint: Keep below 5MB
             media_library:
               config:
                 max_file_size: 5000000 # 1MB = 1,000,000 bytes
-          - name: "cta"
-            label: "Call To Action"
-            widget: "object"
+          - name: cta
+            label: Call To Action
+            widget: object
             summary: "{{ fields.name }}: {{ fields.url }}"
             required: false
             fields:
@@ -610,37 +598,37 @@ collections:
                 widget: string
                 required: false
                 hint: i.e. /join
-      - name: "installers"
-        label: "Section - Installers"
-        file: "src/_data/page_platform/installers.yaml"
-        preview_path: "/platform#installers"
+      - name: installers
+        label: Section - Installers
+        file: src/_data/page_platform/installers.yaml
+        preview_path: /platform#installers
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Platform - Installers)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Installers)
+            widget: boolean
             default: true
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
-          - name: "section_desc"
-            label: "Section Description"
-            widget: "text"
+          - name: section_desc
+            label: Section Description
+            widget: text
             required: true
             hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-          - name: "logo_grid"
-            label: "Logo Grid Size"
-            widget: "number"
+          - name: logo_grid
+            label: Logo Grid Size
+            widget: number
             min: 3
             max: 5
             required: true
             hint: Display between 3 and 5 logos per row
-          - name: "img_list"
-            label: "Logo List"
-            label_singular: "Logo"
-            widget: "list"
+          - name: img_list
+            label: Logo List
+            label_singular: Logo
+            widget: list
             required: true
             fields:
               - name: title
@@ -651,37 +639,37 @@ collections:
                 label: Image Source
                 widget: image
                 required: true
-      - name: "financiers"
-        label: "Section - Finance Options"
-        file: "src/_data/page_platform/financiers.yaml"
-        preview_path: "/platform#financiers"
+      - name: financiers
+        label: Section - Finance Options
+        file: src/_data/page_platform/financiers.yaml
+        preview_path: /platform#financiers
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Platform - Finance Options)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Finance Options)
+            widget: boolean
             default: true
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
-          - name: "section_desc"
-            label: "Section Description"
-            widget: "text"
+          - name: section_desc
+            label: Section Description
+            widget: text
             required: true
             hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-          - name: "logo_grid"
-            label: "Logo Grid Size"
-            widget: "number"
+          - name: logo_grid
+            label: Logo Grid Size
+            widget: number
             min: 3
             max: 5
             required: true
             hint: Display between 3 and 5 logos per row
-          - name: "img_list"
-            label: "Logo List"
-            label_singular: "Logo"
-            widget: "list"
+          - name: img_list
+            label: Logo List
+            label_singular: Logo
+            widget: list
             required: true
             fields:
               - name: title
@@ -692,52 +680,52 @@ collections:
                 label: Image Source
                 widget: image
                 required: true
-      - name: "tools"
-        label: "Section - Tools"
-        file: "src/_data/page_platform/tools.yaml"
-        preview_path: "/platform#platform-tools"
+      - name: tools
+        label: Section - Tools
+        file: src/_data/page_platform/tools.yaml
+        preview_path: /platform#platform-tools
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Platform - Tools)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Tools)
+            widget: boolean
             default: true
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
             hint: Semantic page heading for accessibility and SEO. Not visually shown on the page (per design) but improves site indexing and other areas. If left blank, defaults to 'Sunder Tools'
-          - name: "list"
-            label: "Tools List"
-            label_singular: "Tool"
-            widget: "list"
+          - name: list
+            label: Tools List
+            label_singular: Tool
+            widget: list
             required: true
             fields:
-              - name: "title"
-                label: "Title"
-                widget: "string"
+              - name: title
+                label: Title
+                widget: string
                 required: true
-              - name: "graphic"
-                label: "Tool Logo"
-                widget: "image"
+              - name: graphic
+                label: Tool Logo
+                widget: image
                 required: true
-              - name: "section_desc"
-                label: "Tool Description"
-                widget: "text"
+              - name: section_desc
+                label: Tool Description
+                widget: text
                 required: true
                 hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-              - name: "section_bg"
-                label: "Tool Background Image"
-                widget: "image"
+              - name: section_bg
+                label: Tool Background Image
+                widget: image
                 required: true
                 hint: Keep below 5MB
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
-              - name: "cta"
-                label: "Call To Action"
-                widget: "object"
+              - name: cta
+                label: Call To Action
+                widget: object
                 summary: "{{ fields.name }}: {{ fields.url }}"
                 required: false
                 fields:
@@ -751,47 +739,47 @@ collections:
                     widget: string
                     required: false
                     hint: i.e. /join
-      - name: "quotes"
-        label: "Section - Quote"
-        file: "src/_data/page_platform/quotes.yaml"
-        preview_path: "/platform#quote-section"
+      - name: quotes
+        label: Section - Quote
+        file: src/_data/page_platform/quotes.yaml
+        preview_path: /platform#quote-section
         editor:
           preview: false
         fields:
-          - name: "toggle_section"
-            label: "Show Section (Sunder Platform - Quote)"
-            widget: "boolean"
+          - name: toggle_section
+            label: Show Section (Sunder Platform - Quote)
+            widget: boolean
             default: true
-          - name: "list"
-            label: "All Quotes"
-            label_singular: "Quote"
-            widget: "list"
+          - name: list
+            label: All Quotes
+            label_singular: Quote
+            widget: list
             required: true
             fields:
-              - name: "title"
-                label: "Title"
-                widget: "string"
+              - name: title
+                label: Title
+                widget: string
                 required: true
-              - name: "quote"
-                label: "Quote"
-                widget: "text"
+              - name: quote
+                label: Quote
+                widget: text
                 required: true
-              - name: "img_src"
-                label: "Portrait Source"
-                widget: "image"
+              - name: img_src
+                label: Portrait Source
+                widget: image
                 required: true
                 hint: Keep below 5MB
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
-              - name: "name"
-                label: "Portrait Name"
-                widget: "string"
+              - name: name
+                label: Portrait Name
+                widget: string
                 required: true
                 hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-              - name: "role"
-                label: "Portrait Role"
-                widget: "string"
+              - name: role
+                label: Portrait Role
+                widget: string
                 required: true
   - name: page_about
     label: Page - About
@@ -804,7 +792,7 @@ collections:
           preview: false
         fields:
           - name: toggle_section
-            label: Show Section (About Sunder - Hero)
+            label: Show Section (About Sunder - Core Values)
             widget: boolean
             default: true
           - name: section_title
@@ -849,7 +837,7 @@ collections:
           preview: false
         fields:
           - name: toggle_section
-            label: Show Section (Sunder Platform - Hero)
+            label: Show Section (About Sunder - Growth History)
             widget: boolean
             default: true
           - name: section_title
@@ -864,7 +852,7 @@ collections:
           preview: false
         fields:
           - name: toggle_section
-            label: Show Section (Sunder Platform - Hero)
+            label: Show Section (About Sunder - Leadership)
             widget: boolean
             default: true
           - name: section_title
@@ -898,52 +886,104 @@ collections:
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
-  - name: "page_join"
-    label: "Page - Join"
+  - name: page_join
+    label: Page - Join
     files:
-      - name: "hero"
-        label: "Section - Hero"
-        file: "src/_data/page_join/hero.yaml"
-        preview_path: "/join"
+      - name: hero
+        label: Section - Hero
+        file: src/_data/page_join/hero.yaml
+        preview_path: /join
         editor:
           preview: false
         fields:
           - name: autoplay_interval
-            label: Autoplay Interval
+            label: Autoplay Interval (Image Carousel)
             widget: number
-            min: 3000
-            hint: The time in milliseconds between each slide change
+            min: 1500
+            max: 7500
+            required: true
+            hint: The time (in milliseconds) between the slide transition. 1000ms = 1 second
           - name: images
             label: Carousel Images
             label_singular: Image
             widget: list
             required: true
             fields:
-              - name: "title"
-                label: "Image Description"
-                widget: "string"
-                hint: "For accessibility. Describe the image while avoiding these words: image, photo, picture, etc."
+              - name: title
+                label: Image Description
+                widget: string
+                hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
               - name: src
                 label: Image Source
                 widget: image
                 required: true
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
-  - name: "page_spare"
-    label: "Page - Spare"
+      - name: form_submit
+        label: Redirect - Form Submit
+        file: src/_data/page_join/form_submit.yaml
+        preview_path: /form-submit
+        editor:
+          preview: true
+        fields:
+          - name: section_title
+            label: Section Title
+            widget: string
+            required: true
+          - name: section_desc
+            label: Section Description
+            widget: string
+            required: true
+          - name: cta_1
+            label: Call To Action 1
+            widget: object
+            summary: "{{ fields.name }}: {{ fields.url }}"
+            required: false
+            fields:
+              - name: title
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
+                hint: "To return home use: /"
+          - name: cta_2
+            label: Call To Action 2
+            widget: object
+            summary: "{{ fields.name }}: {{ fields.url }}"
+            required: false
+            fields:
+              - name: title
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
+  - name: page_spare
+    label: Page - Spare
     files:
-      - name: "hero"
-        label: "Section - Hero"
-        file: "src/_data/page_join/hero.yaml"
-        preview_path: "/join"
+      - name: hero
+        label: Section - Hero
+        file: src/_data/page_join/hero.yaml
+        preview_path: /join
         editor:
           preview: false
         fields:
-          - name: "section_title"
-            label: "Section Title"
-            widget: "string"
+          - name: section_title
+            label: Section Title
+            widget: string
             required: true
   - name: global
     label: Global

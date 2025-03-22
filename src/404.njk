@@ -7,13 +7,17 @@ description: The page you are looking for cannot be found. Please check the URL 
 
 hide_header: false
 hide_footer: false
-cta_1_text: Return home
-cta_1_url: /
 ---
 
-<section class="error">
-  <h1><span>404</span> error</h1>
-  <p>The page you’re looking for doesn’t exist</p>
+<section class="hero-alert">
+  <h1 class="hero-alert__title">{{ page_404.hero.section_title }}</h1>
+  <p class="hero-alert__desc">{{ page_404.hero.section_desc }}</p>
 
+  <!-- prettier-ignore -->
+  {% set cta_1_text = page_404.hero.cta_1.text %}
+  {% set cta_1_url = page_404.hero.cta_1.url %}
+  {% set cta_1_outline = true %}
+  {% set cta_2_text = page_404.hero.cta_2.text %}
+  {% set cta_2_url = page_404.hero.cta_2.url %}
   {% include "./_includes/components/cta-group.njk" %}
 </section>
