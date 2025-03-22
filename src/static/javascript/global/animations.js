@@ -247,8 +247,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
           const pinDuration = "+=400%";
           const pinDurationExtended = "+=480%";
           const growthPinSteps = document.querySelectorAll(".growth-pin-step");
-          // const startPoint = "-2px center";
-          const startPoint = `${bodyPaddingDouble} top`;
+          const startPoint = `${bodyPaddingDouble / 4} top`;
           const endPoint = `bottom top`;
 
           // Pinning the Growth Section
@@ -344,6 +343,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 onLeaveBack: () => {
                   if (isFirstMarker) updateCounter(numberCounter, "00");
                 },
+                // markers: true,
               });
             });
 
@@ -373,7 +373,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 start: startPoint,
                 end: pinDurationExtended,
                 toggleClass: "active",
-                markers: false,
+                // markers: true,
               },
               {
                 elements: document.querySelectorAll(".pending-2019"),
@@ -381,7 +381,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 start: startPoint,
                 end: endPoint,
                 toggleClass: "active-pending",
-                markers: false,
+                // markers: redMarkers,
               },
               {
                 elements: document.querySelectorAll(".pending-2019"),
@@ -389,7 +389,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 start: startPoint,
                 end: pinDurationExtended,
                 toggleClass: "active",
-                markers: false,
+                // markers: navyMarkers,
               },
               {
                 elements: document.querySelectorAll(".pending-2020"),

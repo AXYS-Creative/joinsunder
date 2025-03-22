@@ -127,6 +127,7 @@
 
     @include mq-max(md) {
       gap: var(--section-gap);
+      align-items: center;
       justify-content: space-between;
       padding-block-end: 128px;
       min-height: 750px;
@@ -196,46 +197,16 @@
       align-items: flex-end;
       justify-content: space-between;
       gap: 12px;
-      width: 100%;
+      width: min(100%, 450px);
     }
 
-    // &::after {
-    //   content: "";
-    //   background: var(--font-color--primary);
-    //   position: absolute;
-    //   top: 0;
-    //   height: 100%;
-    //   right: -48px;
-    //   width: 1px;
-
-    //   @include mq-motion-allow {
-    //     height: 0;
-    //     transition: $transition-duration ease;
-
-    //     @include mq-max(md) {
-    //       height: 1px;
-    //       top: auto;
-    //       bottom: 7ch;
-    //       left: 0;
-    //       width: 0;
-    //     }
-    //   }
-
-    //   @include mq-max(lg) {
-    //     right: -24px;
-    //   }
-
-    //   @include mq-max(md) {
-    //     right: auto;
-    //     left: 0;
-    //     height: 1px;
-    //     width: 0;
-    //   }
-    // }
-
     .growth-link {
+      --tick-width: 12px;
+
       @include h5;
+      @include row-center;
       border-color: transparent;
+      padding: 2px;
 
       @include mq-motion-allow {
         opacity: 0;
@@ -248,20 +219,68 @@
         }
       }
 
-      // @include desktop-hover {
-      //   border-color: var(--hero-color--primary);
-      //   background: transparent;
-      // }
-
       @include mq-max(md) {
         @include link-font-styles;
       }
 
-      &.active {
-        translate: 12px 0;
+      &__tick {
+        position: absolute;
+        top: 50%;
+        right: -12px;
+        translate: 100% -50%;
+        background: var(--hero-color--primary);
+        height: 4px;
+        width: 0;
+
+        @include mq-motion-allow {
+          transition: $ease;
+        }
 
         @include mq-max(md) {
-          translate: 0 -4px;
+          top: 100%;
+          right: 0;
+          left: auto;
+          translate: 0 -2px;
+          height: 2px;
+        }
+      }
+
+      &:last-of-type {
+        .growth-link__tick {
+          &::after {
+            @include hide-content;
+            content: "Now";
+            position: absolute;
+            top: 50%;
+            translate: 0.75ch -50%;
+            transition: $ease;
+
+            @include mq-max(md) {
+              top: 0%;
+              right: 50%;
+              translate: 50% -4.5ch;
+            }
+          }
+        }
+      }
+
+      &.active {
+        .growth-link__tick {
+          width: 12px;
+
+          @include mq-max(md) {
+            width: 100%;
+            left: 0;
+            right: auto;
+          }
+
+          &::after {
+            @include show-content;
+
+            @include mq-min(md) {
+              translate: calc(var(--tick-width) + 0.75ch) -50%;
+            }
+          }
         }
       }
     }
@@ -273,6 +292,11 @@
     bottom: var(--body-padding-double);
     right: 0;
     gap: var(--section-gap-half);
+
+    @include mq-max(xl) {
+      align-items: flex-end;
+      gap: var(--panel-gap);
+    }
 
     @include mq-max(md) {
       @include row-end(space-between);
@@ -293,6 +317,10 @@
       &.show-item {
         opacity: 1;
       }
+    }
+
+    @include mq-max(xl) {
+      align-items: flex-end;
     }
 
     @include mq-max(md) {
@@ -358,7 +386,13 @@
     @include mq-max(xxl) {
       width: 60%;
     }
+
+    @include mq-max(xl) {
+      left: 56%;
+    }
+
     @include mq-max(md) {
+      left: 50%;
       width: min(100%, 520px);
     }
 
@@ -408,10 +442,6 @@
       border-radius: var(--radius-sm);
 
       @include mq-max(xl) {
-        --font-size: #{$body-text-2};
-      }
-
-      @include mq-max(md) {
         font-size: 15px;
       }
     }
@@ -430,7 +460,7 @@
     padding-bottom: 75vh; // Adjust end of animation (also see pinDuration)
 
     .growth-pin-step {
-      scroll-margin-top: -248px; // Really crossing the threshold
+      scroll-margin-top: -196px; // Really crossing the threshold
     }
   }
 }

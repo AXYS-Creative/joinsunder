@@ -1003,6 +1003,7 @@ figure {
 @media screen and (max-width: 768px) {
   .section-growth .growth-pin {
     gap: var(--section-gap);
+    align-items: center;
     justify-content: space-between;
     padding-block-end: 128px;
     min-height: 750px;
@@ -1088,16 +1089,21 @@ figure {
     align-items: flex-end;
     justify-content: space-between;
     gap: 12px;
-    width: 100%;
+    width: min(100%, 450px);
   }
 }
 .section-growth .growth-links .growth-link {
+  --tick-width: 12px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
   font-size: 24px;
   letter-spacing: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-color: transparent;
+  padding: 2px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .section-growth .growth-links .growth-link {
@@ -1153,12 +1159,68 @@ figure {
     font-size: 14px;
   }
 }
-.section-growth .growth-links .growth-link.active {
-  translate: 12px 0;
+.section-growth .growth-links .growth-link__tick {
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  translate: 100% -50%;
+  background: var(--hero-color--primary);
+  height: 4px;
+  width: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .section-growth .growth-links .growth-link__tick {
+    transition: 0.32s ease;
+  }
 }
 @media screen and (max-width: 768px) {
-  .section-growth .growth-links .growth-link.active {
-    translate: 0 -4px;
+  .section-growth .growth-links .growth-link__tick {
+    top: 100%;
+    right: 0;
+    left: auto;
+    translate: 0 -2px;
+    height: 2px;
+  }
+}
+.section-growth .growth-links .growth-link:last-of-type .growth-link__tick::after {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  content: "Now";
+  position: absolute;
+  top: 50%;
+  translate: 0.75ch -50%;
+  transition: 0.32s ease;
+}
+@media screen and (max-width: 768px) {
+  .section-growth .growth-links .growth-link:last-of-type .growth-link__tick::after {
+    top: 0%;
+    right: 50%;
+    translate: 50% -4.5ch;
+  }
+}
+.section-growth .growth-links .growth-link.active .growth-link__tick {
+  width: 12px;
+}
+@media screen and (max-width: 768px) {
+  .section-growth .growth-links .growth-link.active .growth-link__tick {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+}
+.section-growth .growth-links .growth-link.active .growth-link__tick::after {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+          user-select: auto;
+}
+@media screen and (min-width: 769px) {
+  .section-growth .growth-links .growth-link.active .growth-link__tick::after {
+    translate: calc(var(--tick-width) + 0.75ch) -50%;
   }
 }
 .section-growth .growth-details {
@@ -1170,6 +1232,12 @@ figure {
   bottom: var(--body-padding-double);
   right: 0;
   gap: var(--section-gap-half);
+}
+@media screen and (max-width: 1200px) {
+  .section-growth .growth-details {
+    align-items: flex-end;
+    gap: var(--panel-gap);
+  }
 }
 @media screen and (max-width: 768px) {
   .section-growth .growth-details {
@@ -1193,6 +1261,11 @@ figure {
   }
   .section-growth .growth-counter.show-item {
     opacity: 1;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .section-growth .growth-counter {
+    align-items: flex-end;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1273,8 +1346,14 @@ figure {
     width: 60%;
   }
 }
+@media screen and (max-width: 1200px) {
+  .section-growth .growth-map {
+    left: 56%;
+  }
+}
 @media screen and (max-width: 768px) {
   .section-growth .growth-map {
+    left: 50%;
     width: min(100%, 520px);
   }
 }
@@ -1334,11 +1413,6 @@ figure {
 }
 @media screen and (max-width: 1200px) {
   .section-growth .growth-key span {
-    --font-size: 22px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .section-growth .growth-key span {
     font-size: 15px;
   }
 }
@@ -1353,7 +1427,7 @@ figure {
   padding-bottom: 75vh;
 }
 .section-growth .growth-pin-steps .growth-pin-step {
-  scroll-margin-top: -248px;
+  scroll-margin-top: -196px;
 }
 
 @media screen and (max-width: 768px) {

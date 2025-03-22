@@ -311,8 +311,9 @@ hide_footer: false
         href="#growth-year-{{ step.year }}"
       >
         <span class="sr-only">Growth for</span>
-        {{ step.year }}
+        <span class="growth-link__year">{{ step.year }}</span>
         <span class="sr-only">: {{ step.state_count }} active states</span>
+        <span class="growth-link__tick"></span>
       </a>
       {% endfor %}
     </div>
