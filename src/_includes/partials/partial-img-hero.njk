@@ -1,6 +1,10 @@
 <!-- prettier-ignore -->
 <{{ container_tag }}
-class="partial-img-hero {{ section_img_hero_class }}"
+class="
+  partial-img-hero
+  {{ section_img_hero_class }}
+  {% if img_hero_subcontent == true%}has-subcontent{% endif %}
+"
 {% if section_id %}
   id="{{ section_id }}"
 {% endif %}
@@ -47,4 +51,13 @@ class="partial-img-hero {{ section_img_hero_class }}"
       {% include "../components/cta-group.njk" %}
     </div>
   </div>
+
+  <!-- Current use on OSS page -->
+   {% if img_hero_subcontent %}
+    <div class="partial-img-hero__sub-content">
+      <p class="sub-content__p">{{ section_p }}</p>
+      {% set cta_1_outline = true %}
+      {% include "../components/cta-group.njk" %}
+    </div>
+   {% endif %}
 </{{ container_tag }}>

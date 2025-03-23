@@ -1,0 +1,32 @@
+---
+layout: app
+path: operation-sunder-serves
+
+title: Operation Sunder Serves
+description: #CHANGE ME
+
+# master props
+hide_header: false
+hide_footer: false
+---
+
+<!-- prettier-ignore -->
+{% set section_h1 = page_oss.hero.section_title %}
+{% set section_p = page_oss.hero.section_desc %}
+{% set section_bg = page_oss.hero.section_bg %}
+{% set cta_1_text = page_oss.hero.cta.text %}
+{% set cta_1_url = page_oss.hero.cta.url %}
+{% set is_hero = true %}
+{% set container_tag = 'section' %}
+{% set section_img_hero_class = 'oss-page' %}
+{% set img_hero_subcontent = true %}
+{% if page_oss.hero.toggle_section %}
+  {% include "./_includes/partials/partial-img-hero.njk" %}
+{% endif %}
+
+<!-- prettier-ignore -->
+{% set section_title = page_oss.quotes.section_title %}
+{% set quote_list = page_oss.quotes.list %}
+{% if page_oss.quotes.toggle_section %}
+  {% include "./_includes/partials/partial-quote.njk" %}
+{% endif %}

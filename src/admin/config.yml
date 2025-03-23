@@ -971,13 +971,106 @@ collections:
                 label: Button URL
                 widget: string
                 required: false
-  - name: page_spare
-    label: Page - Spare
+  - name: page_oss
+    label: Page - OSS
     files:
       - name: hero
         label: Section - Hero
-        file: src/_data/page_join/hero.yaml
-        preview_path: /join
+        file: src/_data/page_oss/oss.yaml
+        preview_path: /operation-sunder-serves
+        editor:
+          preview: false
+        fields:
+          - name: toggle_section
+            label: Show Section (OSS - Hero)
+            widget: boolean
+            default: true
+          - name: section_title
+            label: Section Title
+            widget: string
+            required: true
+            hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+          - name: section_desc
+            label: Section Description
+            widget: text
+            required: true
+          - name: section_bg
+            label: Section Background Image
+            widget: image
+            required: true
+            hint: Keep below 5MB
+            media_library:
+              config:
+                max_file_size: 5000000 # 1MB = 1,000,000 bytes
+          - name: cta
+            label: Call To Action
+            widget: object
+            summary: "{{ fields.text }} → {{ fields.url }}"
+            required: false
+            fields:
+              - name: text
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
+                hint: i.e. /join
+      - name: quotes
+        label: Section - Quote
+        file: src/_data/page_oss/quotes.yaml
+        preview_path: /operation-sunder-serves#quote-section
+        editor:
+          preview: false
+        fields:
+          - name: toggle_section
+            label: Show Section (OSS - Quote)
+            widget: boolean
+            default: true
+          - name: list
+            label: All Quotes
+            label_singular: Quote
+            widget: list
+            required: true
+            fields:
+              - name: title
+                label: Title
+                widget: string
+                required: true
+              - name: quote
+                label: Quote
+                widget: text
+                required: true
+              - name: img_src
+                label: Portrait Source
+                widget: image
+                required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
+              - name: name
+                label: Portrait Name
+                widget: string
+                required: true
+                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
+              - name: role
+                label: Portrait Role
+                widget: string
+                required: true
+  - name: page_404
+    label: Page - 404 (Error)
+    description: >-
+      A 404 page is shown to visitors when they try to access a page that doesn’t exist
+      on your site—either because the URL was mistyped, the page was removed, or it was
+      never created. You can customize this page to help guide users back to working content.
+    files:
+      - name: hero
+        label: Section - Hero
+        file: src/_data/page_404/hero.yaml
+        preview_path: /blog
         editor:
           preview: false
         fields:
@@ -985,6 +1078,41 @@ collections:
             label: Section Title
             widget: string
             required: true
+          - name: section_desc
+            label: Section Description
+            widget: string
+            required: true
+          - name: cta_1
+            label: Call To Action 1
+            widget: object
+            summary: "{{ fields.text }} → {{ fields.url }}"
+            required: false
+            fields:
+              - name: text
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
+                hint: "To return home use: /"
+          - name: cta_2
+            label: Call To Action 2
+            widget: object
+            summary: "{{ fields.text }} → {{ fields.url }}"
+            required: false
+            fields:
+              - name: text
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
   - name: global
     label: Global
     files:

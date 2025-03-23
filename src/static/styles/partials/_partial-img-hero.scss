@@ -21,21 +21,17 @@
 
     // Blue gradient
     &::before {
+      @include blue-gradient(60deg, 0%, 70%);
       content: "";
       position: absolute;
       top: 0;
       left: 0;
-      background: linear-gradient(60deg, rgba($blue, 1) 0%, rgba($blue, 0) 70%);
       width: 100%;
       height: 100%;
       z-index: -1;
 
       @include mq-max(md) {
-        background: linear-gradient(
-          180deg,
-          rgba($blue, 1) 15%,
-          rgba($blue, 0) 120%
-        );
+        @include blue-gradient(180deg, 15%, 120%);
       }
     }
   }
@@ -92,9 +88,44 @@
     margin-block-end: var(--section-gap);
   }
 
+  &__sub-content {
+    @include light-theme;
+
+    @include mq-min(md) {
+      display: none;
+    }
+
+    .sub-content__p {
+      margin-block: var(--section-gap-half);
+      text-align: center;
+    }
+  }
+
   .cta-group {
     @include mq-min(md) {
       justify-content: flex-end;
+    }
+  }
+
+  //
+  // Overrides
+  //
+
+  &.has-subcontent {
+    .partial-img-hero__h1 {
+      @include mq-max(md) {
+        margin-block-end: 196px;
+      }
+    }
+
+    .partial-img-hero__footer {
+      @include mq-max(md) {
+        display: none;
+      }
+    }
+
+    .cta-group {
+      @include light-theme;
     }
   }
 
@@ -192,8 +223,8 @@
     }
   }
 
-  // Operation Sunder Serves (The Sunder Way)
-  &.oss {
+  // OSS section (The Sunder Way)
+  &.oss-section {
     .partial-img-hero__inner {
       padding: var(--body-padding-double); // overrides with original above
 
@@ -222,6 +253,24 @@
     .partial-img-hero__p {
       @include mq-min(md) {
         margin: 0;
+      }
+    }
+  }
+
+  // OSS hero (OSS Page)
+  &.oss-page {
+    .partial-img-hero__bg {
+      object-position: 50% 25%;
+
+      @include mq-max(md) {
+        margin-block-start: 156px;
+        object-position: 100% 50%;
+      }
+    }
+
+    .partial-img-hero__inner::before {
+      @include mq-max(md) {
+        @include blue-gradient(180deg, 40%, 100%);
       }
     }
   }

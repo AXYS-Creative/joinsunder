@@ -221,6 +221,20 @@ $min-breakpoints: (
   color: var(--font-color--primary);
 }
 
+@mixin light-theme {
+  --font-color--primary: #{$blue};
+
+  --link-color: #{$blue};
+  --link-color-hover: #{$blue};
+
+  --btn-color-bg: #{$blue};
+  --btn-color-text: #{$white};
+  --btn-color-border: var(--btn-color-bg);
+  --btn-color-bg--hover: #{$white};
+  --btn-color-text--hover: #{$blue};
+  --btn-color-border--hover: var(--btn-color-bg--hover);
+}
+
 // @mixin ultra-wide-bg($bg-color: $test-bg, $z-index: -1) {
 //   &::before {
 //     content: "";

@@ -26,12 +26,8 @@
 
     .portrait-gradient {
       // See _portrait.scss for full styles
-      width: 100%;
+      width: min(100%, 520px);
       aspect-ratio: 1;
-
-      @include mq-min(md) {
-        width: 70%;
-      }
 
       @include mq-min(lg) {
         width: 32%;

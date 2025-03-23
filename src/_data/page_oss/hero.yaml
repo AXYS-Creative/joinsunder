@@ -1,0 +1,9 @@
+toggle_section: true
+
+section_title: Operation[%br%] Sunder Serves
+section_desc: This year, Operation Sunder Serves will head to Cuzco, Peru, where our team will work alongside locals to maintain schools, build furniture, and create brighter futures for children by providing hands-on education and support, while also enjoying the adventure of exploring ancient ruins like Machu Picchu.
+section_bg: /static/img/OSS-Hero-BG.jpg
+
+cta:
+  text: Register
+  url: /join
