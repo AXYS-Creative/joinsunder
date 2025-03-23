@@ -157,7 +157,7 @@ collections:
           - name: cta
             label: Call To Action
             widget: object
-            summary: "{{ fields.name }}: {{ fields.url }}"
+            summary: "{{ fields.text }} → {{ fields.url }}"
             required: false
             fields:
               - name: text
@@ -496,7 +496,7 @@ collections:
           - name: cta
             label: Call To Action
             widget: object
-            summary: "{{ fields.name }}: {{ fields.url }}"
+            summary: "{{ fields.text }} → {{ fields.url }}"
             required: false
             fields:
               - name: text
@@ -585,7 +585,7 @@ collections:
           - name: cta
             label: Call To Action
             widget: object
-            summary: "{{ fields.name }}: {{ fields.url }}"
+            summary: "{{ fields.text }} → {{ fields.url }}"
             required: false
             fields:
               - name: text
@@ -726,7 +726,7 @@ collections:
               - name: cta
                 label: Call To Action
                 widget: object
-                summary: "{{ fields.name }}: {{ fields.url }}"
+                summary: "{{ fields.text }} → {{ fields.url }}"
                 required: false
                 fields:
                   - name: text
@@ -943,10 +943,10 @@ collections:
           - name: cta_1
             label: Call To Action 1
             widget: object
-            summary: "{{ fields.name }}: {{ fields.url }}"
+            summary: "{{ fields.text }} → {{ fields.url }}"
             required: false
             fields:
-              - name: title
+              - name: text
                 label: Button Text
                 widget: string
                 required: false
@@ -959,10 +959,10 @@ collections:
           - name: cta_2
             label: Call To Action 2
             widget: object
-            summary: "{{ fields.name }}: {{ fields.url }}"
+            summary: "{{ fields.text }} → {{ fields.url }}"
             required: false
             fields:
-              - name: title
+              - name: text
                 label: Button Text
                 widget: string
                 required: false
@@ -1016,10 +1016,10 @@ collections:
           - name: cta
             label: Call To Action
             widget: object
-            summary: "{{ fields.name }}: {{ fields.url }}"
+            summary: "{{ fields.text }} → {{ fields.url }}"
             required: false
             fields:
-              - name: title
+              - name: text
                 label: Button Text
                 widget: string
                 required: false
