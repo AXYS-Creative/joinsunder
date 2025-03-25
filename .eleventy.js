@@ -18,7 +18,7 @@ module.exports = function (eleventyConfig) {
     );
   });
 
-  // 11ty-img optimizing
+  // 11ty-img optimizing (pre formatting before getting to Netlify)
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "jpeg"],
     widths: [320, 640, 1280, 1920],
