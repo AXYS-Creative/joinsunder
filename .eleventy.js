@@ -20,8 +20,8 @@ module.exports = function (eleventyConfig) {
 
   // 11ty-img optimizing
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["avif", "webp", "jpeg"], // Modern formats
-    widths: [320, 640, 1280, 1920], // No extra-large images
+    formats: ["avif", "webp", "jpeg"],
+    widths: [320, 640, 1280, 1920],
     htmlOptions: {
       imgAttributes: {
         sizes:
@@ -32,9 +32,11 @@ module.exports = function (eleventyConfig) {
       pictureAttributes: {},
     },
     cacheOptions: {
-      duration: "30d", // Cache images for 30 days
-      directory: ".cache/eleventy-img", // Use persistent cache directory
+      duration: "30d",
+      directory: ".cache/eleventy-img",
     },
+    outputDir: "./src/static/images/", // ✅ This is where images will be written
+    urlPath: "/static/images/", // ✅ This is how they’ll be referenced in HTML
   });
 
   // Syntax Highlighting for Code blocks
