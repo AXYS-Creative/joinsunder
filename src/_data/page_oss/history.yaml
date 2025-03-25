@@ -1,0 +1,69 @@
+toggle_section: true
+section_title: History
+section_desc: What we've achieved is impressive, but we’re just getting started.
+
+events:
+  - title: Afghanistan
+    year: 2021
+    desc: "Sunder created its charity event O.S.S. (Operation Sunder Serves) and donated over $50k to helping civilians evacuate Afghanistan from the Taliban."
+    graphic: /static/img/OSS-Emblem-1Afghanistan.png
+    gallery:
+  - title: Merida, Mexico
+    year: 2022
+    desc: "Sunder helped build/renovate a community elementary school and donated bikes to the students."
+    graphic: /static/img/OSS-Emblem-2Mexico.png
+    vid_src: https://www.dropbox.com/scl/fi/gkfzto0gk50ux9hoidwes/Way-Experience-1Video.mov?rlkey=z18lot4x4ul79abjqybg0gwsd&st=vrfv0oy7&dl=0
+    vid_btn_text: "Play video"
+    gallery:
+      - title:
+        src: /static/img/OSS-Mexico-1Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-2Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-3Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-4Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-5Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-6Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-7Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-8Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-9Photo.PNG
+      - title:
+        src: /static/img/OSS-Mexico-10Photo.PNG
+  - title: Orosi Valley, Costa Rica
+    year: 2024
+    desc: Sunder helped a local community build a community center and play ground.
+    graphic: /static/img/OSS-Emblem-3CostaRica.png
+    vid_src: https://www.dropbox.com/scl/fi/zvl1g4ouji8f96ahf20es/Way-Experience-2Video.mp4?rlkey=131a48hraz7r8d3jtw8ibkyyr&st=t5wmpt02&dl=0
+    vid_btn_text: "Play video"
+    gallery:
+      - title:
+        src: /static/img/OSS-CostaRica-1Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-2Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-3Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-4Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-5Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-6Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-7Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-8Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-9Photo.png
+      - title:
+        src: /static/img/OSS-CostaRica-10Photo.png
+  - title: Cuzco, Peru
+    year: 2025
+    desc: Sunder is currently preparing to serve in Peru![%br%] Register to join us!
+    graphic: /static/img/OSS-Emblem-4Peru.png
+    gallery:

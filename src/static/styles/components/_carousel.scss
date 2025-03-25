@@ -18,9 +18,12 @@
   }
 
   &__track-item {
+    // border: $test;
     flex: 1;
     min-width: calc(33% - var(--carousel-gap) / 3);
     scroll-snap-align: start;
+    border-radius: var(--radius);
+    overflow: hidden;
 
     @include mq-max(lg) {
       min-width: 500px;
@@ -56,6 +59,10 @@
     }
 
     &-cta {
+      @include mq-min(lg) {
+        margin-inline-end: auto;
+      }
+
       .carousel-cta {
         padding: var(--btn-padding);
       }

@@ -1,0 +1,101 @@
+.section-oss-history {
+  @include mq-max(lg) {
+    @include column-center;
+  }
+
+  &__events {
+    @include column-start;
+    gap: var(--section-gap-double);
+
+    @include mq-max(lg) {
+      width: 100%;
+    }
+  }
+
+  .service-event {
+    overflow: hidden;
+    @include row-center(flex-start);
+    gap: var(--section-gap-double);
+    width: 100%;
+
+    @include mq-max(lg) {
+      flex-direction: column;
+      gap: var(--section-gap);
+    }
+
+    &__graphic {
+      width: 320px;
+
+      @include mq-max(xxl) {
+        width: 20%;
+      }
+
+      @include mq-max(lg) {
+        width: 250px;
+      }
+
+      @include mq-min(xl) {
+        margin-inline-start: var(--section-gap-double);
+      }
+    }
+
+    &__content {
+      max-width: 1024px;
+
+      @include mq-max(lg) {
+        @include column-center;
+        width: 100%;
+      }
+    }
+
+    &__year {
+      @include h4;
+    }
+
+    &__title {
+      @include h3;
+
+      @include mq-max(lg) {
+        text-align: center;
+        text-wrap: balance;
+      }
+      @include mq-max(md) {
+        @include h4;
+      }
+      @include mq-max(sm) {
+        font-size: 10vw;
+      }
+    }
+
+    &__desc {
+      margin-block: var(--section-gap-half);
+
+      @include mq-max(lg) {
+        text-align: center;
+        text-wrap: balance;
+      }
+    }
+  }
+
+  .carousel {
+    @include mq-max(lg) {
+      align-self: flex-start;
+      width: 100%;
+    }
+
+    &__track-item {
+      min-width: calc(25% - var(--carousel-gap) / 4);
+      aspect-ratio: 1 / 1.15;
+      height: 75%;
+
+      @include mq-max(lg) {
+        min-width: 250px;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

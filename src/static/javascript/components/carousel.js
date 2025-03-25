@@ -1,19 +1,37 @@
-const carousel = document.querySelector(".carousel"),
-  track = document.querySelector(".carousel__track"),
-  trackInner = document.querySelector(".carousel__track-inner"),
-  prevBtn = document.querySelector(".carousel-btn-prev"),
-  nextBtn = document.querySelector(".carousel-btn-next"),
-  progressBar = document.querySelector(".carousel__progress-bar");
+document.querySelectorAll(".carousel").forEach((carousel) => {
+  const track = carousel.querySelector(".carousel__track");
+  const trackInner = carousel.querySelector(".carousel__track-inner");
+  const prevBtn = carousel.querySelector(".carousel-btn-prev");
+  const nextBtn = carousel.querySelector(".carousel-btn-next");
+  const progressBar = carousel.querySelector(".carousel__progress-bar");
+  const items = carousel.querySelectorAll(".carousel__track-item");
 
-const items = document.querySelectorAll(".carousel__track-item");
+  if (!track || !items.length) return;
 
-if (carousel) {
   let currentIndex = 0;
   const itemCount = items.length;
   let autoplayInterval = null;
 
   const isAutoplayEnabled = carousel.classList.contains("autoplay");
   const autoplayDelay = parseInt(carousel.dataset.autoplayInterval) || 3200;
+
+  const getClosestIndex = () => {
+    const scrollPosition = track.scrollLeft;
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    items.forEach((item, index) => {
+      const distance = Math.abs(item.offsetLeft - scrollPosition);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  };
+
+  currentIndex = getClosestIndex();
 
   const isAtEnd = () => {
     const scrollWidth = track.scrollWidth;
@@ -40,12 +58,9 @@ if (carousel) {
   };
 
   const updateButtonStates = () => {
-    prevBtn.disabled = isAtStart();
-    nextBtn.disabled = isAtEnd();
+    if (prevBtn) prevBtn.disabled = isAtStart();
+    if (nextBtn) nextBtn.disabled = isAtEnd();
   };
-
-  updateButtonStates();
-  updateProgressBar();
 
   const scrollToItem = (index) => {
     if (index < 0) {
@@ -57,7 +72,6 @@ if (carousel) {
     currentIndex = index;
 
     const targetItem = items[index];
-
     track.scrollTo({
       left: targetItem.offsetLeft - track.offsetLeft,
       behavior: "smooth",
@@ -85,9 +99,7 @@ if (carousel) {
 
   const startAutoplay = () => {
     if (!isAutoplayEnabled) return;
-
     stopAutoplay();
-
     autoplayInterval = setInterval(advanceToNextSlide, autoplayDelay);
   };
 
@@ -98,22 +110,24 @@ if (carousel) {
     }
   };
 
-  prevBtn.addEventListener("click", () => {
-    scrollToItem(currentIndex - 1);
+  // Event listeners
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      scrollToItem(currentIndex - 1);
+      startAutoplay();
+    });
+  }
 
-    startAutoplay();
-  });
-
-  nextBtn.addEventListener("click", () => {
-    scrollToItem(currentIndex + 1);
-
-    startAutoplay();
-  });
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      scrollToItem(currentIndex + 1);
+      startAutoplay();
+    });
+  }
 
   let scrollTimeout;
   track.addEventListener("scroll", () => {
     clearTimeout(scrollTimeout);
-
     stopAutoplay();
 
     scrollTimeout = setTimeout(() => {
@@ -135,7 +149,6 @@ if (carousel) {
 
       if (currentIndex !== closestIndex) {
         currentIndex = closestIndex;
-
         updateProgressBar();
       }
 
@@ -145,7 +158,6 @@ if (carousel) {
 
   track.addEventListener("mouseenter", stopAutoplay);
   track.addEventListener("touchstart", stopAutoplay, { passive: true });
-
   track.addEventListener("mouseleave", startAutoplay);
   track.addEventListener("touchend", startAutoplay);
 
@@ -158,12 +170,17 @@ if (carousel) {
   }
 
   window.addEventListener("resize", () => {
+    currentIndex = getClosestIndex();
     updateButtonStates();
     updateProgressBar();
     startAutoplay();
   });
 
+  // Initial state
+  updateButtonStates();
+  updateProgressBar();
+
   if (isAutoplayEnabled) {
     setTimeout(startAutoplay, 100);
   }
-}
+});

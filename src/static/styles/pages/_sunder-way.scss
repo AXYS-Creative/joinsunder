@@ -442,9 +442,7 @@
       }
 
       &-item {
-        border: 4px solid transparent;
-        overflow: hidden;
-        border-radius: var(--radius);
+        border: 2px solid transparent;
         transition: $ease;
 
         @include mq-max(sm) {
@@ -458,7 +456,7 @@
         }
 
         &:focus {
-          border: 4px solid var(--hero-color--primary);
+          border: 2px solid var(--hero-color--primary);
         }
 
         img {

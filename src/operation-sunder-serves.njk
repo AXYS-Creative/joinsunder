@@ -25,6 +25,38 @@ hide_footer: false
 {% endif %}
 
 <!-- prettier-ignore -->
+{% if page_oss.history.toggle_section %}
+<section class="section-oss-history section-gradient" id="oss-history">
+  <h2 class="section-gradient__title section-oss-history__title">
+    {{ page_oss.history.section_title }}
+  </h2>
+  <p class="section-gradient__desc section-oss-history__desc">
+    {{ page_oss.history.section_desc }}
+  </p>
+
+  <div class="section-oss-history__events">
+    {% for item in page_oss.history.events %}
+    <div class="service-event">
+      <img class="service-event__graphic" src="{{ item.graphic }}" alt="" eleventy:ignore>
+
+      <div class="service-event__content">
+        <h3 class="service-event__year">{{ item.year }}</h3>
+        <h4 class="service-event__title">{{ item.title }}</h4>
+        <p class="service-event__desc">{{ item.desc }}</p>
+
+        {% set list = item.gallery %}
+        {% set carousel_cta_text = item.vid_btn_text %}
+        {% set cta_1_outline = true %}
+        {% set vid_title = item.title + ' service' %}
+        {% set vid_src = item.vid_src %}
+        {% include "./_includes/components/carousel.njk" %}
+      </div>
+    </div>
+    {% endfor %}
+</section>
+{% endif %}
+
+<!-- prettier-ignore -->
 {% set section_title = page_oss.quotes.section_title %}
 {% set quote_list = page_oss.quotes.list %}
 {% if page_oss.quotes.toggle_section %}

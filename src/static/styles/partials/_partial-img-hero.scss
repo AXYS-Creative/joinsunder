@@ -266,6 +266,10 @@
         margin-block-start: 156px;
         object-position: 100% 50%;
       }
+
+      @include mq-max(sm) {
+        object-position: 90% 50%;
+      }
     }
 
     .partial-img-hero__inner::before {
