@@ -1,6 +1,7 @@
 import "./util.js";
 
 import "./components/carousel.js";
+import "./components/carousel-swiper.js";
 import "./components/collage.js";
 import "./components/form-redirect.js";
 import "./components/video-overlay.js";

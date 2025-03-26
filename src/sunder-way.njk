@@ -148,7 +148,8 @@ hide_footer: false
   {% set carousel_autoplay = page_sunder_way.experiences.carousel_autoplay %}
   {% set carousel_cta_text = "" %}
   {% set carousel_progress = true %}
-  {% include "./_includes/components/carousel.njk" %}
+  {% set cta_1_text = '' %}
+  {% include "./_includes/components/carousel-swiper.njk" %}
 
   {% if page_sunder_way.experiences.toggle_collage %}
   <div class="collage">

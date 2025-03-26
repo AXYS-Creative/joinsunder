@@ -1,0 +1,51 @@
+{% if list %}
+<div
+  class="swiper mySwiper {% if video_carousel %}video-carousel{% endif %} {% if img_carousel %}img-carousel{% endif %}"
+>
+  <div class="swiper-wrapper">
+    {% for item in list %} {% if video_carousel %}
+    <button
+      class="video-toggle swiper-slide tab-element-page"
+      data-src="{{ item.src }}"
+      aria-label="Play video: {{ item.title }}"
+      aria-controls="video-overlay"
+    >
+      <span class="badge cta-1">{{ global.carousel.video_badge_text }}</span>
+      <img src="{{ item.poster }}" alt="{{ item.title }}" />
+    </button>
+    {% else %}
+    <div class="swiper-slide">
+      <img src="{{ item.src }}" alt="{{ item.title }}" />
+    </div>
+    {% endif %} {% endfor %}
+  </div>
+
+  <div class="controls">
+    <div class="swiper-button-prev">
+      <img src="{{ global.carousel.arrow_img }}" alt="" eleventy:ignore />
+    </div>
+    <div class="swiper-button-next">
+      <img src="{{ global.carousel.arrow_img }}" alt="" eleventy:ignore />
+    </div>
+
+    <!-- prettier-ignore -->
+    {% if cta_text %}
+    <div class="carousel__controls-cta">
+      <button
+        class="video-toggle carousel-cta cta-1 {%if cta_1_outline%}outline{%endif%} tab-element-page"
+        data-src="{{ cta_url }}"
+        aria-label="Play video: {{ vid_title }}"
+        aria-controls="video-overlay"
+      >
+        {{ cta_text }}
+      </button>
+    </div>
+    {% endif %}
+
+    <!-- prettier-ignore -->
+    {% if carousel_progress %}
+    <div class="swiper-pagination"></div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

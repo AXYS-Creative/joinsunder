@@ -44,12 +44,18 @@ hide_footer: false
         <h4 class="service-event__title">{{ item.title }}</h4>
         <p class="service-event__desc">{{ item.desc }}</p>
 
+        {% set img_carousel = true %}
         {% set list = item.gallery %}
-        {% set carousel_cta_text = item.vid_btn_text %}
         {% set cta_1_outline = true %}
-        {% set vid_title = item.title + ' service' %}
-        {% set vid_src = item.vid_src %}
-        {% include "./_includes/components/carousel.njk" %}
+        {% set cta_url = item.cta_url %}
+        {% set cta_text = item.cta_text %}
+        {% include "./_includes/components/carousel-swiper.njk" %}
+
+        {% if (not item.gallery) and item.cta_text %}
+          {% set cta_1_url = item.cta_url %}
+          {% set cta_1_text = item.cta_text %}
+          {% include "./_includes/components/cta-group.njk" %}
+        {% endif %}
       </div>
     </div>
     {% endfor %}

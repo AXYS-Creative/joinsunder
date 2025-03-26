@@ -433,44 +433,15 @@
 .section-experiences {
   // using section-gradient util
 
-  .carousel {
-    margin-block-end: var(--section-gap-double);
-
-    &__track {
-      &-inner {
-        padding-block: 4px;
-      }
-
-      &-item {
-        border: 2px solid transparent;
-        transition: $ease;
-
-        @include mq-max(sm) {
-          min-width: 100%;
-        }
-
-        @include desktop-hover {
-          img {
-            scale: 1;
-          }
-        }
-
-        &:focus {
-          border: 2px solid var(--hero-color--primary);
-        }
-
-        img {
-          scale: 1.025;
-          height: 100%;
-          transition: $ease;
-        }
-      }
+  &__desc {
+    @include mq-min(md) {
+      text-align: left;
     }
-
-    // &__controls {
-
-    // }
   }
+
+  // .carousel {
+  // see _carousel-swiper.scss
+  // }
 
   // .collage {
   // see _collage.scss

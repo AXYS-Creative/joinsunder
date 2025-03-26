@@ -13,7 +13,6 @@
   }
 
   .service-event {
-    overflow: hidden;
     @include row-center(flex-start);
     gap: var(--section-gap-double);
     width: 100%;
@@ -41,6 +40,8 @@
 
     &__content {
       max-width: 1024px;
+      width: 50%;
+      flex: 1;
 
       @include mq-max(lg) {
         @include column-center;
@@ -68,34 +69,26 @@
     }
 
     &__desc {
-      margin-block: var(--section-gap-half);
+      margin-block-start: var(--section-gap-half);
 
       @include mq-max(lg) {
         text-align: center;
         text-wrap: balance;
       }
-    }
-  }
 
-  .carousel {
-    @include mq-max(lg) {
-      align-self: flex-start;
-      width: 100%;
-    }
-
-    &__track-item {
-      min-width: calc(25% - var(--carousel-gap) / 4);
-      aspect-ratio: 1 / 1.15;
-      height: 75%;
-
-      @include mq-max(lg) {
-        min-width: 250px;
+      &:has(+ .cta-group) {
+        margin-block-end: var(--section-gap-half);
       }
+    }
 
-      img {
-        height: 100%;
-        object-fit: cover;
+    .cta-group {
+      @include mq-min(lg) {
+        justify-content: flex-start;
       }
     }
   }
+
+  // .carousel {
+  // see _carousel-swiper.scss
+  // }
 }

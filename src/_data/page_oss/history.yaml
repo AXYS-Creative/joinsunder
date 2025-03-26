@@ -12,8 +12,8 @@ events:
     year: 2022
     desc: "Sunder helped build/renovate a community elementary school and donated bikes to the students."
     graphic: /static/img/OSS-Emblem-2Mexico.png
-    vid_src: https://www.dropbox.com/scl/fi/gkfzto0gk50ux9hoidwes/Way-Experience-1Video.mov?rlkey=z18lot4x4ul79abjqybg0gwsd&st=vrfv0oy7&dl=0
-    vid_btn_text: "Play video"
+    cta_url: https://www.dropbox.com/scl/fi/gkfzto0gk50ux9hoidwes/Way-Experience-1Video.mov?rlkey=z18lot4x4ul79abjqybg0gwsd&st=vrfv0oy7&dl=0
+    cta_text: "Play video"
     gallery:
       - title:
         src: /static/img/OSS-Mexico-1Photo.PNG
@@ -39,8 +39,8 @@ events:
     year: 2024
     desc: Sunder helped a local community build a community center and play ground.
     graphic: /static/img/OSS-Emblem-3CostaRica.png
-    vid_src: https://www.dropbox.com/scl/fi/zvl1g4ouji8f96ahf20es/Way-Experience-2Video.mp4?rlkey=131a48hraz7r8d3jtw8ibkyyr&st=t5wmpt02&dl=0
-    vid_btn_text: "Play video"
+    cta_url: https://www.dropbox.com/scl/fi/zvl1g4ouji8f96ahf20es/Way-Experience-2Video.mp4?rlkey=131a48hraz7r8d3jtw8ibkyyr&st=t5wmpt02&dl=0
+    cta_text: "Play video"
     gallery:
       - title:
         src: /static/img/OSS-CostaRica-1Photo.png
@@ -66,4 +66,6 @@ events:
     year: 2025
     desc: Sunder is currently preparing to serve in Peru![%br%] Register to join us!
     graphic: /static/img/OSS-Emblem-4Peru.png
+    cta_url: /join
+    cta_text: "Register"
     gallery:
