@@ -7,6 +7,8 @@ events:
     year: 2021
     desc: "Sunder created its charity event O.S.S. (Operation Sunder Serves) and donated over $50k to helping civilians evacuate Afghanistan from the Taliban."
     graphic: /static/img/OSS-Emblem-1Afghanistan.png
+    cta_url:
+    cta_text:
     gallery:
   - title: Merida, Mexico
     year: 2022

@@ -166,7 +166,8 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   trigger: ".collage",
                   start: maxSm ? "top 10%" : "top top",
                   end: maxSm ? "98% bottom" : "99% bottom",
-                  scrub: 0.2,
+                  scrub: 1,
+                  markers: false,
                 },
               });
             }

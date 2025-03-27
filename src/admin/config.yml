@@ -930,7 +930,7 @@ collections:
         file: src/_data/page_join/form_submit.yaml
         preview_path: /form-submit
         editor:
-          preview: true
+          preview: false
         fields:
           - name: section_title
             label: Section Title
@@ -1018,6 +1018,81 @@ collections:
                 widget: string
                 required: false
                 hint: i.e. /join
+      - name: history
+        label: Section - History
+        file: src/_data/page_oss/history.yaml
+        preview_path: /operation-sunder-serves#history
+        editor:
+          preview: false
+        fields:
+          - name: toggle_section
+            label: Show Section (OSS - History)
+            widget: boolean
+            default: true
+          - name: section_title
+            label: Section Title
+            widget: string
+            required: true
+          - name: section_desc
+            label: Section Description
+            widget: text
+            required: false
+          - name: events
+            label: Service Event
+            label_singular: Event
+            widget: list
+            required: true
+            fields:
+              - name: title
+                label: Title (Location)
+                widget: string
+                required: true
+                hint: i.e. Merida, Mexico
+              - name: year
+                label: Year
+                widget: number
+                min: 2000
+                max: 2100
+                required: true
+              - name: graphic
+                label: Graphic
+                widget: image
+                required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
+              - name: cta_url
+                label: Button URL
+                widget: string
+                required: false
+                hint: i.e. URL to the service video or registration page. An empty value removes the button
+              - name: cta_text
+                label: Button Text
+                widget: string
+                required: false
+                hint: i.e. "Play Video" or "Register"
+              - name: gallery
+                label: Image Gallery
+                label_singular: Image
+                allow_add: true
+                widget: list
+                required: false
+                hint: An empty list removes the gallery
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                    required: true
+                    hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
+                  - name: src
+                    label: Image Source
+                    widget: image
+                    required: true
+                    hint: Keep below 5MB
+                    media_library:
+                      config:
+                        max_file_size: 5000000 # 1MB = 1,000,000 bytes
       - name: quotes
         label: Section - Quote
         file: src/_data/page_oss/quotes.yaml
@@ -1184,7 +1259,10 @@ collections:
   - name: meta_data
     label: Meta Data
     description: >
-      Edit the site's meta data here. Open Graph dimensions: 1200x630. Open graph file name: open-graph.png
+      Meta data includes important information used by search engines and
+      social platforms, such as your site title, description, keywords, and
+      preview images. Updating these settings can improve SEO and control
+      how your content appears when shared online.
     files:
       - name: meta_data
         label: Meta Data
@@ -1217,6 +1295,23 @@ collections:
             widget: color
             required: true
             hint: Hex code for overflow color on some devices
+          - name: page_descriptions
+            label: Page Descriptions
+            allow_add: false
+            widget: list
+            required: true
+            hint: Used for SEO and social sharing
+            fields:
+              - name: page
+                label: Page
+                widget: string
+                required: true
+                hint: Do not edit this field (label only)
+              - name: description
+                label: Description
+                widget: text
+                required: true
+                hint: Short page summary for SEO and social media. Keep it around 140–160 characters.
           - name: og_title
             label: Open Graph Title
             widget: string
@@ -1232,7 +1327,7 @@ collections:
             widget: image
             default: "https://CHANGE-ME.com/static/img/og-image.png"
             required: true
-            hint: "Recommended formats: PNG or JPG. Recommended image dimensions: 1200 x 630 pixels. File size should be under 8 MB."
+            hint: "Recommended formats: PNG or JPG. Recommended image dimensions: 1200 x 630 pixels. File size should be under 5 MB."
             media_library:
               config:
-                max_file_size: 8000000 # 1MB = 1,000,000 bytes
+                max_file_size: 5000000 # 1MB = 1,000,000 bytes
