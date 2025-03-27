@@ -17,25 +17,25 @@ events:
     cta_url: https://www.dropbox.com/scl/fi/gkfzto0gk50ux9hoidwes/Way-Experience-1Video.mov?rlkey=z18lot4x4ul79abjqybg0gwsd&st=vrfv0oy7&dl=0
     cta_text: "Play video"
     gallery:
-      - title:
+      - title: Sunder reps painting a wall
         src: /static/img/OSS-Mexico-1Photo.PNG
-      - title:
+      - title: Children riding in a freight tricycle
         src: /static/img/OSS-Mexico-2Photo.PNG
-      - title:
+      - title: Max carrying heavy bags
         src: /static/img/OSS-Mexico-3Photo.PNG
-      - title:
+      - title: A man lifting a child to dunk a basketball
         src: /static/img/OSS-Mexico-4Photo.PNG
-      - title:
+      - title: A Sunder rep working hard
         src: /static/img/OSS-Mexico-5Photo.PNG
-      - title:
+      - title: A group of children in white attire
         src: /static/img/OSS-Mexico-6Photo.PNG
-      - title:
+      - title: Max helping a kid ride a bike
         src: /static/img/OSS-Mexico-7Photo.PNG
-      - title:
+      - title: A man shoveling into a wheelbarrow
         src: /static/img/OSS-Mexico-8Photo.PNG
-      - title:
+      - title: A girl on a bike
         src: /static/img/OSS-Mexico-9Photo.PNG
-      - title:
+      - title: A man pulling a wheelbarrow
         src: /static/img/OSS-Mexico-10Photo.PNG
   - title: Orosi Valley, Costa Rica
     year: 2024
@@ -44,25 +44,25 @@ events:
     cta_url: https://www.dropbox.com/scl/fi/zvl1g4ouji8f96ahf20es/Way-Experience-2Video.mp4?rlkey=131a48hraz7r8d3jtw8ibkyyr&st=t5wmpt02&dl=0
     cta_text: "Play video"
     gallery:
-      - title:
+      - title: Shoveling dirt
         src: /static/img/OSS-CostaRica-1Photo.png
-      - title:
+      - title: Playing in a wheelbarrow
         src: /static/img/OSS-CostaRica-2Photo.png
-      - title:
+      - title: Man and woman behind a group of kids
         src: /static/img/OSS-CostaRica-3Photo.png
-      - title:
+      - title: Sparks flying as a Sunder rep welds metal
         src: /static/img/OSS-CostaRica-4Photo.png
-      - title:
+      - title: A man riding in the back of a car
         src: /static/img/OSS-CostaRica-5Photo.png
-      - title:
+      - title: A group posing at a soccer field
         src: /static/img/OSS-CostaRica-6Photo.png
-      - title:
+      - title: Pouring cement mix
         src: /static/img/OSS-CostaRica-7Photo.png
-      - title:
+      - title: A man doing a handstand
         src: /static/img/OSS-CostaRica-8Photo.png
-      - title:
+      - title: A man pushing a heavy wheelbarrow full of dirt
         src: /static/img/OSS-CostaRica-9Photo.png
-      - title:
+      - title: Ziplining through the jungle
         src: /static/img/OSS-CostaRica-10Photo.png
   - title: Cuzco, Peru
     year: 2025

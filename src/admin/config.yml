@@ -1190,6 +1190,8 @@ collections:
                 required: false
   - name: global
     label: Global
+    description: >
+      Global components used throughout the site. These elements are shared across multiple pages and help maintain consistency in layout and branding.
     files:
       - name: footer
         label: Site Footer
@@ -1256,6 +1258,21 @@ collections:
                 label: Icon Source
                 widget: image
                 required: true
+      - name: carousel
+        label: Carousel
+        file: src/_data/global/carousel.yaml
+        editor:
+          preview: false
+        fields:
+          - name: arrow_img
+            label: Arrow Icon (next/prev buttons)
+            widget: image
+            required: true
+          - name: video_badge_text
+            label: Video Badge Text (Video Carousel - Experience Page)
+            widget: string
+            required: true
+            hint: i.e. Play Video
   - name: meta_data
     label: Meta Data
     description: >
@@ -1279,7 +1296,7 @@ collections:
             label: URL
             widget: string
             required: true
-            hint: Full URL to your site
+            hint: Full URL to your site. Don't include end slash /
           - name: author
             label: Author
             widget: string
@@ -1306,7 +1323,7 @@ collections:
                 label: Page
                 widget: string
                 required: true
-                hint: Do not edit this field (label only)
+                hint: Dashboard label only — DO NOT edit this field
               - name: description
                 label: Description
                 widget: text

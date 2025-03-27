@@ -1,5 +1,5 @@
 site_name: "Join Sunder"
-url: "https://joinsunder-dev.netlify.app/"
+url: "https://joinsunder-dev.netlify.app" #ensure no end slash for og-img
 author: Sunder Energy
 contact_email: info@sunderenergy.com
 theme_color: "#f7f7f7"
@@ -28,4 +28,4 @@ og_description:
   "Looking for your next opportunity? Join Sunder Energy, where our
   mission is to empower individuals to shape a brighter future through
   sustainable energy solutions." #Separate from individual page description in index.html
-og_image: "/static/img/og-image.png"
+og_image: "/static/img/open-graph-image.png"

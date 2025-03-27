@@ -3475,6 +3475,11 @@ figure {
     background: linear-gradient(0deg, #0058f5 15%, rgba(0, 88, 245, 0) 120%);
   }
 }
+.partial-img-hero.oss-section picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .partial-img-hero.oss-section .partial-img-hero__graphic {
   width: 250px;
 }
