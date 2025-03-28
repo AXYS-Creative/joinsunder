@@ -3,21 +3,48 @@
 }
 
 .section-values {
-  @include row-center;
-  gap: var(--section-gap-double);
+  position: relative;
   margin-block-start: var(--top-spacing-header);
   margin-block-end: var(--section-gap-double);
 
-  @include mq-min(lg) {
-    @include partial-height-section;
-  }
+  // @include mq-min(lg) {
+  //   @include partial-height-section; // Height messing with pin
+  // }
 
   @include mq-max(lg) {
     flex-direction: column;
   }
 
+  .values-pin {
+    --framing-padding: calc(
+      calc(var(--body-padding-double) + var(--header-height) * 4)
+    );
+
+    // border: $test;
+    @include row-center(flex-start);
+    gap: var(--section-gap-double);
+
+    @include mq-min(lg) {
+      height: calc(100vh - var(--framing-padding)); // Center for pinning
+      min-height: 450px;
+    }
+
+    @include mq-min(xxl) {
+      min-height: 650px;
+    }
+
+    @include mq-max(lg) {
+      @include column-center;
+    }
+  }
+
   &__text {
     @include column-start;
+
+    @include mq-min(lg) {
+      margin-inline-start: var(--body-padding-double);
+      opacity: 0;
+    }
 
     @include mq-max(lg) {
       align-items: center;
@@ -29,10 +56,42 @@
     height: 100%;
     flex-shrink: 0;
 
+    @include mq-min(lg) {
+      @include absolute-center;
+      width: 38%;
+    }
+
     .values-svg {
       width: 100%;
       height: 100%;
       fill: var(--hero-color--primary);
+
+      &__frame {
+        @include mq-min(lg) {
+          opacity: 0;
+        }
+      }
+
+      &__word {
+        @include mq-min(lg) {
+          opacity: 0;
+        }
+      }
+
+      &__sunder-sun {
+        @include mq-min(lg) {
+          animation: reveal-sun $ease 0.125s forwards;
+          opacity: 0;
+          translate: 0 196px;
+
+          @keyframes reveal-sun {
+            to {
+              opacity: 1;
+              translate: 0 0px;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -181,6 +181,105 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
       // Page - About
       {
+        // Values Section (Hero)
+        if (document.querySelector(".section-values") && minLg) {
+          const pinDuration = "+=200%";
+          let bodyPadding = maxXl ? 64 : 96;
+
+          // Pinning Values Section
+          gsap.to(".values-pin", {
+            scrollTrigger: {
+              trigger: ".values-pin",
+              start: `top ${bodyPadding}px`,
+              end: pinDuration,
+              pin: true,
+            },
+          });
+
+          // Values step two (fading each word and frame)
+          {
+            let scrubValue = 0.5;
+
+            // Fading in each word (step 2)
+            for (let i = 1; i <= 6; i++) {
+              gsap.fromTo(
+                `.word-${i}`,
+                { opacity: 0 },
+                {
+                  opacity: 1,
+                  scrollTrigger: {
+                    trigger: `.values-pin-step-${i}`,
+                    start: "top top",
+                    end: "250% 10%",
+                    scrub: scrubValue,
+                    // markers: true,
+                  },
+                }
+              );
+            }
+
+            // Fading in SVG frame (step 2)
+            gsap.fromTo(
+              ".values-svg__frame",
+              {
+                opacity: 0,
+              },
+              {
+                opacity: 1,
+                scrollTrigger: {
+                  trigger: ".values-pin-step-8",
+                  start: `-75% ${bodyPadding}px`,
+                  end: "600% 25%",
+                  scrub: scrubValue,
+                  // markers: navyMarkers,
+                },
+              }
+            );
+          }
+
+          // Values step three (shifting content while showing text)
+          {
+            let shiftOffset = 20;
+            let scrubValue = 1;
+
+            // Fading in values text (step 3)
+            gsap.fromTo(
+              ".section-values__text",
+              {
+                x: `-${shiftOffset}vw`,
+                opacity: 0,
+              },
+              {
+                x: 0,
+                opacity: 1,
+                scrollTrigger: {
+                  trigger: ".values-pin-step-9", // Change the step to alter sequence
+                  start: `top ${bodyPadding}px`,
+                  end: `bottom ${bodyPadding}px`,
+                  scrub: scrubValue,
+                },
+              }
+            );
+
+            // Pushing SVG aside (step 3)
+            gsap.fromTo(
+              ".section-values__svg",
+              {
+                marginLeft: 0, // don't use x value, struggles with css translate
+              },
+              {
+                marginLeft: `${shiftOffset}vw`,
+                scrollTrigger: {
+                  trigger: ".values-pin-step-9", // Change the step to alter sequence
+                  start: `top ${bodyPadding}px`,
+                  end: `bottom ${bodyPadding}px`,
+                  scrub: scrubValue,
+                },
+              }
+            );
+          }
+        }
+
         // Mission Section
         if (document.querySelector(".section-mission")) {
           const pinDuration = "+=250%";
@@ -344,7 +443,6 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 onLeaveBack: () => {
                   if (isFirstMarker) updateCounter(numberCounter, "00");
                 },
-                // markers: true,
               });
             });
 
