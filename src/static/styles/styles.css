@@ -929,6 +929,11 @@ figure {
     text-align: center;
   }
 }
+@media screen and (min-width: 1025px) {
+  .section-values__text-desc {
+    width: 40vw;
+  }
+}
 .section-values__svg {
   height: 100%;
   flex-shrink: 0;

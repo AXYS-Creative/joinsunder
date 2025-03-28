@@ -50,6 +50,12 @@
       align-items: center;
       text-align: center;
     }
+
+    &-desc {
+      @include mq-min(lg) {
+        width: 40vw;
+      }
+    }
   }
 
   &__svg {
