@@ -5,4 +5,5 @@ section_desc: Our core values are the foundation of everything we do, guiding ou
 
 cta:
   text: Join the squad
+  text_desc:
   url: /join

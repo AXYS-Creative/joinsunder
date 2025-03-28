@@ -2,8 +2,8 @@ toggle_section: true
 section_title: Growth[%br%] History
 
 history:
-  - year: 2019
-    state_count: 7
+  - year: 2012
+    state_count: 2
   - year: 2020
     state_count: 18
   - year: 2021

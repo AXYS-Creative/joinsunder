@@ -860,6 +860,27 @@ collections:
             label: Section Title
             widget: string
             required: true
+          - name: cta
+            label: Call To Action
+            widget: object
+            summary: "{{ fields.text }} → {{ fields.url }}"
+            required: false
+            fields:
+              - name: text
+                label: Button Text
+                widget: string
+                required: false
+                hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
+              - name: url
+                label: Button URL
+                widget: string
+                required: false
+                hint: i.e. /join
       - name: mission
         label: Section - Our Mission
         file: src/_data/page_about/mission.yaml

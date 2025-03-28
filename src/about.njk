@@ -19,8 +19,7 @@ hide_footer: false
       </p>
 
       <!-- prettier-ignore -->
-      {% set cta_1_text = page_about.values.cta.text %}
-      {% set cta_1_url = page_about.values.cta.url %}
+      {% set cta_1 = page_about.values.cta %}
       {% set cta_1_outline = true %}
       {% include "./_includes/components/cta-group.njk" %}
     </div>
