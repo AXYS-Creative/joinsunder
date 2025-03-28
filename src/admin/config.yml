@@ -1070,8 +1070,8 @@ collections:
                 label: Country
                 widget: string
                 required: true
-              - name: City
-                label: city
+              - name: city
+                label: City
                 widget: string
                 required: false
               - name: graphic

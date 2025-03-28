@@ -76,7 +76,6 @@
       margin-block-start: var(--section-gap-half);
 
       @include mq-max(lg) {
-        border: $test;
         text-align: center;
         text-wrap: balance;
       }

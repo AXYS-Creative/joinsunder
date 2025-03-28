@@ -1961,7 +1961,6 @@ figure {
 }
 @media screen and (max-width: 1024px) {
   .section-oss-history .service-event__desc {
-    border: 2px dashed rgba(255, 127, 80, 0.75);
     text-align: center;
     text-wrap: balance;
   }
