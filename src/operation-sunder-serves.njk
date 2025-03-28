@@ -40,7 +40,12 @@ hide_footer: false
 
       <div class="service-event__content">
         <h3 class="service-event__year">{{ item.year }}</h3>
-        <h4 class="service-event__title">{{ item.title }}</h4>
+        <h4 class="service-event__location">
+          {% if item.city %}
+            <span class="service-event__location-city">{{ item.city }},</span>
+          {% endif %}
+          <span class="service-event__location-country">{{ item.country }}</span>
+        </h4>
         <p class="service-event__desc">{{ item.desc }}</p>
 
         {% set img_carousel = true %}

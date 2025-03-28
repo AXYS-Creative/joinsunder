@@ -336,6 +336,7 @@ body:has(.load-complete) .hero div {
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 36px;
+    line-height: 1;
   }
 }
 @media screen and (max-width: 480px) {
@@ -689,6 +690,7 @@ figure {
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 36px;
+    line-height: 1;
     margin-block-end: var(--panel-gap);
     text-align: center;
   }
@@ -1062,6 +1064,7 @@ figure {
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 36px;
+    line-height: 1;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1331,6 +1334,7 @@ figure {
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 36px;
+    line-height: 1;
   }
 }
 .section-growth .growth-counter .digit {
@@ -1358,6 +1362,7 @@ figure {
   text-transform: uppercase;
   letter-spacing: -2px;
   font-size: 36px;
+  line-height: 1;
 }
 @media screen and (max-width: 768px) {
   .section-growth .growth-counter__label {
@@ -1515,6 +1520,7 @@ figure {
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 36px;
+    line-height: 1;
   }
 }
 .section-leadership .leadership-portraits .portrait-gradient.big-three {
@@ -1551,6 +1557,7 @@ figure {
   text-transform: uppercase;
   letter-spacing: -2px;
   font-size: 36px;
+  line-height: 1;
 }
 
 .main-home {
@@ -1703,6 +1710,7 @@ figure {
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 36px;
+    line-height: 1;
   }
 }
 .main-home .hero .sunder-internal {
@@ -1870,7 +1878,7 @@ figure {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: var(--section-gap-double);
+  gap: calc(var(--section-gap) * 3);
   width: 100%;
 }
 @media screen and (max-width: 1024px) {
@@ -1916,8 +1924,10 @@ figure {
   text-transform: uppercase;
   letter-spacing: -2px;
   font-size: 36px;
+  line-height: 1;
+  margin-block-end: 12px;
 }
-.section-oss-history .service-event__title {
+.section-oss-history .service-event__location {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -2px;
@@ -1925,22 +1935,25 @@ figure {
   line-height: 110%;
 }
 @media screen and (max-width: 1024px) {
-  .section-oss-history .service-event__title {
-    text-align: center;
-    text-wrap: balance;
+  .section-oss-history .service-event__location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
-@media screen and (max-width: 768px) {
-  .section-oss-history .service-event__title {
+@media screen and (max-width: 480px) {
+  .section-oss-history .service-event__location {
+    font-size: 10vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-oss-history .service-event__location-city {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 36px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .section-oss-history .service-event__title {
-    font-size: 10vw;
+    line-height: 1;
   }
 }
 .section-oss-history .service-event__desc {
@@ -1948,6 +1961,7 @@ figure {
 }
 @media screen and (max-width: 1024px) {
   .section-oss-history .service-event__desc {
+    border: 2px dashed rgba(255, 127, 80, 0.75);
     text-align: center;
     text-wrap: balance;
   }
@@ -2199,8 +2213,13 @@ figure {
   overflow: hidden;
   flex: 1;
   aspect-ratio: 1/1.65;
-  min-width: 320px;
+  min-width: 364px;
   scroll-snap-align: start;
+}
+@media screen and (max-width: 1512px) {
+  .section-competitions .competition-types__figure {
+    min-width: 320px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .section-competitions .competition-types__figure {
@@ -2257,6 +2276,7 @@ figure {
   text-transform: uppercase;
   letter-spacing: -2px;
   font-size: 36px;
+  line-height: 1;
   margin-block-end: var(--panel-gap);
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -3701,6 +3721,7 @@ figure {
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 36px;
+    line-height: 1;
     text-align: center;
     margin-block-end: var(--section-gap-half);
   }

@@ -117,29 +117,42 @@ collections:
             hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
           - name: section_imgs
             label: Section Images
+            label_singular: Image
             widget: list
-            allow_add: false
+            allow_add: true
+            min: 4
+            max: 4
             collapse: true
             required: true
-            field:
-              name: src
-              label: Image Source
-              widget: image
-              required: true
-              hint: Keep below 5MB
-              media_library:
-                config:
-                  max_file_size: 5000000 # 1MB = 1,000,000 bytes
+            hint: Limited to four images
+            fields:
+              - name: title
+                label: Title
+                widget: string
+                required: true
+                hint: "For accessibility. Describe the image while avoiding words like: image, photo, picture, etc."
+              - name: src
+                label: Image Source
+                widget: image
+                required: true
+                hint: Keep below 5MB
+                media_library:
+                  config:
+                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
           - name: section_desc
             label: Section Description (Middle)
             widget: text
             required: true
           - name: values
             label: Value Tiles
+            label_singular: Tile
             widget: list
+            min: 3
+            max: 3
+            allow_add: true
             collapse: true
             required: true
-            allow_add: false
+            hint: Limited to three tiles
             fields:
               - name: title
                 label: Title
@@ -217,14 +230,14 @@ collections:
             required: true
           - name: yog_merch
             label: Rows - Year of Gear Merch
-            label_singular: row
+            label_singular: Row
             widget: list
             summary: "Row: {{fields.items.0.title}} ... {{fields.items.1.title}}"
             required: true
             fields:
               - name: items
                 label: Items
-                label_singular: item
+                label_singular: Item
                 widget: list
                 required: true
                 min: 1
@@ -251,9 +264,13 @@ collections:
                     create: false
           - name: yog_types
             label: Year of Gear Types
+            label_singular: Type
             widget: list
-            allow_add: false
+            min: 4
+            max: 4
+            allow_add: true
             required: true
+            hint: Limited to four types
             fields:
               - name: title
                 label: Title
@@ -342,7 +359,7 @@ collections:
             required: true
             fields:
               - name: column_1
-                label: Column 1
+                label: Images in column 1
                 label_singular: Image
                 widget: list
                 collapsed: true
@@ -362,7 +379,7 @@ collections:
                       config:
                         max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: column_2
-                label: Column 2
+                label: Images in column 2
                 label_singular: Image
                 widget: list
                 collapsed: true
@@ -382,7 +399,7 @@ collections:
                       config:
                         max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: column_3
-                label: Column 3
+                label: Images in column 3
                 label_singular: Image
                 widget: list
                 collapsed: true
@@ -402,7 +419,7 @@ collections:
                       config:
                         max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: column_4
-                label: Column 4
+                label: Images in column 4
                 label_singular: Image
                 widget: list
                 collapsed: true
@@ -422,7 +439,7 @@ collections:
                       config:
                         max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: column_1_mobile
-                label: Column 1 (Mobile)
+                label: Images in column 1 (Mobile)
                 label_singular: Image
                 widget: list
                 collapsed: true
@@ -442,7 +459,7 @@ collections:
                       config:
                         max_file_size: 5000000 # 1MB = 1,000,000 bytes
               - name: column_2_mobile
-                label: Column 2 (Mobile)
+                label: Images in column 2 (Mobile)
                 label_singular: Image
                 widget: list
                 collapsed: true
@@ -521,7 +538,7 @@ collections:
             widget: boolean
             default: true
           - name: list
-            label: All Quotes
+            label: Quotes
             label_singular: Quote
             widget: list
             required: true
@@ -626,7 +643,7 @@ collections:
             required: true
             hint: Display between 3 and 5 logos per row
           - name: img_list
-            label: Logo List
+            label: Installer Logos
             label_singular: Logo
             widget: list
             required: true
@@ -667,7 +684,7 @@ collections:
             required: true
             hint: Display between 3 and 5 logos per row
           - name: img_list
-            label: Logo List
+            label: Financier Logos
             label_singular: Logo
             widget: list
             required: true
@@ -697,7 +714,7 @@ collections:
             required: true
             hint: Semantic page heading for accessibility and SEO. Not visually shown on the page (per design) but improves site indexing and other areas. If left blank, defaults to 'Sunder Tools'
           - name: list
-            label: Tools List
+            label: Tools
             label_singular: Tool
             widget: list
             required: true
@@ -751,7 +768,7 @@ collections:
             widget: boolean
             default: true
           - name: list
-            label: All Quotes
+            label: Quotes
             label_singular: Quote
             widget: list
             required: true
@@ -1038,22 +1055,25 @@ collections:
             widget: text
             required: false
           - name: events
-            label: Service Event
+            label: Service Events
             label_singular: Event
             widget: list
             required: true
             fields:
-              - name: title
-                label: Title (Location)
-                widget: string
-                required: true
-                hint: i.e. Merida, Mexico
               - name: year
                 label: Year
                 widget: number
                 min: 2000
                 max: 2100
                 required: true
+              - name: country
+                label: Country
+                widget: string
+                required: true
+              - name: City
+                label: city
+                widget: string
+                required: false
               - name: graphic
                 label: Graphic
                 widget: image
@@ -1073,7 +1093,7 @@ collections:
                 required: false
                 hint: i.e. "Play Video" or "Register"
               - name: gallery
-                label: Image Gallery
+                label: Gallery Images
                 label_singular: Image
                 allow_add: true
                 widget: list
@@ -1105,7 +1125,7 @@ collections:
             widget: boolean
             default: true
           - name: list
-            label: All Quotes
+            label: Quotes
             label_singular: Quote
             widget: list
             required: true
@@ -1314,6 +1334,7 @@ collections:
             hint: Hex code for overflow color on some devices
           - name: page_descriptions
             label: Page Descriptions
+            label_singular: Description
             allow_add: false
             widget: list
             required: true

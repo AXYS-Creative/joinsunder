@@ -205,8 +205,12 @@
       overflow: hidden;
       flex: 1;
       aspect-ratio: 1 / 1.65;
-      min-width: 320px;
+      min-width: 364px;
       scroll-snap-align: start;
+
+      @include mq-max(xxl) {
+        min-width: 320px;
+      }
 
       @include mq-max(lg) {
         translate: 30px 0;

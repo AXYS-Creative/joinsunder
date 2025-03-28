@@ -14,7 +14,7 @@
 
   .service-event {
     @include row-center(flex-start);
-    gap: var(--section-gap-double);
+    gap: calc(var(--section-gap) * 3);
     width: 100%;
 
     @include mq-max(lg) {
@@ -51,20 +51,24 @@
 
     &__year {
       @include h4;
+      margin-block-end: 12px;
     }
 
-    &__title {
+    &__location {
       @include h3;
 
       @include mq-max(lg) {
-        text-align: center;
-        text-wrap: balance;
+        @include column-center;
       }
-      @include mq-max(md) {
-        @include h4;
-      }
+
       @include mq-max(sm) {
         font-size: 10vw;
+      }
+
+      &-city {
+        @include mq-max(lg) {
+          @include h4;
+        }
       }
     }
 
@@ -72,6 +76,7 @@
       margin-block-start: var(--section-gap-half);
 
       @include mq-max(lg) {
+        border: $test;
         text-align: center;
         text-wrap: balance;
       }

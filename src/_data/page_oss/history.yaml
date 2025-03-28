@@ -3,18 +3,20 @@ section_title: History
 section_desc: What we've achieved is impressive, but we’re just getting started.
 
 events:
-  - title: Afghanistan
-    year: 2021
+  - year: 2021
+    country: Afghanistan
+    city:
     desc: "Sunder created its charity event O.S.S. (Operation Sunder Serves) and donated over $50k to helping civilians evacuate Afghanistan from the Taliban."
     graphic: /static/img/OSS-Emblem-1Afghanistan.png
     cta_url:
     cta_text:
     gallery:
-  - title: Merida, Mexico
-    year: 2022
+  - year: 2022
+    country: Mexico
+    city: Merida
     desc: "Sunder helped build/renovate a community elementary school and donated bikes to the students."
     graphic: /static/img/OSS-Emblem-2Mexico.png
-    cta_url: https://www.dropbox.com/scl/fi/gkfzto0gk50ux9hoidwes/Way-Experience-1Video.mov?rlkey=z18lot4x4ul79abjqybg0gwsd&st=vrfv0oy7&dl=0
+    cta_url: https://www.dropbox.com/scl/fi/rty8m7ra1isbcswv0q8jv/OSS-History-1Video.mov?rlkey=xh7aeis50ghl2qw29dfl9sw50&st=1c767ax0&dl=0
     cta_text: "Play video"
     gallery:
       - title: Sunder reps painting a wall
@@ -37,11 +39,12 @@ events:
         src: /static/img/OSS-Mexico-9Photo.PNG
       - title: A man pulling a wheelbarrow
         src: /static/img/OSS-Mexico-10Photo.PNG
-  - title: Orosi Valley, Costa Rica
-    year: 2024
+  - year: 2024
+    country: Costa Rica
+    city: Orosi Valley
     desc: Sunder helped a local community build a community center and play ground.
     graphic: /static/img/OSS-Emblem-3CostaRica.png
-    cta_url: https://www.dropbox.com/scl/fi/zvl1g4ouji8f96ahf20es/Way-Experience-2Video.mp4?rlkey=131a48hraz7r8d3jtw8ibkyyr&st=t5wmpt02&dl=0
+    cta_url: https://www.dropbox.com/scl/fi/57gdmg2rbch560buyis8l/OSS-History-2Video.mov?rlkey=z76at8all9e3dqh6hq5dnof5p&st=icbls5cs&dl=0
     cta_text: "Play video"
     gallery:
       - title: Shoveling dirt
@@ -64,8 +67,9 @@ events:
         src: /static/img/OSS-CostaRica-9Photo.png
       - title: Ziplining through the jungle
         src: /static/img/OSS-CostaRica-10Photo.png
-  - title: Cuzco, Peru
-    year: 2025
+  - year: 2025
+    country: Peru
+    city: Cuzco
     desc: Sunder is currently preparing to serve in Peru![%br%] Register to join us!
     graphic: /static/img/OSS-Emblem-4Peru.png
     cta_url: /join
