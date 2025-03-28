@@ -68,7 +68,7 @@ collections:
                     label: Button Text Description
                     widget: string
                     required: false
-                    hint: Some text i.e. 'Learn More' is marked down by search bots due to being too vague. Briefly describe what the button does.
+                    hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
                   - name: url
                     label: Button URL
                     widget: string
@@ -110,6 +110,11 @@ collections:
                     widget: string
                     required: false
                     hint: An empty value removes the button
+                  - name: text_desc
+                    label: Button Text Description
+                    widget: string
+                    required: false
+                    hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
                   - name: url
                     label: Button URL
                     widget: string
@@ -201,7 +206,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots due to being too vague. Briefly describe what the button does.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string
@@ -328,25 +333,25 @@ collections:
             label: Section Description
             widget: text
             required: true
-          - name: carousel_autoplay
-            label: Carousel Autoplay
-            widget: object
-            collapsed: true
-            summary: "Autoplay: {{ fields.enabled }} - Interval: {{ fields.interval }}"
-            required: false
-            fields:
-              - name: enabled
-                label: Toggle Autoplay
-                widget: boolean
-                default: false
-                hint: Optional feature to have the video carousel automatically change slides.
-              - name: interval
-                label: Autoplay Interval
-                widget: number
-                min: 1500
-                max: 7500
-                required: true
-                hint: The time (in milliseconds) between the slide transition. 1000ms = 1 second
+          # - name: carousel_autoplay
+          #   label: Carousel Autoplay
+          #   widget: object
+          #   collapsed: true
+          #   summary: "Autoplay: {{ fields.enabled }} - Interval: {{ fields.interval }}"
+          #   required: false
+          #   fields:
+          #     - name: enabled
+          #       label: Toggle Autoplay
+          #       widget: boolean
+          #       default: false
+          #       hint: Optional feature to have the video carousel automatically change slides.
+          #     - name: interval
+          #       label: Autoplay Interval
+          #       widget: number
+          #       min: 1500
+          #       max: 7500
+          #       required: true
+          #       hint: The time (in milliseconds) between the slide transition. 1000ms = 1 second
           - name: videos
             label: Carousel Videos
             label_singular: Video
@@ -549,7 +554,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string
@@ -643,7 +648,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string
@@ -789,7 +794,7 @@ collections:
                     label: Button Text Description
                     widget: string
                     required: false
-                    hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                    hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
                   - name: url
                     label: Button URL
                     widget: string
@@ -1011,7 +1016,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string
@@ -1032,7 +1037,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string
@@ -1083,7 +1088,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string
@@ -1151,7 +1156,7 @@ collections:
                     label: Button Text Description
                     widget: string
                     required: false
-                    hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                    hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
                   - name: url
                     label: Button URL
                     widget: string
@@ -1257,7 +1262,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string
@@ -1278,7 +1283,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string
@@ -1328,7 +1333,7 @@ collections:
                 label: Button Text Description
                 widget: string
                 required: false
-                hint: Some text i.e. 'Learn More' is marked down by search bots due to being too vague. Briefly describe what the button does.
+                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
               - name: url
                 label: Button URL
                 widget: string

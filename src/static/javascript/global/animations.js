@@ -256,7 +256,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   trigger: ".values-pin-step-9", // Change the step to alter sequence
                   start: `top ${bodyPadding}px`,
                   end: `bottom ${bodyPadding}px`,
-                  scrub: scrubValue,
+                  scrub: 0.5,
                 },
               }
             );
@@ -273,7 +273,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   trigger: ".values-pin-step-9", // Change the step to alter sequence
                   start: `top ${bodyPadding}px`,
                   end: `bottom ${bodyPadding}px`,
-                  scrub: scrubValue,
+                  scrub: 1,
                 },
               }
             );
