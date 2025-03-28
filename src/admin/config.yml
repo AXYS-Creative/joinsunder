@@ -53,15 +53,22 @@ collections:
                 label: Large Title
                 widget: string
                 required: true
-              - name: cta_text
-                label: Button Text
-                widget: string
-                required: true
-                hint: Leave empty to remove the button
-              - name: cta_url
-                label: Button URL
-                widget: string
-                required: true
+              - name: cta
+                label: Call To Action
+                widget: object
+                summary: "{{ fields.text }} → {{ fields.url }}"
+                required: false
+                fields:
+                  - name: text
+                    label: Button Text
+                    widget: string
+                    required: false
+                    hint: An empty value removes the button
+                  - name: url
+                    label: Button URL
+                    widget: string
+                    required: false
+                    hint: i.e. /join
           - name: internal_panel
             label: Internal Panel (joinsunder.com)
             widget: object
@@ -87,15 +94,22 @@ collections:
                 label: Large Title
                 widget: string
                 required: true
-              - name: cta_text
-                label: Button Text
-                widget: string
-                required: true
-                hint: Leave empty to remove the button
-              - name: cta_url
-                label: Button URL
-                widget: string
-                required: true
+              - name: cta
+                label: Call To Action
+                widget: object
+                summary: "{{ fields.text }} → {{ fields.url }}"
+                required: false
+                fields:
+                  - name: text
+                    label: Button Text
+                    widget: string
+                    required: false
+                    hint: An empty value removes the button
+                  - name: url
+                    label: Button URL
+                    widget: string
+                    required: false
+                    hint: i.e. /join
   - name: page_sunder_way
     label: Page - Sunder Way
     files:

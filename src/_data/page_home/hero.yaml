@@ -5,14 +5,16 @@ external_panel:
   logo: /static/img/logo-external-light.svg
   pre_title: Learn more about
   title: going solar
-  cta_text: Learn More
-  cta_text_description: Learn More about Sunder Energy
-  cta_url: https://sunderenergy.com/
+  cta:
+    text: Learn More
+    text_description: Learn More about Sunder Energy
+    url: https://sunderenergy.com/
 internal_panel:
   bg_img: /static/img/Landing-Hero-BG2.png
   logo: /static/img/logo-squad-light.svg
   pre_title: Join America’s leading
   title: solar company
-  cta_text: Learn More
-  cta_text_description: Learn More about Joining Sunder
-  cta_url: /sunder-way
+  cta:
+    text: Learn More
+    text_description: Learn More about Joining Sunder
+    url: /sunder-way
