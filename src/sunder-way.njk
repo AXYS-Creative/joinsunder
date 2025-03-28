@@ -49,8 +49,7 @@ hide_footer: false
     <p class="ethos-bottom__p">{{ page_sunder_way.ethos.cta_p }}</p>
 
     <!-- prettier-ignore -->
-    {% set cta_1_text = page_sunder_way.ethos.cta.text %}
-    {% set cta_1_url = page_sunder_way.ethos.cta.url %}
+    {% set cta_1 = page_sunder_way.ethos.cta %}
     {% set cta_1_outline = true %}
     {% include "./_includes/components/cta-group.njk" %}
   </div>
@@ -224,21 +223,20 @@ hide_footer: false
 {% endif %}
 
 <!-- prettier-ignore -->
-{% set section_id = "operation-sunder-serves" %}
-{% set section_graphic = page_sunder_way.oss.graphic %}
-{% set graphic_title = page_sunder_way.oss.section_title | removeTokens %}
-{% set section_h1 = '' %}
-{% set section_h2 = page_sunder_way.oss.section_title %}
-{% set section_p = page_sunder_way.oss.section_desc %}
-{% set section_bg = page_sunder_way.oss.section_bg %}
-{% set cta_1_text = page_sunder_way.oss.cta.text %}
-{% set cta_1_url = page_sunder_way.oss.cta.url %}
-{% set cta_1_outline = false %}
-{% set is_hero = false %}
-{% set container_tag = 'section' %}
-{% set section_img_hero_class = 'oss-section' %}
-{% set img_hero_subcontent = false %}
 {% if page_sunder_way.oss.toggle_section %}
+  {% set section_id = "operation-sunder-serves" %}
+  {% set section_graphic = page_sunder_way.oss.graphic %}
+  {% set graphic_title = page_sunder_way.oss.section_title | removeTokens %}
+  {% set section_h1 = '' %}
+  {% set section_h2 = page_sunder_way.oss.section_title %}
+  {% set section_p = page_sunder_way.oss.section_desc %}
+  {% set section_bg = page_sunder_way.oss.section_bg %}
+  {% set cta_1 = page_sunder_way.oss.cta %}
+  {% set cta_1_outline = false %}
+  {% set is_hero = false %}
+  {% set container_tag = 'section' %}
+  {% set section_img_hero_class = 'oss-section' %}
+  {% set img_hero_subcontent = false %}
   {% include "./_includes/partials/partial-img-hero.njk" %}
 {% endif %}
 

@@ -6,4 +6,5 @@ section_bg: /static/img/OSS-Hero-BG.jpg
 
 cta:
   text: Register
+  text_desc: Register to serve with Sunder
   url: /join

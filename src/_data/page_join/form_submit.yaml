@@ -3,8 +3,10 @@ section_desc: We will review your information and get in touch with you at our e
 
 cta_1:
   text: Return home
+  text_desc:
   url: /
 
 cta_2:
   text:
+  text_desc:
   url:

@@ -20,4 +20,5 @@ values:
 cta_p: Deception has no place in our business. Our reputation is built on the trust of those we serve. At Sunder Energy, we win with integrity—always.
 cta:
   text: Join the squad
+  text_desc:
   url: /join

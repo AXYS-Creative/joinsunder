@@ -6,4 +6,5 @@ section_bg: /static/img/Way-OSS-BG.png
 graphic: /static/img/Way-OSS-Emblem.png
 cta:
   text: Learn more
+  text_desc: Learn More about how Sunder serves
   url: /operation-sunder-serves

@@ -13,8 +13,7 @@ hide_footer: false
 {% set section_h1 = page_oss.hero.section_title %}
 {% set section_p = page_oss.hero.section_desc %}
 {% set section_bg = page_oss.hero.section_bg %}
-{% set cta_1_text = page_oss.hero.cta.text %}
-{% set cta_1_url = page_oss.hero.cta.url %}
+{% set cta_1 = page_oss.hero.cta %}
 {% set is_hero = true %}
 {% set container_tag = 'section' %}
 {% set section_img_hero_class = 'oss-page' %}
@@ -51,13 +50,11 @@ hide_footer: false
         {% set img_carousel = true %}
         {% set list = item.gallery %}
         {% set cta_1_outline = true %}
-        {% set cta_url = item.cta_url %}
-        {% set cta_text = item.cta_text %}
+        {% set cta_1 = item.cta %}
         {% include "./_includes/components/carousel-swiper.njk" %}
 
-        {% if (not item.gallery) and item.cta_text %}
-          {% set cta_1_url = item.cta_url %}
-          {% set cta_1_text = item.cta_text %}
+        {% if (not item.gallery) and item.cta.text %}
+          {% set cta_1 = item.cta %}
           {% include "./_includes/components/cta-group.njk" %}
         {% endif %}
       </div>

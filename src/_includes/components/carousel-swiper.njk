@@ -29,15 +29,15 @@
     </div>
 
     <!-- prettier-ignore -->
-    {% if cta_text %}
+    {% if cta_1.text and cta_1.url %}
     <div class="carousel__controls-cta">
       <button
         class="video-toggle carousel-cta cta-1 {%if cta_1_outline%}outline{%endif%} tab-element-page"
-        data-src="{{ cta_url }}"
+        data-src="{{ cta_1.url }}"
         aria-label="Play video: {{ vid_title }}"
         aria-controls="video-overlay"
       >
-        {{ cta_text }}
+        {{ cta_1.text }}
       </button>
     </div>
     {% endif %}

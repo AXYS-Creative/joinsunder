@@ -3,8 +3,10 @@ section_desc: The page you’re looking for doesn’t exist.
 
 cta_1:
   text: Return home
+  text_desc:
   url: /
 
 cta_2:
   text:
+  text_desc:
   url:

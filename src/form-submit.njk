@@ -16,10 +16,8 @@ hide_footer: false
   </p>
 
   <!-- prettier-ignore -->
-  {% set cta_1_text = page_join.form_submit.cta_1.text %}
-  {% set cta_1_url = page_join.form_submit.cta_1.url %}
+  {% set cta_1 = page_join.form_submit.cta_1 %}
   {% set cta_1_outline = true %}
-  {% set cta_2_text = page_join.form_submit.cta_2.text %}
-  {% set cta_2_url = page_join.form_submit.cta_2.url %}
+  {% set cta_2 = page_join.form_submit.cta_2 %}
   {% include "./_includes/components/cta-group.njk" %}
 </section>

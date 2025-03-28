@@ -18,4 +18,5 @@ links:
     url: "https://sunderenergy.com/"
 cta:
   text: Join the squad
+  text_desc:
   url: /join

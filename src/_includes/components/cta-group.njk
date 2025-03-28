@@ -1,23 +1,23 @@
 <div class="cta-group">
-  {% if cta_1_text and cta_1_url %}
+  {% if cta_1.text and cta_1.url %}
   <a
     class="cta-1 {%if cta_1_outline%}outline{%endif%} tab-element-page"
-    href="{{ cta_1_url }}"
-    aria-label="{{ cta_1_text_description or cta_1_text }}"
+    href="{{ cta_1.url }}"
+    aria-label="{{ cta_1.text_desc or cta_1.text }}"
   >
-    {{ cta_1_text }}
-    <span class="sr-only">{{ cta_1_text_description }}</span>
+    {{ cta_1.text }}
+    <span class="sr-only">{{ cta_1.text_desc }}</span>
   </a>
   {% endif %}
   <!-- prettier-ignore -->
-  {% if cta_2_text and cta_2_url %}
+  {% if cta_2.text and cta_2.url %}
   <a
     class="cta-2 {%if cta_2_outline%}outline{%endif%} tab-element-page"
-    href="{{ cta_2_url }}"
-    aria-label="{{ cta_2_text_description or cta_2_text }}"
+    href="{{ cta_2.url }}"
+    aria-label="{{ cta_2.text_desc or cta_2.text }}"
   >
-    {{ cta_2_text }}
-    <span class="sr-only">{{ cta_2_text_description }}</span>
+    {{ cta_2.text }}
+    <span class="sr-only">{{ cta_2.text_desc }}</span>
   </a>
   {% endif %}
 </div>

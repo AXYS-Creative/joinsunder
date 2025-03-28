@@ -64,6 +64,11 @@ collections:
                     widget: string
                     required: false
                     hint: An empty value removes the button
+                  - name: text_desc
+                    label: Button Text Description
+                    widget: string
+                    required: false
+                    hint: Some text i.e. 'Learn More' is marked down by search bots due to being too vague. Briefly describe what the button does.
                   - name: url
                     label: Button URL
                     widget: string
@@ -192,6 +197,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots due to being too vague. Briefly describe what the button does.
               - name: url
                 label: Button URL
                 widget: string
@@ -535,6 +545,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
               - name: url
                 label: Button URL
                 widget: string
@@ -624,6 +639,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
               - name: url
                 label: Button URL
                 widget: string
@@ -765,6 +785,11 @@ collections:
                     widget: string
                     required: false
                     hint: An empty value removes the button
+                  - name: text_desc
+                    label: Button Text Description
+                    widget: string
+                    required: false
+                    hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
                   - name: url
                     label: Button URL
                     widget: string
@@ -982,6 +1007,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
               - name: url
                 label: Button URL
                 widget: string
@@ -998,6 +1028,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
               - name: url
                 label: Button URL
                 widget: string
@@ -1044,6 +1079,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
               - name: url
                 label: Button URL
                 widget: string
@@ -1096,16 +1136,27 @@ collections:
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
-              - name: cta_url
-                label: Button URL
-                widget: string
+              - name: cta
+                label: Call To Action
+                widget: object
+                summary: "{{ fields.text }} → {{ fields.url }}"
                 required: false
-                hint: i.e. URL to the service video or registration page. An empty value removes the button
-              - name: cta_text
-                label: Button Text
-                widget: string
-                required: false
-                hint: i.e. "Play Video" or "Register"
+                fields:
+                  - name: text
+                    label: Button Text
+                    widget: string
+                    required: false
+                    hint: i.e. "Play Video" or "Register". An empty value removes the button
+                  - name: text_desc
+                    label: Button Text Description
+                    widget: string
+                    required: false
+                    hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
+                  - name: url
+                    label: Button URL
+                    widget: string
+                    required: false
+                    hint: URL to the service video (requires image gallery) or registration page. An empty value removes the button
               - name: gallery
                 label: Gallery Images
                 label_singular: Image
@@ -1202,6 +1253,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
               - name: url
                 label: Button URL
                 widget: string
@@ -1218,6 +1274,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots for being too vague. Briefly describe what the button does or use more descriptive text.
               - name: url
                 label: Button URL
                 widget: string
@@ -1263,6 +1324,11 @@ collections:
                 widget: string
                 required: false
                 hint: An empty value removes the button
+              - name: text_desc
+                label: Button Text Description
+                widget: string
+                required: false
+                hint: Some text i.e. 'Learn More' is marked down by search bots due to being too vague. Briefly describe what the button does.
               - name: url
                 label: Button URL
                 widget: string

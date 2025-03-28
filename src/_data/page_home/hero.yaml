@@ -7,7 +7,7 @@ external_panel:
   title: going solar
   cta:
     text: Learn More
-    text_description: Learn More about Sunder Energy
+    text_desc: Learn More about Sunder Energy
     url: https://sunderenergy.com/
 internal_panel:
   bg_img: /static/img/Landing-Hero-BG2.png
@@ -16,5 +16,5 @@ internal_panel:
   title: solar company
   cta:
     text: Learn More
-    text_description: Learn More about Joining Sunder
+    text_desc: Learn More about joining Sunder
     url: /sunder-way

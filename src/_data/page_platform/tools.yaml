@@ -9,6 +9,7 @@ list:
     section_bg: /static/img/Platform-Tools-1Enzy.png
     cta:
       text: Learn More
+      text_desc: Learn More about Enzy
       url: /join
     class: enzy
   - title: Merdeka
@@ -17,6 +18,7 @@ list:
     section_bg: /static/img/Platform-Tools-2Merdeka.png
     cta:
       text: Learn More
+      text_desc: Learn More about Merdeka
       url: /join
     class: merdeka
   - title: Captivate IQ
@@ -29,5 +31,6 @@ list:
     section_bg: /static/img/Platform-Tools-3CIQ.png
     cta:
       text: Learn More
+      text_desc: Learn More about CaptivateIQ
       url: /join
     class: ciq

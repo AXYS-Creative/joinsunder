@@ -6,4 +6,5 @@ section_bg: /static/img/Platform-Hero-BG.png
 
 cta:
   text: Join The Squad
+  text_desc:
   url: /join

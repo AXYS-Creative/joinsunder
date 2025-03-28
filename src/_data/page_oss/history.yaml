@@ -8,16 +8,20 @@ events:
     city:
     desc: "Sunder created its charity event O.S.S. (Operation Sunder Serves) and donated over $50k to helping civilians evacuate Afghanistan from the Taliban."
     graphic: /static/img/OSS-Emblem-1Afghanistan.png
-    cta_url:
-    cta_text:
+    cta:
+      text:
+      text_desc:
+      url:
     gallery:
   - year: 2022
     country: Mexico
     city: Merida
     desc: "Sunder helped build/renovate a community elementary school and donated bikes to the students."
     graphic: /static/img/OSS-Emblem-2Mexico.png
-    cta_url: https://www.dropbox.com/scl/fi/rty8m7ra1isbcswv0q8jv/OSS-History-1Video.mov?rlkey=xh7aeis50ghl2qw29dfl9sw50&st=1c767ax0&dl=0
-    cta_text: "Play video"
+    cta:
+      text: Play video
+      text_desc:
+      url: https://www.dropbox.com/scl/fi/rty8m7ra1isbcswv0q8jv/OSS-History-1Video.mov?rlkey=xh7aeis50ghl2qw29dfl9sw50&st=1c767ax0&dl=0
     gallery:
       - title: Sunder reps painting a wall
         src: /static/img/OSS-Mexico-1Photo.PNG
@@ -44,8 +48,10 @@ events:
     city: Orosi Valley
     desc: Sunder helped a local community build a community center and play ground.
     graphic: /static/img/OSS-Emblem-3CostaRica.png
-    cta_url: https://www.dropbox.com/scl/fi/57gdmg2rbch560buyis8l/OSS-History-2Video.mov?rlkey=z76at8all9e3dqh6hq5dnof5p&st=icbls5cs&dl=0
-    cta_text: "Play video"
+    cta:
+      text: Play video
+      text_desc:
+      url: https://www.dropbox.com/scl/fi/57gdmg2rbch560buyis8l/OSS-History-2Video.mov?rlkey=z76at8all9e3dqh6hq5dnof5p&st=icbls5cs&dl=0
     gallery:
       - title: Shoveling dirt
         src: /static/img/OSS-CostaRica-1Photo.png
@@ -72,6 +78,8 @@ events:
     city: Cuzco
     desc: Sunder is currently preparing to serve in Peru![%br%] Register to join us!
     graphic: /static/img/OSS-Emblem-4Peru.png
-    cta_url: /join
-    cta_text: "Register"
+    cta:
+      text: Register
+      text_desc: Register for OSS Cuzco, Peru
+      url: /join
     gallery:

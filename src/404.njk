@@ -13,10 +13,8 @@ hide_footer: false
   <p class="hero-alert__desc">{{ page_404.hero.section_desc }}</p>
 
   <!-- prettier-ignore -->
-  {% set cta_1_text = page_404.hero.cta_1.text %}
-  {% set cta_1_url = page_404.hero.cta_1.url %}
+  {% set cta_1 = page_404.hero.cta_1 %}
   {% set cta_1_outline = true %}
-  {% set cta_2_text = page_404.hero.cta_2.text %}
-  {% set cta_2_url = page_404.hero.cta_2.url %}
+  {% set cta_2 = page_404.hero.cta_2 %}
   {% include "./_includes/components/cta-group.njk" %}
 </section>
