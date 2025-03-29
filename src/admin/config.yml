@@ -926,6 +926,20 @@ collections:
             label: Section Title
             widget: string
             required: true
+          - name: history
+            label: History
+            allow_add: false
+            widget: list
+            required: true
+            fields:
+              - name: year
+                label: Year
+                widget: number
+                required: true
+              - name: state_count
+                label: State Count
+                widget: number
+                required: true
       - name: leadership
         label: Section - Leadership
         file: src/_data/page_about/leadership.yaml
