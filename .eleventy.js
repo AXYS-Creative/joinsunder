@@ -2,9 +2,7 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
-const fs = require("fs");
-const path = require("path");
-const Image = require("@11ty/eleventy-img");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -21,47 +19,25 @@ module.exports = function (eleventyConfig) {
   });
 
   // 11ty-img optimizing (pre formatting before getting to Netlify)
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "image",
-    async function (
-      src,
-      alt,
-      widths = [320, 640, 1280, 1920],
-      formats = ["avif", "webp", "jpeg"]
-    ) {
-      const outputDir = "./src/static/images/";
-      const urlPath = "/static/images/";
-      const cacheDir = ".cache/eleventy-img";
-
-      const fileName = path.basename(src);
-      const baseName = fileName.replace(path.extname(fileName), "");
-      const optimizedPath = path.join(outputDir, `${baseName}-320.jpeg`);
-
-      // If optimized image exists, return <picture> markup
-      if (fs.existsSync(optimizedPath)) {
-        let metadata = await Image(src, {
-          widths,
-          formats,
-          outputDir,
-          urlPath,
-          cacheOptions: {
-            duration: "30d",
-            directory: cacheDir,
-          },
-        });
-
-        return Image.generateHTML(metadata, {
-          alt,
-          loading: "lazy",
-          decoding: "async",
-        });
-      }
-
-      // Otherwise, fallback to raw image
-      const publicPath = src.replace(/^src\//, "/");
-      return `<img src="${publicPath}" alt="${alt}" loading="lazy" decoding="async">`;
-    }
-  );
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "jpeg"],
+    widths: [320, 640, 1280, 1920],
+    htmlOptions: {
+      imgAttributes: {
+        sizes:
+          "(max-width: 600px) 320px, (max-width: 1200px) 640px, (max-width: 1800px) 1280px, 1920px",
+        loading: "lazy",
+        decoding: "async",
+      },
+      pictureAttributes: {},
+    },
+    cacheOptions: {
+      duration: "30d",
+      directory: ".cache/eleventy-img",
+    },
+    outputDir: "./src/static/images/", // ✅ This is where images will be written
+    urlPath: "/static/images/", // ✅ This is how they’ll be referenced in HTML
+  });
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
