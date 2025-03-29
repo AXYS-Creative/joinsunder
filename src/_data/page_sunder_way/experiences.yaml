@@ -1,11 +1,10 @@
 toggle_section: true
 section_title: Experiences
-section_desc: From exhilarating excursions to inspiring events, explore experiences that take you to new heights
-
+section_desc: From exhilarating excursions to inspiring events, explore
+  experiences that take you to new heights
 carousel_autoplay:
   enabled: false
-  interval: 3200 # set min of 1500
-
+  interval: 3200
 videos:
   - title: XCaret - 2025 Top Performers
     poster: /static/img/Way-Experience-1Video.png
@@ -31,7 +30,6 @@ videos:
   - title: 2024 Sunder Elite
     poster: /static/img/Way-Experience-8Video.png
     src: https://www.dropbox.com/scl/fi/qc0h2da9h0njdrgynowmm/Way-Experience-8Video.mov?rlkey=toj4ii1zzf766r2tzqdddi5vc&st=r4t56ycg&dl=0
-
 toggle_collage: true
 collage:
   column_1:
@@ -97,7 +95,7 @@ collage:
     - title: Two men holding trophies
       src: /static/img/Way-Experience-29Photo.png
     - title: Beach volleyball
-      src: /static/img/Way-Experience-30Photo.png
+      src: /static/img/grid-flow-img.png
   column_1_mobile:
     - title: Group by a plane
       src: /static/img/Way-Experience-9Photo.png
