@@ -182,21 +182,82 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
       // Page - About
       {
         // Values Section (Hero)
-        if (document.querySelector(".section-values") && minLg) {
-          const pinDuration = "+=200%";
-          let bodyPadding = maxXl ? 64 : 96;
+        if (document.querySelector(".section-values")) {
+          // LG and above
+          if (minLg) {
+            const pinDuration = "+=200%";
+            let bodyPadding = maxXl ? 64 : 96;
 
-          // Pinning Values Section
-          gsap.to(".values-pin", {
-            scrollTrigger: {
-              trigger: ".values-pin",
-              start: `top ${bodyPadding}px`,
-              end: pinDuration,
-              pin: true,
-            },
-          });
+            // Pinning Values Section
+            gsap.to(".values-pin", {
+              scrollTrigger: {
+                trigger: ".values-pin",
+                start: `top ${bodyPadding}px`,
+                end: pinDuration,
+                pin: true,
+              },
+            });
 
-          // Values step two (fading each word and frame)
+            // Values step three (shifting content while showing text)
+            {
+              let shiftOffset = 20;
+              let scrubValue = 1;
+
+              // Fading in values text (step 3)
+              gsap.fromTo(
+                ".section-values__text",
+                {
+                  x: `-${shiftOffset}vw`,
+                  opacity: 0,
+                },
+                {
+                  x: 0,
+                  opacity: 1,
+                  scrollTrigger: {
+                    trigger: ".values-pin-step-9", // Change the step to alter sequence
+                    start: `top ${bodyPadding}px`,
+                    end: `bottom ${bodyPadding}px`,
+                    scrub: 0.5,
+                  },
+                }
+              );
+
+              // Pushing SVG aside (step 3)
+              gsap.fromTo(
+                ".section-values__figure",
+                {
+                  marginLeft: 0, // don't use x value, struggles with css translate
+                },
+                {
+                  marginLeft: `${shiftOffset}vw`,
+                  scrollTrigger: {
+                    trigger: ".values-pin-step-9", // Change the step to alter sequence
+                    start: `top ${bodyPadding}px`,
+                    end: `bottom ${bodyPadding}px`,
+                    scrub: 1,
+                  },
+                }
+              );
+            }
+          }
+
+          // Mobile
+          if (maxLg) {
+            let mobileSpacer = document.querySelector(".mobile-spacer");
+            let smDuration = mobileSpacer.offsetHeight; // Duration controled by html element's height
+
+            // Mobile — Pin for values svg
+            gsap.to(".section-values__figure", {
+              scrollTrigger: {
+                trigger: ".section-values__figure",
+                start: `center center`,
+                end: `+=${smDuration}`,
+                pin: true,
+              },
+            });
+          }
+
+          // All viewports — Values step two (fading each word and frame)
           {
             let scrubValue = 0.5;
 
@@ -232,48 +293,6 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   end: "600% 25%",
                   scrub: scrubValue,
                   // markers: navyMarkers,
-                },
-              }
-            );
-          }
-
-          // Values step three (shifting content while showing text)
-          {
-            let shiftOffset = 20;
-            let scrubValue = 1;
-
-            // Fading in values text (step 3)
-            gsap.fromTo(
-              ".section-values__text",
-              {
-                x: `-${shiftOffset}vw`,
-                opacity: 0,
-              },
-              {
-                x: 0,
-                opacity: 1,
-                scrollTrigger: {
-                  trigger: ".values-pin-step-9", // Change the step to alter sequence
-                  start: `top ${bodyPadding}px`,
-                  end: `bottom ${bodyPadding}px`,
-                  scrub: 0.5,
-                },
-              }
-            );
-
-            // Pushing SVG aside (step 3)
-            gsap.fromTo(
-              ".section-values__svg",
-              {
-                marginLeft: 0, // don't use x value, struggles with css translate
-              },
-              {
-                marginLeft: `${shiftOffset}vw`,
-                scrollTrigger: {
-                  trigger: ".values-pin-step-9", // Change the step to alter sequence
-                  start: `top ${bodyPadding}px`,
-                  end: `bottom ${bodyPadding}px`,
-                  scrub: 1,
                 },
               }
             );

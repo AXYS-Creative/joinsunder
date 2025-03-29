@@ -62,12 +62,16 @@
       }
 
       @include mq-max(sm) {
-        font-size: 10vw;
+        font-size: 10.8vw;
       }
 
       &-city {
         @include mq-max(lg) {
           @include h4;
+
+          @include mq-max(sm) {
+            font-size: 8vw;
+          }
         }
       }
     }

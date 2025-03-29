@@ -153,6 +153,10 @@ $test-bg: rgba(navy, 0.75);
 
     --radius: 5px;
   }
+
+  @media (max-width: 480px) {
+    --body-padding: 12px;
+  }
 }
 
 // If you add a dark/light theme

@@ -7,20 +7,11 @@
   margin-block-start: var(--top-spacing-header);
   margin-block-end: var(--section-gap-double);
 
-  // @include mq-min(lg) {
-  //   @include partial-height-section; // Height messing with pin
-  // }
-
-  @include mq-max(lg) {
-    flex-direction: column;
-  }
-
   .values-pin {
     --framing-padding: calc(
       calc(var(--body-padding-double) + var(--header-height) * 4)
     );
 
-    // border: $test;
     @include row-center(flex-start);
     gap: var(--section-gap-double);
 
@@ -34,7 +25,7 @@
     }
 
     @include mq-max(lg) {
-      @include column-center;
+      @include column-center(flex-start);
     }
   }
 
@@ -58,13 +49,17 @@
     }
   }
 
-  &__svg {
-    height: 100%;
+  &__figure {
     flex-shrink: 0;
+    width: 92%;
+    max-width: 520px;
+    aspect-ratio: 1;
 
     @include mq-min(lg) {
       @include absolute-center;
       width: 38%;
+      max-width: 100%;
+      height: auto;
     }
 
     .values-svg {
@@ -73,31 +68,38 @@
       fill: var(--hero-color--primary);
 
       &__frame {
-        @include mq-min(lg) {
-          opacity: 0;
-        }
+        opacity: 0;
       }
 
       &__word {
-        @include mq-min(lg) {
-          opacity: 0;
-        }
+        opacity: 0;
       }
 
       &__sunder-sun {
-        @include mq-min(lg) {
-          animation: reveal-sun $ease 0.125s forwards;
-          opacity: 0;
-          translate: 0 196px;
+        animation: reveal-sun $ease 0.125s forwards;
+        opacity: 0;
+        translate: 0 196px;
 
-          @keyframes reveal-sun {
-            to {
-              opacity: 1;
-              translate: 0 0px;
-            }
+        @keyframes reveal-sun {
+          to {
+            opacity: 1;
+            translate: 0 0px;
           }
         }
       }
+    }
+  }
+
+  .mobile-spacer {
+    height: 1950px; // This hooks up to the gsap duration
+    width: 12px;
+    align-self: flex-end;
+  }
+
+  .values-pin-steps {
+    // Control mobile timing (delay)
+    @include mq-max(lg) {
+      margin-block-start: 320px;
     }
   }
 }
@@ -210,6 +212,9 @@
     }
 
     @include mq-max(md) {
+      margin-block-start: calc(
+        var(--body-padding-double) + var(--header-height)
+      );
       align-self: center;
     }
 
