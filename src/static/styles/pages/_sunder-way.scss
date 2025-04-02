@@ -195,7 +195,7 @@
       // translate: -30px 0;
       // padding-inline-start: 48px; // doesn't work for some reason
       padding-inline-end: 32px;
-      width: calc(100vw - var(--body-padding-double) + 6px);
+      width: calc(100vw - var(--body-padding-double));
       // width: 100vw;
     }
 
@@ -213,7 +213,7 @@
       }
 
       @include mq-max(lg) {
-        translate: 30px 0;
+        translate: 12px 0;
       }
 
       &:hover {

@@ -531,3 +531,49 @@ hide_footer: false
   </div>
 </section>
 {% endif %}
+
+<!-- prettier-ignore -->
+{% if page_about.timeline.toggle_section %}
+<section class="section-timeline section-gradient">
+  <div class="timeline-pin">
+    <h2 class="section-timeline__title section-gradient__title">
+      {{ page_about.timeline.section_title }}
+    </h2>
+    <p class="section-timeline__desc section-gradient__desc">
+      {{ page_about.timeline.section_desc }}
+    </p>
+
+    <div class="timeline">
+      {% for event in page_about.timeline.events %}
+      <div
+        class="timeline__event timeline__event-{{
+          loop.index
+        }} {%if loop.last%}timeline__event-last{%endif%}"
+      >
+        <h3 class="timeline__event-year">{{ event.year }}</h3>
+        <div class="timeline__event-circle"></div>
+        <p class="timeline__event-desc">{{ event.desc }}</p>
+      </div>
+      {% endfor %}
+      <div class="timeline__bar"></div>
+    </div>
+  </div>
+  <div class="timeline-pin-steps pin-steps" aria-hidden="true">
+    <div class="timeline-pin-step timeline-pin-step-1 pin-step"></div>
+    {% for event in page_about.timeline.events %}
+    <div
+      class="timeline-pin-step timeline-pin-step-{{ loop.index + 1 }} pin-step"
+    ></div>
+    {% endfor %}
+
+    <!-- prettier-ignore -->
+    {# Add 3 extra divs after the events #}
+    {% set offset = page_about.timeline.events | length + 2 %}
+    {% for i in range(0, 2) %}
+    <div
+      class="timeline-pin-step timeline-pin-step-{{ offset + i }} pin-step"
+    ></div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

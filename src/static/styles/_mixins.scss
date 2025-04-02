@@ -131,7 +131,7 @@ $min-breakpoints: (
   line-height: 1;
 }
 
-// Landing page
+// Landing page & Timeline (about page)
 @mixin h5 {
   @include heading-text;
   font-size: 24px;
@@ -158,8 +158,13 @@ $min-breakpoints: (
     }
   }
 
-  // used on form page
+  // used on timeline
   @if $size == sm {
+    --font-size: 22px;
+  }
+
+  // used on form page
+  @if $size == xs {
     --font-size: 18px;
 
     @include mq-max(lg) {
@@ -268,11 +273,11 @@ $min-breakpoints: (
 
 // Home & Join pages
 @mixin full-height-section {
-  height: max(750px, calc(100vh - var(--body-padding-sm-double)));
+  height: max(750px, calc(100lvh - var(--body-padding-sm-double)));
   padding: 0;
 
   @include mq-max(xxl) {
-    height: max(620px, calc(100vh - var(--body-padding-sm-double)));
+    height: max(620px, calc(100lvh - var(--body-padding-sm-double)));
   }
 
   @include mq-max(lg) {

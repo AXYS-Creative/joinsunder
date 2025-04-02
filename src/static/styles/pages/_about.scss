@@ -16,7 +16,7 @@
     gap: var(--section-gap-double);
 
     @include mq-min(lg) {
-      height: calc(100vh - var(--framing-padding)); // Center for pinning
+      height: calc(100lvh - var(--framing-padding)); // Center for pinning
       min-height: 450px;
     }
 
@@ -420,7 +420,7 @@
       &:nth-of-type(2) {
         .sequence {
           @include mq-motion-allow {
-            transition: transform 1.35s $ease;
+            transition: transform 1s $ease; // from 1.35
           }
         }
       }
@@ -533,7 +533,7 @@
     padding-bottom: 75vh; // Adjust end of animation (also see pinDuration)
 
     .growth-pin-step {
-      scroll-margin-top: -196px; // Really crossing the threshold
+      scroll-margin-top: -128px; // Really crossing the threshold
     }
   }
 }
@@ -613,4 +613,98 @@
       }
     }
   }
+}
+
+.section-timeline {
+  position: relative;
+  padding-block-end: var(--section-gap-double);
+
+  &__desc {
+    @include mq-max(lg) {
+      text-align: left;
+    }
+    @include mq-max(md) {
+      text-align: center;
+    }
+  }
+
+  .timeline {
+    --line-height: 3px;
+    --circle-size: 24px;
+    --event-gap: 48px;
+
+    @include row-center(space-between);
+    position: relative;
+    width: 100%;
+    margin-block-start: var(--section-gap-double);
+
+    @include mq-max(md) {
+      overflow: auto;
+      scroll-snap-type: x mandatory;
+      gap: var(--event-gap);
+    }
+
+    &__event {
+      @include column-center;
+      gap: 12px;
+      text-align: center;
+      z-index: 1;
+
+      @include mq-max(md) {
+        min-width: 96px;
+        scroll-snap-align: start;
+
+        &:first-of-type {
+          margin-inline-start: 48px;
+        }
+        &-last {
+          margin-inline-end: 48px;
+        }
+      }
+
+      &-year {
+        @include h5;
+      }
+
+      &-circle {
+        width: var(--circle-size);
+        height: var(--circle-size);
+        border-radius: 50%;
+        border: var(--line-height) solid var(--hero-color--primary);
+        background-color: var(--background-color);
+
+        @include mq-max(md) {
+          position: relative;
+
+          &::before {
+            content: "";
+            @include absolute-center;
+            display: flex;
+            height: var(--line-height);
+            width: calc(100% + calc(var(--event-gap) * 2.75));
+            background-color: var(--hero-color--primary);
+            z-index: -1;
+          }
+        }
+      }
+
+      &-desc {
+        @include body-font-styles(sm);
+      }
+    }
+
+    &__bar {
+      position: absolute;
+      top: 5ch;
+      left: 0;
+      width: 0%;
+      height: var(--line-height);
+      background: var(--hero-color--primary);
+    }
+  }
+
+  // .timeline-pin-steps {
+  //   border: $test;
+  //   // padding-block-end: 500px;
+  // }
 }

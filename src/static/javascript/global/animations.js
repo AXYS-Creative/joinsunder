@@ -185,7 +185,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
         if (document.querySelector(".section-values")) {
           // LG and above
           if (minLg) {
-            const pinDuration = "+=200%";
+            const pinDuration = "+=120%"; // Request down from 200%
             let bodyPadding = maxXl ? 64 : 96;
 
             // Pinning Values Section
@@ -201,7 +201,6 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
             // Values step three (shifting content while showing text)
             {
               let shiftOffset = 20;
-              let scrubValue = 1;
 
               // Fading in values text (step 3)
               gsap.fromTo(
@@ -273,7 +272,6 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                     start: "top top",
                     end: "250% 10%",
                     scrub: scrubValue,
-                    // markers: true,
                   },
                 }
               );
@@ -292,7 +290,6 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   start: `-75% ${bodyPadding}px`,
                   end: "600% 25%",
                   scrub: scrubValue,
-                  // markers: navyMarkers,
                 },
               }
             );
@@ -301,7 +298,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
         // Mission Section
         if (document.querySelector(".section-mission")) {
-          const pinDuration = "+=250%";
+          const pinDuration = "+=120%"; // Request down from 250%
 
           // Pinning Mission Section
           gsap.to(".mission-pin", {
@@ -346,7 +343,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   scrollTrigger: {
                     trigger: `.mission-pin-step-${(index + 1) * 2 - 1}`, // Adjust trigger dynamically
                     start: `top ${bodyPaddingSm}px`,
-                    end: "+=120%", // Overlap ripples here
+                    end: "+=80%", // Overlap ripples here. Adjusted from 120%
                     // end: `bottom ${bodyPaddingSm}px`,
                     scrub: 0.25,
                   },
@@ -363,8 +360,8 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
         // Growth History (USA map)
         if (document.querySelector(".section-growth")) {
-          const pinDuration = "+=400%";
-          const pinDurationExtended = "+=480%";
+          const pinDuration = "+=320%"; // Request down from 400%
+          const pinDurationExtended = "+=480%"; // Request down from 480%
           const growthPinSteps = document.querySelectorAll(".growth-pin-step");
           const startPoint = `${bodyPaddingDouble / 4} top`;
           const endPoint = `bottom top`;
@@ -590,6 +587,105 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
             );
           }
         }
+
+        // Timeline Section
+        if (document.querySelector(".section-timeline") && minLg) {
+          const pinDuration = "+=250%";
+
+          // For line and event fade
+          let startValue = "top center";
+          let endValue = "10% center";
+
+          // Pinning Mission Section
+          gsap.to(".timeline-pin", {
+            scrollTrigger: {
+              trigger: ".timeline-pin",
+              start: `center center`,
+              end: pinDuration,
+              pin: true,
+              ease: "none",
+              // markers: navyMarkers,
+            },
+          });
+
+          // Showing line (issue starts at 97%... end value below)
+          gsap.fromTo(
+            ".timeline__bar",
+            {
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+              scrollTrigger: {
+                trigger: ".timeline-pin-step-2",
+                start: startValue,
+              },
+            }
+          );
+
+          // Drawing line
+          {
+            const timelineSteps = [
+              { step: 2, from: "0%", to: "2.5%" },
+              { step: 3, from: "2.5%", to: "21.5%" },
+              { step: 4, from: "21.5%", to: "40.5%" },
+              { step: 5, from: "40.5%", to: "59%" },
+              { step: 6, from: "59%", to: "78%" },
+              { step: 7, from: "78%", to: "97%" },
+              { step: 8, from: "97%", to: "100%" },
+            ];
+
+            gsap.set(".timeline__bar", { width: "0%" });
+
+            timelineSteps.forEach(({ step, from, to }, index) => {
+              gsap.fromTo(
+                ".timeline__bar",
+                { width: from },
+                {
+                  width: to,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: `.timeline-pin-step-${step}`,
+                    start: startValue, // Individual selection e.g. index === 0 ? "center center" : "50% center"
+                    end: endValue,
+                    scrub: 0.75,
+                    snap: 0.5,
+                    // markers: true, // First couple of steps e.g. step <= 4,
+                  },
+                }
+              );
+            });
+          }
+
+          // Showing years
+          {
+            const timelineEvents = [
+              { trigger: ".timeline-pin-step-2", target: ".timeline__event-1" },
+              { trigger: ".timeline-pin-step-3", target: ".timeline__event-2" },
+              { trigger: ".timeline-pin-step-4", target: ".timeline__event-3" },
+              { trigger: ".timeline-pin-step-5", target: ".timeline__event-4" },
+              { trigger: ".timeline-pin-step-6", target: ".timeline__event-5" },
+              { trigger: ".timeline-pin-step-7", target: ".timeline__event-6" },
+            ];
+
+            timelineEvents.forEach(({ trigger, target }) => {
+              gsap.fromTo(
+                target,
+                { opacity: 0 },
+                {
+                  opacity: 1,
+                  scrollTrigger: {
+                    trigger: trigger,
+                    start: startValue,
+                    end: endValue,
+                    scrub: 0.75,
+                    // markers: navyMarkers,
+                  },
+                }
+              );
+            });
+          }
+        }
       }
 
       // GLOBAL (place under other tweens i.e. pinned sections) - Animate any element with the class 'gsap-animate' using the 'animate' companion class
@@ -611,198 +707,198 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
         });
       }
 
-      // Library - Lift any desired code blocks out, then delete from production
-      {
-        // Parallax
-        {
-          const parallaxConfigs = [
-            { selector: ".parallax", y: "15%", scrub: 1 },
-            { selector: ".parallax--strong", y: "25%", scrub: 1 },
-            { selector: ".parallax--reverse", y: "-25%", scrub: 0.25 },
-          ];
+      // // Library - Lift any desired code blocks out, then delete from production
+      // {
+      //   // Parallax
+      //   {
+      //     const parallaxConfigs = [
+      //       { selector: ".parallax", y: "15%", scrub: 1 },
+      //       { selector: ".parallax--strong", y: "25%", scrub: 1 },
+      //       { selector: ".parallax--reverse", y: "-25%", scrub: 0.25 },
+      //     ];
 
-          parallaxConfigs.forEach(({ selector, y, scrub }) => {
-            document.querySelectorAll(selector).forEach((el) => {
-              gsap.to(el, {
-                y,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: el,
-                  start: "top bottom",
-                  end: "bottom top",
-                  scrub,
-                },
-              });
-            });
-          });
-        }
+      //     parallaxConfigs.forEach(({ selector, y, scrub }) => {
+      //       document.querySelectorAll(selector).forEach((el) => {
+      //         gsap.to(el, {
+      //           y,
+      //           ease: "none",
+      //           scrollTrigger: {
+      //             trigger: el,
+      //             start: "top bottom",
+      //             end: "bottom top",
+      //             scrub,
+      //           },
+      //         });
+      //       });
+      //     });
+      //   }
 
-        // Fill Text - Scrub only
-        {
-          // Use 'fill-text' for default, then 'quick-fill' or 'slow-fill' to modify animation end
-          const fillText = document.querySelectorAll(".fill-text");
+      //   // Fill Text - Scrub only
+      //   {
+      //     // Use 'fill-text' for default, then 'quick-fill' or 'slow-fill' to modify animation end
+      //     const fillText = document.querySelectorAll(".fill-text");
 
-          if (fillText) {
-            fillText.forEach((el) => {
-              let end = "bottom 60%";
+      //     if (fillText) {
+      //       fillText.forEach((el) => {
+      //         let end = "bottom 60%";
 
-              // Modifier classes –— Higher percentage ends the animation faster
-              if (el.classList.contains("quick-fill")) {
-                end = "bottom 80%";
-              } else if (el.classList.contains("slow-fill")) {
-                end = "bottom 40%";
-              }
+      //         // Modifier classes –— Higher percentage ends the animation faster
+      //         if (el.classList.contains("quick-fill")) {
+      //           end = "bottom 80%";
+      //         } else if (el.classList.contains("slow-fill")) {
+      //           end = "bottom 40%";
+      //         }
 
-              gsap.fromTo(
-                el,
-                {
-                  backgroundSize: "0%",
-                },
-                {
-                  backgroundSize: "100%",
-                  scrollTrigger: {
-                    trigger: el,
-                    start: "top 90%",
-                    end: end,
-                    scrub: 1,
-                  },
-                }
-              );
-            });
-          }
-        }
+      //         gsap.fromTo(
+      //           el,
+      //           {
+      //             backgroundSize: "0%",
+      //           },
+      //           {
+      //             backgroundSize: "100%",
+      //             scrollTrigger: {
+      //               trigger: el,
+      //               start: "top 90%",
+      //               end: end,
+      //               scrub: 1,
+      //             },
+      //           }
+      //         );
+      //       });
+      //     }
+      //   }
 
-        // Horizontal Scroll (pinned section)
-        {
-          const horizontalScroll =
-            document.querySelectorAll(".horizontal-scroll");
+      //   // Horizontal Scroll (pinned section)
+      //   {
+      //     const horizontalScroll =
+      //       document.querySelectorAll(".horizontal-scroll");
 
-          horizontalScroll.forEach((el) => {
-            let container = el.querySelector(".container");
-            let slider = el.querySelector(".slider");
-            const sliderWidth = slider.scrollWidth;
-            const containerWidth = container.offsetWidth;
-            const distanceToTranslate = sliderWidth - containerWidth;
+      //     horizontalScroll.forEach((el) => {
+      //       let container = el.querySelector(".container");
+      //       let slider = el.querySelector(".slider");
+      //       const sliderWidth = slider.scrollWidth;
+      //       const containerWidth = container.offsetWidth;
+      //       const distanceToTranslate = sliderWidth - containerWidth;
 
-            let duration = maxSm ? "+=150%" : "+=200%";
+      //       let duration = maxSm ? "+=150%" : "+=200%";
 
-            // Actual Pinning
-            gsap.to(el, {
-              scrollTrigger: {
-                trigger: el,
-                start: "top top",
-                end: duration,
-                pin: true,
-              },
-            });
+      //       // Actual Pinning
+      //       gsap.to(el, {
+      //         scrollTrigger: {
+      //           trigger: el,
+      //           start: "top top",
+      //           end: duration,
+      //           pin: true,
+      //         },
+      //       });
 
-            // Slider Along X-Axis
-            gsap.fromTo(
-              slider,
-              { x: 0 },
-              {
-                x: () => -distanceToTranslate,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: el,
-                  start: "top top",
-                  end: duration,
-                  scrub: maxSm ? 1 : 0.5,
-                },
-              }
-            );
-          });
-        }
+      //       // Slider Along X-Axis
+      //       gsap.fromTo(
+      //         slider,
+      //         { x: 0 },
+      //         {
+      //           x: () => -distanceToTranslate,
+      //           ease: "none",
+      //           scrollTrigger: {
+      //             trigger: el,
+      //             start: "top top",
+      //             end: duration,
+      //             scrub: maxSm ? 1 : 0.5,
+      //           },
+      //         }
+      //       );
+      //     });
+      //   }
 
-        // Marquee Animations
-        {
-          let marqueeSpeed = maxSm ? 20 : maxMd ? 24 : 28;
+      //   // Marquee Animations
+      //   {
+      //     let marqueeSpeed = maxSm ? 20 : maxMd ? 24 : 28;
 
-          // Standard Marquee
-          {
-            const autoMarquees = gsap.utils.toArray(".marquee-inner");
-            let marqueeTweens = [];
+      //     // Standard Marquee
+      //     {
+      //       const autoMarquees = gsap.utils.toArray(".marquee-inner");
+      //       let marqueeTweens = [];
 
-            const createMarqueeTweens = () => {
-              marqueeTweens.forEach((tween) => tween.kill()); // Kill previous tweens to prevent stacking memory
-              marqueeTweens = [];
+      //       const createMarqueeTweens = () => {
+      //         marqueeTweens.forEach((tween) => tween.kill()); // Kill previous tweens to prevent stacking memory
+      //         marqueeTweens = [];
 
-              autoMarquees.forEach((elem) => {
-                const tween = gsap
-                  .to(elem, {
-                    xPercent: -50,
-                    repeat: -1,
-                    duration: marqueeSpeed,
-                    ease: "linear",
-                  })
-                  .totalProgress(0.5);
+      //         autoMarquees.forEach((elem) => {
+      //           const tween = gsap
+      //             .to(elem, {
+      //               xPercent: -50,
+      //               repeat: -1,
+      //               duration: marqueeSpeed,
+      //               ease: "linear",
+      //             })
+      //             .totalProgress(0.5);
 
-                marqueeTweens.push(tween);
-              });
-            };
+      //           marqueeTweens.push(tween);
+      //         });
+      //       };
 
-            createMarqueeTweens();
+      //       createMarqueeTweens();
 
-            let currentScroll = window.scrollY;
+      //       let currentScroll = window.scrollY;
 
-            const adjustTimeScale = () => {
-              const isScrollingDown = window.scrollY > currentScroll;
+      //       const adjustTimeScale = () => {
+      //         const isScrollingDown = window.scrollY > currentScroll;
 
-              marqueeTweens.forEach((tween, index) =>
-                gsap.to(tween, {
-                  timeScale: (index % 2 === 0) === isScrollingDown ? 1 : -1,
-                  duration: 0.3,
-                  ease: "power2.out",
-                })
-              );
+      //         marqueeTweens.forEach((tween, index) =>
+      //           gsap.to(tween, {
+      //             timeScale: (index % 2 === 0) === isScrollingDown ? 1 : -1,
+      //             duration: 0.3,
+      //             ease: "power2.out",
+      //           })
+      //         );
 
-              currentScroll = window.scrollY;
-            };
+      //         currentScroll = window.scrollY;
+      //       };
 
-            window.addEventListener("scroll", adjustTimeScale, {
-              passive: true,
-            });
-          }
+      //       window.addEventListener("scroll", adjustTimeScale, {
+      //         passive: true,
+      //       });
+      //     }
 
-          // Scrub Effect for Specific Marquees
-          {
-            const scrubMarquees = gsap.utils.toArray(".marquee--scrub");
-            const sensitivity = 5;
-            let scrubTriggers = [];
+      //     // Scrub Effect for Specific Marquees
+      //     {
+      //       const scrubMarquees = gsap.utils.toArray(".marquee--scrub");
+      //       const sensitivity = 5;
+      //       let scrubTriggers = [];
 
-            const createScrubMarquees = () => {
-              scrubTriggers.forEach((trigger) => trigger.kill());
-              scrubTriggers = [];
+      //       const createScrubMarquees = () => {
+      //         scrubTriggers.forEach((trigger) => trigger.kill());
+      //         scrubTriggers = [];
 
-              scrubMarquees.forEach((scrubElem) => {
-                const marqueeInners =
-                  scrubElem.querySelectorAll(".marquee-inner");
+      //         scrubMarquees.forEach((scrubElem) => {
+      //           const marqueeInners =
+      //             scrubElem.querySelectorAll(".marquee-inner");
 
-                marqueeInners.forEach((inner, index) => {
-                  const scrubTween = gsap.fromTo(
-                    inner,
-                    { x: index % 2 === 0 ? "0%" : `-${sensitivity}%` },
-                    {
-                      x: index % 2 === 0 ? `-${sensitivity}%` : "0%",
-                      scrollTrigger: {
-                        trigger: scrubElem,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: 1,
-                        invalidateOnRefresh: true,
-                      },
-                    }
-                  );
+      //           marqueeInners.forEach((inner, index) => {
+      //             const scrubTween = gsap.fromTo(
+      //               inner,
+      //               { x: index % 2 === 0 ? "0%" : `-${sensitivity}%` },
+      //               {
+      //                 x: index % 2 === 0 ? `-${sensitivity}%` : "0%",
+      //                 scrollTrigger: {
+      //                   trigger: scrubElem,
+      //                   start: "top bottom",
+      //                   end: "bottom top",
+      //                   scrub: 1,
+      //                   invalidateOnRefresh: true,
+      //                 },
+      //               }
+      //             );
 
-                  scrubTriggers.push(scrubTween.scrollTrigger);
-                });
-              });
-            };
+      //             scrubTriggers.push(scrubTween.scrollTrigger);
+      //           });
+      //         });
+      //       };
 
-            createScrubMarquees();
-          }
-        }
-      }
+      //       createScrubMarquees();
+      //     }
+      //   }
+      // }
     }
   );
 

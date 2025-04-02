@@ -1,6 +1,6 @@
 // .form-feedback,
 .form-redirect {
-  @include body-font-styles(sm);
+  @include body-font-styles(xs);
   @include column-center;
   gap: 1em;
   width: min(100%, 648px);
