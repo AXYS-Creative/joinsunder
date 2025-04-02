@@ -192,11 +192,13 @@
     margin-block-end: var(--section-gap-double);
 
     @include mq-max(lg) {
-      // translate: -30px 0;
       // padding-inline-start: 48px; // doesn't work for some reason
       padding-inline-end: 32px;
       width: calc(100vw - var(--body-padding-double));
-      // width: 100vw;
+    }
+
+    @include mq-max(md) {
+      flex-direction: column;
     }
 
     &__figure {
@@ -212,8 +214,11 @@
         min-width: 320px;
       }
 
-      @include mq-max(lg) {
-        translate: 12px 0;
+      @include mq-max(md) {
+        aspect-ratio: 1;
+        width: 100%;
+        max-width: 500px;
+        min-width: 0;
       }
 
       &:hover {
@@ -230,10 +235,15 @@
           }
         }
       }
+
+      picture {
+        height: 100%;
+      }
     }
 
     &__img {
       height: 100%;
+      object-fit: cover;
 
       @include mq-motion-allow {
         scale: 1.025;
@@ -242,6 +252,8 @@
     }
 
     &__caption {
+      --content-offset: 48px 0;
+
       @include dark-theme;
       @include column-start(flex-end);
       @include blue-gradient(0deg, 50%, 100%);
@@ -260,7 +272,7 @@
         margin-block-end: var(--panel-gap);
 
         @include mq-motion-allow {
-          translate: 48px 0;
+          translate: var(--content-offset);
           transition: $ease;
         }
       }
@@ -270,12 +282,16 @@
         font-size: $body-text-2;
 
         @include mq-motion-allow {
-          translate: 48px 0;
+          translate: var(--content-offset);
           transition: $ease 0.024s;
         }
 
         @include mq-max(xxl) {
           height: 11lh;
+        }
+        @include mq-max(md) {
+          font-size: 18px;
+          height: 8lh;
         }
       }
     }
@@ -328,10 +344,6 @@
           flex-direction: column;
           gap: var(--section-gap);
           margin-block-end: var(--section-gap);
-        }
-
-        picture {
-          @include row-center;
         }
 
         &-img {
@@ -434,20 +446,14 @@
   }
 }
 
-.section-experiences {
-  // using section-gradient util
+// .section-experiences {
+// using section-gradient util
 
-  &__desc {
-    @include mq-min(md) {
-      text-align: left;
-    }
-  }
+// .carousel {
+// see _carousel-swiper.scss
+// }
 
-  // .carousel {
-  // see _carousel-swiper.scss
-  // }
-
-  // .collage {
-  // see _collage.scss
-  // }
-}
+// .collage {
+// see _collage.scss
+// }
+// }

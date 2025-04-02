@@ -58,7 +58,7 @@
     @include paragraph-width-snip;
     margin-block-end: var(--section-gap);
 
-    @include mq-max(lg) {
+    @include mq-max(md) {
       text-align: center;
       text-wrap: balance;
     }

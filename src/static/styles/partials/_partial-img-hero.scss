@@ -239,10 +239,6 @@
       }
     }
 
-    picture {
-      @include row-center; // Maybe make global? Competition banners get messed up, but pagespeed shows a ding for aspect ratio so might be good
-    }
-
     .partial-img-hero__graphic {
       width: 250px;
 

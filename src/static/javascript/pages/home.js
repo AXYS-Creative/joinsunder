@@ -4,8 +4,6 @@ const externalPanel = document.querySelector(".sunder-external"),
   internalPanel = document.querySelector(".sunder-internal");
 
 if (document.querySelector(".main-home") && mqMinMd) {
-  console.log("mouse baby");
-
   const externalUrl = externalPanel
     .querySelector(".sunder-external .cta-1")
     .getAttribute("href");

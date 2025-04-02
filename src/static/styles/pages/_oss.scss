@@ -3,6 +3,14 @@
     @include column-center;
   }
 
+  &__desc {
+    // one-off 👍
+    @include mq-max(lg) {
+      text-align: center;
+      text-wrap: balance;
+    }
+  }
+
   &__events {
     @include column-start;
     gap: var(--section-gap-double);

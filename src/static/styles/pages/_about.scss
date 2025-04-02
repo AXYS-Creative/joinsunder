@@ -468,6 +468,9 @@
         top: 46vh;
       }
     }
+    @media (max-height: 750px) {
+      top: 364px;
+    }
 
     &__map {
       width: 100%;
@@ -543,17 +546,6 @@
     @include column-center;
   }
 
-  &__title,
-  &__desc {
-    // This block is a one-off to center text at md vs lg
-    // If you delete it, remove the classes off the elements too
-    text-align: left;
-
-    @include mq-max(md) {
-      text-align: center;
-    }
-  }
-
   .leadership-portraits {
     display: flex;
     flex-wrap: wrap;
@@ -619,15 +611,6 @@
   position: relative;
   padding-block-end: var(--section-gap-double);
 
-  &__desc {
-    @include mq-max(lg) {
-      text-align: left;
-    }
-    @include mq-max(md) {
-      text-align: center;
-    }
-  }
-
   .timeline {
     --line-height: 3px;
     --circle-size: 24px;
@@ -650,7 +633,7 @@
       text-align: center;
       z-index: 1;
 
-      @include mq-max(md) {
+      @include mq-max(lg) {
         min-width: 96px;
         scroll-snap-align: start;
 
@@ -673,7 +656,7 @@
         border: var(--line-height) solid var(--hero-color--primary);
         background-color: var(--background-color);
 
-        @include mq-max(md) {
+        @include mq-max(lg) {
           position: relative;
 
           &::before {
@@ -704,7 +687,6 @@
   }
 
   // .timeline-pin-steps {
-  //   border: $test;
-  //   // padding-block-end: 500px;
+  //   padding-block-end: 500px;
   // }
 }

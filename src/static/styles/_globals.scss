@@ -458,9 +458,9 @@ small {
   font-size: 12px;
 }
 
-// picture {
-//   @include row-center;
-// }
+picture {
+  @include row-center;
+}
 
 img,
 video {
