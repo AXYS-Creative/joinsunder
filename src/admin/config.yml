@@ -1022,6 +1022,34 @@ collections:
             label: Section Title
             widget: string
             required: true
+          - name: form_data
+            label: Form Configs
+            widget: object
+            fields:
+              - name: show_field_discovery
+                label: Add Field — Discovery (How did you hear about us)
+                widget: boolean
+                default: true
+              - name: label_discovery
+                label: Discovery Field Label
+                widget: string
+                required: false
+              - name: show_checkbox_awareness
+                label: Add Checkbox — Awareness (That this is a sales position)
+                widget: boolean
+                default: true
+              - name: label_checkbox_awareness
+                label: Discovery Field Label
+                widget: string
+                required: false
+              - name: show_recaptcha
+                label: Add reCAPTCHA
+                widget: boolean
+                default: true
+              - name: submit_btn_text
+                label: Submit Button Text
+                widget: string
+                required: true
       - name: form_submit
         label: Redirect - Form Submit
         file: src/_data/page_join/form_submit.yaml

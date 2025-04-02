@@ -1,7 +1,6 @@
 toggle_section: true
 section_title: Experiences
-section_desc: From exhilarating excursions to inspiring events, explore
-  experiences that take you to new heights
+section_desc: From exhilarating excursions to inspiring events, we go further—together.
 carousel_autoplay:
   enabled: false
   interval: 3200
