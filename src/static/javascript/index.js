@@ -13,6 +13,7 @@ import "./global/nav.js";
 import "./global/scroll.js";
 
 import "./pages/about.js";
+import "./pages/home.js";
 import "./pages/join.js";
 
 // import "./library/accordion.js";

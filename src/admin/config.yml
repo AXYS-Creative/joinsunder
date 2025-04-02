@@ -1051,7 +1051,7 @@ collections:
                 widget: string
                 required: true
       - name: form_submit
-        label: Redirect - Form Submit
+        label: Redirect - Form Submit (Success Page)
         file: src/_data/page_join/form_submit.yaml
         preview_path: /form-submit
         editor:

@@ -1775,6 +1775,7 @@ figure {
   width: 50%;
   padding-block-start: 150px;
   overflow: hidden;
+  cursor: pointer;
 }
 @media (prefers-reduced-motion: no-preference) {
   .main-home .hero .hero-panel {

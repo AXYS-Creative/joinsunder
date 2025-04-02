@@ -6,6 +6,7 @@ export const mqMotionAllow = window.matchMedia(
 );
 export const mqMaxLg = window.matchMedia("(max-width: 1024px)").matches;
 export const mqMinLg = window.matchMedia("(min-width: 1025px)").matches;
+export const mqMinMd = window.matchMedia("(min-width: 769px)").matches;
 
 export const lenis = new Lenis({
   autoRaf: true,

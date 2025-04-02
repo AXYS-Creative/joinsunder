@@ -21,6 +21,7 @@
       width: 50%;
       padding-block-start: 150px;
       overflow: hidden;
+      cursor: pointer;
 
       @include mq-motion-allow {
         transition: $ease;
