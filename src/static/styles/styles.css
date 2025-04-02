@@ -2414,6 +2414,9 @@ figure {
 .section-competitions .competition-types__figure:hover .competition-types__caption-title, .section-competitions .competition-types__figure:hover .competition-types__caption-p {
   translate: 0 0;
 }
+.section-competitions .competition-types__figure:hover .competition-types__badge {
+  opacity: 0;
+}
 .section-competitions .competition-types__figure picture {
   height: 100%;
 }
@@ -2489,6 +2492,17 @@ figure {
   .section-competitions .competition-types__caption-p {
     font-size: 18px;
     height: 8lh;
+  }
+}
+.section-competitions .competition-types__badge {
+  display: none;
+}
+@media (hover: none) and (pointer: coarse) {
+  .section-competitions .competition-types__badge {
+    display: flex;
+    position: absolute;
+    bottom: var(--body-padding-sm);
+    right: var(--body-padding-sm);
   }
 }
 .section-competitions .yog {

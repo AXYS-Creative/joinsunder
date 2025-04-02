@@ -234,6 +234,10 @@
             translate: 0 0;
           }
         }
+
+        .competition-types__badge {
+          opacity: 0;
+        }
       }
 
       picture {
@@ -293,6 +297,17 @@
           font-size: 18px;
           height: 8lh;
         }
+      }
+    }
+
+    &__badge {
+      display: none;
+
+      @include mq-touch {
+        display: flex;
+        position: absolute;
+        bottom: var(--body-padding-sm);
+        right: var(--body-padding-sm);
       }
     }
   }
