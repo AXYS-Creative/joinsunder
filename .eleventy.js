@@ -2,7 +2,6 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -18,26 +17,60 @@ module.exports = function (eleventyConfig) {
     );
   });
 
-  // 11ty-img optimizing (pre formatting before getting to Netlify)
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["avif", "webp", "jpeg"],
-    widths: [320, 640, 1280, 1920],
-    htmlOptions: {
-      imgAttributes: {
-        sizes:
-          "(max-width: 600px) 320px, (max-width: 1200px) 640px, (max-width: 1800px) 1280px, 1920px",
+  // Dynamic image formatting to work with CMS
+  const imageShortcodeFn = async function (
+    src,
+    alt = "",
+    className = "",
+    optimize = true,
+    widths = [320, 640, 1280, 1920],
+    formats = ["avif", "webp", "jpeg"]
+  ) {
+    const outputDir = "./src/static/images/";
+    const urlPath = "/static/images/";
+    const cacheDir = ".cache/eleventy-img";
+
+    const path = require("path");
+    const Image = require("@11ty/eleventy-img");
+    const fullSrcPath = path.join("src", src.replace(/^\//, ""));
+
+    if (!optimize) {
+      return `<img src="${src}" alt="${alt}" loading="lazy" decoding="async"${
+        className ? ` class="${className}"` : ""
+      }>`;
+    }
+
+    try {
+      const metadata = await Image(fullSrcPath, {
+        widths,
+        formats,
+        outputDir,
+        urlPath,
+        cacheOptions: {
+          duration: "30d",
+          directory: cacheDir,
+        },
+      });
+
+      return Image.generateHTML(metadata, {
+        alt,
         loading: "lazy",
         decoding: "async",
-      },
-      pictureAttributes: {},
-    },
-    cacheOptions: {
-      duration: "30d",
-      directory: ".cache/eleventy-img",
-    },
-    outputDir: "./src/static/images/", // ✅ This is where images will be written
-    urlPath: "/static/images/", // ✅ This is how they’ll be referenced in HTML
-  });
+        class: className,
+      });
+    } catch (err) {
+      console.warn(
+        `⚠️ eleventy-img failed for ${src}, using raw <img>.`,
+        err.message
+      );
+      return `<img src="${src}" alt="${alt}" loading="lazy" decoding="async"${
+        className ? ` class="${className}"` : ""
+      }>`;
+    }
+  };
+
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcodeFn);
+  eleventyConfig.addNunjucksAsyncFilter("image", imageShortcodeFn);
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -119,5 +152,7 @@ module.exports = function (eleventyConfig) {
       input: "src",
     },
     htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    templateFormats: ["njk", "md", "html"],
   };
 };
