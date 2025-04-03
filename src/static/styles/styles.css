@@ -1965,6 +1965,11 @@ figure {
   }
 }
 .main-join .hero .join-carousel__img {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1973,11 +1978,14 @@ figure {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 0;
   transition: 0.32s ease;
 }
 .main-join .hero .join-carousel__img.active {
   opacity: 1;
+  pointer-events: all;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+          user-select: auto;
 }
 .main-join .hero .form-panel {
   display: flex;

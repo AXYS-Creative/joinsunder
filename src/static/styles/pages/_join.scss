@@ -33,15 +33,15 @@
       }
 
       &__img {
+        @include hide-content;
         @include absolute-center;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0;
         transition: $ease;
 
         &.active {
-          opacity: 1;
+          @include show-content;
         }
       }
     }
