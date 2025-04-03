@@ -2255,12 +2255,12 @@ figure {
   justify-content: center;
   align-items: center;
   gap: var(--section-gap);
+  position: relative;
 }
 @media screen and (max-width: 1200px) {
   .section-ethos .ethos-middle {
     flex-direction: column;
     width: 100%;
-    overflow: hidden;
   }
 }
 @media screen and (min-width: 1201px) {
@@ -2277,14 +2277,20 @@ figure {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  gap: var(--panel-gap);
   width: 100%;
   overflow: auto;
   scroll-snap-type: x mandatory;
 }
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1025px) {
   .section-ethos .ethos-middle__panels {
-    width: 60%;
+    gap: var(--panel-gap);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .section-ethos .ethos-middle__panels {
+    position: relative;
+    height: calc(100lvh - var(--body-padding-double));
+    max-height: 500px;
   }
 }
 .section-ethos .ethos-middle__panels-panel {
@@ -2310,7 +2316,24 @@ figure {
 }
 @media screen and (max-width: 1024px) {
   .section-ethos .ethos-middle__panels-panel {
-    scroll-snap-align: start;
+    --slide-offset: 48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 320px;
+    height: 320px;
+    opacity: 0;
+    translate: calc(-50% + var(--slide-offset)) -50%;
+    transition: 0.5s ease;
+  }
+  .section-ethos .ethos-middle__panels-panel.step-1 {
+    opacity: 1;
+    translate: -50% -50%;
+  }
+  .section-ethos .ethos-middle__panels-panel.step-2 {
+    opacity: 0;
+    translate: calc(-50% - var(--slide-offset)) -50%;
   }
 }
 .section-ethos .ethos-middle__panels-panel .panel-title {
@@ -2320,6 +2343,26 @@ figure {
   font-size: 24px;
   letter-spacing: -1px;
   margin-block-end: calc(var(--section-gap-half) / 2);
+}
+.section-ethos .ethos-middle-pin {
+  width: 100%;
+}
+@media screen and (min-width: 1201px) {
+  .section-ethos .ethos-middle-pin {
+    width: 60%;
+  }
+}
+.section-ethos .ethos-middle-pin-steps {
+  --font-size: 24px;
+  color: var(--font-color--primary);
+  font-size: var(--font-size);
+  font-weight: 500;
+  padding-block: 7lh;
+}
+@media screen and (max-width: 1024px) {
+  .section-ethos .ethos-middle-pin-steps {
+    --font-size: 22px;
+  }
 }
 .section-ethos .ethos-bottom {
   display: flex;
@@ -2363,6 +2406,11 @@ figure {
 @media screen and (min-width: 1025px) {
   .section-ethos .ethos-bottom__p {
     width: min(64%, 664px);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-ethos .ethos-bottom__p {
+    text-align: center;
   }
 }
 .section-ethos .ethos-pin {

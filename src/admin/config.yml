@@ -680,7 +680,7 @@ collections:
             min: 3
             max: 5
             required: true
-            hint: Display between 3 and 5 logos per row
+            hint: Display between 3 and 5 logos per row. (Only affects large devices)
           - name: img_list
             label: Installer Logos
             label_singular: Logo
@@ -721,7 +721,7 @@ collections:
             min: 3
             max: 5
             required: true
-            hint: Display between 3 and 5 logos per row
+            hint: Display between 3 and 5 logos per row. (Only affects large devices)
           - name: img_list
             label: Financier Logos
             label_singular: Logo

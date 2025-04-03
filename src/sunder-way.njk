@@ -30,17 +30,28 @@ hide_footer: false
     <div class="ethos-middle">
       <p class="ethos-middle__p">{{ page_sunder_way.ethos.section_desc }}</p>
 
-      <div class="ethos-middle__panels" tabindex="-1">
-        <!-- prettier-ignore -->
+      <div class="ethos-middle-pin">
+        <div class="ethos-middle__panels" tabindex="-1">
+          <!-- prettier-ignore -->
+          {% for item in page_sunder_way.ethos.values %}
+          <div
+            class="ethos-middle__panels-panel value-panel value-panel-{{
+              loop.index
+            }}"
+          >
+            <h2 class="panel-title">{{ item.title }}</h2>
+            <p class="panel-desc">{{ item.caption }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="ethos-middle-pin-steps pin-steps" aria-hidden="true">
         {% for item in page_sunder_way.ethos.values %}
         <div
-          class="ethos-middle__panels-panel value-panel value-panel-{{
+          class="ethos-middle-pin-step ethos-middle-pin-step-{{
             loop.index
-          }}"
-        >
-          <h2 class="panel-title">{{ item.title }}</h2>
-          <p class="panel-desc">{{ item.caption }}</p>
-        </div>
+          }} pin-step"
+        ></div>
         {% endfor %}
       </div>
     </div>

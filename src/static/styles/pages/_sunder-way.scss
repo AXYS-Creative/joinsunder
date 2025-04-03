@@ -65,11 +65,11 @@
   .ethos-middle {
     @include row-center;
     gap: var(--section-gap);
+    position: relative;
 
     @include mq-max(xl) {
       flex-direction: column;
       width: 100%;
-      overflow: hidden;
     }
 
     &__p {
@@ -83,13 +83,18 @@
 
     &__panels {
       @include row-stretch(flex-start);
-      gap: var(--panel-gap);
       width: 100%;
       overflow: auto; // needed for scroll-snap
       scroll-snap-type: x mandatory;
 
-      @include mq-min(xl) {
-        width: 60%;
+      @include mq-min(lg) {
+        gap: var(--panel-gap);
+      }
+
+      @include mq-max(xl) {
+        position: relative;
+        height: calc(100lvh - var(--body-padding-double));
+        max-height: 500px;
       }
 
       &-panel {
@@ -116,7 +121,25 @@
         }
 
         @include mq-max(lg) {
-          scroll-snap-align: start; // placing in mq. Was messing with gsap translate for desktop
+          --slide-offset: 48px;
+
+          @include absolute-center;
+          width: 320px;
+          height: 320px;
+
+          opacity: 0;
+          translate: calc(-50% + var(--slide-offset)) -50%;
+          transition: 0.5s ease;
+
+          &.step-1 {
+            opacity: 1;
+            translate: -50% -50%;
+          }
+
+          &.step-2 {
+            opacity: 0;
+            translate: calc(-50% - var(--slide-offset)) -50%;
+          }
         }
 
         .panel-title {
@@ -124,6 +147,20 @@
           margin-block-end: calc(var(--section-gap-half) / 2);
         }
       }
+    }
+
+    // LG down
+    &-pin {
+      width: 100%;
+
+      @include mq-min(xl) {
+        width: 60%;
+      }
+    }
+
+    &-pin-steps {
+      @include body-font-styles;
+      padding-block: 7lh; // height of paragraph. Prone to mismatch?
     }
   }
 
@@ -159,6 +196,9 @@
     &__p {
       @include mq-min(lg) {
         width: min(64%, 664px);
+      }
+      @include mq-max(lg) {
+        text-align: center;
       }
     }
   }
