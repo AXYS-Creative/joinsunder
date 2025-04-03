@@ -31,6 +31,11 @@ let swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
   // on: {
+  //   init: function () {
+  //     console.log("Swiper initialized");
+  //   },
+  // },
+  // on: {
   //   slideChangeTransitionStart: function () {
   //     if (swiper.autoplay.running) {
   //       swiper.autoplay.stop();
