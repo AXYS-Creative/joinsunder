@@ -541,13 +541,6 @@
   }
 }
 
-.section-values,
-.section-mission,
-.section-growth,
-.section-timeline {
-  display: none !important;
-}
-
 .section-leadership {
   @include mq-max(md) {
     @include column-center;

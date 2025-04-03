@@ -1548,13 +1548,6 @@ figure {
   scroll-margin-top: -128px;
 }
 
-.section-values,
-.section-mission,
-.section-growth,
-.section-timeline {
-  display: none !important;
-}
-
 @media screen and (max-width: 768px) {
   .section-leadership {
     display: flex;
