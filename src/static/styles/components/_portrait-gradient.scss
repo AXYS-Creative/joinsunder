@@ -3,8 +3,6 @@
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  // width:
-  // aspect-ratio:
 
   &::before {
     @include blue-gradient(0deg, 20%, 50%);
@@ -26,9 +24,15 @@
 
   &__caption {
     position: absolute;
-    bottom: var(--body-padding);
-    left: var(--body-padding);
+    bottom: 0;
+    left: 0;
+    padding: var(--body-padding);
+    width: 100%;
     z-index: 1;
+
+    @include mq-max(sm) {
+      --body-padding: 24px;
+    }
 
     &-name {
       @include h3;

@@ -541,6 +541,13 @@
   }
 }
 
+.section-values,
+.section-mission,
+.section-growth,
+.section-timeline {
+  display: none !important;
+}
+
 .section-leadership {
   @include mq-max(md) {
     @include column-center;
@@ -568,22 +575,24 @@
       }
 
       .portrait-gradient__caption-name {
-        @include mq-max(xl) {
-          @include h4;
-        }
+        margin-block-end: 4px;
+        // @include mq-max(xl) {
+        //   @include h4;
+        // }
       }
 
-      &.big-three {
-        min-width: calc(33% - var(--panel-gap) * 2);
+      // Not in use, see njk
+      // &.big-three {
+      //   min-width: calc(33% - var(--panel-gap) * 2);
 
-        @include mq-max(md) {
-          min-width: calc(50% - var(--panel-gap) * 0.5);
-        }
+      //   @include mq-max(md) {
+      //     min-width: calc(50% - var(--panel-gap) * 0.5);
+      //   }
 
-        @include mq-max(sm) {
-          min-width: 100%;
-        }
-      }
+      //   @include mq-max(sm) {
+      //     min-width: 100%;
+      //   }
+      // }
 
       &:not(.big-three) {
         @include mq-max(xl) {
@@ -599,8 +608,39 @@
           min-width: 100%;
         }
 
+        // Eyeballing based on longest name
         .portrait-gradient__caption-name {
           @include h4;
+          font-size: min(2.92vw, 45px); // One-off set to 45px (overflows)
+
+          @include mq-max(xl) {
+            font-size: 3.72vw;
+          }
+
+          @include mq-max(md) {
+            font-size: 5.8vw;
+          }
+
+          @include mq-max(sm) {
+            font-size: 36px; // original h4 value, Figma shows two columns though
+          }
+        }
+
+        .portrait-gradient__caption-role {
+          // 20px & 14px
+          font-size: min(1.6vw, 20px);
+
+          @include mq-max(xl) {
+            font-size: min(2.2vw, 20px);
+          }
+
+          @include mq-max(md) {
+            font-size: min(4vw, 20px);
+          }
+
+          @include mq-max(sm) {
+            font-size: 20px;
+          }
         }
       }
     }

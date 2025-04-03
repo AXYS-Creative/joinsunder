@@ -13,27 +13,30 @@ list:
   - name: Devon[%br%] Glassman
     role: COO
     src: /static/img/About-Leadership-3Devon.png
-  - name: Cary[%br%] Jenkins
-    role: CTO
-    src: /static/img/About-Leadership-4Cary.png
-  - name: Yan[%br%] Purba
-    role: CXO
-    src: /static/img/About-Leadership-5Yan.png
   - name: Bryan[%br%] Smith
     role: CMO
-    src: /static/img/About-Leadership-6Bryan.png
+    src: /static/img/About-Leadership-4Bryan.png
+  - name: Cary[%br%] Jenkins
+    role: CTO
+    src: /static/img/About-Leadership-5Cary.png
   - name: Brett[%br%] Jaynes
     role: CFO
-    src: /static/img/About-Leadership-7Brett.png
+    src: /static/img/About-Leadership-6Brett.png
+  - name: Yan[%br%] Purba
+    role: CXO
+    src: /static/img/About-Leadership-7Yan.png
   - name: Kerstin[%br%] Larsen
     role: VP Sales Operations
     src: /static/img/About-Leadership-8Kerstin.png
-  - name: Wyler[%br%] Wittwer
-    role: VP Sales
-    src: /static/img/About-Leadership-9Wyler.png
+  - name: Michael[%br%] Gutschmidt
+    role: Director of Sales
+    src: /static/img/About-Leadership-9Michael.png
   - name: Brady[%br%] Jones
     role: VP Partners
     src: /static/img/About-Leadership-10Brady.png
+  - name: Wyler[%br%] Wittwer
+    role: VP Sales
+    src: /static/img/About-Leadership-11Wyler.png
   - name: Daniel[%br%] Garcia
     role: Creative Director
-    src: /static/img/About-Leadership-11Daniel.png
+    src: /static/img/About-Leadership-12Daniel.png
