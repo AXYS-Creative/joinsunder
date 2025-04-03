@@ -2286,7 +2286,7 @@ figure {
     gap: var(--panel-gap);
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .section-ethos .ethos-middle__panels {
     position: relative;
     height: calc(100lvh - var(--body-padding-double));

@@ -91,7 +91,7 @@
         gap: var(--panel-gap);
       }
 
-      @include mq-max(xl) {
+      @include mq-max(lg) {
         position: relative;
         height: calc(100lvh - var(--body-padding-double));
         max-height: 500px;
