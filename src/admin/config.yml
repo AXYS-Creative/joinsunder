@@ -983,6 +983,40 @@ collections:
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
+      - name: timeline
+        label: Section - Timeline History
+        file: src/_data/page_about/timeline.yaml
+        preview_path: /about#timeline
+        editor:
+          preview: false
+        fields:
+          - name: toggle_section
+            label: Show Section (About Sunder - Timeline History)
+            widget: boolean
+            default: true
+          - name: section_title
+            label: Section Title
+            widget: string
+            required: true
+          - name: section_desc
+            label: Section Description
+            widget: text
+            required: false
+          - name: events
+            label: Events (Timeline History)
+            label_singular: Event
+            allow_add: false
+            widget: list
+            required: true
+            fields:
+              - name: year
+                label: Year
+                widget: number
+                required: true
+              - name: desc
+                label: Description
+                widget: string
+                required: true
   - name: page_join
     label: Page - Join
     files:
