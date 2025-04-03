@@ -1,12 +1,26 @@
 autoplay_interval: 5000
 
 images:
-  - title: "A Sunder solar rep talking with a man at his front door."
-    src: "/static/img/Join-Form-1Photo.png"
-  - title: "Title 2"
-    src: "/static/img/Landing-Hero-BG1.png"
-  - title: "Title 3"
-    src: "/static/img/Landing-Hero-BG2.png"
+  - title: Woman going door to door
+    src: /static/img/Join-SlideShow-1Photo.png
+  - title: Group at a service event
+    src: /static/img/Join-SlideShow-2Photo.png
+  - title: Celebrating at a conference
+    src: /static/img/Join-SlideShow-3Photo.jpg
+  - title: Solar rep in a neighborhood
+    src: /static/img/Join-SlideShow-4Photo.jpg
+  - title: Man in a Sunder jacket at a conference
+    src: /static/img/Join-SlideShow-5Photo.jpg
+  - title: Enjoying the pool
+    src: /static/img/Join-SlideShow-6Photo.png
+  - title: Solar rep at the door
+    src: /static/img/Join-SlideShow-7Photo.png
+  - title: Group in front of a plane
+    src: /static/img/Join-SlideShow-8Photo.png
+  - title: Socializing at a conference
+    src: /static/img/Join-SlideShow-9Photo.jpg
+  - title: Man rock climbing
+    src: /static/img/Join-SlideShow-10Photo.png
 
 section_title: Join Sunder
 
