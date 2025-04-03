@@ -1030,14 +1030,16 @@ collections:
           - name: autoplay_interval
             label: Autoplay Interval (Image Carousel)
             widget: number
-            min: 1500
-            max: 7500
+            min: 1000
+            max: 10000
             required: true
-            hint: The time (in milliseconds) between the slide transition. 1000ms = 1 second
+            hint: The time (in milliseconds) between the slide transition. 1,000ms = 1 second. Minimum 1,000ms. Maximum 10,000ms
           - name: images
             label: Carousel Images
             label_singular: Image
             widget: list
+            min: 1 # only works with max value
+            max: 50
             required: true
             fields:
               - name: title
@@ -1073,11 +1075,11 @@ collections:
                 widget: boolean
                 default: true
               - name: label_checkbox_awareness
-                label: Discovery Field Label
+                label: Awareness Checkbox Label
                 widget: string
                 required: false
               - name: show_recaptcha
-                label: Add reCAPTCHA
+                label: Add reCAPTCHA (Extra spam prevention)
                 widget: boolean
                 default: true
               - name: submit_btn_text
