@@ -15,9 +15,13 @@
       <ul class="footer-links" aria-label="Footer navigation">
         {% for item in global.footer.links %}
         <li>
+          <!-- prettier-ignore -->
           <a
             class="footer-links__link classic-link tab-element-page"
             href="{{ item.url }}"
+            {%if item.new_tab%}
+              target="_blank" rel="noopener noreferrer"
+            {%endif%}
           >
             {{ item.title }}
           </a>

@@ -7,4 +7,5 @@ section_bg: /static/img/OSS-Hero-BG.jpg
 cta:
   text: Register
   text_desc: Register to serve with Sunder
-  url: /join
+  url: https://globeaware.org/sunder-energy-in-machu-picchu-peru-2025?fbclid=PAZXh0bgNhZW0CMTEAAaZ_fbbNjdEwGA_xOH16EksdFJoRKhZ6wuNyHzytwiM8uRgJmYfeuNWCvXY_aem_ae35dXlu-IxrcortjTkCcA
+  new_tab: true

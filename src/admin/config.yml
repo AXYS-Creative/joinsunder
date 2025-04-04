@@ -800,6 +800,10 @@ collections:
                     widget: string
                     required: false
                     hint: i.e. /join
+                  - name: new_tab
+                    label: Open in new tab
+                    widget: boolean
+                    default: true
       - name: quotes
         label: Section - Quote
         file: src/_data/page_platform/quotes.yaml
@@ -1418,6 +1422,10 @@ collections:
                 label: URL
                 widget: string
                 required: true
+              - name: new_tab
+                label: Open in new tab
+                widget: boolean
+                default: true
           - name: cta
             label: Call To Action
             widget: object

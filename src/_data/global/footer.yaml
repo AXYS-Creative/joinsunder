@@ -2,20 +2,28 @@ logo_src: /static/img/logo-squad-light.svg
 links:
   - title: The Sunder Way
     url: "/sunder-way"
+    new_tab: false
   - title: The Sunder Platform
     url: "/platform"
+    new_tab: false
   - title: About Sunder
     url: "/about"
+    new_tab: false
   - title: OSS
     url: "/operation-sunder-serves"
+    new_tab: false
   - title: Privacy Policy
-    url: "/"
+    url: "https://sunderenergy.com/privacy-policy/"
+    new_tab: true
   - title: Terms and Conditions
-    url: "/"
+    url: "https://sunderenergy.com/terms-conditions/"
+    new_tab: true
   - title: Contact Us
-    url: "/"
+    url: "https://sunderenergy.com/contact/"
+    new_tab: true
   - title: Sunder Energy
     url: "https://sunderenergy.com/"
+    new_tab: true
 cta:
   text: Join the squad
   text_desc:
