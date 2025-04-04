@@ -121,61 +121,6 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
           });
         }
 
-        // Ethos Section (Tablet)
-        if (document.querySelector(".section-ethos") && maxLg) {
-          const pinDuration = "+=150%";
-
-          // Pinning Ethos Section
-          gsap.to(".ethos-middle__panels", {
-            scrollTrigger: {
-              trigger: ".ethos-middle__panels",
-              start: `center center`,
-              end: pinDuration,
-              pin: true,
-            },
-          });
-
-          // Fading in panels
-          {
-            const panels = [
-              {
-                panelSelector: ".value-panel-1",
-                triggerSelector: ".ethos-middle-pin-step-1",
-                start: "-10% center",
-                end: "100% center",
-              },
-              {
-                panelSelector: ".value-panel-2",
-                triggerSelector: ".ethos-middle-pin-step-2",
-                start: "0% center",
-                end: "100% center",
-              },
-              {
-                panelSelector: ".value-panel-3",
-                triggerSelector: ".ethos-middle-pin-step-3",
-                start: "0% center",
-                end: "150% center",
-              },
-            ];
-
-            panels.forEach(({ panelSelector, triggerSelector, start, end }) => {
-              const panel = document.querySelector(panelSelector);
-
-              gsap.to(panel, {
-                scrollTrigger: {
-                  trigger: triggerSelector,
-                  start,
-                  end,
-                  onEnter: () => panel.classList.add("step-1"),
-                  onEnterBack: () => panel.classList.remove("step-2"),
-                  onLeave: () => panel.classList.add("step-2"),
-                  onLeaveBack: () => panel.classList.remove("step-1"),
-                },
-              });
-            });
-          }
-        }
-
         // Competitions Section (YOG)
         if (document.querySelector(".section-competitions")) {
           // Fade YOG logo

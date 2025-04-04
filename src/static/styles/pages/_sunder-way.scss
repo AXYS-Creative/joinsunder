@@ -79,6 +79,9 @@
       @include mq-max(xl) {
         font-size: $body-text-2;
       }
+      @include mq-max(lg) {
+        text-align: center;
+      }
     }
 
     &__panels {
@@ -87,27 +90,28 @@
       overflow: auto; // needed for scroll-snap
       scroll-snap-type: x mandatory;
 
+      @include mq-min(xl) {
+        width: 60%;
+      }
       @include mq-min(lg) {
         gap: var(--panel-gap);
       }
-
       @include mq-max(lg) {
-        position: relative;
-        height: calc(100lvh - var(--body-padding-double));
-        max-height: 500px;
+        @include column-center;
       }
 
       &-panel {
         background: var(--surface-color);
         border-radius: var(--radius);
         padding: var(--body-padding);
-        aspect-ratio: 1;
         flex: 1 1 auto;
         flex-shrink: 0;
         width: 32%;
         min-width: 248px;
 
         @include mq-min(lg) {
+          aspect-ratio: 1;
+
           @include mq-motion-allow {
             opacity: 0;
             translate: var(--panel-translate-offset) 0;
@@ -121,46 +125,45 @@
         }
 
         @include mq-max(lg) {
-          --slide-offset: 48px;
+          width: 100%;
+          max-width: 520px;
+          padding-inline: var(--section-gap);
 
-          @include absolute-center;
-          width: 320px;
-          height: 320px;
-
-          opacity: 0;
-          translate: calc(-50% + var(--slide-offset)) -50%;
-          transition: 0.5s ease;
-
-          &.step-1 {
-            opacity: 1;
-            translate: -50% -50%;
+          &.value-panel-1 {
+            border-radius: var(--radius) var(--radius) 0 0;
+            padding-block-start: var(--section-gap);
           }
-
-          &.step-2 {
-            opacity: 0;
-            translate: calc(-50% - var(--slide-offset)) -50%;
+          &.value-panel-2 {
+            border-radius: 0;
+            padding-block: var(--section-gap);
+          }
+          &.value-panel-3 {
+            border-radius: 0 0 var(--radius) var(--radius);
+            padding-block-end: var(--section-gap);
           }
         }
 
         .panel-title {
           @include h5;
           margin-block-end: calc(var(--section-gap-half) / 2);
+
+          @include mq-max(lg) {
+            @include h4;
+            text-align: center;
+          }
+
+          @include mq-max(md) {
+            @include h5;
+          }
+        }
+
+        .panel-desc {
+          @include mq-max(lg) {
+            text-align: center;
+            text-wrap: balance;
+          }
         }
       }
-    }
-
-    // LG down
-    &-pin {
-      width: 100%;
-
-      @include mq-min(xl) {
-        width: 60%;
-      }
-    }
-
-    &-pin-steps {
-      @include body-font-styles;
-      padding-block: 7lh; // height of paragraph. Prone to mismatch?
     }
   }
 
