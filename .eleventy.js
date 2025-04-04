@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
     );
   });
 
-  // Dynamic image formatting to work with CMS (Doesn't work within partials 🤦‍♂️)
+  // Dynamic image formatting to work with CMS (Doesn't work within partials )
   const imageShortcodeFn = async function (options = {}) {
     const {
       src,
@@ -61,7 +61,7 @@ module.exports = function (eleventyConfig) {
         alt,
         loading,
         decoding: "async",
-        // sizes,
+        sizes,
         class: className,
       });
     } catch (err) {
