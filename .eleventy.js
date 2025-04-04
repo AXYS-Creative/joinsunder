@@ -18,24 +18,29 @@ module.exports = function (eleventyConfig) {
   });
 
   // Dynamic image formatting to work with CMS
-  const imageShortcodeFn = async function (
-    src,
-    alt = "",
-    className = "",
-    optimize = true,
-    widths = [320, 640, 1280, 1920],
-    formats = ["avif", "webp", "jpeg"]
-  ) {
+  const imageShortcodeFn = async function (options = {}) {
+    const {
+      src,
+      alt = "",
+      className = "",
+      optimize = true,
+      loading = "lazy",
+      sizes = "100vw", // Required to use loading="eager" and maintain transform
+      widths = [320, 640, 1280, 1920],
+      formats = ["avif", "webp", "jpeg"],
+    } = options;
+
     const outputDir = "./src/static/images/";
     const urlPath = "/static/images/";
     const cacheDir = ".cache/eleventy-img";
 
     const path = require("path");
     const Image = require("@11ty/eleventy-img");
+
     const fullSrcPath = path.join("src", src.replace(/^\//, ""));
 
     if (!optimize) {
-      return `<img src="${src}" alt="${alt}" loading="lazy" decoding="async"${
+      return `<img src="${src}" alt="${alt}" loading="${loading}" decoding="async"${
         className ? ` class="${className}"` : ""
       }>`;
     }
@@ -54,8 +59,9 @@ module.exports = function (eleventyConfig) {
 
       return Image.generateHTML(metadata, {
         alt,
-        loading: "lazy",
+        loading,
         decoding: "async",
+        sizes,
         class: className,
       });
     } catch (err) {
@@ -63,14 +69,13 @@ module.exports = function (eleventyConfig) {
         `⚠️ eleventy-img failed for ${src}, using raw <img>.`,
         err.message
       );
-      return `<img src="${src}" alt="${alt}" loading="lazy" decoding="async"${
+      return `<img src="${src}" alt="${alt}" loading="${loading}" decoding="async"${
         className ? ` class="${className}"` : ""
       }>`;
     }
   };
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcodeFn);
-  eleventyConfig.addNunjucksAsyncFilter("image", imageShortcodeFn);
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);

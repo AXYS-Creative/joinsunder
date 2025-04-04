@@ -16,8 +16,18 @@ hide_footer: true
 
   <div class="hero-panel sunder-external">
     <!-- prettier-ignore -->
-    {% image page_home.hero.external_panel.bg_img, "", "hero-panel__bg-img" %}
-    {% image page_home.hero.external_panel.logo, "", "hero-panel__logo", false %}
+    {% image {
+      src: page_home.hero.external_panel.bg_img,
+      alt: "",
+      className: "hero-panel__bg-img"
+    } %}
+    
+    {% image {
+      src: page_home.hero.external_panel.logo,
+      alt: "",
+      className: "hero-panel__logo",
+      optimize: false
+    } %}
 
     <h2 class="hero-panel__title">
       <span class="hero-panel__title-sm">
@@ -35,8 +45,19 @@ hide_footer: true
 
   <div class="hero-panel sunder-internal">
     <!-- prettier-ignore -->
-    {% image page_home.hero.internal_panel.bg_img, "", "hero-panel__bg-img" %}
-    {% image page_home.hero.internal_panel.logo, "", "hero-panel__logo", false %}
+    {% image {
+      src: page_home.hero.internal_panel.bg_img,
+      alt: "",
+      className: "hero-panel__bg-img"
+    } %}
+    
+    {% image {
+      src: page_home.hero.internal_panel.logo,
+      alt: "",
+      className: "hero-panel__logo",
+      optimize: false
+    } %}
+
     <h2 class="hero-panel__title">
       <span class="hero-panel__title-sm">
         {{ page_home.hero.internal_panel.pre_title }}

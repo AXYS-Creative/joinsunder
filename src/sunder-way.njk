@@ -17,13 +17,15 @@ hide_footer: false
         {{ page_sunder_way.ethos.section_title }}
       </h1>
       <figure class="ethos-top__figure">
+        <!-- prettier-ignore -->
         {% for img in page_sunder_way.ethos.section_imgs %}
-        <img
-          class="ethos-top__figure-img ethos-img-{{ loop.index }}"
-          src="{{ img.src }}"
-          alt="{{ img.title }}"
-          loading="eager"
-        />
+          {% image {
+            src: img.src,
+            alt: img.title,
+            className: "ethos-top__figure-img ethos-img-" + loop.index,
+            optimize: true,
+            loading: "eager"
+          } %}
         {% endfor %}
       </figure>
     </div>
