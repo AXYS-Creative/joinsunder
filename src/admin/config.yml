@@ -801,7 +801,7 @@ collections:
                     required: false
                     hint: i.e. /join
                   - name: new_tab
-                    label: Open in new tab
+                    label: Open in a new tab
                     widget: boolean
                     default: true
       - name: quotes
@@ -1151,7 +1151,7 @@ collections:
     files:
       - name: hero
         label: Section - Hero
-        file: src/_data/page_oss/oss.yaml
+        file: src/_data/page_oss/hero.yaml
         preview_path: /operation-sunder-serves
         editor:
           preview: false
@@ -1198,6 +1198,10 @@ collections:
                 widget: string
                 required: false
                 hint: i.e. /join
+              - name: new_tab
+                label: Open in a new tab
+                widget: boolean
+                default: true
       - name: history
         label: Section - History
         file: src/_data/page_oss/history.yaml
@@ -1423,7 +1427,7 @@ collections:
                 widget: string
                 required: true
               - name: new_tab
-                label: Open in new tab
+                label: Open in a new tab
                 widget: boolean
                 default: true
           - name: cta
