@@ -898,6 +898,8 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
     });
   }
 
+  // Does setting the width/height fix the issue???
+
   // // ScrollTrigger has issues with loading="lazy", hand select images for loading="eager" (function below makes all images eager...)
   // {
   //   function handleLazyLoad(config = {}) {

@@ -24,7 +24,8 @@ hide_footer: false
             alt: img.title,
             className: "ethos-top__figure-img ethos-img-" + loop.index,
             optimize: true,
-            loading: "eager"
+            loading: "eager",
+            sizes: "(min-width: 768px) 50vw, 100vw"
           } %}
         {% endfor %}
       </figure>
@@ -79,12 +80,15 @@ hide_footer: false
   <div class="competition-types">
     {% for type in page_sunder_way.competitions.types %}
     <figure class="competition-types__figure">
-      <img
-        class="competition-types__img"
-        src="{{ type.src }}"
-        alt=""
-        loading="eager"
-      />
+      <!-- prettier-ignore -->
+      {% image {
+        src: type.src,
+        alt: "",
+        className: "competition-types__img",
+        optimize: true,
+        loading: "eager",
+        sizes: "(min-width: 768px) 50vw, 100vw"
+      } %}
 
       <figcaption class="competition-types__caption">
         <h3 class="competition-types__caption-title">{{ type.title }}</h3>
@@ -98,32 +102,44 @@ hide_footer: false
 
   <div class="yog">
     <figure class="yog-logo">
-      <img
-        class="yog-logo__img"
-        src="{{ page_sunder_way.competitions.yog_logo }}"
-        alt="Year of Gear"
-        eleventy:ignore
-      />
+      <!-- prettier-ignore -->
+      {% image {
+        src: page_sunder_way.competitions.yog_logo,
+        alt: "Year of Gear",
+        className: "yog-logo__img",
+        optimize: false,
+        loading: "eager"
+      } %}
     </figure>
 
     <div class="yog-merch">
       {% for row in page_sunder_way.competitions.yog_merch %}
       <div class="yog-merch__row">
+        <!-- prettier-ignore -->
         {% for item in row.items %}
-        <img
-          class="yog-merch__row-img gsap-animate {{ item.rotate }}"
-          src="{{ item.src }}"
-          alt="{{ item.title }}"
-          loading="eager"
-        />
+          {% image {
+            src: item.src,
+            alt: item.title,
+            className: "yog-merch__row-img gsap-animate " + item.rotate,
+            optimize: true,
+            loading: "eager",
+            sizes: "(min-width: 768px) 50vw, 100vw"
+          } %}
         {% endfor %}
       </div>
       {% endfor %}
     </div>
 
     <div class="yog-types">
+      <!-- prettier-ignore -->
       {% for type in page_sunder_way.competitions.yog_types %}
-      <img class="yog-types__img" src="{{ type.src }}" alt="" eleventy:ignore />
+        {% image {
+          src: type.src,
+          alt: "Year of Gear",
+          className: "yog-types__img",
+          optimize: false,
+          loading: "eager"
+        } %}
       {% endfor %}
     </div>
 

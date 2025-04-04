@@ -11,7 +11,7 @@
       aria-controls="video-overlay"
     >
       <span class="badge cta-1">{{ global.carousel.video_badge_text }}</span>
-      <img src="{{ item.poster }}" alt="{{ item.title }}" />
+      <img src="{{ item.poster }}" alt="{{ item.title }}" loading="eager" />
     </button>
     {% else %}
     <div class="swiper-slide">
