@@ -1583,6 +1583,7 @@ figure {
   aspect-ratio: 1/1.35;
   min-width: calc(25% - var(--panel-gap) * 3);
   width: 25%;
+  max-width: 25%;
 }
 @media screen and (max-width: 1024px) {
   .section-leadership .leadership-portraits .portrait-gradient {

@@ -558,6 +558,7 @@
       aspect-ratio: 1 / 1.35;
       min-width: calc(25% - var(--panel-gap) * 3);
       width: 25%;
+      max-width: 25%;
 
       @include mq-max(lg) {
         min-width: calc(50% - var(--panel-gap));
@@ -636,6 +637,18 @@
           }
         }
       }
+
+      // @include mq-motion-allow {
+      //   &.gsap-animate {
+      //     opacity: 0;
+      //     translate: 0 24px;
+      //   }
+      //   &.animate {
+      //     transition: $ease 0.125s;
+      //     translate: 0 0;
+      //     opacity: 1;
+      //   }
+      // }
     }
   }
 }

@@ -57,6 +57,15 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
       // Page - Sunder Way
       {
+        // Sunday way scrollTrigger fix
+        if (document.querySelector(".main-sunder-way")) {
+          window.addEventListener("load", () => {
+            setTimeout(() => {
+              ScrollTrigger.refresh(); // simulate the post-resize recalculation
+            }, 500); // try 200–500ms if needed
+          });
+        }
+
         // Ethos Section (Desktop)
         if (document.querySelector(".section-ethos") && minLg) {
           const pinDuration = "+=160%";
@@ -902,9 +911,3 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
     });
   }
 }
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    ScrollTrigger.refresh(); // simulate the post-resize recalculation
-  }, 500); // try 200–500ms if needed
-});

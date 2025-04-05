@@ -21,7 +21,13 @@
     </button>
     {% else %}
     <div class="swiper-slide">
-      <img src="{{ item.src }}" alt="{{ item.title }}" />
+      <img
+        src="{{ item.src }}"
+        alt="{{ item.title }}"
+        loading="lazy"
+        width="220"
+        height="250"
+      />
     </div>
     {% endif %} {% endfor %}
   </div>

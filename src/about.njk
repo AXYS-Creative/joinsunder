@@ -522,9 +522,9 @@ hide_footer: false
       {% set src = img.src %}
       {% set name = img.name %}
       {% set role = img.role %}
-      {% set class = '' %}
+      {% set class = 'gsap-animate' %}
       {% if loop.index <= 3 %}
-        {% set class = 'big-three-not-in-use' %}
+        {% set class = 'gsap-animate big-three-not-in-use' %}
       {% endif %}
       {% include "./_includes/components/portrait-gradient.njk" %}
     {% endfor %}
