@@ -151,10 +151,10 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 ease: "none",
                 scrollTrigger: {
                   trigger: ".collage",
-                  start: maxSm ? "-10% 10%" : "top top", // bandaid for mobile/CLS
+                  start: maxSm ? "-50% 10%" : "top top", // bandaid for mobile/CLS
                   end: "98% bottom",
                   scrub: 1,
-                  markers: true,
+                  // markers: true,
                 },
               });
             }
@@ -902,3 +902,9 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
     });
   }
 }
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    ScrollTrigger.refresh(); // simulate the post-resize recalculation
+  }, 500); // try 200–500ms if needed
+});
