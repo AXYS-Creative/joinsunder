@@ -130,8 +130,8 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
             opacity: 0,
             scrollTrigger: {
               trigger: ".yog",
-              start: maxSm ? "75% 100%" : "85% 90%", // bandaid for mobile/CLS
-              end: maxSm ? "75% 50%" : "85% 40%", // bandaid for mobile/CLS
+              start: "85% 90%",
+              end: "85% 40%",
               scrub: 0,
               // markers: true,
             },
@@ -151,7 +151,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 ease: "none",
                 scrollTrigger: {
                   trigger: ".collage",
-                  start: maxSm ? "-50% 10%" : "top top", // bandaid for mobile/CLS
+                  start: maxSm ? "-48px 10%" : "top top",
                   end: "98% bottom",
                   scrub: 1,
                   // markers: true,
