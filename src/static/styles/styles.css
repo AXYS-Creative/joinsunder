@@ -4,7 +4,7 @@
   --font-color--secondary: #d9d9d9;
   --font-color--error: #dc143c;
   --hero-color--primary: #0058f5;
-  --font-family: Satoshi, source-sans-pro, sans-serif;
+  --font-family: Satoshi, system-ui, sans-serif;
   --btn-color-bg: #0058f5;
   --btn-color-text: #f7f7f7;
   --btn-color-border: var(--btn-color-bg);
@@ -318,6 +318,7 @@ body:has(.load-complete) .hero div {
   letter-spacing: -2px;
   font-size: 96px;
   line-height: 107.8%;
+  font-size-adjust: 0.5;
   position: relative;
   color: #f7f7f7;
   display: inline-flex;
@@ -333,6 +334,7 @@ body:has(.load-complete) .hero div {
     letter-spacing: -2px;
     font-size: 55px;
     line-height: 110%;
+    font-size-adjust: 0.5;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -501,6 +503,7 @@ h1 {
   letter-spacing: -2px;
   font-size: 96px;
   line-height: 107.8%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 1024px) {
   h1 {
@@ -509,6 +512,7 @@ h1 {
     letter-spacing: -2px;
     font-size: 55px;
     line-height: 110%;
+    font-size-adjust: 0.5;
   }
 }
 
@@ -701,6 +705,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 768px) {
   .section-gradient__title {
@@ -1131,6 +1136,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 1024px) {
   .section-growth .growth-title {
@@ -1392,6 +1398,7 @@ figure {
   letter-spacing: -2px;
   font-size: 96px;
   line-height: 107.8%;
+  font-size-adjust: 0.5;
   display: flex;
 }
 @media screen and (max-width: 1200px) {
@@ -1401,6 +1408,7 @@ figure {
     letter-spacing: -2px;
     font-size: 55px;
     line-height: 110%;
+    font-size-adjust: 0.5;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1886,6 +1894,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 1024px) {
   .main-home .hero .hero-panel__title-lg {
@@ -2024,6 +2033,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 1512px) {
   .main-join .hero .form-panel__title {
@@ -2130,6 +2140,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 1024px) {
   .section-oss-history .service-event__location {
@@ -2187,6 +2198,7 @@ figure {
   letter-spacing: -2px;
   font-size: 96px;
   line-height: 107.8%;
+  font-size-adjust: 0.5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2200,6 +2212,7 @@ figure {
     letter-spacing: -2px;
     font-size: 55px;
     line-height: 110%;
+    font-size-adjust: 0.5;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -2213,6 +2226,7 @@ figure {
   letter-spacing: -2px;
   font-size: 96px;
   line-height: 107.8%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 1200px) {
   .section-ethos .ethos-top__title {
@@ -2221,6 +2235,7 @@ figure {
     letter-spacing: -2px;
     font-size: 55px;
     line-height: 110%;
+    font-size-adjust: 0.5;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -3332,6 +3347,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
 }
 .portrait-gradient__caption-role {
   font-weight: 900;
@@ -3638,6 +3654,7 @@ figure {
   letter-spacing: -2px;
   font-size: 96px;
   line-height: 107.8%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 1024px) {
   .partial-img-hero__h1 {
@@ -3646,6 +3663,7 @@ figure {
     letter-spacing: -2px;
     font-size: 55px;
     line-height: 110%;
+    font-size-adjust: 0.5;
   }
 }
 .partial-img-hero__h2 {
@@ -3654,6 +3672,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
 }
 .partial-img-hero__graphic {
   width: 400px;
@@ -3886,6 +3905,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
   margin-block-end: 24px;
 }
 @media screen and (max-width: 768px) {
@@ -4032,6 +4052,7 @@ figure {
   letter-spacing: -2px;
   font-size: 55px;
   line-height: 110%;
+  font-size-adjust: 0.5;
 }
 @media screen and (max-width: 1024px) {
   .partial-quote .quote__text-block-title {

@@ -44,7 +44,10 @@ collections:
                 label: Logo
                 widget: image
                 required: true
-                hint: Recommended to use an SVG file
+                hint: Recommended to use an SVG file. Keep below 1MB
+                media_library:
+                  config:
+                    max_file_size: 1000000 # 1MB = 1,000,000 bytes
               - name: pre_title
                 label: Small Title
                 widget: string
@@ -90,7 +93,10 @@ collections:
                 label: Logo
                 widget: image
                 required: true
-                hint: Recommended to use an SVG file
+                hint: Recommended to use an SVG file. Keep below 1MB
+                media_library:
+                  config:
+                    max_file_size: 1000000 # 1MB = 1,000,000 bytes
               - name: pre_title
                 label: Small Title
                 widget: string
@@ -257,6 +263,10 @@ collections:
             label: Logo - Year of Gear Logo
             widget: image
             required: true
+            hint: Recommended to use an SVG file. Keep below 1MB
+            media_library:
+              config:
+                max_file_size: 1000000 # 1MB = 1,000,000 bytes
           - name: yog_merch
             label: Rows - Year of Gear Merch
             label_singular: Row
@@ -309,7 +319,7 @@ collections:
                 label: Image Source (Banner)
                 widget: image
                 required: true
-                hint: Keep below 1MB
+                hint: Recommended to use an SVG file. Keep below 1MB
                 media_library:
                   config:
                     max_file_size: 1000000 # 1MB = 1,000,000 bytes
@@ -539,6 +549,10 @@ collections:
             label: Graphic
             widget: image
             required: false
+            hint: Recommended to use an SVG file. Keep below 1MB
+            media_library:
+              config:
+                max_file_size: 1000000 # 1MB = 1,000,000 bytes
           - name: cta
             label: Call To Action
             widget: object
@@ -695,6 +709,10 @@ collections:
                 label: Image Source
                 widget: image
                 required: true
+                hint: Recommended to use an SVG file. Keep below 1MB
+                media_library:
+                  config:
+                    max_file_size: 1000000 # 1MB = 1,000,000 bytes
       - name: financiers
         label: Section - Finance Options
         file: src/_data/page_platform/financiers.yaml
@@ -736,6 +754,10 @@ collections:
                 label: Image Source
                 widget: image
                 required: true
+                hint: Recommended to use an SVG file. Keep below 1MB
+                media_library:
+                  config:
+                    max_file_size: 1000000 # 1MB = 1,000,000 bytes
       - name: tools
         label: Section - Tools
         file: src/_data/page_platform/tools.yaml
@@ -766,6 +788,10 @@ collections:
                 label: Tool Logo
                 widget: image
                 required: true
+                hint: Recommended to use an SVG file. Keep below 1MB
+                media_library:
+                  config:
+                    max_file_size: 1000000 # 1MB = 1,000,000 bytes
               - name: section_desc
                 label: Tool Description
                 widget: text
@@ -1411,7 +1437,10 @@ collections:
             label: Logo Image Source
             widget: image
             required: false
-            hint: An empty value removes the logo
+            hint: An empty value removes the logo. Keep below 1MB
+            media_library:
+              config:
+                max_file_size: 1000000 # 1MB = 1,000,000 bytes
           - name: links
             label: Footer Links
             label_singular: Link
