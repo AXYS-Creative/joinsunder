@@ -19,6 +19,8 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
 // GSAP
 {
+  console.log("ScrollTrigger initialized at", performance.now());
+
   gsap.registerPlugin(ScrollTrigger);
 
   let responsiveGsap = gsap.matchMedia();
@@ -898,6 +900,34 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
       ScrollTrigger.refresh();
     });
   }
+
+  // Help scrollTrigger with Lenis
+  ScrollTrigger.normalizeScroll(true);
+
+  // Attempt to fix scrollTrigger
+  window.addEventListener("load", () => {
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 50); // small delay to catch any late reflows
+    });
+  });
+
+  // Wait until images and fonts load
+  Promise.all([
+    document.fonts.ready,
+    ...Array.from(document.images).map((img) => {
+      if (img.complete) return Promise.resolve();
+      return new Promise((resolve) =>
+        img.decode
+          ? img.decode().then(resolve).catch(resolve)
+          : img.addEventListener("load", resolve)
+      );
+    }),
+  ]).then(() => {
+    // Now run ScrollTrigger logic
+    ScrollTrigger.refresh();
+  });
 
   // Does setting the width/height fix the issue???
 
