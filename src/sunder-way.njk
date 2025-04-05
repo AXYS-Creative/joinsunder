@@ -138,7 +138,7 @@ hide_footer: false
         class="yog-types__img"
         src="{{ type.src }}"
         alt="{{ type.title }}"
-        loading="eager"
+        loading="lazy"
         width="150"
         height="150"
       />
@@ -259,7 +259,7 @@ hide_footer: false
         class="{%if loop.index0 % 2 == 1%}portrait{%else%}landscape{%endif%}"
         src="{{ img.src }}"
         alt="{{ img.title }}"
-        loading="eager"
+        loading="lazy"
       />
       {% endfor %}
     </div>
@@ -271,7 +271,7 @@ hide_footer: false
         class="{%if loop.index0 % 2 == 1%}portrait{%else%}landscape{%endif%}"
         src="{{ img.src }}"
         alt="{{ img.title }}"
-        loading="eager"
+        loading="lazy"
       />
       {% endfor %}
     </div>

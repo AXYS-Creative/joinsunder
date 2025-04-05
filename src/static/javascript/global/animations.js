@@ -149,9 +149,9 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                 scrollTrigger: {
                   trigger: ".collage",
                   start: maxSm ? "-48px 10%" : "top top",
-                  end: maxSm ? "98% bottom" : "99% bottom",
+                  end: "98% bottom",
                   scrub: 1,
-                  markers: false,
+                  markers: true,
                 },
               });
             }
@@ -686,6 +686,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
               onLeave: () => targetElem.classList.remove("animate"),
               onEnterBack: () => targetElem.classList.add("animate"),
               onLeaveBack: () => targetElem.classList.remove("animate"),
+              markers: navyMarkers,
             },
           });
         });
