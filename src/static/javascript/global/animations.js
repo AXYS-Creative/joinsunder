@@ -19,7 +19,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
 // GSAP
 {
-  console.log("ScrollTrigger initialized at", performance.now());
+  // console.log("ScrollTrigger initialized at", performance.now());
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -133,6 +133,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
               start: "85% 90%",
               end: "85% 40%",
               scrub: 0,
+              markers: redMarkers,
             },
           });
         }
@@ -153,7 +154,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
                   start: maxSm ? "-48px 10%" : "top top",
                   end: "98% bottom",
                   scrub: 1,
-                  // markers: true,
+                  markers: true,
                 },
               });
             }
@@ -688,7 +689,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
               onLeave: () => targetElem.classList.remove("animate"),
               onEnterBack: () => targetElem.classList.add("animate"),
               onLeaveBack: () => targetElem.classList.remove("animate"),
-              // markers: navyMarkers,
+              markers: navyMarkers,
             },
           });
         });

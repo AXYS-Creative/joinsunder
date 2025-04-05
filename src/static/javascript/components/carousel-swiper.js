@@ -18,6 +18,7 @@ let swiper = new Swiper(".mySwiper", {
       slidesPerView: page === "pageSunderWay" ? 3 : 4,
     },
   },
+  // Hook up to CMS
   // autoplay: {
   //   delay: 5000,
   //   disableOnInteraction: true,

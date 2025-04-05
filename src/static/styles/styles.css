@@ -4,7 +4,7 @@
   --font-color--secondary: #d9d9d9;
   --font-color--error: #dc143c;
   --hero-color--primary: #0058f5;
-  --font-family: Satoshi, system-ui, sans-serif;
+  --font-family: satoshi, system-ui, sans-serif;
   --btn-color-bg: #0058f5;
   --btn-color-text: #f7f7f7;
   --btn-color-border: var(--btn-color-bg);
@@ -887,8 +887,8 @@ figure {
   }
 }
 @font-face {
-  font-family: "Satoshi";
-  src: url("../fonts/Satoshi-Variable.woff2") format("woff2");
+  font-family: "satoshi";
+  src: url("../fonts/satoshi-variable.woff2") format("woff2");
   font-weight: 100 900;
   font-display: block;
 }
