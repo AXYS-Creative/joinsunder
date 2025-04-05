@@ -92,12 +92,8 @@
   }
 
   &.no-label {
-    .social-media__label {
-      display: none;
-    }
-
     .social-media__links {
-      margin-top: 0; // Reset margin if no label
+      margin-top: 0;
 
       li {
         opacity: 1;

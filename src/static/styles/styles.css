@@ -3482,9 +3482,6 @@ figure {
   height: 100%;
   transition: 0.32s ease;
 }
-.social-media.no-label .social-media__label {
-  display: none;
-}
 .social-media.no-label .social-media__links {
   margin-top: 0;
 }
