@@ -340,7 +340,7 @@ body {
   max-width: var(--header-max-width);
   // max-width: unset; // toggle for ultra-wide behavior
   padding: var(--body-padding-double);
-  margin-bottom: var(--body-padding-sm);
+  margin-block: var(--body-padding) var(--body-padding-sm);
   border-radius: var(--radius-lg);
 
   &__inner {

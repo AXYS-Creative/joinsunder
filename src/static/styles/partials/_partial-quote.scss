@@ -1,6 +1,7 @@
 .partial-quote {
   @include column-center;
   gap: var(--section-gap);
+  padding-block: var(--section-gap-double);
 
   @include mq-min(xl) {
     padding-inline: calc(var(--body-padding-double) * 2);

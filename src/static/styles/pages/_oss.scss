@@ -22,8 +22,12 @@
 
   .service-event {
     @include row-center(flex-start);
-    gap: calc(var(--section-gap) * 3);
+    gap: calc(var(--section-gap) * 4);
     width: 100%;
+
+    @include mq-max(xxl) {
+      gap: calc(var(--section-gap) * 3);
+    }
 
     @include mq-max(lg) {
       flex-direction: column;
@@ -31,14 +35,10 @@
     }
 
     &__graphic {
-      width: 320px;
-
-      @include mq-max(xxl) {
-        width: 20%;
-      }
+      width: min(18%, 320px);
 
       @include mq-max(lg) {
-        width: 250px;
+        width: 180px;
       }
 
       @include mq-min(xl) {

@@ -435,7 +435,7 @@ body:has(.load-complete) .hero div {
   width: calc(100vw - var(--body-padding-sm-double));
   max-width: var(--header-max-width);
   padding: var(--body-padding-double);
-  margin-bottom: var(--body-padding-sm);
+  margin-block: var(--body-padding) var(--body-padding-sm);
   border-radius: var(--radius-lg);
 }
 .site-footer__inner {
@@ -2068,8 +2068,13 @@ figure {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: calc(var(--section-gap) * 3);
+  gap: calc(var(--section-gap) * 4);
   width: 100%;
+}
+@media screen and (max-width: 1512px) {
+  .section-oss-history .service-event {
+    gap: calc(var(--section-gap) * 3);
+  }
 }
 @media screen and (max-width: 1024px) {
   .section-oss-history .service-event {
@@ -2078,16 +2083,11 @@ figure {
   }
 }
 .section-oss-history .service-event__graphic {
-  width: 320px;
-}
-@media screen and (max-width: 1512px) {
-  .section-oss-history .service-event__graphic {
-    width: 20%;
-  }
+  width: min(18%, 320px);
 }
 @media screen and (max-width: 1024px) {
   .section-oss-history .service-event__graphic {
-    width: 250px;
+    width: 180px;
   }
 }
 @media screen and (min-width: 1201px) {
@@ -3961,6 +3961,7 @@ figure {
   justify-content: center;
   align-items: center;
   gap: var(--section-gap);
+  padding-block: var(--section-gap-double);
 }
 @media screen and (min-width: 1201px) {
   .partial-quote {
