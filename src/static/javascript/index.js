@@ -6,15 +6,15 @@ import "./components/collage.js";
 import "./components/form-redirect.js";
 import "./components/video-overlay.js";
 
-import "./global/animations.js";
+import "./pages/about.js";
+import "./pages/home.js";
+import "./pages/join.js";
+
 import "./global/header.js";
 import "./global/loader.js";
 import "./global/nav.js";
 import "./global/scroll.js";
-
-import "./pages/about.js";
-import "./pages/home.js";
-import "./pages/join.js";
+import "./global/animations.js";
 
 // import "./library/accordion.js";
 // import "./library/carousel-snap.js";

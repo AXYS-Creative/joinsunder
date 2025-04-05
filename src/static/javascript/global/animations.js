@@ -227,7 +227,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
           // Mobile
           if (maxLg) {
             let mobileSpacer = document.querySelector(".mobile-spacer");
-            let smDuration = mobileSpacer.offsetHeight; // Duration controled by html element's height
+            let smDuration = mobileSpacer.offsetHeight; // Duration controled by html element's height, search 'valuePinSm'
 
             // Mobile — Pin for values svg
             gsap.to(".section-values__figure", {

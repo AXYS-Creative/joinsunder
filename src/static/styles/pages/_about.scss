@@ -91,7 +91,7 @@
   }
 
   .mobile-spacer {
-    height: 1950px; // This hooks up to the gsap duration
+    height: 1200px; // Controls GSAP scroll, was 1950px valuePinSm
     width: 12px;
     align-self: flex-end;
   }
