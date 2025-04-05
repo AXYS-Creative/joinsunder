@@ -130,8 +130,8 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
             opacity: 0,
             scrollTrigger: {
               trigger: ".yog",
-              start: "85% 90%",
-              end: "85% 40%",
+              start: maxSm ? "60% 100%" : "85% 90%",
+              end: maxSm ? "60% 50%" : "85% 40%",
               scrub: 0,
               markers: true,
             },
