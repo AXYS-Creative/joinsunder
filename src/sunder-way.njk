@@ -138,7 +138,7 @@ hide_footer: false
         class="yog-types__img"
         src="{{ type.src }}"
         alt="{{ type.title }}"
-        loading="lazy"
+        loading="eager"
         width="150"
         height="150"
       />
@@ -254,25 +254,43 @@ hide_footer: false
     <div
       class="collage__column collage__column-mobile collage__column-mobile-1"
     >
+      <!-- prettier-ignore -->
       {% for img in page_sunder_way.experiences.collage.column_1_mobile %}
-      <img
-        class="{%if loop.index0 % 2 == 1%}portrait{%else%}landscape{%endif%}"
-        src="{{ img.src }}"
-        alt="{{ img.title }}"
-        loading="lazy"
-      />
+        {% if loop.index0 % 2 == 0 %}
+          {% set className = "landscape" %}
+        {% else %}
+          {% set className = "portrait" %}
+        {% endif %}
+
+        {% image {
+          src: img.src,
+          alt: img.title,
+          className: className,
+          optimize: true,
+          loading: "eager",
+          sizes: "(min-width: 768px) 50vw, 100vw"
+        } %}
       {% endfor %}
     </div>
     <div
       class="collage__column collage__column-mobile collage__column-mobile-2"
     >
+      <!-- prettier-ignore -->
       {% for img in page_sunder_way.experiences.collage.column_2_mobile %}
-      <img
-        class="{%if loop.index0 % 2 == 1%}portrait{%else%}landscape{%endif%}"
-        src="{{ img.src }}"
-        alt="{{ img.title }}"
-        loading="lazy"
-      />
+        {% if loop.index0 % 2 == 0 %}
+          {% set className = "landscape" %}
+        {% else %}
+          {% set className = "portrait" %}
+        {% endif %}
+
+        {% image {
+          src: img.src,
+          alt: img.title,
+          className: className,
+          optimize: true,
+          loading: "eager",
+          sizes: "(min-width: 768px) 50vw, 100vw"
+        } %}
       {% endfor %}
     </div>
   </div>
