@@ -453,6 +453,7 @@ body:has(.load-complete) .hero div {
     gap: 64px;
   }
 }
+.site-footer__inner .inner-top,
 .site-footer__inner .inner-bottom {
   display: flex;
   justify-content: space-between;
@@ -460,10 +461,16 @@ body:has(.load-complete) .hero div {
   width: 100%;
 }
 @media screen and (max-width: 1024px) {
+  .site-footer__inner .inner-top,
   .site-footer__inner .inner-bottom {
     flex-direction: column;
     align-items: flex-start;
     gap: 64px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .site-footer__inner .social-media {
+    display: none;
   }
 }
 .site-footer .footer-links {
@@ -3474,6 +3481,15 @@ figure {
   width: 100%;
   height: 100%;
   transition: 0.32s ease;
+}
+.social-media.no-label .social-media__label {
+  display: none;
+}
+.social-media.no-label .social-media__links {
+  margin-top: 0;
+}
+.social-media.no-label .social-media__links li {
+  opacity: 1;
 }
 
 .video-overlay {

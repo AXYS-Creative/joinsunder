@@ -90,4 +90,18 @@
       transition: $ease;
     }
   }
+
+  &.no-label {
+    .social-media__label {
+      display: none;
+    }
+
+    .social-media__links {
+      margin-top: 0; // Reset margin if no label
+
+      li {
+        opacity: 1;
+      }
+    }
+  }
 }

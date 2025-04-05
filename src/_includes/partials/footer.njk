@@ -8,6 +8,11 @@
       {% set logo_link_class = "footer-logo" %}
       {% set page_tabbing = 'tab-element-page' %}
       {% include "../components/logo-link.njk" %}
+
+      <!-- prettier-ignore -->
+      {% set no_label = true %}
+      {% set social_data = global.social_media.links %}
+      {% include "../components/social-media.njk" %}
     </div>
     {% endif %}
 
