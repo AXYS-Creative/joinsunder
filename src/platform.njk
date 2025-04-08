@@ -49,7 +49,7 @@ hide_footer: false
 {% if page_platform.tools.toggle_section %}
 <section class="section-tools" id="platform-tools">
   <h2 class="sr-only">
-    {{ page_platform.tools.section_title or page_platform.tools.section_title_default }}
+    {{ page_platform.tools.section_title or 'Sunder Tools' }}
   </h2>
   <!-- prettier-ignore -->
   {% for tool in page_platform.tools.list %}

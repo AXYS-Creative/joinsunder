@@ -1,6 +1,5 @@
 toggle_section: true
 section_title: Sunder Tools
-section_title_default: Sunder Tools #if this changes update config file
 
 list:
   - title: Enzy
