@@ -56,3 +56,8 @@ let swiper = new Swiper(".mySwiper", {
   //   },
   // },
 });
+
+// Remove role attribute from video toggle elements (invalid HTML)
+document
+  .querySelectorAll(".video-toggle")
+  .forEach((el) => el.removeAttribute("role"));

@@ -15,6 +15,9 @@ class="
       class="partial-img-hero__bg"
       src="{{ section_bg }}"
       alt=""
+      {% if is_hero %}
+        loading="eager"
+      {% endif %}
     />
     
     {% if section_graphic %}

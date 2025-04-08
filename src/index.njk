@@ -19,6 +19,7 @@ hide_footer: true
       class="hero-panel__bg-img"
       src="{{ page_home.hero.external_panel.bg_img }}"
       alt=""
+      loading="eager"
     />
     <img
       class="hero-panel__logo"
@@ -41,9 +42,12 @@ hide_footer: true
   </div>
 
   <div class="hero-panel sunder-internal">
-    <!-- prettier-ignore -->
-    <img class="hero-panel__bg-img" src="{{page_home.hero.internal_panel.bg_img}}" alt="">
-
+    <img
+      class="hero-panel__bg-img"
+      src="{{ page_home.hero.internal_panel.bg_img }}"
+      alt=""
+      loading="eager"
+    />
     <img
       class="hero-panel__logo"
       src="{{ page_home.hero.internal_panel.logo }}"
