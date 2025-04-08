@@ -77,7 +77,12 @@ hide_footer: false
   <div class="competition-types">
     {% for type in page_sunder_way.competitions.types %}
     <figure class="competition-types__figure">
-      <img class="competition-types__img" src="{{ type.src }}" alt="" />
+      <img
+        class="competition-types__img"
+        src="{{ type.src }}"
+        alt=""
+        loading="eager"
+      />
 
       <figcaption class="competition-types__caption">
         <h3 class="competition-types__caption-title">{{ type.title }}</h3>
@@ -95,6 +100,8 @@ hide_footer: false
         class="yog-logo__img"
         src="{{ page_sunder_way.competitions.yog_logo }}"
         alt="Year of Gear"
+        loading="lazy"
+        eleventy:ignore
       />
     </figure>
 
@@ -107,6 +114,7 @@ hide_footer: false
           class="yog-merch__row-img gsap-animate {{ item.rotate }}"
           src="{{ item.src }}"
           alt="{{ item.title }}"
+          loading="eager"
         />
         {% endfor %}
       </div>
@@ -205,6 +213,7 @@ hide_footer: false
         class="{% if loop.index0 % 2 == 1 %}portrait{% else %}landscape{% endif %}"
         src="{{ img.src }}"
         alt="{{ img.title }}"
+        loading="eager"
       />
       {% endfor %}
     </div>
@@ -217,6 +226,7 @@ hide_footer: false
         class="{% if loop.index0 % 2 == 1 %}portrait{% else %}landscape{% endif %}"
         src="{{ img.src }}"
         alt="{{ img.title }}"
+        loading="eager"
       />
       {% endfor %}
     </div>

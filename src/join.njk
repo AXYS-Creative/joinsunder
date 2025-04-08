@@ -16,7 +16,8 @@ hide_footer: true
   >
     {% for img in page_join.hero.images %}
     <!-- prettier-ignore -->
-    <img class="join-carousel__img" src="{{ img.src }}" alt="{{ img.title }}"/>
+    <img class="join-carousel__img" src="{{ img.src }}" alt="{{ img.title }}"
+    {%if loop.index == 1%} loading="eager" {%endif%} />
     <!-- prettier-ignore -->
     {% endfor %}
   </div>
