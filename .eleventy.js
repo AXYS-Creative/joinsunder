@@ -4,6 +4,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
+const fs = require("fs");
 
 module.exports = async function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -38,7 +39,10 @@ module.exports = async function (eleventyConfig) {
 
     const fullSrcPath = path.join("src", src.replace(/^\//, ""));
 
-    if (!optimize) {
+    if (!optimize || !fs.existsSync(fullSrcPath)) {
+      if (!fs.existsSync(fullSrcPath)) {
+        console.warn(`⚠️ Image source not found: ${fullSrcPath}`);
+      }
       return `<img src="${src}" alt="${alt}" loading="${loading}" decoding="async"${
         className ? ` class="${className}"` : ""
       }>`;
