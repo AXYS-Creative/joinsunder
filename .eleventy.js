@@ -6,9 +6,6 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
 module.exports = async function (eleventyConfig) {
-  // Enable async-compatible rendering
-  const { EleventyRenderPlugin } = await import("@11ty/eleventy");
-
   // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);
 
@@ -21,21 +18,6 @@ module.exports = async function (eleventyConfig) {
       "dd LLL yyyy"
     );
   });
-
-  eleventyConfig.addPlugin(EleventyRenderPlugin);
-
-  // Filer for transformable/CMS friendly images within partials
-  eleventyConfig.addNunjucksAsyncFilter(
-    "imgHTML",
-    async (options, callback) => {
-      try {
-        const html = await generateImageHTML(options);
-        callback(null, html);
-      } catch (err) {
-        callback(err);
-      }
-    }
-  );
 
   // Dynamic image formatting to work with CMS (Doesn't work within partials )
   const imageShortcodeFn = async function (options = {}) {
