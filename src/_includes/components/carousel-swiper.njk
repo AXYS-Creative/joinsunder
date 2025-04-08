@@ -11,23 +11,11 @@
       aria-controls="video-overlay"
     >
       <span class="badge cta-1">{{ global.carousel.video_badge_text }}</span>
-      <img
-        src="{{ item.poster }}"
-        alt="{{ item.title }}"
-        loading="lazy"
-        width="520"
-        height="296"
-      />
+      <img src="{{ item.poster }}" alt="{{ item.title }}" />
     </button>
     {% else %}
     <div class="swiper-slide">
-      <img
-        src="{{ item.src }}"
-        alt="{{ item.title }}"
-        loading="lazy"
-        width="220"
-        height="250"
-      />
+      <img src="{{ item.src }}" alt="{{ item.title }}" />
     </div>
     {% endif %} {% endfor %}
   </div>

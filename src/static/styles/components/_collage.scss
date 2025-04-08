@@ -13,6 +13,10 @@
       display: none;
     }
 
+    picture {
+      width: 100%;
+    }
+
     img {
       border-radius: var(--radius);
       object-fit: cover;

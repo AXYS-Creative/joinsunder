@@ -14,22 +14,10 @@ hide_footer: true
     class="join-carousel"
     data-carousel-interval="{{ page_join.hero.autoplay_interval }}"
   >
-    <!-- prettier-ignore -->
     {% for img in page_join.hero.images %}
-      {% if loop.index == 1 %}
-        {% set loading = "eager" %}
-      {% else %}
-        {% set loading = "lazy" %}
-      {% endif %}
-
-      {% image {
-        src: img.src,
-        alt: "",
-        className: "join-carousel__img",
-        optimize: true,
-        loading: loading,
-        sizes: "(max-width: 600px) 320px, (max-width: 1000px) 640px, 1000px"
-      } %}
+    <!-- prettier-ignore -->
+    <img class="join-carousel__img" src="{{ img.src }}" alt="{{ img.title }}"/>
+    <!-- prettier-ignore -->
     {% endfor %}
   </div>
 

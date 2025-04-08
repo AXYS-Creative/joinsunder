@@ -1,90 +1,30 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const htmlmin = require("html-minifier");
-const Image = require("@11ty/eleventy-img");
-const path = require("path");
-const fs = require("fs");
 
 module.exports = async function (eleventyConfig) {
-  // Disable automatic use of your .gitignore
-  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.setUseGitIgnore(false); // Disable automatic use of your .gitignore
+  eleventyConfig.setDataDeepMerge(true); // Merge data instead of overriding
 
-  // Merge data instead of overriding
-  eleventyConfig.setDataDeepMerge(true);
+  eleventyConfig.addFilter("readableDate", (dateObj) =>
+    DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd LLL yyyy")
+  );
 
-  // human readable date
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL yyyy"
-    );
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["webp", "jpeg"],
+    widths: [320, 768, 1280, 1920],
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+        sizes: "100vw",
+      },
+      pictureAttributes: {},
+    },
   });
 
-  // Dynamic image formatting to work with CMS (Doesn't work within partials )
-  const imageShortcodeFn = async function (options = {}) {
-    const {
-      src,
-      alt = "",
-      className = "",
-      optimize = true,
-      loading = "lazy",
-      sizes = "100vw", // Required to use loading="eager" and maintain transform
-      widths = [320, 640, 1280, 1920],
-      formats = ["avif", "webp", "jpeg"],
-    } = options;
-
-    const outputDir = "./src/static/images/";
-    const urlPath = "/static/images/";
-    const cacheDir = ".cache/eleventy-img";
-
-    const fullSrcPath = path.join("src", src.replace(/^\//, ""));
-
-    if (!optimize || !fs.existsSync(fullSrcPath)) {
-      if (!fs.existsSync(fullSrcPath)) {
-        console.warn(`⚠️ Image source not found: ${fullSrcPath}`);
-      }
-      return `<img src="${src}" alt="${alt}" loading="${loading}" decoding="async"${
-        className ? ` class="${className}"` : ""
-      }>`;
-    }
-
-    try {
-      const metadata = await Image(fullSrcPath, {
-        widths,
-        formats,
-        outputDir,
-        urlPath,
-        cacheOptions: {
-          duration: "30d",
-          directory: cacheDir,
-        },
-      });
-
-      return Image.generateHTML(metadata, {
-        alt,
-        loading,
-        decoding: "async",
-        sizes,
-        class: className,
-      });
-    } catch (err) {
-      console.warn(
-        `⚠️ eleventy-img failed for ${src}, using raw <img>.`,
-        err.message
-      );
-      return `<img src="${src}" alt="${alt}" loading="${loading}" decoding="async"${
-        className ? ` class="${className}"` : ""
-      }>`;
-    }
-  };
-
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcodeFn);
-
-  // Syntax Highlighting for Code blocks
-  eleventyConfig.addPlugin(syntaxHighlight);
-
-  // To Support .yaml Extension in _data
-  // You may remove this if you can use JSON
+  // To support .yaml extension in _data. You may remove this if using JSON
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 
   // Copy Static Files over to _site directory
@@ -160,7 +100,5 @@ module.exports = async function (eleventyConfig) {
       input: "src",
     },
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-    templateFormats: ["njk", "md", "html"],
   };
 };

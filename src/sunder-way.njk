@@ -19,14 +19,11 @@ hide_footer: false
       <figure class="ethos-top__figure">
         <!-- prettier-ignore -->
         {% for img in page_sunder_way.ethos.section_imgs %}
-          {% image {
-            src: img.src,
-            alt: img.title,
-            className: "ethos-top__figure-img ethos-img-" + loop.index,
-            optimize: true,
-            loading: "eager",
-            sizes: "(min-width: 768px) 50vw, 100vw"
-          } %}
+        <img
+          class="ethos-top__figure-img ethos-img-{{ loop.index }}"
+          src="{{ img.src }}"
+          alt="{{ img.title }}"
+        />
         {% endfor %}
       </figure>
     </div>
@@ -80,15 +77,7 @@ hide_footer: false
   <div class="competition-types">
     {% for type in page_sunder_way.competitions.types %}
     <figure class="competition-types__figure">
-      <!-- prettier-ignore -->
-      {% image {
-        src: type.src,
-        alt: "",
-        className: "competition-types__img",
-        optimize: true,
-        loading: "eager",
-        sizes: "(min-width: 768px) 50vw, 100vw"
-      } %}
+      <img class="competition-types__img" src="{{ type.src }}" alt="" />
 
       <figcaption class="competition-types__caption">
         <h3 class="competition-types__caption-title">{{ type.title }}</h3>
@@ -102,14 +91,11 @@ hide_footer: false
 
   <div class="yog">
     <figure class="yog-logo">
-      <!-- prettier-ignore -->
-      {% image {
-        src: page_sunder_way.competitions.yog_logo,
-        alt: "Year of Gear",
-        className: "yog-logo__img",
-        optimize: false,
-        loading: "eager"
-      } %}
+      <img
+        class="yog-logo__img"
+        src="{{ page_sunder_way.competitions.yog_logo }}"
+        alt="Year of Gear"
+      />
     </figure>
 
     <div class="yog-merch">
@@ -117,14 +103,11 @@ hide_footer: false
       <div class="yog-merch__row">
         <!-- prettier-ignore -->
         {% for item in row.items %}
-          {% image {
-            src: item.src,
-            alt: item.title,
-            className: "yog-merch__row-img gsap-animate " + item.rotate,
-            optimize: true,
-            loading: "eager",
-            sizes: "(min-width: 768px) 50vw, 100vw"
-          } %}
+        <img
+          class="yog-merch__row-img gsap-animate {{ item.rotate }}"
+          src="{{ item.src }}"
+          alt="{{ item.title }}"
+        />
         {% endfor %}
       </div>
       {% endfor %}
@@ -138,9 +121,7 @@ hide_footer: false
         class="yog-types__img"
         src="{{ type.src }}"
         alt="{{ type.title }}"
-        loading="eager"
-        width="150"
-        height="150"
+        eleventy:ignore
       />
       {% endfor %}
     </div>
@@ -176,77 +157,41 @@ hide_footer: false
     <div class="collage__column collage__column-1">
       <!-- prettier-ignore -->
       {% for img in page_sunder_way.experiences.collage.column_1 %}
-        {% if loop.index0 % 2 == 0 %}
-          {% set className = "portrait" %}
-        {% else %}
-          {% set className = "landscape" %}
-        {% endif %}
-
-        {% image {
-          src: img.src,
-          alt: img.title,
-          className: className,
-          optimize: true,
-          loading: "eager",
-          sizes: "(min-width: 768px) 50vw, 100vw"
-        } %}
+      <img
+        class="{% if loop.index0 % 2 == 0 %}portrait{% else %}landscape{% endif %}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
       {% endfor %}
     </div>
     <div class="collage__column collage__column-2">
       <!-- prettier-ignore -->
       {% for img in page_sunder_way.experiences.collage.column_2 %}
-        {% if loop.index0 % 2 == 0 %}
-          {% set className = "landscape" %}
-        {% else %}
-          {% set className = "portrait" %}
-        {% endif %}
-
-        {% image {
-          src: img.src,
-          alt: img.title,
-          className: className,
-          optimize: true,
-          loading: "eager",
-          sizes: "(min-width: 768px) 50vw, 100vw"
-        } %}
+      <img
+        class="{% if loop.index0 % 2 == 1 %}portrait{% else %}landscape{% endif %}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
       {% endfor %}
     </div>
     <div class="collage__column collage__column-3">
       <!-- prettier-ignore -->
       {% for img in page_sunder_way.experiences.collage.column_3 %}
-        {% if loop.index0 % 2 == 0 %}
-          {% set className = "portrait" %}
-        {% else %}
-          {% set className = "landscape" %}
-        {% endif %}
-
-        {% image {
-          src: img.src,
-          alt: img.title,
-          className: className,
-          optimize: true,
-          loading: "eager",
-          sizes: "(min-width: 768px) 50vw, 100vw"
-        } %}
+      <img
+        class="{% if loop.index0 % 2 == 0 %}portrait{% else %}landscape{% endif %}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
       {% endfor %}
     </div>
     <div class="collage__column collage__column-4">
       <!-- prettier-ignore -->
       {% for img in page_sunder_way.experiences.collage.column_4 %}
-        {% if loop.index0 % 2 == 0 %}
-          {% set className = "landscape" %}
-        {% else %}
-          {% set className = "portrait" %}
-        {% endif %}
-
-        {% image {
-          src: img.src,
-          alt: img.title,
-          className: className,
-          optimize: true,
-          loading: "eager",
-          sizes: "(min-width: 768px) 50vw, 100vw"
-        } %}
+      <img
+        class="{% if loop.index0 % 2 == 1 %}portrait{% else %}landscape{% endif %}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
       {% endfor %}
     </div>
 
@@ -256,20 +201,11 @@ hide_footer: false
     >
       <!-- prettier-ignore -->
       {% for img in page_sunder_way.experiences.collage.column_1_mobile %}
-        {% if loop.index0 % 2 == 0 %}
-          {% set className = "landscape" %}
-        {% else %}
-          {% set className = "portrait" %}
-        {% endif %}
-
-        {% image {
-          src: img.src,
-          alt: img.title,
-          className: className,
-          optimize: true,
-          loading: "eager",
-          sizes: "(min-width: 768px) 50vw, 100vw"
-        } %}
+      <img
+        class="{% if loop.index0 % 2 == 1 %}portrait{% else %}landscape{% endif %}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
       {% endfor %}
     </div>
     <div
@@ -277,20 +213,11 @@ hide_footer: false
     >
       <!-- prettier-ignore -->
       {% for img in page_sunder_way.experiences.collage.column_2_mobile %}
-        {% if loop.index0 % 2 == 0 %}
-          {% set className = "landscape" %}
-        {% else %}
-          {% set className = "portrait" %}
-        {% endif %}
-
-        {% image {
-          src: img.src,
-          alt: img.title,
-          className: className,
-          optimize: true,
-          loading: "eager",
-          sizes: "(min-width: 768px) 50vw, 100vw"
-        } %}
+      <img
+        class="{% if loop.index0 % 2 == 1 %}portrait{% else %}landscape{% endif %}"
+        src="{{ img.src }}"
+        alt="{{ img.title }}"
+      />
       {% endfor %}
     </div>
   </div>

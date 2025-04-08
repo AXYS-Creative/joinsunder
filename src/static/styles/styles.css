@@ -3131,6 +3131,9 @@ figure {
     display: none;
   }
 }
+.collage__column picture {
+  width: 100%;
+}
 .collage__column img {
   border-radius: var(--radius);
   -o-object-fit: cover;
