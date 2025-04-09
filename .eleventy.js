@@ -11,6 +11,7 @@ module.exports = async function (eleventyConfig) {
     DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("dd LLL yyyy")
   );
 
+  // CMS-friendly, build-optimized image transform. Is the cached images folder needed still?
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["webp", "jpeg"],
     widths: [320, 768, 1280, 1920],

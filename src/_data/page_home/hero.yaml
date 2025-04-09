@@ -1,6 +1,6 @@
 section_title: Welcome to Sunder Energy
 external_panel:
-  bg_img: https://images.pexels.com/photos/9800003/pexels-photo-9800003.jpeg
+  bg_img: /static/img/Landing-Hero-BG1.png
   logo: /static/img/logo-external-light.svg
   pre_title: Learn more about
   title: going solar
@@ -9,7 +9,7 @@ external_panel:
     text_desc: Learn More about Sunder Energy
     url: https://sunderenergy.com/
 internal_panel:
-  bg_img: /static/img/audience-img-2.png
+  bg_img: /static/img/Landing-Hero-BG2.png
   logo: /static/img/logo-squad-light.svg
   pre_title: Join America’s leading
   title: solar company
