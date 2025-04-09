@@ -351,6 +351,7 @@
         position: absolute;
         bottom: var(--body-padding-sm);
         right: var(--body-padding-sm);
+        z-index: 1; // Badge not showing on android
       }
     }
   }
