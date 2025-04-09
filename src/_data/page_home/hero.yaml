@@ -1,6 +1,6 @@
 section_title: Welcome to Sunder Energy
 external_panel:
-  bg_img: /static/img/Landing-Hero-BG1.png
+  bg_img: https://images.pexels.com/photos/9800003/pexels-photo-9800003.jpeg
   logo: /static/img/logo-external-light.svg
   pre_title: Learn more about
   title: going solar
