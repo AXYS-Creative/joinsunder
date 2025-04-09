@@ -9,7 +9,7 @@ external_panel:
     text_desc: Learn More about Sunder Energy
     url: https://sunderenergy.com/
 internal_panel:
-  bg_img: /static/img/Landing-Hero-BG2.png
+  bg_img: /static/img/audience-img-2.png
   logo: /static/img/logo-squad-light.svg
   pre_title: Join America’s leading
   title: solar company
