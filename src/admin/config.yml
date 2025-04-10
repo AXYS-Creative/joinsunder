@@ -1121,7 +1121,7 @@ collections:
         file: src/_data/page_join/form_submit.yaml
         preview_path: /form-submit
         editor:
-          preview: false
+          preview: true
         fields:
           - name: section_title
             label: Section Title

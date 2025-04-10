@@ -12,16 +12,6 @@ list:
       url: https://www.enzy.co/
       new_tab: true
     class: enzy
-  - title: Merdeka
-    graphic: /static/img/Platform-Tools-2LogoMerdeka.svg
-    section_desc: Sunder’s proprietary platform that enables customer success, automated commissions, and data flows across 20+ install partners.
-    section_bg: /static/img/Platform-Tools-2Merdeka.png
-    cta:
-      text: Learn More
-      text_desc: Learn More about Merdeka
-      url: https://apps.apple.com/us/app/merdeka-ai/id6476926506
-      new_tab: true
-    class: merdeka
   - title: Captivate IQ
     graphic: /static/img/Platform-Tools-3LogoCIQ.svg
     section_desc: >
@@ -36,3 +26,13 @@ list:
       url: https://www.captivateiq.com/
       new_tab: true
     class: ciq
+  - title: Merdeka
+    graphic: /static/img/Platform-Tools-2LogoMerdeka.svg
+    section_desc: Sunder’s proprietary platform that enables customer success, automated commissions, and data flows across 20+ install partners.
+    section_bg: /static/img/Platform-Tools-2Merdeka.png
+    cta:
+      text: Learn More
+      text_desc: Learn More about Merdeka
+      url: https://apps.apple.com/us/app/merdeka-ai/id6476926506
+      new_tab: true
+    class: merdeka

@@ -31,14 +31,10 @@
     ></script>
 
     <!-- Admin Preview Styles -->
-    <script>
-      CMS.registerPreviewStyle("/static/styles/styles.css");
-    </script>
 
     <script>
       const { h, createClass } = window;
-
-      var HeroErrorPreview = createClass({
+      let HeroErrorPreview = createClass({
         render: function () {
           const entry = this.props.entry;
           const data = entry.getIn(["data"]).toJS();
@@ -70,8 +66,50 @@
         },
       });
 
+      let FormSubmitPreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+
+          return h(
+            "section",
+            { className: "hero-alert" },
+            h("h1", { className: "hero-alert__title" }, data.section_title),
+            h("p", { className: "hero-alert__desc" }, data.section_desc),
+            h(
+              "div",
+              { className: "cta-group" },
+              data.cta_1?.text &&
+                h(
+                  "a",
+                  {
+                    className: "cta-1 outline tab-element-page",
+                    href: data.cta_1.url || "#",
+                    "aria-label": data.cta_1.text,
+                  },
+                  data.cta_1.text,
+                  h("span", { className: "sr-only" })
+                ),
+              data.cta_2?.text &&
+                h(
+                  "a",
+                  {
+                    className: "cta-2 tab-element-page",
+                    href: data.cta_2.url || "#",
+                    "aria-label": data.cta_2.text,
+                  },
+                  data.cta_2.text,
+                  h("span", { className: "sr-only" })
+                )
+            )
+          );
+        },
+      });
+
       // The key here: use the same name as your file definition in config.yml
       CMS.registerPreviewTemplate("hero_error", HeroErrorPreview);
+      CMS.registerPreviewTemplate("form_submit", FormSubmitPreview);
+      CMS.registerPreviewStyle("/static/styles/styles.css");
     </script>
   </body>
 </html>
