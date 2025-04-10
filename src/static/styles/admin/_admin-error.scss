@@ -1,0 +1,46 @@
+.frame-content {
+  height: 100vh;
+  @include column-center;
+
+  // Parent of content
+  .e1iji6y40 {
+    @include column-center;
+
+    // h1.hero-alert__title
+    > div:nth-of-type(1) .es44anv0 div {
+      @include h1;
+      text-align: center;
+      margin-block-end: 24px;
+
+      @include mq-max(md) {
+        @include h3;
+      }
+    }
+
+    // p.hero-alert__desc
+    > div:nth-of-type(2) .es44anv0 div {
+      @include body-font-styles;
+      text-align: center;
+      max-width: 750px;
+      margin-block-end: 48px;
+    }
+
+    // a.cta-1
+    > div:nth-of-type(3) .es44anv0 .es44anv0 {
+      --btn-color-border--hover: var(--btn-color-bg);
+
+      @include cta-1;
+      cursor: pointer;
+    }
+  }
+
+  // Hide cta-1 URL path
+  .es44anv0 + .es44anv0 {
+    display: none;
+  }
+
+  // Hide config label
+  strong {
+    display: none;
+  }
+}
