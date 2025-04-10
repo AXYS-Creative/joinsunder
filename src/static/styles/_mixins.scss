@@ -196,6 +196,7 @@ $min-breakpoints: (
   font-weight: inherit;
 }
 
+// Primary setup for Admin Preview Styles
 @mixin cta-1 {
   @include link-font-styles;
   border: 1px solid var(--btn-color-border);
@@ -218,6 +219,24 @@ $min-breakpoints: (
   &.outline {
     --btn-color-border--hover: var(--btn-color-bg);
   }
+}
+
+@mixin cta-2 {
+  border: 1px solid var(--btn-color-2-border);
+  background: var(--btn-color-2-bg);
+  color: var(--btn-color-2-text);
+
+  @include desktop-hover {
+    border-color: var(--btn-color-2-border--hover);
+    background: var(--btn-color-2-bg--hover);
+    color: var(--btn-color-2-text--hover);
+  }
+}
+
+@mixin cta-group {
+  @include row-center;
+  gap: 24px;
+  flex-shrink: 0;
 }
 
 @mixin sr-only {

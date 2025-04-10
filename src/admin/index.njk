@@ -34,5 +34,45 @@
     <script>
       CMS.registerPreviewStyle("/static/styles/styles.css");
     </script>
+
+    <script>
+      const { h, createClass } = window;
+
+      var HeroErrorPreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+
+          return h(
+            "section",
+            {
+              className: "hero-alert",
+              style: { border: "2px solid red", padding: "1rem" },
+            },
+            h("h1", { className: "hero-alert__title" }, data.section_title),
+            h("p", { className: "hero-alert__desc" }, data.section_desc),
+            h(
+              "div",
+              { className: "cta-group" },
+              data.cta_1?.text &&
+                h(
+                  "a",
+                  { className: "cta-1 outline", href: data.cta_1.url || "#" },
+                  data.cta_1.text
+                ),
+              data.cta_2?.text &&
+                h(
+                  "a",
+                  { className: "cta-2", href: data.cta_2.url || "#" },
+                  data.cta_2.text
+                )
+            )
+          );
+        },
+      });
+
+      // The key here: use the same name as your file definition in config.yml
+      CMS.registerPreviewTemplate("hero_error", HeroErrorPreview);
+    </script>
   </body>
 </html>
