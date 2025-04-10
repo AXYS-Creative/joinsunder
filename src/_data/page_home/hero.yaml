@@ -8,6 +8,7 @@ external_panel:
     text: Learn More
     text_desc: Learn More about Sunder Energy
     url: https://sunderenergy.com/
+    new_tab: true
 internal_panel:
   bg_img: /static/img/Landing-Hero-BG2.png
   logo: /static/img/logo-squad-light.svg
@@ -17,3 +18,4 @@ internal_panel:
     text: Learn More
     text_desc: Learn More about joining Sunder
     url: /sunder-way
+    new_tab: false

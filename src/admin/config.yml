@@ -16,12 +16,12 @@ collections:
   - name: page_home
     label: Page - Home
     files:
-      - name: hero
+      - name: home_hero # Updated from 'hero' for admin preview styles
         label: Section - Hero
         file: src/_data/page_home/hero.yaml
         preview_path: /
         editor:
-          preview: false
+          preview: true
         fields:
           - name: section_title
             label: Section Title
@@ -77,6 +77,10 @@ collections:
                     widget: string
                     required: false
                     hint: i.e. /join
+                  - name: new_tab
+                    label: Open in a new tab
+                    widget: boolean
+                    default: true
           - name: internal_panel
             label: Internal Panel (joinsunder.com)
             widget: object
@@ -126,6 +130,10 @@ collections:
                     widget: string
                     required: false
                     hint: i.e. /join
+                  - name: new_tab
+                    label: Open in a new tab
+                    widget: boolean
+                    default: true
   - name: page_sunder_way
     label: Page - Sunder Way
     files:
@@ -1402,6 +1410,10 @@ collections:
                 widget: string
                 required: false
                 hint: "To return home use: /"
+              - name: new_tab
+                label: Open in a new tab
+                widget: boolean
+                default: true
           - name: cta_2
             label: Call To Action 2
             widget: object
@@ -1422,6 +1434,10 @@ collections:
                 label: Button URL
                 widget: string
                 required: false
+              - name: new_tab
+                label: Open in a new tab
+                widget: boolean
+                default: true
   - name: global
     label: Global
     description: >
@@ -1431,7 +1447,7 @@ collections:
         label: Site Footer
         file: src/_data/global/footer.yaml
         editor:
-          preview: false
+          preview: true
         fields:
           - name: logo_src
             label: Logo Image Source
@@ -1480,6 +1496,10 @@ collections:
                 widget: string
                 required: false
                 hint: i.e. /join
+              - name: new_tab
+                label: Open in a new tab
+                widget: boolean
+                default: true
       - name: social_media
         label: Social Media
         file: src/_data/global/social_media.yaml

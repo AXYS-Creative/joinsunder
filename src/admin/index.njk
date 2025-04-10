@@ -31,9 +31,228 @@
     ></script>
 
     <!-- Admin Preview Styles -->
-
     <script>
       const { h, createClass } = window;
+
+      let FooterPreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+
+          const logoSrc = data.logo_src || "/static/img/logo-squad-light.svg";
+          const links = data.links || [];
+          const cta = data.cta || {};
+
+          return h(
+            "footer",
+            { className: "site-footer" },
+            h(
+              "div",
+              { className: "site-footer__inner" },
+              h(
+                "div",
+                { className: "inner-top" },
+                h(
+                  "a",
+                  {
+                    className: "logo-link footer-logo tab-element-page",
+                    href: "/",
+                  },
+                  h("img", {
+                    className: "logo-link__img footer-logo__img",
+                    src: logoSrc,
+                    alt: "Join Sunder logo",
+                    width: "116",
+                    height: "32",
+                  })
+                ),
+                h(
+                  "div",
+                  { className: "social-media no-label" },
+                  h(
+                    "ul",
+                    { className: "social-media__links" },
+                    [
+                      {
+                        href: "https://www.tiktok.com/@join.sunder",
+                        label: "Tik Tok",
+                        icon: "/static/img/icon-social-tiktok.svg",
+                      },
+                      {
+                        href: "https://www.youtube.com/@sunderenergy9101",
+                        label: "YouTube",
+                        icon: "/static/img/icon-social-youtube.svg",
+                      },
+                      {
+                        href: "https://www.facebook.com/sunderenergy",
+                        label: "Facebook",
+                        icon: "/static/img/icon-social-facebook.svg",
+                      },
+                      {
+                        href: "https://www.instagram.com/joinsunder/",
+                        label: "Instagram",
+                        icon: "/static/img/icon-social-instagram.svg",
+                      },
+                      {
+                        href: "https://www.linkedin.com/company/sunder-energy/",
+                        label: "LinkedIn",
+                        icon: "/static/img/icon-social-linkedin.svg",
+                      },
+                    ].map((social) =>
+                      h(
+                        "li",
+                        {},
+                        h(
+                          "a",
+                          {
+                            href: social.href,
+                            target: "_blank",
+                            className: "social-media__link tab-element-page",
+                            "aria-label": social.label,
+                          },
+                          h("span", {
+                            className: "social-media__link-img",
+                            style: {
+                              maskImage: `url(${social.icon})`,
+                              WebkitMaskImage: `url(${social.icon})`,
+                            },
+                          })
+                        )
+                      )
+                    )
+                  )
+                )
+              ),
+              h(
+                "div",
+                { className: "inner-bottom" },
+                h(
+                  "ul",
+                  {
+                    className: "footer-links",
+                    "aria-label": "Footer navigation",
+                  },
+                  links.map((link) =>
+                    h(
+                      "li",
+                      {},
+                      h(
+                        "a",
+                        {
+                          className:
+                            "footer-links__link classic-link tab-element-page",
+                          href: link.url,
+                          target: link.new_tab ? "_blank" : null,
+                          rel: link.new_tab ? "noopener noreferrer" : null,
+                        },
+                        link.title
+                      )
+                    )
+                  )
+                ),
+                cta.text &&
+                  h(
+                    "div",
+                    { className: "cta-group" },
+                    h(
+                      "a",
+                      {
+                        className: "cta-1 outline tab-element-page",
+                        href: cta.url || "#",
+                        target: cta.new_tab ? "_blank" : null,
+                        rel: cta.new_tab ? "noopener noreferrer" : null,
+                        "aria-label": cta.text,
+                      },
+                      cta.text,
+                      h("span", { className: "sr-only" })
+                    )
+                  )
+              )
+            )
+          );
+        },
+      });
+
+      let HeroHomePreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+
+          const fallbackTitle = "Welcome to Sunder Energy";
+          const sectionTitle = data.section_title || fallbackTitle;
+
+          const renderPanel = (panelData, panelClass) => {
+            if (!panelData) return null;
+
+            return h(
+              "div",
+              { className: `hero-panel ${panelClass}` },
+              // Background image
+              h("img", {
+                className: "hero-panel__bg-img",
+                src: panelData.bg_img,
+                alt: "",
+                width: "1000",
+                height: "600",
+                loading: "eager",
+                decoding: "async",
+              }),
+              // Logo
+              h("img", {
+                className: "hero-panel__logo",
+                src: panelData.logo,
+                alt: "",
+              }),
+              // Title
+              h(
+                "h2",
+                { className: "hero-panel__title" },
+                h(
+                  "span",
+                  { className: "hero-panel__title-sm" },
+                  panelData.pre_title
+                ),
+                h(
+                  "span",
+                  { className: "hero-panel__title-lg" },
+                  panelData.title
+                )
+              ),
+              // CTA
+              panelData.cta?.text &&
+                h(
+                  "div",
+                  { className: "cta-group" },
+                  h(
+                    "a",
+                    {
+                      className: "cta-1 tab-element-page",
+                      href: panelData.cta.url || "#",
+                      target: panelData.cta.new_tab ? "_blank" : null,
+                      rel: panelData.cta.new_tab ? "noopener noreferrer" : null,
+                      "aria-label": `Learn More about ${panelData.title}`,
+                    },
+                    panelData.cta.text,
+                    h(
+                      "span",
+                      { className: "sr-only" },
+                      `Learn More about ${panelData.title}`
+                    )
+                  )
+                )
+            );
+          };
+
+          return h(
+            "section",
+            { className: "hero" },
+            h("h1", { className: "sr-only" }, sectionTitle),
+            renderPanel(data.external_panel, "sunder-external"),
+            renderPanel(data.internal_panel, "sunder-internal")
+          );
+        },
+      });
+
       let HeroErrorPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -107,6 +326,8 @@
       });
 
       // The key here: use the same name as your file definition in config.yml
+      CMS.registerPreviewTemplate("footer", FooterPreview);
+      CMS.registerPreviewTemplate("home_hero", HeroHomePreview);
       CMS.registerPreviewTemplate("hero_error", HeroErrorPreview);
       CMS.registerPreviewTemplate("form_submit", FormSubmitPreview);
       CMS.registerPreviewStyle("/static/styles/styles.css");
