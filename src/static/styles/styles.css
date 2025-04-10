@@ -792,6 +792,7 @@ figure {
 }
 .hero-alert__title {
   margin-block-end: 24px;
+  text-align: center;
 }
 .hero-alert__title span {
   color: var(--hero-color--primary);
@@ -2833,6 +2834,21 @@ figure {
   align-items: center;
   gap: 24px;
   flex-shrink: 0;
+}
+@media screen and (max-width: 1024px) {
+  .cta-group {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cta-group {
+    gap: 8px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .cta-group {
+    flex-direction: column;
+  }
 }
 
 .carousel-section {
