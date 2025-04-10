@@ -244,11 +244,15 @@
           };
 
           return h(
-            "section",
-            { className: "hero" },
-            h("h1", { className: "sr-only" }, sectionTitle),
-            renderPanel(data.external_panel, "sunder-external"),
-            renderPanel(data.internal_panel, "sunder-internal")
+            "div",
+            { className: "main-home" },
+            h(
+              "section",
+              { className: "hero" },
+              h("h1", { className: "sr-only" }, sectionTitle),
+              renderPanel(data.external_panel, "sunder-external"),
+              renderPanel(data.internal_panel, "sunder-internal")
+            )
           );
         },
       });
