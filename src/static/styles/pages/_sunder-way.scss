@@ -211,7 +211,6 @@
     // }
 
     @include mq-max(lg) {
-      width: calc(100% - var(--body-padding-double));
       flex-direction: column;
       padding: var(--body-padding-double);
     }

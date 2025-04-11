@@ -2460,7 +2460,6 @@ figure {
 }
 @media screen and (max-width: 1024px) {
   .section-ethos .ethos-bottom {
-    width: calc(100% - var(--body-padding-double));
     flex-direction: column;
     padding: var(--body-padding-double);
   }
