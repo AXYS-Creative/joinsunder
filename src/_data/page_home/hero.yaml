@@ -5,7 +5,7 @@ external_panel:
   pre_title: Learn more about
   title: going solar
   cta:
-    text: Learn More
+    text: sunderenergy.com
     text_desc: Learn More about Sunder Energy
     url: https://sunderenergy.com/
     new_tab: true
@@ -15,7 +15,7 @@ internal_panel:
   pre_title: Join America’s leading
   title: solar company
   cta:
-    text: Learn More
+    text: joinsunder.com
     text_desc: Learn More about joining Sunder
     url: /sunder-way
     new_tab: false
