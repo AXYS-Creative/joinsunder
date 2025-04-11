@@ -1,5 +1,5 @@
 .section-ethos {
-  --panel-translate-offset: 128px;
+  --panel-translate-offset: 24px;
 
   position: relative;
   padding: 0;
@@ -38,6 +38,14 @@
       object-fit: cover;
       border-radius: var(--radius);
       overflow: hidden;
+
+      @include mq-max(lg) {
+        height: 4lh;
+      }
+
+      @include mq-max(md) {
+        height: 3lh;
+      }
 
       &-img {
         position: absolute;
@@ -111,17 +119,6 @@
 
         @include mq-min(lg) {
           aspect-ratio: 1;
-
-          @include mq-motion-allow {
-            opacity: 0;
-            translate: var(--panel-translate-offset) 0;
-            transition: $ease;
-
-            &.active {
-              translate: 0 0;
-              opacity: 1;
-            }
-          }
         }
 
         @include mq-max(lg) {
@@ -161,6 +158,30 @@
           @include mq-max(lg) {
             text-align: center;
             text-wrap: balance;
+
+            @include mq-motion-allow {
+              opacity: 0;
+              translate: var(--panel-translate-offset) 0;
+              transition: $ease;
+
+              &.animate {
+                translate: 0 0;
+                opacity: 1;
+              }
+            }
+          }
+
+          @include mq-min(lg) {
+            @include mq-motion-allow {
+              opacity: 0;
+              translate: var(--panel-translate-offset) 0;
+              transition: $ease;
+
+              &.active {
+                translate: 0 0;
+                opacity: 1;
+              }
+            }
           }
         }
       }
@@ -170,25 +191,24 @@
   .ethos-bottom {
     @include row-center(space-between);
     @include dark-theme;
-    margin: var(--section-gap-half) auto 0;
     background-color: var(--hero-color--primary);
     padding: var(--body-padding);
     border-radius: var(--radius);
     gap: var(--section-gap);
-    width: calc(100% - var(--body-padding-double) * 2);
+    width: 100%;
 
-    @include mq-min(lg) {
-      @include mq-motion-allow {
-        opacity: 0;
-        translate: calc(var(--panel-translate-offset) * -1) 0;
-        transition: $ease;
+    // @include mq-min(lg) {
+    //   @include mq-motion-allow {
+    //     opacity: 0;
+    //     translate: calc(var(--panel-translate-offset) * -1) 0;
+    //     transition: $ease;
 
-        &.active {
-          opacity: 1;
-          translate: 0 0;
-        }
-      }
-    }
+    //     &.active {
+    //       opacity: 1;
+    //       translate: 0 0;
+    //     }
+    //   }
+    // }
 
     @include mq-max(lg) {
       width: calc(100% - var(--body-padding-double));

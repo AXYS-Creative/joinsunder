@@ -19,8 +19,6 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
 // GSAP
 {
-  // console.log("ScrollTrigger initialized at", performance.now());
-
   gsap.registerPlugin(ScrollTrigger);
 
   let responsiveGsap = gsap.matchMedia();
@@ -61,7 +59,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
         if (document.querySelector(".main-sunder-way")) {
           window.addEventListener("load", () => {
             setTimeout(() => {
-              ScrollTrigger.refresh(); // simulate the post-resize recalculation
+              ScrollTrigger.refresh();
             }, 500); // try 200–500ms if needed
           });
         }
@@ -75,7 +73,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
           gsap.to(".ethos-pin", {
             scrollTrigger: {
               trigger: ".ethos-pin",
-              start: `top ${bodyPadding}px`,
+              start: `top ${bodyPaddingSm}px`,
               end: pinDuration,
               pin: true,
               // markers: true,
@@ -87,15 +85,15 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
             const steps = document.querySelectorAll(
               ".ethos-pin-step-1, .ethos-pin-step-2, .ethos-pin-step-3"
             );
-            const panels = document.querySelectorAll(
-              ".value-panel-1, .value-panel-2, .value-panel-3"
+            const panelsDesc = document.querySelectorAll(
+              ".panel-desc-1, .panel-desc-2, .panel-desc-3"
             );
             const images = document.querySelectorAll(
               ".ethos-img-2, .ethos-img-3, .ethos-img-4"
             );
 
             steps.forEach((step, index) => {
-              const panel = panels[index];
+              const panel = panelsDesc[index];
               const image = images[index];
 
               gsap.to(panel, {
@@ -120,16 +118,16 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
             });
           }
 
-          // Ethos Bottom slide in
-          let ethosBottom = document.querySelector(".ethos-bottom");
-          gsap.to(ethosBottom, {
-            scrollTrigger: {
-              trigger: ethosBottom,
-              start: "bottom bottom",
-              onEnter: () => ethosBottom.classList.add("active"),
-              onLeaveBack: () => ethosBottom.classList.remove("active"),
-            },
-          });
+          // // Ethos Bottom slide in
+          // let ethosBottom = document.querySelector(".ethos-bottom");
+          // gsap.to(ethosBottom, {
+          //   scrollTrigger: {
+          //     trigger: ethosBottom,
+          //     start: "bottom bottom",
+          //     onEnter: () => ethosBottom.classList.add("active"),
+          //     onLeaveBack: () => ethosBottom.classList.remove("active"),
+          //   },
+          // });
         }
 
         // Competitions Section (YOG)
@@ -150,7 +148,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
         // Experience Section (Collage)
         if (document.querySelector(".collage")) {
           const yVal = maxMd ? "-16.15%" : maxXxl ? "-16.225%" : "-16.2%";
-          const yValMobile = "-24%";
+          const yValMobile = "-24.01%";
 
           const collageSlide = (el, distance) => {
             const element = document.querySelector(el);
@@ -686,9 +684,21 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
 
       // GLOBAL (place under other tweens i.e. pinned sections) - Animate any element with the class 'gsap-animate' using the 'animate' companion class
       {
-        const targetElements = document.querySelectorAll(".gsap-animate");
+        // BASE: All screen sizes
+        document
+          .querySelectorAll(".gsap-animate:not([class*='gsap-animate-'])")
+          .forEach((el) => {
+            setupScrollAnimation(el);
+          });
 
-        targetElements.forEach((targetElem) => {
+        // LARGE SCREENS ONLY
+        if (maxLg) {
+          document.querySelectorAll(".gsap-animate-lg").forEach((el) => {
+            setupScrollAnimation(el);
+          });
+        }
+
+        function setupScrollAnimation(targetElem) {
           gsap.to(targetElem, {
             scrollTrigger: {
               trigger: targetElem,
@@ -701,7 +711,7 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
               // markers: navyMarkers,
             },
           });
-        });
+        }
       }
 
       // // Library - Lift any desired code blocks out, then delete from production

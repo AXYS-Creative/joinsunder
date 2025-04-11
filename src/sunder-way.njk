@@ -39,19 +39,21 @@ hide_footer: false
           }}"
         >
           <h2 class="panel-title">{{ item.title }}</h2>
-          <p class="panel-desc">{{ item.caption }}</p>
+          <p class="gsap-animate-lg panel-desc panel-desc-{{ loop.index }}">
+            {{ item.caption }}
+          </p>
         </div>
         {% endfor %}
       </div>
     </div>
-  </div>
-  <div class="ethos-bottom">
-    <p class="ethos-bottom__p">{{ page_sunder_way.ethos.cta_p }}</p>
+    <div class="ethos-bottom">
+      <p class="ethos-bottom__p">{{ page_sunder_way.ethos.cta_p }}</p>
 
-    <!-- prettier-ignore -->
-    {% set cta_1 = page_sunder_way.ethos.cta %}
-    {% set cta_1_outline = true %}
-    {% include "./_includes/components/cta-group.njk" %}
+      <!-- prettier-ignore -->
+      {% set cta_1 = page_sunder_way.ethos.cta %}
+      {% set cta_1_outline = true %}
+      {% include "./_includes/components/cta-group.njk" %}
+    </div>
   </div>
   <div class="ethos-pin-steps pin-steps" aria-hidden="true">
     <div class="ethos-pin-step ethos-pin-step-1 pin-step"></div>
