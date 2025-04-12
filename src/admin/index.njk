@@ -257,6 +257,63 @@
         },
       });
 
+      let QuoteSectionPreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+          const quotes = data.list || [];
+
+          return h(
+            "section",
+            { className: "partial-quote", id: "quote-section" },
+            quotes.map((item, index) =>
+              h(
+                "div",
+                { className: "quote", key: index },
+                h(
+                  "figure",
+                  { className: "portrait-gradient" },
+                  h("img", {
+                    className: "portrait-gradient__img",
+                    src: item.img_src,
+                    alt: `${item.name} ${item.role}`,
+                    width: "1000",
+                    height: "1086",
+                    loading: "lazy",
+                    decoding: "async",
+                  }),
+                  h(
+                    "figcaption",
+                    {
+                      className: "portrait-gradient__caption",
+                      "aria-hidden": "true",
+                    },
+                    h(
+                      "h3",
+                      { className: "portrait-gradient__caption-name" },
+                      item.name?.split(" ")[0],
+                      h("br", { "aria-hidden": "true" }),
+                      item.name?.split(" ").slice(1).join(" ")
+                    ),
+                    h(
+                      "h4",
+                      { className: "portrait-gradient__caption-role" },
+                      item.role
+                    )
+                  )
+                ),
+                h(
+                  "div",
+                  { className: "quote__text-block" },
+                  h("h2", { className: "quote__text-block-title" }, item.title),
+                  h("blockquote", {}, `“${item.quote}”`)
+                )
+              )
+            )
+          );
+        },
+      });
+
       let HeroErrorPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -332,6 +389,7 @@
       // The key here: use the same name as your file definition in config.yml
       CMS.registerPreviewTemplate("footer", FooterPreview);
       CMS.registerPreviewTemplate("home_hero", HeroHomePreview);
+      CMS.registerPreviewTemplate("quotes", QuoteSectionPreview);
       CMS.registerPreviewTemplate("hero_error", HeroErrorPreview);
       CMS.registerPreviewTemplate("form_submit", FormSubmitPreview);
       CMS.registerPreviewStyle("/static/styles/styles.css");

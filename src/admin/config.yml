@@ -594,7 +594,7 @@ collections:
         file: src/_data/page_sunder_way/quotes.yaml
         preview_path: /sunder-way#quote-section
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - Quote)
@@ -614,6 +614,7 @@ collections:
                 label: Quote
                 widget: text
                 required: true
+                hint: No need to add quotation marks
               - name: img_src
                 label: Portrait Source
                 widget: image

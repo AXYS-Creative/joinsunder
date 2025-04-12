@@ -3958,7 +3958,7 @@ figure {
   }
 }
 .partial-quote .quote .portrait-gradient {
-  width: min(100%, 520px);
+  width: clamp(280px, 100%, 520px);
   aspect-ratio: 1;
 }
 @media screen and (min-width: 1025px) {
