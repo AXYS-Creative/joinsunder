@@ -1,5 +1,5 @@
 .section-ethos {
-  --panel-translate-offset: 24px;
+  --panel-translate-offset: 96px;
 
   position: relative;
   padding: 0;
@@ -31,48 +31,15 @@
       }
     }
 
-    &__figure {
-      position: relative;
-      width: 100%;
-      height: 3lh;
-      object-fit: cover;
-      border-radius: var(--radius);
-      overflow: hidden;
-
-      @include mq-max(lg) {
-        height: 4lh;
-      }
-
-      @include mq-max(md) {
-        height: 3lh;
-      }
-
-      &-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        object-fit: cover;
-
-        @include mq-motion-allow {
-          opacity: 0;
-          transition: opacity $ease;
-
-          &.active {
-            opacity: 1;
-          }
-        }
-      }
-
-      .ethos-img-1 {
-        opacity: 1;
-      }
-    }
+    // .carousel-gallery--ethos {
+    // see _carousel-gallery.scss
+    // }
   }
 
   .ethos-middle {
     @include row-center;
-    gap: var(--section-gap);
+    flex-wrap: wrap;
+    gap: var(--section-gap-half);
     position: relative;
 
     @include mq-max(xl) {
@@ -82,7 +49,8 @@
 
     &__p {
       @include mq-min(xl) {
-        width: 40%;
+        // width: 40%;
+        flex: 1;
       }
       @include mq-max(xl) {
         font-size: $body-text-2;
@@ -94,18 +62,17 @@
 
     &__panels {
       @include row-stretch(flex-start);
-      width: 100%;
-      overflow: auto; // needed for scroll-snap
-      scroll-snap-type: x mandatory;
+      overflow: hidden;
 
       @include mq-min(xl) {
-        width: 60%;
+        flex: 0.5 1 650px;
       }
       @include mq-min(lg) {
         gap: var(--panel-gap);
       }
       @include mq-max(lg) {
         @include column-center;
+        width: 100%;
       }
 
       &-panel {
@@ -140,6 +107,24 @@
           }
         }
 
+        @include mq-motion-allow {
+          opacity: 0;
+          translate: var(--panel-translate-offset) 0;
+          transition: $ease;
+
+          &:nth-of-type(2) {
+            transition: $ease 0.064s;
+          }
+          &:nth-of-type(3) {
+            transition: $ease 0.128s;
+          }
+
+          &.animate {
+            opacity: 1;
+            translate: 0 0;
+          }
+        }
+
         .panel-title {
           @include h5;
           margin-block-end: calc(var(--section-gap-half) / 2);
@@ -158,30 +143,6 @@
           @include mq-max(lg) {
             text-align: center;
             text-wrap: balance;
-
-            @include mq-motion-allow {
-              opacity: 0;
-              translate: var(--panel-translate-offset) 0;
-              transition: $ease;
-
-              &.animate {
-                translate: 0 0;
-                opacity: 1;
-              }
-            }
-          }
-
-          @include mq-min(lg) {
-            @include mq-motion-allow {
-              opacity: 0;
-              translate: var(--panel-translate-offset) 0;
-              transition: $ease;
-
-              &.active {
-                translate: 0 0;
-                opacity: 1;
-              }
-            }
           }
         }
       }
@@ -197,22 +158,20 @@
     gap: var(--section-gap);
     width: 100%;
 
-    // @include mq-min(lg) {
-    //   @include mq-motion-allow {
-    //     opacity: 0;
-    //     translate: calc(var(--panel-translate-offset) * -1) 0;
-    //     transition: $ease;
-
-    //     &.active {
-    //       opacity: 1;
-    //       translate: 0 0;
-    //     }
-    //   }
-    // }
-
     @include mq-max(lg) {
       flex-direction: column;
       padding: var(--body-padding-double);
+    }
+
+    @include mq-motion-allow {
+      opacity: 0;
+      translate: calc(var(--panel-translate-offset) * -1) 0;
+      transition: $ease 0.25s;
+
+      &.animate {
+        opacity: 1;
+        translate: 0 0;
+      }
     }
 
     &__p {

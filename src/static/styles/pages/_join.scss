@@ -14,37 +14,9 @@
       }
     }
 
-    .join-carousel {
-      position: sticky;
-      top: var(--body-padding-sm);
-      left: var(--body-padding-sm);
-      height: var(--full-height-snip-sm);
-      min-height: 750px;
-      margin-block: var(--body-padding-sm);
-      border-radius: var(--radius);
-      overflow: hidden;
-
-      @include mq-max(xxl) {
-        min-height: 650px;
-      }
-
-      @include mq-max(lg) {
-        display: none;
-      }
-
-      &__img {
-        @include hide-content;
-        @include absolute-center;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: $ease;
-
-        &.active {
-          @include show-content;
-        }
-      }
-    }
+    // .carousel-gallery--join {
+    // see _carousel-gallery.scss
+    // }
 
     .form-panel {
       @include column-center;

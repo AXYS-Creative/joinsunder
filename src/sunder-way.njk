@@ -11,21 +11,17 @@ hide_footer: false
 
 {% if page_sunder_way.ethos.toggle_section %}
 <section class="section-ethos">
-  <div class="ethos-pin">
+  <div class="ethos-pin deactivated">
     <div class="ethos-top">
       <h1 class="ethos-top__title">
         {{ page_sunder_way.ethos.section_title }}
       </h1>
-      <figure class="ethos-top__figure">
-        <!-- prettier-ignore -->
-        {% for img in page_sunder_way.ethos.section_imgs %}
-        <img
-          class="ethos-top__figure-img ethos-img-{{ loop.index }}"
-          src="{{ img.src }}"
-          alt="{{ img.title }}"
-        />
-        {% endfor %}
-      </figure>
+
+      <!-- prettier-ignore -->
+      {% set carousel_list = page_sunder_way.ethos.section_imgs %}
+      {% set carousel_interval = page_sunder_way.ethos.autoplay_interval %}
+      {% set carousel_class = 'carousel-gallery--ethos' %}
+      {% include "./_includes/components/carousel-gallery.njk" %}
     </div>
     <div class="ethos-middle">
       <p class="ethos-middle__p">{{ page_sunder_way.ethos.section_desc }}</p>
@@ -36,17 +32,17 @@ hide_footer: false
         <div
           class="ethos-middle__panels-panel value-panel value-panel-{{
             loop.index
-          }}"
+          }} gsap-animate"
         >
           <h2 class="panel-title">{{ item.title }}</h2>
-          <p class="gsap-animate-lg panel-desc panel-desc-{{ loop.index }}">
+          <p class="panel-desc panel-desc-{{ loop.index }}">
             {{ item.caption }}
           </p>
         </div>
         {% endfor %}
       </div>
     </div>
-    <div class="ethos-bottom">
+    <div class="ethos-bottom gsap-animate">
       <p class="ethos-bottom__p">{{ page_sunder_way.ethos.cta_p }}</p>
 
       <!-- prettier-ignore -->

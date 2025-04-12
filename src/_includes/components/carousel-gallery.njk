@@ -1,0 +1,13 @@
+<div
+  class="carousel-gallery {{ carousel_class }}"
+  data-carousel-interval="{{ carousel_interval }}"
+>
+  {% for img in carousel_list %}
+  <!-- prettier-ignore -->
+  <img 
+    class="carousel-gallery__img join-carousel__img" 
+    src="{{ img.src }}" alt="{{ img.title }}" {%if loop.index == 1%}
+  loading="eager" {%endif%} />
+  <!-- prettier-ignore -->
+  {% endfor %}
+</div>

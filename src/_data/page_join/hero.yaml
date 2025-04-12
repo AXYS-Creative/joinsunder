@@ -1,6 +1,6 @@
 autoplay_interval: 5000
 
-images:
+imgs:
   - title: Woman going door to door
     src: /static/img/Join-SlideShow-1Photo.png
   - title: Group at a service event

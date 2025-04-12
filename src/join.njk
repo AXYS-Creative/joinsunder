@@ -10,17 +10,11 @@ hide_footer: true
 ---
 
 <section class="hero">
-  <div
-    class="join-carousel"
-    data-carousel-interval="{{ page_join.hero.autoplay_interval }}"
-  >
-    {% for img in page_join.hero.images %}
-    <!-- prettier-ignore -->
-    <img class="join-carousel__img" src="{{ img.src }}" alt="{{ img.title }}"
-    {%if loop.index == 1%} loading="eager" {%endif%} />
-    <!-- prettier-ignore -->
-    {% endfor %}
-  </div>
+  <!-- prettier-ignore -->
+  {% set carousel_list = page_join.hero.images %}
+  {% set carousel_interval = page_join.hero.autoplay_interval %}
+  {% set carousel_class = 'carousel-gallery--join' %}
+  {% include "./_includes/components/carousel-gallery.njk" %}
 
   <div class="form-panel">
     <h1 class="form-panel__title">{{ page_join.hero.section_title }}</h1>

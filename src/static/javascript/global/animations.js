@@ -65,70 +65,64 @@ export const cubicBezier = (p1x, p1y, p2x, p2y) => {
         }
 
         // Ethos Section (Desktop)
-        if (document.querySelector(".section-ethos") && minLg) {
-          const pinDuration = "+=160%";
-          let bodyPadding = maxXl ? 64 : 96;
-
-          // Pinning Ethos Section
-          gsap.to(".ethos-pin", {
-            scrollTrigger: {
-              trigger: ".ethos-pin",
-              start: `top ${bodyPaddingSm}px`,
-              end: pinDuration,
-              pin: true,
-              // markers: true,
-            },
-          });
-
-          // Step animation (Image cycle and panel reveal)
-          {
-            const steps = document.querySelectorAll(
-              ".ethos-pin-step-1, .ethos-pin-step-2, .ethos-pin-step-3"
-            );
-            const panelsDesc = document.querySelectorAll(
-              ".panel-desc-1, .panel-desc-2, .panel-desc-3"
-            );
-            const images = document.querySelectorAll(
-              ".ethos-img-2, .ethos-img-3, .ethos-img-4"
-            );
-
-            steps.forEach((step, index) => {
-              const panel = panelsDesc[index];
-              const image = images[index];
-
-              gsap.to(panel, {
-                scrollTrigger: {
-                  trigger: step,
-                  start: `top ${bodyPadding}px`,
-                  end: `bottom top`,
-                  onEnter: () => panel.classList.add("active"),
-                  onLeaveBack: () => panel.classList.remove("active"),
-                },
-              });
-
-              gsap.to(image, {
-                scrollTrigger: {
-                  trigger: step,
-                  start: `top ${bodyPadding}px`,
-                  end: `bottom top`,
-                  onEnter: () => image.classList.add("active"),
-                  onLeaveBack: () => image.classList.remove("active"),
-                },
-              });
-            });
-          }
-
-          // // Ethos Bottom slide in
-          // let ethosBottom = document.querySelector(".ethos-bottom");
-          // gsap.to(ethosBottom, {
-          //   scrollTrigger: {
-          //     trigger: ethosBottom,
-          //     start: "bottom bottom",
-          //     onEnter: () => ethosBottom.classList.add("active"),
-          //     onLeaveBack: () => ethosBottom.classList.remove("active"),
-          //   },
-          // });
-        }
+        // if (document.querySelector(".section-ethos") && minLg) {
+        // const pinDuration = "+=160%";
+        // let bodyPadding = maxXl ? 64 : 96;
+        // // Pinning Ethos Section
+        // gsap.to(".ethos-pin", {
+        //   scrollTrigger: {
+        //     trigger: ".ethos-pin",
+        //     start: `top ${bodyPaddingSm}px`,
+        //     end: pinDuration,
+        //     pin: true,
+        //     // markers: true,
+        //   },
+        // });
+        // // Step animation (Image cycle and panel reveal)
+        // {
+        //   const steps = document.querySelectorAll(
+        //     ".ethos-pin-step-1, .ethos-pin-step-2, .ethos-pin-step-3"
+        //   );
+        //   const panelsDesc = document.querySelectorAll(
+        //     ".panel-desc-1, .panel-desc-2, .panel-desc-3"
+        //   );
+        //   const images = document.querySelectorAll(
+        //     ".ethos-img-2, .ethos-img-3, .ethos-img-4"
+        //   );
+        //   steps.forEach((step, index) => {
+        //     const panel = panelsDesc[index];
+        //     const image = images[index];
+        //     gsap.to(panel, {
+        //       scrollTrigger: {
+        //         trigger: step,
+        //         start: `top ${bodyPadding}px`,
+        //         end: `bottom top`,
+        //         onEnter: () => panel.classList.add("active"),
+        //         onLeaveBack: () => panel.classList.remove("active"),
+        //       },
+        //     });
+        //     gsap.to(image, {
+        //       scrollTrigger: {
+        //         trigger: step,
+        //         start: `top ${bodyPadding}px`,
+        //         end: `bottom top`,
+        //         onEnter: () => image.classList.add("active"),
+        //         onLeaveBack: () => image.classList.remove("active"),
+        //       },
+        //     });
+        //   });
+        // }
+        // // Ethos Bottom slide in
+        // let ethosBottom = document.querySelector(".ethos-bottom");
+        // gsap.to(ethosBottom, {
+        //   scrollTrigger: {
+        //     trigger: ethosBottom,
+        //     start: "bottom bottom",
+        //     onEnter: () => ethosBottom.classList.add("active"),
+        //     onLeaveBack: () => ethosBottom.classList.remove("active"),
+        //   },
+        // });
+        // }
 
         // Competitions Section (YOG)
         if (document.querySelector(".section-competitions")) {
