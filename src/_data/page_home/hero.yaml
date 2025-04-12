@@ -6,7 +6,7 @@ external_panel:
   title: going solar
   cta:
     text: sunderenergy.com
-    text_desc: Learn More about Sunder Energy
+    text_desc:
     url: https://sunderenergy.com/
     new_tab: true
 internal_panel:
@@ -16,6 +16,6 @@ internal_panel:
   title: solar company
   cta:
     text: joinsunder.com
-    text_desc: Learn More about joining Sunder
+    text_desc:
     url: /sunder-way
     new_tab: false

@@ -32,13 +32,13 @@
     img {
       flex: 1;
 
-      @include mq-motion-allow {
-        opacity: 0;
+      // @include mq-motion-allow {
+      //   opacity: 0;
 
-        &.animate {
-          opacity: 1;
-        }
-      }
+      //   &.animate {
+      //     opacity: 1;
+      //   }
+      // }
     }
 
     &.grid-5 {

@@ -312,7 +312,7 @@ body {
         overflow: hidden;
 
         @include mq-mouse {
-          transition: color 0.01s ease, width $ease;
+          transition: width $ease;
         }
       }
     }

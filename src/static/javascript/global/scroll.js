@@ -20,9 +20,13 @@ window.addEventListener("scroll", () => {
 
   if (awayFromTop && scrollingDown) {
     siteHeader.classList.add("scrolling-down");
+
+    // Sunder Platform Page
     stackSections.forEach((section) => section.classList.add("scrolling-down"));
   } else {
     siteHeader.classList.remove("scrolling-down");
+
+    // Sunder Platform Page
     stackSections.forEach((section) =>
       section.classList.remove("scrolling-down")
     );

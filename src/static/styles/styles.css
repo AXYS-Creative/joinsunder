@@ -397,7 +397,7 @@ body:has(.load-complete) .hero div {
 }
 @media (hover: hover) and (pointer: fine) {
   .site-nav .nav-links__link .reveal {
-    transition: color 0.01s ease, width 0.32s ease;
+    transition: width 0.32s ease;
   }
 }
 .site-nav__footer {
@@ -3869,14 +3869,6 @@ figure {
 }
 .logos-group__imgs img {
   flex: 1;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .logos-group__imgs img {
-    opacity: 0;
-  }
-  .logos-group__imgs img.animate {
-    opacity: 1;
-  }
 }
 .logos-group__imgs.grid-5 img {
   max-width: 20%;
