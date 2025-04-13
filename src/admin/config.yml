@@ -12,7 +12,7 @@ logo_url: https://joinsunder-dev.netlify.app/static/img/icons/admin-logo.svg # C
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
 # publish_mode: editorial_workflow
-_partials:
+partials:
   shared_cta: &cta_field
     name: cta
     label: Call To Action
@@ -30,8 +30,8 @@ _partials:
         widget: string
         required: false
         hint: >
-          "Some phrases like 'Learn More' or 'Register' are too vague & hurt site metrics. 
-           Add more details to enhance SEO & a11y. This won't show on the button."
+          Some phrases like 'Learn More' or 'Register' are too vague & hurt site metrics. 
+          Add more details to enhance SEO & a11y. This won't show on the button.
       - name: url
         label: Button URL
         widget: string
@@ -123,7 +123,7 @@ collections:
         file: src/_data/page_sunder_way/ethos.yaml
         preview_path: /sunder-way
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - Ethos)
@@ -150,7 +150,7 @@ collections:
             max: 20
             collapse: true
             required: true
-            hint: Limited to four images
+            hint: The preview shows the top image. Move your images to the top (first slot) in order to view them in the preview.
             fields:
               - name: title
                 label: Title
@@ -193,27 +193,7 @@ collections:
             label: Call To Action Paragraph (Bottom)
             widget: text
             required: true
-          - name: cta
-            label: Call To Action
-            widget: object
-            summary: "{{ fields.text }} → {{ fields.url }}"
-            required: false
-            fields:
-              - name: text
-                label: Button Text
-                widget: string
-                required: false
-                hint: An empty value removes the button
-              - name: text_desc
-                label: Button Text Description
-                widget: string
-                required: false
-                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
-              - name: url
-                label: Button URL
-                widget: string
-                required: false
-                hint: i.e. /join
+          - *cta_field
       - name: competitions
         label: Section - Competitions
         file: src/_data/page_sunder_way/competitions.yaml
@@ -549,27 +529,7 @@ collections:
             media_library:
               config:
                 max_file_size: 1000000 # 1MB = 1,000,000 bytes
-          - name: cta
-            label: Call To Action
-            widget: object
-            summary: "{{ fields.text }} → {{ fields.url }}"
-            required: false
-            fields:
-              - name: text
-                label: Button Text
-                widget: string
-                required: false
-                hint: An empty value removes the button
-              - name: text_desc
-                label: Button Text Description
-                widget: string
-                required: false
-                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
-              - name: url
-                label: Button URL
-                widget: string
-                required: false
-                hint: i.e. /join
+          - *cta_field
       - name: quotes
         label: Section - Quote
         file: src/_data/page_sunder_way/quotes.yaml

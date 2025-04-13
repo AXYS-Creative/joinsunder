@@ -3867,9 +3867,6 @@ figure {
   align-items: center;
   flex-wrap: wrap;
 }
-.logos-group__imgs img {
-  flex: 1;
-}
 .logos-group__imgs.grid-5 img {
   max-width: 20%;
 }

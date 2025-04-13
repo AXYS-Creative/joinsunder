@@ -257,6 +257,124 @@
         },
       });
 
+      let EthosPreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+
+          const sectionTitle = data.section_title;
+          const images = data.section_imgs || [];
+          const values = data.values || [];
+          const ctaText = data.cta?.text;
+          const ctaUrl = data.cta?.url;
+          const ctaP = data.cta_p;
+
+          return h(
+            "section",
+            { className: "section-ethos" },
+            h(
+              "div",
+              { className: "ethos-pin deactivated" },
+
+              // ── Top Section ─────────────────────
+              h(
+                "div",
+                { className: "ethos-top" },
+                h(
+                  "h1",
+                  { className: "ethos-top__title" },
+                  ...sectionTitle
+                    .split(" ")
+                    .map((word, i) => [
+                      word,
+                      h("br", { "aria-hidden": "true", key: i }),
+                    ])
+                ),
+                h(
+                  "div",
+                  {
+                    className: "carousel-gallery carousel-gallery--ethos",
+                  },
+                  images.map((img, i) =>
+                    h("img", {
+                      className: `carousel-gallery__img join-carousel__img${
+                        i === 0 ? " active" : ""
+                      }`,
+                      src: img.src,
+                      alt: img.title || "",
+                      width: "1280",
+                      height: "453",
+                      loading: i === 0 ? "eager" : "lazy",
+                      decoding: "async",
+                    })
+                  )
+                )
+              ),
+
+              // ── Middle Section ─────────────────
+              h(
+                "div",
+                { className: "ethos-middle" },
+                h("p", { className: "ethos-middle__p" }, data.section_desc),
+                h(
+                  "div",
+                  { className: "ethos-middle__panels", tabIndex: "-1" },
+                  values.map((val, i) =>
+                    h(
+                      "div",
+                      {
+                        className: `ethos-middle__panels-panel value-panel value-panel-${
+                          i + 1
+                        } gsap-animate animate`,
+                      },
+                      h(
+                        "h2",
+                        { className: "panel-title" },
+                        ...val.title
+                          .split(" ")
+                          .map((word, i) => [
+                            word,
+                            h("br", { "aria-hidden": "true", key: i }),
+                          ])
+                      ),
+                      h(
+                        "p",
+                        {
+                          className: `panel-desc panel-desc-${i + 1}`,
+                        },
+                        val.caption
+                      )
+                    )
+                  )
+                )
+              ),
+
+              // ── Bottom Section ────────────────
+              h(
+                "div",
+                { className: "ethos-bottom gsap-animate animate" },
+                h("p", { className: "ethos-bottom__p" }, ctaP),
+                ctaText &&
+                  h(
+                    "div",
+                    { className: "cta-group" },
+                    h(
+                      "a",
+                      {
+                        className: "cta-1 outline tab-element-page",
+                        href: ctaUrl || "#",
+                        "aria-label": ctaText,
+                      },
+                      ctaText,
+                      h("span", { className: "sr-only" })
+                    )
+                  )
+              )
+            )
+          );
+        },
+      });
+
       let QuoteSectionPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -389,6 +507,7 @@
       // The key here: use the same name as your file definition in config.yml
       CMS.registerPreviewTemplate("footer", FooterPreview);
       CMS.registerPreviewTemplate("home_hero", HeroHomePreview);
+      CMS.registerPreviewTemplate("ethos", EthosPreview);
       CMS.registerPreviewTemplate("quotes", QuoteSectionPreview);
       CMS.registerPreviewTemplate("hero_error", HeroErrorPreview);
       CMS.registerPreviewTemplate("form_submit", FormSubmitPreview);

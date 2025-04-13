@@ -29,17 +29,16 @@
     @include row-center;
     flex-wrap: wrap;
 
-    img {
-      flex: 1;
+    // img {
 
-      // @include mq-motion-allow {
-      //   opacity: 0;
+    // @include mq-motion-allow {
+    //   opacity: 0;
 
-      //   &.animate {
-      //     opacity: 1;
-      //   }
-      // }
-    }
+    //   &.animate {
+    //     opacity: 1;
+    //   }
+    // }
+    // }
 
     &.grid-5 {
       img {
