@@ -27,18 +27,20 @@ hide_footer: true
       alt="hero-panel__logo"
       eleventy:ignore
     />
-    <h2 class="hero-panel__title">
-      <span class="hero-panel__title-sm">
-        {{ page_home.hero.external_panel.pre_title }}
-      </span>
-      <span class="hero-panel__title-lg">
-        {{ page_home.hero.external_panel.title }}
-      </span>
-    </h2>
+    <div class="hero-panel__text">
+      <h2 class="hero-panel__title">
+        <span class="hero-panel__title-sm">
+          {{ page_home.hero.external_panel.pre_title }}
+        </span>
+        <span class="hero-panel__title-lg">
+          {{ page_home.hero.external_panel.title }}
+        </span>
+      </h2>
 
-    <!-- prettier-ignore -->
-    {% set cta_1 = page_home.hero.external_panel.cta %}
-    {% include "./_includes/components/cta-group.njk" %}
+      <!-- prettier-ignore -->
+      {% set cta_1 = page_home.hero.external_panel.cta %}
+      {% include "./_includes/components/cta-group.njk" %}
+    </div>
   </div>
 
   <div class="hero-panel sunder-internal">
@@ -55,17 +57,19 @@ hide_footer: true
       eleventy:ignore
     />
 
-    <h2 class="hero-panel__title">
-      <span class="hero-panel__title-sm">
-        {{ page_home.hero.internal_panel.pre_title }}
-      </span>
-      <span class="hero-panel__title-lg">
-        {{ page_home.hero.internal_panel.title }}
-      </span>
-    </h2>
+    <div class="hero-panel__text">
+      <h2 class="hero-panel__title">
+        <span class="hero-panel__title-sm">
+          {{ page_home.hero.internal_panel.pre_title }}
+        </span>
+        <span class="hero-panel__title-lg">
+          {{ page_home.hero.internal_panel.title }}
+        </span>
+      </h2>
 
-    <!-- prettier-ignore -->
-    {% set cta_1 = page_home.hero.internal_panel.cta %}
-    {% include "./_includes/components/cta-group.njk" %}
+      <!-- prettier-ignore -->
+      {% set cta_1 = page_home.hero.internal_panel.cta %}
+      {% include "./_includes/components/cta-group.njk" %}
+    </div>
   </div>
 </section>
