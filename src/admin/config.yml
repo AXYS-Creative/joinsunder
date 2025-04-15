@@ -5,9 +5,9 @@ backend:
   repo: "https://github.com/AXYS-Creative/joinsunder.git"
 media_folder: "src/static/img"
 public_folder: "/static/img"
-site_url: https://joinsunder.com/ # On admin login page, this adds a 'go back to site' link. Also added in the corner when logged in.
-display_url: https://joinsunder.com/ # In admin dashboard, this addes the URL in the corner 'View Live'. Used with 'preview_path' for collection viewing.
-logo_url: https://joinsunder.com//static/img/icons/admin-logo.svg # On admin login page, this adds a custom logo.
+site_url: https://joinsunder.com # On admin login page, this adds a 'go back to site' link. Also added in the corner when logged in.
+display_url: https://joinsunder.com # In admin dashboard, this addes the URL in the corner 'View Live'. Used with 'preview_path' for collection viewing.
+logo_url: https://joinsunder.com/static/img/icons/admin-logo.svg # On admin login page, this adds a custom logo.
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
