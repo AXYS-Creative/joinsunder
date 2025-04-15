@@ -203,43 +203,49 @@
                 src: panelData.logo,
                 alt: "",
               }),
-              // Title
               h(
-                "h2",
-                { className: "hero-panel__title" },
+                "div",
+                { className: "hero-panel__text" },
+                // Title
                 h(
-                  "span",
-                  { className: "hero-panel__title-sm" },
-                  panelData.pre_title
-                ),
-                h(
-                  "span",
-                  { className: "hero-panel__title-lg" },
-                  panelData.title
-                )
-              ),
-              // CTA
-              panelData.cta?.text &&
-                h(
-                  "div",
-                  { className: "cta-group" },
+                  "h2",
+                  { className: "hero-panel__title" },
                   h(
-                    "a",
-                    {
-                      className: "cta-1 tab-element-page",
-                      href: panelData.cta.url || "#",
-                      target: panelData.cta.new_tab ? "_blank" : null,
-                      rel: panelData.cta.new_tab ? "noopener noreferrer" : null,
-                      "aria-label": `Learn More about ${panelData.title}`,
-                    },
-                    panelData.cta.text,
+                    "span",
+                    { className: "hero-panel__title-sm" },
+                    panelData.pre_title
+                  ),
+                  h(
+                    "span",
+                    { className: "hero-panel__title-lg" },
+                    panelData.title
+                  )
+                ),
+                // CTA
+                panelData.cta?.text &&
+                  h(
+                    "div",
+                    { className: "cta-group" },
                     h(
-                      "span",
-                      { className: "sr-only" },
-                      `Learn More about ${panelData.title}`
+                      "a",
+                      {
+                        className: "cta-1 tab-element-page",
+                        href: panelData.cta.url || "#",
+                        target: panelData.cta.new_tab ? "_blank" : null,
+                        rel: panelData.cta.new_tab
+                          ? "noopener noreferrer"
+                          : null,
+                        "aria-label": `Learn More about ${panelData.title}`,
+                      },
+                      panelData.cta.text,
+                      h(
+                        "span",
+                        { className: "sr-only" },
+                        `Learn More about ${panelData.title}`
+                      )
                     )
                   )
-                )
+              )
             );
           };
 
