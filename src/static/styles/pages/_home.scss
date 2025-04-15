@@ -249,8 +249,14 @@
         right: 0;
 
         @include mq-max(lg) {
-          --direction: to bottom;
+          --direction: to top;
+          top: auto;
+          bottom: 0;
         }
+
+        // @include mq-max(lg) {
+        //   --direction: to bottom;
+        // }
       }
     }
   }

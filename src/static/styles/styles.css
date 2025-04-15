@@ -2036,7 +2036,9 @@ figure {
 }
 @media screen and (max-width: 1024px) {
   .main-home .hero .sunder-external::after {
-    --direction: to bottom;
+    --direction: to top;
+    top: auto;
+    bottom: 0;
   }
 }
 
