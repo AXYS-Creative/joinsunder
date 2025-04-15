@@ -1,8 +1,7 @@
 toggle_section: true
-
 section_title: Leadership
-section_desc: Our leadership team is driven by your success, ensuring you have the care, resources, and support to achieve your goals.
-
+section_desc: Our leadership team is driven by your success, ensuring you have
+  the care, resources, and support to achieve your goals.
 list:
   - name: Max[%br%] Britton
     role: CEO
@@ -39,4 +38,4 @@ list:
     src: /static/img/About-Leadership-11Wyler.png
   - name: Daniel[%br%] Garcia
     role: Creative Director
-    src: /static/img/About-Leadership-12Daniel.png
+    src: /static/img/r6_t9181.png
