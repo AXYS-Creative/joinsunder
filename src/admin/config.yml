@@ -321,7 +321,7 @@ collections:
         file: src/_data/page_sunder_way/experiences.yaml
         preview_path: /sunder-way#experiences
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - Experiences)

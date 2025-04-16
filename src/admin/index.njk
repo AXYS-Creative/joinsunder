@@ -373,7 +373,7 @@
         },
       });
 
-      const CompetitionsPreview = createClass({
+      let CompetitionsPreview = createClass({
         render: function () {
           const entry = this.props.entry;
           const data = entry.getIn(["data"]).toJS();
@@ -501,6 +501,131 @@
         },
       });
 
+      let ExperiencesPreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+
+          const videos = data.videos || [];
+          const collage = data.collage || {};
+          // Handles both desktop and mobile, with opt-in for alternating mode
+          const renderImage = (
+            img,
+            imgIndex,
+            colIndex,
+            alternateByCol = false
+          ) => {
+            const isPortrait = alternateByCol
+              ? colIndex % 2 === 0 // col 0 and 2 → portrait first
+                ? imgIndex % 2 === 0
+                : imgIndex % 2 !== 0
+              : imgIndex % 2 !== 0; // original mobile logic
+
+            return h("img", {
+              className: isPortrait ? "portrait" : "landscape",
+              src: img.src,
+              alt: img.title,
+            });
+          };
+
+          return h(
+            "section",
+            {
+              className: "section-experiences section-gradient",
+              id: "experiences",
+            },
+
+            // Title + Description
+            h(
+              "h2",
+              {
+                className: "section-gradient__title section-experiences__title",
+              },
+              data.section_title
+            ),
+            h(
+              "p",
+              { className: "section-gradient__desc section-experiences__desc" },
+              data.section_desc
+            ),
+
+            // ─── Simulated Swiper Carousel ───
+            h(
+              "div",
+              {
+                className: "swiper mySwiper video-carousel",
+              },
+              h(
+                "div",
+                {
+                  className: "swiper-wrapper",
+                  style: {
+                    display: "flex",
+                    gap: "12px",
+                    overflow: "auto",
+                  },
+                },
+                videos.map((vid, i) =>
+                  h(
+                    "button",
+                    {
+                      className: "video-toggle swiper-slide tab-element-page",
+                      style: {
+                        minWidth: "400px",
+                      },
+                      "data-src": vid.src,
+                      "aria-label": `Play video: ${vid.title}`,
+                      key: i,
+                    },
+                    h("span", { className: "badge cta-1" }, "Play Video"),
+                    h("img", {
+                      src: vid.poster,
+                      alt: vid.title,
+                    })
+                  )
+                )
+              )
+            ),
+
+            // ─── Collage (optional) ───
+            data.toggle_collage &&
+              h(
+                "div",
+                { className: "collage" },
+                ["column_1", "column_2", "column_3", "column_4"].map(
+                  (colKey, colIndex) =>
+                    h(
+                      "div",
+                      {
+                        className: `collage__column collage__column-${
+                          colIndex + 1
+                        }`,
+                      },
+                      (collage[colKey] || []).map(
+                        (img, imgIndex) =>
+                          renderImage(img, imgIndex, colIndex, true) // ← alternateByCol = true
+                      )
+                    )
+                ),
+                ["column_1_mobile", "column_2_mobile"].map((colKey, colIndex) =>
+                  h(
+                    "div",
+                    {
+                      className: `collage__column collage__column-mobile collage__column-mobile-${
+                        colIndex + 1
+                      }`,
+                    },
+                    (collage[colKey] || []).map(
+                      (img, imgIndex) =>
+                        renderImage(img, imgIndex, colIndex, false) // ← standard alt logic
+                    )
+                  )
+                )
+              )
+          );
+        },
+      });
+
       let QuoteSectionPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -592,6 +717,7 @@
       CMS.registerPreviewTemplate("home_hero", HeroHomePreview);
       CMS.registerPreviewTemplate("ethos", EthosPreview);
       CMS.registerPreviewTemplate("competitions", CompetitionsPreview);
+      CMS.registerPreviewTemplate("experiences", ExperiencesPreview);
       CMS.registerPreviewTemplate("quotes", QuoteSectionPreview);
       CMS.registerPreviewTemplate("hero_error", HeroAlertPreview);
       CMS.registerPreviewTemplate("form_submit", HeroAlertPreview);
