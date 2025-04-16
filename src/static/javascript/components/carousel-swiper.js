@@ -31,30 +31,6 @@ let swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  // on: {
-  //   init: function () {
-  //     console.log("Swiper initialized");
-  //   },
-  // },
-  // on: {
-  //   slideChangeTransitionStart: function () {
-  //     if (swiper.autoplay.running) {
-  //       swiper.autoplay.stop();
-  //       swiper.autoplay.start();
-  //     }
-  //   },
-  // },
-  // on: {
-  //   init: function () {
-  //     const progressbar = document.querySelector(
-  //       ".swiper-pagination-progressbar-fill"
-  //     );
-  //     if (progressbar) {
-  //       progressbar.style.transform = "scaleX(0)";
-  //       progressbar.style.transformOrigin = "left";
-  //     }
-  //   },
-  // },
 });
 
 // Remove role attribute from video toggle elements (invalid HTML)

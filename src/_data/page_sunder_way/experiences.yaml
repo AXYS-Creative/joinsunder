@@ -1,9 +1,6 @@
 toggle_section: true
 section_title: Experiences
 section_desc: From exhilarating excursions to inspiring events, we go further—together.
-carousel_autoplay:
-  enabled: false
-  interval: 3200
 videos:
   - title: XCaret - 2025 Top Performers
     poster: /static/img/Way-Experience-1Video.png
