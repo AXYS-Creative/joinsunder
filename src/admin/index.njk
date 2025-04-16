@@ -62,8 +62,6 @@
                     className: "logo-link__img footer-logo__img",
                     src: logoSrc,
                     alt: "Join Sunder logo",
-                    width: "116",
-                    height: "32",
                   })
                 ),
                 h(
@@ -192,9 +190,6 @@
                 className: "hero-panel__bg-img",
                 src: panelData.bg_img,
                 alt: "",
-                width: "1000",
-                height: "600",
-                loading: "eager",
                 decoding: "async",
               }),
               // Logo
@@ -308,9 +303,6 @@
                       }`,
                       src: img.src,
                       alt: img.title || "",
-                      width: "1280",
-                      height: "453",
-                      loading: i === 0 ? "eager" : "lazy",
                       decoding: "async",
                     })
                   )
@@ -381,6 +373,134 @@
         },
       });
 
+      const CompetitionsPreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+
+          const types = data.types || [];
+          const merch = data.yog_merch || [];
+          const yogTypes = data.yog_types || [];
+          const yogLogo = data.yog_logo;
+
+          return h(
+            "section",
+            {
+              className: "section-competitions section-gradient",
+              id: "competitions",
+            },
+
+            // Title + Description
+            h(
+              "h2",
+              { className: "section-gradient__title" },
+              data.section_title
+            ),
+            h("p", { className: "section-gradient__desc" }, data.section_desc),
+
+            // Competition Types
+            h(
+              "div",
+              { className: "competition-types" },
+              types.map((type, i) =>
+                h(
+                  "figure",
+                  { className: "competition-types__figure", key: i },
+                  h("img", {
+                    className: "competition-types__img",
+                    src: type.src,
+                    alt: "",
+                  }),
+                  h(
+                    "figcaption",
+                    { className: "competition-types__caption" },
+                    h(
+                      "h3",
+                      { className: "competition-types__caption-title" },
+                      type.title
+                    ),
+                    h(
+                      "p",
+                      { className: "competition-types__caption-p" },
+                      type.caption
+                    )
+                  ),
+                  h(
+                    "span",
+                    { className: "cta-1 competition-types__badge" },
+                    "Read More"
+                  )
+                )
+              )
+            ),
+
+            // Year of Gear
+            h(
+              "div",
+              { className: "yog" },
+
+              // Logo
+              yogLogo &&
+                h(
+                  "figure",
+                  { className: "yog-logo" },
+                  h("img", {
+                    className: "yog-logo__img",
+                    src: yogLogo,
+                    alt: "Year of Gear",
+                  })
+                ),
+
+              // Merch Rows
+              h(
+                "div",
+                { className: "yog-merch" },
+                merch.map((row, i) =>
+                  h(
+                    "div",
+                    { className: "yog-merch__row", key: i },
+                    row.items?.map((item, j) =>
+                      h("img", {
+                        className: `yog-merch__row-img gsap-animate ${
+                          item.rotate || ""
+                        }`,
+                        style: {
+                          opacity: 1,
+                        },
+                        src: item.src,
+                        alt: item.title,
+                        key: j,
+                      })
+                    )
+                  )
+                )
+              ),
+
+              // Yog Types
+              h(
+                "div",
+                { className: "yog-types" },
+                yogTypes.map((type, i) =>
+                  h("img", {
+                    className: "yog-types__img",
+                    src: type.src,
+                    alt: type.title,
+                    key: i,
+                  })
+                )
+              ),
+
+              // Stripe element
+              h(
+                "div",
+                { className: "yog-stripes" },
+                h("div", { className: "yog-stripes__stripe" })
+              )
+            )
+          );
+        },
+      });
+
       let QuoteSectionPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -401,9 +521,6 @@
                     className: "portrait-gradient__img",
                     src: item.img_src,
                     alt: `${item.name} ${item.role}`,
-                    width: "1000",
-                    height: "1086",
-                    loading: "lazy",
                     decoding: "async",
                   }),
                   h(
@@ -474,6 +591,7 @@
       CMS.registerPreviewTemplate("footer", FooterPreview);
       CMS.registerPreviewTemplate("home_hero", HeroHomePreview);
       CMS.registerPreviewTemplate("ethos", EthosPreview);
+      CMS.registerPreviewTemplate("competitions", CompetitionsPreview);
       CMS.registerPreviewTemplate("quotes", QuoteSectionPreview);
       CMS.registerPreviewTemplate("hero_error", HeroAlertPreview);
       CMS.registerPreviewTemplate("form_submit", HeroAlertPreview);

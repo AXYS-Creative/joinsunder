@@ -85,6 +85,7 @@ collections:
                 label: Large Title
                 widget: string
                 required: true
+                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
               - *cta_field
           - name: internal_panel
             label: Internal Panel (joinsunder.com)
@@ -114,6 +115,7 @@ collections:
                 label: Large Title
                 widget: string
                 required: true
+                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
               - *cta_field
   - name: page_sunder_way
     label: Page - Sunder Way
@@ -199,7 +201,7 @@ collections:
         file: src/_data/page_sunder_way/competitions.yaml
         preview_path: /sunder-way#competitions
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (Sunder Way - Competitions)
@@ -291,6 +293,7 @@ collections:
                 label: Title
                 widget: string
                 required: true
+                hint: "Accessible image title."
               - name: src
                 label: Image Source (Banner)
                 widget: image
@@ -1406,6 +1409,10 @@ collections:
             media_library:
               config:
                 max_file_size: 1000000 # 1MB = 1,000,000 bytes
+          - name: show_social
+            label: Show Social Media Links
+            widget: boolean
+            default: true
           - name: links
             label: Footer Links
             label_singular: Link

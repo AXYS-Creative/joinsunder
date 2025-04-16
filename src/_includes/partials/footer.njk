@@ -1,18 +1,22 @@
 {% if hide_footer != true %}
 <footer class="site-footer">
   <div class="site-footer__inner">
-    {% if global.footer.logo_src %}
+    {% if global.footer.logo_src or global.footer.show_social %}
     <div class="inner-top">
       <!-- prettier-ignore -->
-      {% set logo_link_src = global.footer.logo_src %}
-      {% set logo_link_class = "footer-logo" %}
-      {% set page_tabbing = 'tab-element-page' %}
-      {% include "../components/logo-link.njk" %}
+      {% if global.footer.logo_src %}      
+        {% set logo_link_src = global.footer.logo_src %}
+        {% set logo_link_class = "footer-logo" %}
+        {% set page_tabbing = 'tab-element-page' %}
+        {% include "../components/logo-link.njk" %}
+      {% endif %}
 
       <!-- prettier-ignore -->
-      {% set no_label = true %}
-      {% set social_data = global.social_media.links %}
-      {% include "../components/social-media.njk" %}
+      {% if global.footer.show_social %}
+        {% set no_label = true %}
+        {% set social_data = global.social_media.links %}
+        {% include "../components/social-media.njk" %}
+      {% endif %}
     </div>
     {% endif %}
 
