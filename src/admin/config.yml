@@ -1398,6 +1398,7 @@ collections:
       - name: footer
         label: Site Footer
         file: src/_data/global/footer.yaml
+        preview_path: /sunder-way#site-footer
         editor:
           preview: true
         fields:
@@ -1459,6 +1460,7 @@ collections:
       - name: social_media
         label: Social Media
         file: src/_data/global/social_media.yaml
+        preview_path: /sunder-way#site-footer
         editor:
           preview: false
         fields:
@@ -1467,6 +1469,7 @@ collections:
             label_singular: Link
             widget: list
             required: false
+            hint: The social media links are found in the navigation menu and footer.
             fields:
               - name: title
                 label: Title
@@ -1480,6 +1483,7 @@ collections:
                 label: Icon Source
                 widget: image
                 required: true
+                hint: Recommended to use an SVG file. Keep below 1MB. Color is handled through the code.
       - name: carousel
         label: Carousel
         file: src/_data/global/carousel.yaml
@@ -1490,6 +1494,7 @@ collections:
             label: Arrow Icon (next/prev buttons)
             widget: image
             required: true
+            hint: Recommended to use an SVG file. Keep below 1MB. If uploading an arrow, make sure it's pointing to the right.
           - name: video_badge_text
             label: Video Badge Text (Video Carousel - Experience Page)
             widget: string
