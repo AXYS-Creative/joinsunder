@@ -1054,6 +1054,228 @@
         },
       });
 
+      let JoinHeroPreview = createClass({
+        render: function () {
+          const data = this.props.entry.getIn(["data"]).toJS();
+          const images = data.imgs || [];
+          const form = data.form_data || {};
+
+          return h(
+            "div",
+            { className: "main-join" },
+            h(
+              "section",
+              { className: "hero" },
+
+              // ─── Carousel Gallery ───
+              h(
+                "div",
+                {
+                  className: "carousel-gallery carousel-gallery--join",
+                },
+                images.map((img, i) =>
+                  h("img", {
+                    className: "carousel-gallery__img join-carousel__img",
+                    style: {
+                      opacity: 1,
+                    },
+                    src: img.src,
+                    alt: img.title,
+                    key: i,
+                  })
+                )
+              ),
+
+              // ─── Form Panel ───
+              // ─── Form Panel ───
+              h(
+                "div",
+                { className: "form-panel" },
+
+                // ✅ Section title
+                h("h1", { className: "form-panel__title" }, data.section_title),
+
+                // ✅ Form
+                h(
+                  "form",
+                  { className: "form-redirect" },
+
+                  // First + Last Name
+                  h(
+                    "div",
+                    {
+                      className: "form-block-group form-block-group--full-name",
+                    },
+                    [
+                      h(
+                        "div",
+                        { className: "form-block form-block--first-name" },
+                        [
+                          h("input", {
+                            className: "input",
+                            placeholder: "",
+                            required: true,
+                          }),
+                          h("label", { className: "label" }, "First Name"),
+                        ]
+                      ),
+                      h(
+                        "div",
+                        { className: "form-block form-block--last-name" },
+                        [
+                          h("input", {
+                            className: "input",
+                            placeholder: "",
+                            required: true,
+                          }),
+                          h("label", { className: "label" }, "Last Name"),
+                        ]
+                      ),
+                    ]
+                  ),
+
+                  // Email + Phone
+                  h(
+                    "div",
+                    {
+                      className:
+                        "form-block-group form-block-group--email-phone",
+                    },
+                    [
+                      h("div", { className: "form-block form-block--email" }, [
+                        h("input", {
+                          className: "input",
+                          type: "email",
+                          placeholder: "",
+                          required: true,
+                        }),
+                        h("label", { className: "label" }, "Email"),
+                      ]),
+                      h("div", { className: "form-block form-block--phone" }, [
+                        h("input", {
+                          className: "input",
+                          type: "tel",
+                          placeholder: "",
+                          required: true,
+                        }),
+                        h("label", { className: "label" }, "Phone"),
+                      ]),
+                    ]
+                  ),
+
+                  // City
+                  h("div", { className: "form-block form-block--city" }, [
+                    h("input", {
+                      className: "input",
+                      placeholder: "",
+                      required: true,
+                    }),
+                    h("label", { className: "label" }, "City"),
+                  ]),
+
+                  // State + Zip
+                  h(
+                    "div",
+                    {
+                      className: "form-block-group form-block-group--state-zip",
+                    },
+                    [
+                      h("div", { className: "form-block form-block--state" }, [
+                        h("input", {
+                          className: "input",
+                          placeholder: "",
+                          required: true,
+                        }),
+                        h("label", { className: "label" }, "State"),
+                      ]),
+                      h("div", { className: "form-block form-block--zip" }, [
+                        h("input", {
+                          className: "input",
+                          placeholder: "",
+                          required: true,
+                        }),
+                        h("label", { className: "label" }, "Zip"),
+                      ]),
+                    ]
+                  ),
+
+                  // Optional: Discovery Field
+                  form.show_field_discovery &&
+                    h(
+                      "div",
+                      { className: "form-block form-block--discovery" },
+                      [
+                        h("textarea", {
+                          className: "input input--textarea",
+                          placeholder: "",
+                          required: true,
+                          maxLength: form.max_count_discovery || 250,
+                        }),
+                        h(
+                          "label",
+                          { className: "label label--textarea" },
+                          form.label_discovery
+                        ),
+                      ]
+                    ),
+
+                  // Optional: Awareness Checkbox
+                  form.show_checkbox_awareness &&
+                    h(
+                      "div",
+                      { className: "form-block form-block--awareness" },
+                      [
+                        h("input", {
+                          type: "checkbox",
+                          className: "checkbox",
+                          required: true,
+                        }),
+                        h(
+                          "label",
+                          { className: "checkbox-label" },
+                          form.label_checkbox_awareness ||
+                            "I understand this is a sales position."
+                        ),
+                      ]
+                    ),
+
+                  // Optional: reCAPTCHA
+                  form.show_recaptcha &&
+                    h(
+                      "div",
+                      {
+                        className: "recaptcha",
+                        style: {
+                          width: "304px",
+                          height: "78px",
+                          background: "#f2f2f2",
+                          border: "1px solid #ccc",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: "12px",
+                          color: "#555",
+                          marginTop: "12px",
+                        },
+                      },
+                      "reCAPTCHA placeholder"
+                    ),
+
+                  // Submit
+                  h("div", { className: "form-footer" }, [
+                    h(
+                      "button",
+                      { className: "cta-1 outline", type: "submit" },
+                      form.submit_btn_text || "Submit"
+                    ),
+                  ])
+                )
+              )
+            )
+          );
+        },
+      });
+
       let HeroAlertPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -1102,6 +1324,7 @@
       CMS.registerPreviewTemplate("mission", MissionPreview);
       CMS.registerPreviewTemplate("leadership", LeadershipPreview);
       CMS.registerPreviewTemplate("timeline", TimelinePreview);
+      CMS.registerPreviewTemplate("hero_join", JoinHeroPreview);
       CMS.registerPreviewTemplate("hero_error", HeroAlertPreview);
       CMS.registerPreviewTemplate("form_submit", HeroAlertPreview);
       CMS.registerPreviewStyle("/static/styles/styles.css");

@@ -881,12 +881,12 @@ collections:
   - name: page_join
     label: Page - Join
     files:
-      - name: hero
+      - name: hero_join
         label: Section - Hero
         file: src/_data/page_join/hero.yaml
         preview_path: /join
         editor:
-          preview: false
+          preview: true
         fields:
           - name: autoplay_interval
             label: Autoplay Interval (Image Carousel)
