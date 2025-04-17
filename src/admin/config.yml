@@ -1421,8 +1421,8 @@ collections:
               - name: page
                 label: Page
                 widget: string
-                required: true
-                hint: Dashboard label only — DO NOT edit this field
+                required: false
+                hint: Dashboard label only — DO NOT edit this field. Home page should be left blank.
               - name: description
                 label: Description
                 widget: text

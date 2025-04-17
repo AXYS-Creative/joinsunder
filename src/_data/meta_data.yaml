@@ -4,8 +4,9 @@ author: Sunder Energy
 contact_email: info@sunderenergy.com
 theme_color: "#f7f7f7"
 page_descriptions:
-  - page: /
-    description: Welcome to Sunder, America's leading solar sales company. Empower
+  - page:
+    description:
+      Welcome to Sunder, America's leading solar sales company. Empower
       your future with us and discover why thousands are building brighter
       careers in the solar industry.
   - page: sunder-way
@@ -18,12 +19,14 @@ page_descriptions:
       industry-leading pay—setting a new standard that no other platform can
       match
   - page: about
-    description: Learn about Sunder Energy’s mission, core values, and rapid growth
+    description:
+      Learn about Sunder Energy’s mission, core values, and rapid growth
       as the leading solar sales company in the U.S. Meet the leadership team
       and explore key milestones on their journey to making clean energy
       accessible nationwide.
   - page: operation-sunder-serves
-    description: See how Sunder Energy gives back. From building schools to donating
+    description:
+      See how Sunder Energy gives back. From building schools to donating
       bikes and creating community spaces, explore our timeline of service
       projects impacting lives across Mexico, Costa Rica, Peru, and beyond.
   - page: join
@@ -35,7 +38,8 @@ page_descriptions:
       submitted — we’ll be in touch soon to help you start your journey in solar
       sales.
   - page: "404"
-    description: The page you are looking for cannot be found. Please check the URL
+    description:
+      The page you are looking for cannot be found. Please check the URL
       or return to the home page.
 og_title: Join Americas Leading Solar Company
 og_description: Looking for your next opportunity? Join Sunder Energy, where our

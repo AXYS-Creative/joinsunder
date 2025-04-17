@@ -9,14 +9,15 @@
 
     <!-- prettier-ignore -->
     {% set pageMeta = null %}
+
     {% for meta in meta_data.page_descriptions %}
-    {% if meta.page == page.fileSlug %}
-    {% set pageMeta = meta %}
-    {% endif %}
+      {% if (meta.page == page.fileSlug) or (not page.fileSlug and not meta.page) %}
+        {% set pageMeta = meta %}
+      {% endif %}
     {% endfor %}
 
     <!-- prettier-ignore -->
-    <meta name="description" content="{% if pageMeta %}{{ pageMeta.description }}{% else %}Page description goes here{% endif %}"/>
+    <meta name="description" content="{% if pageMeta %}{{ pageMeta.description }}{% else %}Page description goes here{% endif %}" />
 
     {% if path == "404" %}
     <meta name="robots" content="noindex, nofollow" />
