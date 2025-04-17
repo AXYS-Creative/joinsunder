@@ -1752,6 +1752,26 @@ figure {
   background: var(--hero-color--primary);
 }
 
+.frame-content .section-values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  .frame-content .section-values {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--section-gap-double);
+  }
+}
+.frame-content .section-values__text {
+  opacity: 1;
+}
+.frame-content .section-values__figure {
+  position: static;
+  translate: unset;
+}
+
 .main-home {
   padding: var(--body-padding-sm);
 }

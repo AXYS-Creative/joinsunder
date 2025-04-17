@@ -727,7 +727,7 @@ collections:
         file: src/_data/page_about/values.yaml
         preview_path: /about
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (About Sunder - Core Values)
@@ -737,33 +737,17 @@ collections:
             label: Section Title
             widget: string
             required: true
-          - name: cta
-            label: Call To Action
-            widget: object
-            summary: "{{ fields.text }} → {{ fields.url }}"
-            required: false
-            fields:
-              - name: text
-                label: Button Text
-                widget: string
-                required: false
-                hint: An empty value removes the button
-              - name: text_desc
-                label: Button Text Description
-                widget: string
-                required: false
-                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
-              - name: url
-                label: Button URL
-                widget: string
-                required: false
-                hint: i.e. /join
+          - name: section_desc
+            label: Section Description
+            widget: text
+            required: true
+          - *cta_field
       - name: mission
         label: Section - Our Mission
         file: src/_data/page_about/mission.yaml
         preview_path: /about#mission
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (About Sunder - Our Mission)
@@ -823,7 +807,7 @@ collections:
         file: src/_data/page_about/leadership.yaml
         preview_path: /about#leadership
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (About Sunder - Leadership)
@@ -835,7 +819,7 @@ collections:
             required: true
           - name: section_desc
             label: Section Description
-            widget: string
+            widget: text
             required: true
           - name: list
             label: Leadership Portraits
@@ -865,7 +849,7 @@ collections:
         file: src/_data/page_about/timeline.yaml
         preview_path: /about#timeline
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (About Sunder - Timeline History)
@@ -976,7 +960,7 @@ collections:
             required: true
           - name: section_desc
             label: Section Description
-            widget: string
+            widget: text
             required: true
           - name: cta_1
             label: Call To Action 1
@@ -1226,7 +1210,7 @@ collections:
             required: true
           - name: section_desc
             label: Section Description
-            widget: string
+            widget: text
             required: true
           - name: cta_1
             label: Call To Action 1

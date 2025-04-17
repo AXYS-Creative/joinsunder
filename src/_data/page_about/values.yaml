@@ -7,3 +7,4 @@ cta:
   text: Join the squad
   text_desc:
   url: /join
+  new_tab: false
