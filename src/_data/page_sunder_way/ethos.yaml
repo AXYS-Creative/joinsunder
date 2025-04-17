@@ -27,3 +27,4 @@ cta:
   text: Join the squad
   text_desc: null
   url: /join
+  new_tab: false

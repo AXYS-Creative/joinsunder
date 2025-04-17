@@ -8,3 +8,4 @@ cta:
   text: Learn more
   text_desc: Learn more about how Sunder serves
   url: /operation-sunder-serves
+  new_tab: false

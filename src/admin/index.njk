@@ -34,6 +34,72 @@
     <script>
       const { h, createClass } = window;
 
+      // Partials
+      const ImgHeroPreview = ({
+        title,
+        titleTag = "h2",
+        desc,
+        bg,
+        graphic,
+        cta,
+        sectionClass = "",
+      }) => {
+        const TitleTag = titleTag;
+
+        return h(
+          "section",
+          { className: `partial-img-hero ${sectionClass}` },
+          h(
+            "div",
+            { className: "partial-img-hero__inner" },
+
+            bg &&
+              h("img", {
+                className: "partial-img-hero__bg",
+                src: bg,
+                alt: "",
+              }),
+
+            graphic &&
+              h("img", {
+                className: "partial-img-hero__graphic",
+                src: graphic,
+                alt: "",
+              }),
+
+            title &&
+              h(
+                TitleTag,
+                { className: `partial-img-hero__${titleTag}` },
+                title
+              ),
+
+            h(
+              "div",
+              { className: "partial-img-hero__footer" },
+              h("p", { className: "partial-img-hero__p" }, desc),
+              cta?.text &&
+                h(
+                  "div",
+                  { className: "cta-group" },
+                  h(
+                    "a",
+                    {
+                      className: "cta-1 tab-element-page",
+                      href: cta.url || "#",
+                      "aria-label": cta.text,
+                    },
+                    cta.text,
+                    h("span", { className: "sr-only" })
+                  )
+                )
+            )
+          )
+        );
+      };
+
+      // Section Previews
+
       let FooterPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -626,6 +692,20 @@
         },
       });
 
+      let OssPreview = createClass({
+        render: function () {
+          const data = this.props.entry.getIn(["data"]).toJS();
+          return ImgHeroPreview({
+            title: data.section_title,
+            desc: data.section_desc,
+            bg: data.section_bg,
+            graphic: data.graphic,
+            cta: data.cta,
+            sectionClass: "oss-section",
+          });
+        },
+      });
+
       let QuoteSectionPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -680,6 +760,21 @@
         },
       });
 
+      let PlatformHeroPreview = createClass({
+        render: function () {
+          const data = this.props.entry.getIn(["data"]).toJS();
+
+          return ImgHeroPreview({
+            title: data.section_title,
+            titleTag: "h1", // ← since the platform page uses section_h1
+            desc: data.section_desc,
+            bg: data.section_bg,
+            cta: data.cta,
+            sectionClass: "platform-hero",
+          });
+        },
+      });
+
       let HeroAlertPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -714,11 +809,13 @@
 
       // Use the same name as your file definition in config.yml
       CMS.registerPreviewTemplate("footer", FooterPreview);
-      CMS.registerPreviewTemplate("home_hero", HeroHomePreview);
+      CMS.registerPreviewTemplate("hero_home", HeroHomePreview);
       CMS.registerPreviewTemplate("ethos", EthosPreview);
       CMS.registerPreviewTemplate("competitions", CompetitionsPreview);
       CMS.registerPreviewTemplate("experiences", ExperiencesPreview);
+      CMS.registerPreviewTemplate("oss", OssPreview);
       CMS.registerPreviewTemplate("quotes", QuoteSectionPreview);
+      CMS.registerPreviewTemplate("hero_platform", PlatformHeroPreview);
       CMS.registerPreviewTemplate("hero_error", HeroAlertPreview);
       CMS.registerPreviewTemplate("form_submit", HeroAlertPreview);
       CMS.registerPreviewStyle("/static/styles/styles.css");
