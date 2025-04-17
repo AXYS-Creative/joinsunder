@@ -116,7 +116,7 @@
           {% for social_link in social_media.links %}
           {% if social_link.url %}"{{ social_link.url }}"{% if not loop.last %},{% endif %}{% endif %}
           {% endfor %}
-        ]
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "{{ meta_data.contact_email }}",
