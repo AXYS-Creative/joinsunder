@@ -1,11 +1,8 @@
 toggle_section: true
-
 section_title: Finance Options
-section_desc: Subtitle Description
-
+section_desc: Flexible Financing Solutions for Every Installation
 logo_grid: 4
 logo_grid_sm: 1
-
 img_list:
   - title: EnFin by Qcells
     src: /static/img/Platform-Finance-1Logo.svg
