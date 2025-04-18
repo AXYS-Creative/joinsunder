@@ -2169,6 +2169,9 @@ figure {
   }
 }
 
+.section-oss-history {
+  padding-block-end: var(--section-gap-double);
+}
 @media screen and (max-width: 1024px) {
   .section-oss-history {
     display: flex;
@@ -2299,6 +2302,17 @@ figure {
   .section-oss-history .service-event .cta-group {
     justify-content: flex-start;
   }
+}
+
+.frame-content .section-oss-history .swiper-slide {
+  display: flex;
+  border-radius: var(--radius);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-content .section-oss-history .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .section-ethos {

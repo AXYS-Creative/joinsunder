@@ -1,4 +1,6 @@
 .section-oss-history {
+  padding-block-end: var(--section-gap-double);
+
   @include mq-max(lg) {
     @include column-center;
   }
@@ -107,4 +109,20 @@
   // .carousel {
   // see _carousel-swiper.scss
   // }
+}
+
+// Admin Preview Styles
+.frame-content {
+  .section-oss-history {
+    .swiper-slide {
+      display: flex;
+      border-radius: var(--radius);
+      overflow: hidden;
+      flex-shrink: 0;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
 }
