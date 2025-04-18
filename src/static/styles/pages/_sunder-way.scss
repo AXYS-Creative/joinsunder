@@ -127,7 +127,8 @@
 
         .panel-title {
           @include h5;
-          margin-block-end: calc(var(--section-gap-half) / 2);
+          // margin-block-end: calc(var(--section-gap-half) / 2);
+          // using <br> for spacing & voice break (a11y)
 
           @include mq-max(lg) {
             @include h4;
@@ -242,7 +243,10 @@
         min-width: 0;
       }
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
+        outline: none;
+
         .competition-types__img {
           scale: 1;
         }

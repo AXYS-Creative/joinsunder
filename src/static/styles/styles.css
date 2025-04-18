@@ -623,9 +623,10 @@ figure {
   font-size: 0;
 }
 
-.sample-video-embed {
-  width: 100%;
-  display: none;
+br.gap-sm {
+  content: "";
+  margin: 16px;
+  display: block;
 }
 
 .classic-link {
@@ -2481,7 +2482,6 @@ figure {
   letter-spacing: -2px;
   font-size: 24px;
   letter-spacing: -1px;
-  margin-block-end: calc(var(--section-gap-half) / 2);
 }
 @media screen and (max-width: 1024px) {
   .section-ethos .ethos-middle__panels-panel .panel-title {
@@ -2618,16 +2618,19 @@ figure {
     min-width: 0;
   }
 }
-.section-competitions .competition-types__figure:hover .competition-types__img {
+.section-competitions .competition-types__figure:hover, .section-competitions .competition-types__figure:focus-visible {
+  outline: none;
+}
+.section-competitions .competition-types__figure:hover .competition-types__img, .section-competitions .competition-types__figure:focus-visible .competition-types__img {
   scale: 1;
 }
-.section-competitions .competition-types__figure:hover .competition-types__caption {
+.section-competitions .competition-types__figure:hover .competition-types__caption, .section-competitions .competition-types__figure:focus-visible .competition-types__caption {
   opacity: 1;
 }
-.section-competitions .competition-types__figure:hover .competition-types__caption-title, .section-competitions .competition-types__figure:hover .competition-types__caption-p {
+.section-competitions .competition-types__figure:hover .competition-types__caption-title, .section-competitions .competition-types__figure:hover .competition-types__caption-p, .section-competitions .competition-types__figure:focus-visible .competition-types__caption-title, .section-competitions .competition-types__figure:focus-visible .competition-types__caption-p {
   translate: 0 0;
 }
-.section-competitions .competition-types__figure:hover .competition-types__badge {
+.section-competitions .competition-types__figure:hover .competition-types__badge, .section-competitions .competition-types__figure:focus-visible .competition-types__badge {
   opacity: 0;
 }
 .section-competitions .competition-types__figure picture {

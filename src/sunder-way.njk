@@ -13,8 +13,13 @@ hide_footer: false
 <section class="section-ethos">
   <div class="ethos-pin deactivated">
     <div class="ethos-top">
-      <h1 class="ethos-top__title">
-        {{ page_sunder_way.ethos.section_title }}
+      <h1
+        class="ethos-top__title"
+        aria-label="{{ page_sunder_way.ethos.section_title | removeTokens }}"
+      >
+        <span aria-hidden="true">
+          {{ page_sunder_way.ethos.section_title }}
+        </span>
       </h1>
 
       <!-- prettier-ignore -->
@@ -24,7 +29,14 @@ hide_footer: false
       {% include "./_includes/components/carousel-gallery.njk" %}
     </div>
     <div class="ethos-middle">
-      <p class="ethos-middle__p">{{ page_sunder_way.ethos.section_desc }}</p>
+      <p
+        class="ethos-middle__p"
+        aria-label="{{ page_sunder_way.ethos.section_desc | removeTokens }}"
+      >
+        <span aria-hidden="true">
+          {{ page_sunder_way.ethos.section_desc }}
+        </span>
+      </p>
 
       <div class="ethos-middle__panels" tabindex="-1">
         <!-- prettier-ignore -->
@@ -34,9 +46,19 @@ hide_footer: false
             loop.index
           }} gsap-animate"
         >
-          <h2 class="panel-title">{{ item.title }}</h2>
-          <p class="panel-desc panel-desc-{{ loop.index }}">
-            {{ item.caption }}
+          <h2 class="panel-title" aria-label="{{ item.title | removeTokens }}">
+            <span aria-hidden="true">
+              {{ item.title }}
+            </span>
+          </h2>
+          <br class="title-gap" aria-hidden="true" />
+          <p
+            class="panel-desc panel-desc-{{ loop.index }}"
+            aria-label="{{ item.caption | removeTokens }}"
+          >
+            <span aria-hidden="true">
+              {{ item.caption }}
+            </span>
           </p>
         </div>
         {% endfor %}
@@ -74,7 +96,7 @@ hide_footer: false
 
   <div class="competition-types">
     {% for type in page_sunder_way.competitions.types %}
-    <figure class="competition-types__figure">
+    <figure class="competition-types__figure" tabindex="0">
       <img
         class="competition-types__img"
         src="{{ type.src }}"

@@ -483,7 +483,10 @@ figure {
   font-size: 0; // Chrome's user agent stylesheet adds 1em padding-block-end
 }
 
-.sample-video-embed {
-  width: 100%;
-  display: none;
+br {
+  &.gap-sm {
+    content: "";
+    margin: 16px;
+    display: block;
+  }
 }
