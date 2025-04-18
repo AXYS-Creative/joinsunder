@@ -5,8 +5,10 @@ cta_1:
   text: Return home
   text_desc:
   url: /
+  new_tab: false
 
 cta_2:
   text:
   text_desc:
   url:
+  new_tab: false

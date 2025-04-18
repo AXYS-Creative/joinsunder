@@ -1047,7 +1047,10 @@
                     h("p", { className: "timeline__event-desc" }, event.desc)
                   )
                 ),
-                h("div", { className: "timeline__bar" })
+                h("div", {
+                  className: "timeline__bar",
+                  style: { width: "100%" },
+                })
               )
             )
           );
@@ -1276,6 +1279,193 @@
         },
       });
 
+      let HeroOSSPreview = createClass({
+        render: function () {
+          const entry = this.props.entry;
+          const data = entry.getIn(["data"]).toJS();
+          const cta = data.cta || {};
+
+          return h(
+            "section",
+            { className: "partial-img-hero oss-page has-subcontent" },
+
+            // Background image
+            h("div", { className: "partial-img-hero__inner" }, [
+              h("img", {
+                className: "partial-img-hero__bg",
+                src: data.section_bg,
+                alt: "",
+              }),
+
+              // Title (h1) — this version uses h1 for the hero
+              h(
+                "h1",
+                { className: "partial-img-hero__h1" },
+                data.section_title
+              ),
+
+              // Footer
+              h("div", { className: "partial-img-hero__footer" }, [
+                h("p", { className: "partial-img-hero__p" }, data.section_desc),
+                h("div", { className: "cta-group" }, [
+                  cta?.text &&
+                    h(
+                      "a",
+                      {
+                        className: "cta-1 tab-element-page",
+                        href: cta.url || "#",
+                        "aria-label": cta.text,
+                      },
+                      cta.text,
+                      h("span", { className: "sr-only" })
+                    ),
+                ]),
+              ]),
+            ]),
+
+            // Optional sub-content block for OSS hero
+            h("div", { className: "partial-img-hero__sub-content" }, [
+              h("p", { className: "sub-content__p" }, data.section_desc),
+              h("div", { className: "cta-group" }, [
+                cta?.text &&
+                  h(
+                    "a",
+                    {
+                      className: "cta-1 outline tab-element-page",
+                      href: cta.url || "#",
+                      "aria-label": cta.text,
+                    },
+                    cta.text,
+                    h("span", { className: "sr-only" })
+                  ),
+              ]),
+            ])
+          );
+        },
+      });
+
+      let OSSHistoryPreview = createClass({
+        render: function () {
+          const data = this.props.entry.getIn(["data"]).toJS();
+          const events = data.events || [];
+
+          return h(
+            "section",
+            {
+              className: "section-oss-history section-gradient",
+              id: "history",
+            },
+
+            // Title + Description
+            h(
+              "h2",
+              {
+                className: "section-gradient__title section-oss-history__title",
+              },
+              data.section_title
+            ),
+            h(
+              "p",
+              { className: "section-gradient__desc section-oss-history__desc" },
+              data.section_desc
+            ),
+
+            // Loop through service events
+            h(
+              "div",
+              { className: "section-oss-history__events" },
+              events.map((item, i) => {
+                const gallery = item.gallery || [];
+                const cta = item.cta || {};
+
+                return h("div", { className: "service-event", key: i }, [
+                  // Graphic
+                  h("img", {
+                    className: "service-event__graphic",
+                    src: item.graphic,
+                    alt: "",
+                  }),
+
+                  // Content block
+                  h("div", { className: "service-event__content" }, [
+                    h("h3", { className: "service-event__year" }, item.year),
+                    h("h4", { className: "service-event__location" }, [
+                      item.city &&
+                        h(
+                          "span",
+                          { className: "service-event__location-city" },
+                          `${item.city}, `
+                        ),
+                      h(
+                        "span",
+                        { className: "service-event__location-country" },
+                        item.country
+                      ),
+                    ]),
+                    item.desc &&
+                      h("p", { className: "service-event__desc" }, item.desc),
+
+                    // Image Gallery Carousel (Simulated as horizontal scroll)
+                    gallery.length > 0 &&
+                      h(
+                        "div",
+                        {
+                          className: "swiper mySwiper img-carousel",
+                          style: {
+                            display: "flex",
+                            gap: "12px",
+                            overflowX: "auto",
+                            padding: "12px 0",
+                            marginTop: "12px",
+                          },
+                        },
+                        gallery.map((img, index) =>
+                          h(
+                            "div",
+                            {
+                              className: "swiper-slide",
+                              style: {
+                                flexShrink: "0",
+                              },
+                              key: index,
+                            },
+                            [
+                              h("img", {
+                                src: img.src,
+                                alt: img.title,
+                                style: { maxWidth: "240px", height: "auto" },
+                              }),
+                            ]
+                          )
+                        )
+                      ),
+
+                    // CTA (if no gallery or standalone)
+                    cta?.text &&
+                      h("div", { className: "cta-group" }, [
+                        h(
+                          "a",
+                          {
+                            className: "cta-1 outline tab-element-page",
+                            href: cta.url || "#",
+                            "aria-label": cta.text,
+                            target: cta.new_tab ? "_blank" : "_self",
+                            rel: cta.new_tab
+                              ? "noopener noreferrer"
+                              : undefined,
+                          },
+                          cta.text,
+                          h("span", { className: "sr-only" })
+                        ),
+                      ]),
+                  ]),
+                ]);
+              })
+            )
+          );
+        },
+      });
+
       let HeroAlertPreview = createClass({
         render: function () {
           const entry = this.props.entry;
@@ -1325,6 +1515,8 @@
       CMS.registerPreviewTemplate("leadership", LeadershipPreview);
       CMS.registerPreviewTemplate("timeline", TimelinePreview);
       CMS.registerPreviewTemplate("hero_join", JoinHeroPreview);
+      CMS.registerPreviewTemplate("hero_oss", HeroOSSPreview);
+      CMS.registerPreviewTemplate("history", OSSHistoryPreview);
       CMS.registerPreviewTemplate("hero_error", HeroAlertPreview);
       CMS.registerPreviewTemplate("form_submit", HeroAlertPreview);
       CMS.registerPreviewStyle("/static/styles/styles.css");

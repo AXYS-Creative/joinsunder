@@ -62,10 +62,3 @@ hide_footer: false
     {% endfor %}
 </section>
 {% endif %}
-
-<!-- prettier-ignore -->
-{% set section_title = page_oss.quotes.section_title %}
-{% set quote_list = page_oss.quotes.list %}
-{% if page_oss.quotes.toggle_section %}
-  {% include "./_includes/partials/partial-quote.njk" %}
-{% endif %}

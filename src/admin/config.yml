@@ -935,6 +935,7 @@ collections:
                 label: Add Checkbox — Awareness (That this is a sales position)
                 widget: boolean
                 default: true
+                hint: If removed, the reCaptcha will still be displayed (if toggled on)
               - name: label_checkbox_awareness
                 label: Awareness Checkbox Label
                 widget: string
@@ -983,6 +984,10 @@ collections:
                 widget: string
                 required: false
                 hint: "To return home use: /"
+              - name: new_tab
+                label: Open in a new tab
+                widget: boolean
+                default: true
           - name: cta_2
             label: Call To Action 2
             widget: object
@@ -1003,15 +1008,19 @@ collections:
                 label: Button URL
                 widget: string
                 required: false
+              - name: new_tab
+                label: Open in a new tab
+                widget: boolean
+                default: true
   - name: page_oss
     label: Page - OSS
     files:
-      - name: hero
+      - name: hero_oss
         label: Section - Hero
         file: src/_data/page_oss/hero.yaml
         preview_path: /operation-sunder-serves
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (OSS - Hero)
@@ -1034,37 +1043,13 @@ collections:
             media_library:
               config:
                 max_file_size: 5000000 # 1MB = 1,000,000 bytes
-          - name: cta
-            label: Call To Action
-            widget: object
-            summary: "{{ fields.text }} → {{ fields.url }}"
-            required: false
-            fields:
-              - name: text
-                label: Button Text
-                widget: string
-                required: false
-                hint: An empty value removes the button
-              - name: text_desc
-                label: Button Text Description
-                widget: string
-                required: false
-                hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
-              - name: url
-                label: Button URL
-                widget: string
-                required: false
-                hint: i.e. /join
-              - name: new_tab
-                label: Open in a new tab
-                widget: boolean
-                default: true
+          - *cta_field
       - name: history
         label: Section - History
         file: src/_data/page_oss/history.yaml
         preview_path: /operation-sunder-serves#history
         editor:
-          preview: false
+          preview: true
         fields:
           - name: toggle_section
             label: Show Section (OSS - History)
@@ -1106,34 +1091,14 @@ collections:
                 media_library:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
-              - name: cta
-                label: Call To Action
-                widget: object
-                summary: "{{ fields.text }} → {{ fields.url }}"
-                required: false
-                fields:
-                  - name: text
-                    label: Button Text
-                    widget: string
-                    required: false
-                    hint: i.e. "Play Video" or "Register". An empty value removes the button
-                  - name: text_desc
-                    label: Button Text Description
-                    widget: string
-                    required: false
-                    hint: "'Learn More' is too vague and hurts SEO. Add more details to enhance the site."
-                  - name: url
-                    label: Button URL
-                    widget: string
-                    required: false
-                    hint: URL to the service video (requires image gallery) or registration page. An empty value removes the button
+              - *cta_field
               - name: gallery
                 label: Gallery Images
                 label_singular: Image
                 allow_add: true
                 widget: list
                 required: false
-                hint: An empty list removes the gallery
+                hint: An empty list removes the gallery and converts the CTA into a typical link (rather than a video player button).
                 fields:
                   - name: title
                     label: Title
@@ -1148,48 +1113,6 @@ collections:
                     media_library:
                       config:
                         max_file_size: 5000000 # 1MB = 1,000,000 bytes
-      - name: quotes
-        label: Section - Quote
-        file: src/_data/page_oss/quotes.yaml
-        preview_path: /operation-sunder-serves#quote-section
-        editor:
-          preview: false
-        fields:
-          - name: toggle_section
-            label: Show Section (OSS - Quote)
-            widget: boolean
-            default: true
-          - name: list
-            label: Quotes
-            label_singular: Quote
-            widget: list
-            required: true
-            fields:
-              - name: title
-                label: Title
-                widget: string
-                required: true
-              - name: quote
-                label: Quote
-                widget: text
-                required: true
-              - name: img_src
-                label: Portrait Source
-                widget: image
-                required: true
-                hint: Keep below 5MB
-                media_library:
-                  config:
-                    max_file_size: 5000000 # 1MB = 1,000,000 bytes
-              - name: name
-                label: Portrait Name
-                widget: string
-                required: true
-                hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
-              - name: role
-                label: Portrait Role
-                widget: string
-                required: true
   - name: page_404
     label: Page - 404 (Error)
     description: >-
