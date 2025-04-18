@@ -32,6 +32,7 @@ export const openvideoOverlay = (src) => {
 
   videoCloseBtn.focus();
 
+  videoOverlay.setAttribute("tabindex", "0");
   videoCloseBtn.setAttribute("tabindex", "0");
   nonVideoOverlayTabElements.forEach((el) => el.setAttribute("tabindex", "-1"));
 
@@ -63,6 +64,7 @@ export const closevideoOverlay = () => {
     videoPlayer.src = ""; // Remove src to stop the video
   }, 300);
 
+  videoOverlay.setAttribute("tabindex", "-1");
   videoCloseBtn.setAttribute("tabindex", "-1");
   nonVideoOverlayTabElements.forEach((el) => el.setAttribute("tabindex", "0"));
 

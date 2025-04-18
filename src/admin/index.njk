@@ -1440,7 +1440,7 @@
                     cta?.text &&
                       h("div", { className: "cta-group" }, [
                         h(
-                          "a",
+                          gallery.length > 0 ? "button" : "a",
                           {
                             className: "cta-1 outline tab-element-page",
                             href: cta.url || "#",

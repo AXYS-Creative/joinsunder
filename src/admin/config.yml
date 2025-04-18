@@ -1083,6 +1083,10 @@ collections:
                 label: City
                 widget: string
                 required: false
+              - name: desc
+                label: Description
+                widget: text
+                required: false
               - name: graphic
                 label: Graphic
                 widget: image

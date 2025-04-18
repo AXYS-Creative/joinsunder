@@ -31,6 +31,12 @@ let swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  a11y: {
+    enabled: true, // still keeps focus management, keyboard control
+    slideRole: "group",
+    containerRoleDescriptionMessage: null,
+    slideLabelMessage: null, // prevent Swiper from injecting its own aria-label
+  },
 });
 
 // Remove role attribute from video toggle elements (invalid HTML)
