@@ -138,7 +138,8 @@
           const entry = this.props.entry;
           const data = entry.getIn(["data"]).toJS();
 
-          const logoSrc = data.logo_src || "/static/img/logo-squad-light.svg";
+          const logoSrc = data.logo_src;
+          const showSocial = data.show_social;
           const links = data.links || [];
           const cta = data.cta || {};
 
@@ -163,62 +164,63 @@
                     alt: "Join Sunder logo",
                   })
                 ),
-                h(
-                  "div",
-                  { className: "social-media no-label" },
+                showSocial &&
                   h(
-                    "ul",
-                    { className: "social-media__links" },
-                    [
-                      {
-                        href: "https://www.tiktok.com/@join.sunder",
-                        label: "Tik Tok",
-                        icon: "/static/img/icon-social-tiktok.svg",
-                      },
-                      {
-                        href: "https://www.youtube.com/@sunderenergy9101",
-                        label: "YouTube",
-                        icon: "/static/img/icon-social-youtube.svg",
-                      },
-                      {
-                        href: "https://www.facebook.com/sunderenergy",
-                        label: "Facebook",
-                        icon: "/static/img/icon-social-facebook.svg",
-                      },
-                      {
-                        href: "https://www.instagram.com/joinsunder/",
-                        label: "Instagram",
-                        icon: "/static/img/icon-social-instagram.svg",
-                      },
-                      {
-                        href: "https://www.linkedin.com/company/sunder-energy/",
-                        label: "LinkedIn",
-                        icon: "/static/img/icon-social-linkedin.svg",
-                      },
-                    ].map((social) =>
-                      h(
-                        "li",
-                        {},
+                    "div",
+                    { className: "social-media no-label" },
+                    h(
+                      "ul",
+                      { className: "social-media__links" },
+                      [
+                        {
+                          href: "https://www.tiktok.com/@join.sunder",
+                          label: "Tik Tok",
+                          icon: "/static/img/icon-social-tiktok.svg",
+                        },
+                        {
+                          href: "https://www.youtube.com/@sunderenergy9101",
+                          label: "YouTube",
+                          icon: "/static/img/icon-social-youtube.svg",
+                        },
+                        {
+                          href: "https://www.facebook.com/sunderenergy",
+                          label: "Facebook",
+                          icon: "/static/img/icon-social-facebook.svg",
+                        },
+                        {
+                          href: "https://www.instagram.com/joinsunder/",
+                          label: "Instagram",
+                          icon: "/static/img/icon-social-instagram.svg",
+                        },
+                        {
+                          href: "https://www.linkedin.com/company/sunder-energy/",
+                          label: "LinkedIn",
+                          icon: "/static/img/icon-social-linkedin.svg",
+                        },
+                      ].map((social) =>
                         h(
-                          "a",
-                          {
-                            href: social.href,
-                            target: "_blank",
-                            className: "social-media__link tab-element-page",
-                            "aria-label": social.label,
-                          },
-                          h("span", {
-                            className: "social-media__link-img",
-                            style: {
-                              maskImage: `url(${social.icon})`,
-                              WebkitMaskImage: `url(${social.icon})`,
+                          "li",
+                          {},
+                          h(
+                            "a",
+                            {
+                              href: social.href,
+                              target: "_blank",
+                              className: "social-media__link tab-element-page",
+                              "aria-label": social.label,
                             },
-                          })
+                            h("span", {
+                              className: "social-media__link-img",
+                              style: {
+                                maskImage: `url(${social.icon})`,
+                                WebkitMaskImage: `url(${social.icon})`,
+                              },
+                            })
+                          )
                         )
                       )
                     )
                   )
-                )
               ),
               h(
                 "div",

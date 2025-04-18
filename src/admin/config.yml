@@ -252,7 +252,7 @@ collections:
                   config:
                     max_file_size: 5000000 # 1MB = 1,000,000 bytes
           - name: yog_logo
-            label: Logo - Year of Gear Logo
+            label: Logo - Year of Gear
             widget: image
             required: true
             hint: Recommended to use an SVG file. Keep below 1MB
@@ -294,7 +294,7 @@ collections:
                     multiple: false
                     create: false
           - name: yog_types
-            label: Year of Gear Types
+            label: Types - Year of Gear
             label_singular: Type
             widget: list
             min: 4
@@ -1209,7 +1209,7 @@ collections:
               config:
                 max_file_size: 1000000 # 1MB = 1,000,000 bytes
           - name: show_social
-            label: Show Social Media Links
+            label: Show Social Media Links (Desktop Only)
             widget: boolean
             default: true
           - name: links
