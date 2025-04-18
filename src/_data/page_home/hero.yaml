@@ -1,12 +1,12 @@
 section_title: Welcome to Sunder Energy
 external_panel:
-  bg_img: /static/img/Landing-Hero-BG1.png
+  bg_img: /static/img/landing-hero-bg5.png
   logo: /static/img/logo-external-light.svg
   pre_title: Learn more about
   title: powering[%br%] your home[%br%] for the future
   cta:
     text: sunderenergy.com
-    text_desc:
+    text_desc: null
     url: https://sunderenergy.com/
     new_tab: true
 internal_panel:
@@ -16,6 +16,6 @@ internal_panel:
   title: solar company
   cta:
     text: joinsunder.com
-    text_desc:
+    text_desc: null
     url: /sunder-way
     new_tab: false
