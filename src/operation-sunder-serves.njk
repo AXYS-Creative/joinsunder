@@ -25,8 +25,10 @@ hide_footer: false
 <!-- prettier-ignore -->
 {% if page_oss.history.toggle_section %}
 <section class="section-oss-history section-gradient" id="history">
-  <h2 class="section-gradient__title section-oss-history__title">
-    {{ page_oss.history.section_title }}
+  <h2 class="section-gradient__title section-oss-history__title" aria-label="{{ page_oss.history.section_title | removeTokens }}">
+    <span aria-hidden="true">
+      {{ page_oss.history.section_title }}
+    </span>
   </h2>
   <p class="section-gradient__desc section-oss-history__desc">
     {{ page_oss.history.section_desc }}
@@ -39,11 +41,11 @@ hide_footer: false
 
       <div class="service-event__content">
         <h3 class="service-event__year">{{ item.year }}</h3>
-        <h4 class="service-event__location">
+        <h4 class="service-event__location" aria-label="{{ item.city }}, {{ item.country }}">
           {% if item.city %}
-            <span class="service-event__location-city">{{ item.city }},</span>
+            <span class="service-event__location-city" aria-hidden="true">{{ item.city }},</span>
           {% endif %}
-          <span class="service-event__location-country">{{ item.country }}</span>
+          <span class="service-event__location-country" aria-hidden="true">{{ item.country }}</span>
         </h4>
         <p class="service-event__desc">{{ item.desc }}</p>
 

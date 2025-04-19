@@ -13,7 +13,11 @@ hide_footer: false
 <section class="section-values section-gradient">
   <div class="values-pin">
     <div class="section-values__text">
-      <h1>{{ page_about.values.section_title }}</h1>
+      <h1 aria-label="{{ page_about.values.section_title | removeTokens }}">
+        <span aria-hidden="true">
+          {{ page_about.values.section_title }}
+        </span>
+      </h1>
       <p class="section-values__text-desc section-gradient__desc">
         {{ page_about.values.section_desc }}
       </p>
@@ -24,7 +28,10 @@ hide_footer: false
       {% include "./_includes/components/cta-group.njk" %}
     </div>
 
-    <figure class="section-values__figure">
+    <figure
+      class="section-values__figure"
+      aria-label="{{ page_about.values.img_desc }}"
+    >
       <svg
         class="values-svg"
         xmlns="http://www.w3.org/2000/svg"
@@ -274,9 +281,10 @@ hide_footer: false
 {% if page_about.mission.toggle_section %}
 <section class="section-mission" id="mission">
   <div class="mission-pin">
-    <h2 class="mission-title">
+    <!-- prettier-ignore -->
+    <h2 class="mission-title" aria-label="{{ page_about.mission.a11y_label }}">
       {% for item in page_about.mission.title %}
-      <span class="mission-title__line {{ item.style }}">
+      <span class="mission-title__line {{ item.style }}" aria-hidden="true">
         {{ item.text }}
       </span>
       {% endfor %}
@@ -303,7 +311,7 @@ hide_footer: false
   <div class="growth-pin">
     <h2
       class="growth-title"
-      aria-label="{{ page_opportunity_growth.section_title | removeTokens }}"
+      aria-label="{{ page_about.growth.section_title | removeTokens }}"
     >
       <span aria-hidden="true">
         {{ page_about.growth.section_title }}
@@ -509,8 +517,13 @@ hide_footer: false
 <!-- prettier-ignore -->
 {% if page_about.leadership.toggle_section %}
 <section class="section-leadership section-gradient" id="leadership">
-  <h2 class="section-gradient__title">
-    {{ page_about.leadership.section_title }}
+  <h2
+    class="section-gradient__title"
+    aria-label="{{ page_about.leadership.section_title | removeTokens }}"
+  >
+    <span aria-hidden="true">
+      {{ page_about.leadership.section_title }}
+    </span>
   </h2>
   <p class="section-gradient__desc">
     {{ page_about.leadership.section_desc }}

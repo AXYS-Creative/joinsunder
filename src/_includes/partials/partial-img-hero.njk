@@ -24,18 +24,26 @@ class="
     <img
       class="partial-img-hero__graphic"
       src="{{ section_graphic }}"
-      alt=""
+      alt="{{ graphic_title }}"
     />
     {% endif %}
 
     <!-- prettier-ignore -->
     {% if section_h1 %}
-    <h1 class="partial-img-hero__h1">{{ section_h1 }}</h1>
+    <h1 class="partial-img-hero__h1" aria-label="{{ section_h1 | removeTokens }}">
+      <span aria-hidden="true">
+        {{ section_h1 }}
+      </span>
+    </h1>
     {% endif %}
 
     <!-- prettier-ignore -->
     {% if section_h2 %}
-    <h2 class="partial-img-hero__h2">{{ section_h2 }}</h2>
+    <h2 class="partial-img-hero__h2" aria-label="{{ section_h2 | removeTokens}}">
+      <span aria-hidden="true">
+        {{ section_h2 }}
+      </span>
+    </h2>
     {% endif %}
 
     <div class="partial-img-hero__footer">

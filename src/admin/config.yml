@@ -737,10 +737,16 @@ collections:
             label: Section Title
             widget: string
             required: true
+            hint: Customize text with tokens. Visit https://axyscreative.com/tokens to learn more.
           - name: section_desc
             label: Section Description
             widget: text
             required: true
+          - name: img_desc
+            label: Image Description (a11y)
+            widget: string
+            required: true
+            hint: Not shown on the page. Used to describe the hero graphic for SEO & a11y.
           - *cta_field
       - name: mission
         label: Section - Our Mission
@@ -753,6 +759,11 @@ collections:
             label: Show Section (About Sunder - Our Mission)
             widget: boolean
             default: true
+          - name: a11y_label
+            label: Accessibility Label
+            widget: string
+            required: true
+            hint: Pass in the individual words/phrases from the animation title. This is used helps SEO and a11y.
           - name: title
             label: Title Lines
             label_singular: Line
