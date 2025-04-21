@@ -1,2 +1,5 @@
 User-agent: *
+Disallow: /admin
 Disallow: /404.html
+Disallow: /form-submit.html
+Sitemap: https://joinsunder.com/sitemap.xml

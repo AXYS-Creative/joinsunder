@@ -2,6 +2,7 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const htmlmin = require("html-minifier");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 module.exports = async function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false); // Disable automatic use of your .gitignore
@@ -24,6 +25,27 @@ module.exports = async function (eleventyConfig) {
       },
       pictureAttributes: {},
     },
+  });
+
+  // Generate xml sitemap
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://joinsunder.com",
+    },
+  });
+
+  eleventyConfig.addCollection("sitemap", function (collectionApi) {
+    return collectionApi.getAll().filter((item) => {
+      const url = item.url || "";
+      const inputPath = item.inputPath || "";
+
+      // Exclude specific paths
+      const isAdmin = url.startsWith("/admin/");
+      const is404 = url.includes("404");
+      const isThankYou = url.includes("/thank-you");
+
+      return !isAdmin && !is404 && !isThankYou;
+    });
   });
 
   // To support .yaml extension in _data. You may remove this if using JSON
