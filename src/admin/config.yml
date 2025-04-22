@@ -1356,8 +1356,8 @@ collections:
             required: true
             hint: Used for SEO and social sharing
             fields:
-              - name: title
-                label: Page
+              - name: label
+                label: Page Label
                 widget: string
                 required: false
                 hint: Dashboard label only.
