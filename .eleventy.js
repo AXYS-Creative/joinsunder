@@ -38,10 +38,9 @@ module.exports = async function (eleventyConfig) {
       const isEmails =
         url.startsWith("/emails/") || inputPath.includes("/emails/");
       const is404 = url.includes("404");
-      const isThankYou = url.includes("/thank-you");
       const isStyleGuide = url.includes("style-guide");
 
-      return !isAdmin && !isEmails && !is404 && !isThankYou && !isStyleGuide;
+      return !isAdmin && !isEmails && !is404 && !isStyleGuide;
     });
   });
 
