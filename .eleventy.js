@@ -28,23 +28,20 @@ module.exports = async function (eleventyConfig) {
   });
 
   // Generate xml sitemap
-  eleventyConfig.addPlugin(sitemap, {
-    sitemap: {
-      hostname: "https://joinsunder.com",
-    },
-  });
-
   eleventyConfig.addCollection("sitemap", function (collectionApi) {
     return collectionApi.getAll().filter((item) => {
       const url = item.url || "";
       const inputPath = item.inputPath || "";
 
-      // Exclude specific paths
-      const isAdmin = url.startsWith("/admin/");
+      const isAdmin =
+        url.startsWith("/admin/") || inputPath.includes("/admin/");
+      const isEmails =
+        url.startsWith("/emails/") || inputPath.includes("/emails/");
       const is404 = url.includes("404");
       const isThankYou = url.includes("/thank-you");
+      const isStyleGuide = url.includes("style-guide");
 
-      return !isAdmin && !is404 && !isThankYou;
+      return !isAdmin && !isEmails && !is404 && !isThankYou && !isStyleGuide;
     });
   });
 
