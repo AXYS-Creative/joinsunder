@@ -1356,11 +1356,11 @@ collections:
             required: true
             hint: Used for SEO and social sharing
             fields:
-              - name: page
+              - name: title
                 label: Page
                 widget: string
                 required: false
-                hint: Dashboard label only — DO NOT edit this field. Home page should be left blank.
+                hint: Dashboard label only.
               - name: description
                 label: Description
                 widget: text
