@@ -2666,6 +2666,7 @@ br.gap-sm {
   background: linear-gradient(0deg, #0058f5 50%, rgba(0, 88, 245, 0) 100%);
   position: absolute;
   height: 100%;
+  width: 100%;
   bottom: 0;
   padding: var(--body-padding);
 }
