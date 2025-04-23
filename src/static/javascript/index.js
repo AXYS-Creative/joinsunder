@@ -15,9 +15,4 @@ import "./global/nav.js";
 import "./global/scroll.js";
 import "./global/animations.js";
 
-// import "./library/accordion.js";
-// import "./library/carousel-snap.js";
-// import "./library/magnet.js";
-// import "./library/tabs.js";
-
 import "./content/tokens.js";
