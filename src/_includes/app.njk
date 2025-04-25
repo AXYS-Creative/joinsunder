@@ -113,10 +113,8 @@
         "url": "{{ meta_data.url }}",
         "logo": "{{ meta_data.url }}/favicon.svg",
         "image": "{{ meta_data.url }}{{ meta_data.og_image }}",
-        "sameAs": [
-          {% for social_link in global.social_media.links %}
-          {% if social_link.url %}"{{ social_link.url }}"{% if not loop.last %},{% endif %}{% endif %}
-          {% endfor %}
+        "sameAs": [{% for social_link in global.social_media.links %}
+          {% if social_link.url %}"{{ social_link.url }}"{% if not loop.last %},{% endif %}{% endif %}{% endfor %}
         ],
         "contactPoint": {
           "@type": "ContactPoint",
