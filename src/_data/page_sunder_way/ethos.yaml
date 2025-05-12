@@ -16,11 +16,12 @@ section_desc: "At Sunder Energy, we believe that trust is earned through
   decision is made with confidence. We pledge to:"
 values:
   - title: Be[%br%] honest
-    caption: No misleading claims, no half-truths—just facts.
+    caption: No misleading claims, no half-truths—[%br%]just facts.
   - title: Be[%br%] ethical
-    caption: Treat everyone with respect, fairness, and integrity.
+    caption: Treat everyone with respect, fairness, [%br%]and integrity.
   - title: Be[%br%] transparent
-    caption: Offer clear terms, real numbers, and full disclosure in every interaction.
+    caption: Offer clear terms, real numbers, and full disclosure in [%br%]every
+      interaction.
 cta_p: Deception has no place in our business. Our reputation is built on the
   trust of those we serve. At Sunder Energy, we win with integrity—always.
 cta:
