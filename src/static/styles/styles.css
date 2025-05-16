@@ -2974,7 +2974,7 @@ body .hide-load {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: 0.32s ease;
+  transition: opacity 0.32s ease;
 }
 .carousel-gallery__img.active {
   opacity: 1;

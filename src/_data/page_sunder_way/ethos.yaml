@@ -1,6 +1,6 @@
 toggle_section: true
 section_title: The[%br%] Sunder[%br%] Way
-autoplay_interval: 3200
+autoplay_interval: 2800
 section_imgs:
   - title: Roof with solar panels
     src: /static/img/way-ethos-1.png
