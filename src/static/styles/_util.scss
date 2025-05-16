@@ -91,6 +91,10 @@
   }
 }
 
+body .hide-load {
+  display: none; // strange issue when visiting page on prod, the video shows briefly then goes away
+}
+
 // Form Submit & 404 pages
 .hero-alert {
   @include full-viewport-section;

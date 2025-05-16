@@ -378,6 +378,7 @@ collections:
                 collapsed: true
                 required: true
                 fields: *collage_image_fields
+                hint: Use 8 images for column 1
               - name: column_2
                 label: Images in column 2
                 label_singular: Image
@@ -385,6 +386,7 @@ collections:
                 collapsed: true
                 required: true
                 fields: *collage_image_fields
+                hint: Use 7 images for column 2
               - name: column_3
                 label: Images in column 3
                 label_singular: Image
@@ -392,6 +394,7 @@ collections:
                 collapsed: true
                 required: true
                 fields: *collage_image_fields
+                hint: Use 8 images for column 3
               - name: column_4
                 label: Images in column 4
                 label_singular: Image
@@ -399,6 +402,7 @@ collections:
                 collapsed: true
                 required: true
                 fields: *collage_image_fields
+                hint: Use 7 images for column 4
               - name: column_1_mobile
                 label: Images in column 1 (Mobile)
                 label_singular: Image
@@ -406,6 +410,7 @@ collections:
                 collapsed: true
                 required: true
                 fields: *collage_image_fields
+                hint: Use 17 images for mobile column 1
               - name: column_2_mobile
                 label: Images in column 2 (Mobile)
                 label_singular: Image
@@ -413,6 +418,7 @@ collections:
                 collapsed: true
                 required: true
                 fields: *collage_image_fields
+                hint: Use 13 images for mobile column 2
       - name: oss
         label: Section - OSS
         file: src/_data/page_sunder_way/oss.yaml

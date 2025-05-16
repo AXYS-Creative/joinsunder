@@ -770,6 +770,10 @@ br.gap-sm {
   width: 100%;
 }
 
+body .hide-load {
+  display: none;
+}
+
 .hero-alert {
   display: flex;
   flex-direction: column;
